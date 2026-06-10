@@ -1,0 +1,43 @@
+default_language_version:
+  python: python3.12 # matches requires-python = ">=3.12, <3.13" in pyproject.toml
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: check-executables-have-shebangs
+      - id: check-toml
+      - id: check-case-conflict
+      - id: check-added-large-files
+
+  # Linter + formatter — keep rev in sync with ruff>=0.8 in pyproject.toml
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.6
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: ^scripts/
+      - id: ruff-format
+        files: ^scripts/
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.44.0
+    hooks:
+      - id: markdownlint
+        args: ["--fix"]
+        files: ^(wiki|docs)/
+
+  # basedpyright runs via uv so it uses the version from uv.lock.
+  - repo: local
+    hooks:
+      - id: basedpyright
+        name: basedpyright
+        entry: uv run basedpyright scripts/
+        language: system
+        files: ^scripts/
+        pass_filenames: false

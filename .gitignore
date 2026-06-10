@@ -1,0 +1,23 @@
+# Instructor-side notes — not published.
+agent_docs/
+
+# Paper PDFs are untrusted input and live outside git.
+raw/pdfs/
+
+# Obsidian session state, if anyone opens the wiki in Obsidian.
+.obsidian/
+
+# macOS cruft
+.DS_Store
+
+# Editor
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+
+# Claude Code local settings (user-specific; .claude/commands/ is tracked).
+.claude/settings.local.json
