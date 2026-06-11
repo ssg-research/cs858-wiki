@@ -1,13 +1,18 @@
 # CS858 Wiki
 
 A wiki of per-paper **reading companions** for CS858 (Trustworthy Machine
-Learning). Each primary-reading paper gets one page that lowers the prerequisite
-load for reading it and raises engagement by surfacing the open questions it sits
-inside. Pages are **instructor + AI co-produced**; students never author them.
+Learning). AI security research draws on many home communities (statistics, ML,
+systems security, cryptography), so papers use terminology that is opaque across
+community lines. Each primary-reading paper gets one page that gives a student a
+high-level, decoded idea of the paper, then sets up a targeted read of the paper
+itself, in service of a strong seminar discussion. Pages are **instructor + AI
+co-produced**; students never author them.
 
-The defining constraint: a paper page **never summarizes the paper's own
-findings**. If a student could read the page instead of the paper and lose
-nothing, the page has failed.
+The defining constraint: **the page orients; the paper teaches.** A paper page
+carries a high-level overview pitched as a contextualized abstract (headline
+results included, threat model bolded), prerequisites, and field context, but
+never walks through the paper's methods, evidence, or argument. If a student
+could read the page instead of the paper and lose nothing, the page has failed.
 
 ---
 
@@ -110,13 +115,25 @@ and is **off-limits to automated sessions**.
 
 ## Universal Rules
 
-- **Never pre-digest a paper's contributions.** No "Summary," "Key findings,"
-  "Contributions," "Results," or "TLDR" section on a paper page, ever. This is
-  the whole point.
+- **The page orients; the paper teaches.** The "High-level overview" is the only
+  section that describes the paper's own content, pitched as a contextualized
+  abstract with a bolded **Threat Model:** paragraph. No "Key findings,"
+  "Methods," or "Results" section, and no walkthrough of the paper's argument or
+  evidence.
+- **Never author the field's open tensions as questions.** Students must reach
+  those themselves (the generation effect); the page places neutral attention
+  anchors in Reading guidance instead. Motivating questions are three to five
+  extremely high-level pre-questions answerable by reading the paper.
+- **Follow the house writing style** in `docs/writing-style.md` on every page:
+  terse, declarative, written for a graduate reader new to the subfield. No
+  essay openers, metaphors-as-structure, or second-person coaching.
 - You may answer from training knowledge, but say so explicitly. If an answer
   did not come from the wiki or a source read this session, state that upfront.
 - Bibliographic metadata: read author names, years, and DOIs off the paper
-  itself (PDF first page, or the arXiv abstract page). Never guess them.
+  itself (PDF first page, or the arXiv abstract page). Never guess them. Every
+  page that cites anything carries a `## References` section with full entries
+  read off the citing paper's bibliography or the cited work's arXiv page,
+  never reconstructed from memory.
 - No em-dashes in prose. Use commas or shorter sentences. Exception: the
   `[text](link) — description` list-separator pattern is allowed.
 - Run markdownlint on every changed file before finishing. The CLI is not on
