@@ -9,4 +9,21 @@ that depends on it.
 Concept pages are created on demand by `/generate-paper-summary`. When you add
 one, list it here as `[slug](slug.md) — one-line description`.
 
-_No concepts added yet._
+- [adversarial-examples](adversarial-examples.md) — the evasion phenomenon: small input perturbations that flip a prediction.
+- [adversarial-threat-model](adversarial-threat-model.md) — how an adversary's power is specified: perturbation set, knowledge, timing.
+- [adversarial-training](adversarial-training.md) — training on adversarially perturbed inputs as a defense.
+- [differential-privacy](differential-privacy.md) — the formal bound on any single example's influence; DP-SGD and the epsilon guarantee.
+- [empirical-risk-minimization](empirical-risk-minimization.md) — average training loss as a proxy for expected loss; the baseline objective.
+- [fgsm](fgsm.md) — the one-step gradient-sign attack and its role as a baseline.
+- [gradient-masking](gradient-masking.md) — the defense failure mode where gradients become useless but worst-case loss stays high.
+- [likelihood-ratio-test](likelihood-ratio-test.md) — deciding between two hypotheses by their likelihood ratio; Neyman-Pearson optimality.
+- [lp-norms](lp-norms.md) — ℓ0 / ℓ2 / ℓ-infinity balls as perturbation budgets and proxies for perceptual similarity.
+- [membership-inference](membership-inference.md) — predicting whether a specific example was in a model's training set; the standard privacy audit.
+- [memorization](memorization.md) — per-example fitting, random-label capacity, and the long-tail argument; the signal privacy attacks exploit.
+- [projected-gradient-descent](projected-gradient-descent.md) — gradient step plus projection; the constrained-optimization primitive behind the PGD attack.
+- [robust-optimization](robust-optimization.md) — min-max / saddle-point optimization and Danskin's theorem.
+- [roc-curves](roc-curves.md) — TPR/FPR trade-offs, AUC, balanced accuracy, and why security evaluates at low false-positive rates.
+- [shadow-models](shadow-models.md) — adversary-trained imitations of the target model used to calibrate membership inference attacks.
+- [stochastic-gradient-descent](stochastic-gradient-descent.md) — minibatch gradient descent; the default optimizer and the source of attack gradients.
+- [transferability](transferability.md) — adversarial examples crafted on one model often fool another; the basis of black-box transfer attacks.
+- [white-box-black-box](white-box-black-box.md) — adversary knowledge assumptions, from full weights to query-only access.

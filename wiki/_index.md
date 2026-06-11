@@ -1,14 +1,15 @@
 # CS858 Wiki
 
 Per-paper reading companions and shared concept pages for CS858 (Trustworthy
-Machine Learning). Each primary-reading paper gets one page that warms students
-up on prerequisites and surfaces the open questions the paper sits inside. The
-pages deliberately do **not** summarize the papers' own findings. That is what
-reading the paper is for.
+Machine Learning). Each primary-reading paper gets one page that orients the
+student: a contextualized overview with the threat model, the prerequisites at
+Wikipedia link density, the state of the field when the paper appeared, and
+high-level questions to read with. The page sets up a targeted read of the
+paper; it never replaces it.
 
 Read this page first at the start of every session.
 
-Last compiled: 2026-06-09. Papers: 0. Concepts: 0.
+Last compiled: 2026-06-10. Papers: 2. Concepts: 18.
 
 ---
 
@@ -25,7 +26,8 @@ Last compiled: 2026-06-09. Papers: 0. Concepts: 0.
 Paper pages are grouped by course section / week. This list is populated as
 papers are added. (Sections mirror the syllabus spreadsheet's section column.)
 
-_No papers added yet._
+- **Adversarial Robustness** — [madry-2018-pgd](papers/madry-2018-pgd.md)
+- **Membership Inference** — [carlini-2022-lira](papers/carlini-2022-lira.md)
 
 ---
 
