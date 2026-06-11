@@ -82,6 +82,11 @@ Each example is from a rejected draft.
   those themselves; the page places a neutral attention anchor in reading
   guidance instead ("the justification for X is one sentence; note what it
   is").
+- Newspaper drama. Rejected: "Deep learning raised the stakes and broke the
+  assumptions," "these attacks are the empirical face of the problem," "would
+  survive contact with either standard," and open-question closers staged for
+  tension ("whether X was possible was open"). Field context states what
+  changed, what failed, and what had not been done, in flat declaratives.
 - Filler intensifiers. Rejected: "is doing real work," "carries the central
   argument," "a striking challenge." Cut them.
 

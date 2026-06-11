@@ -149,8 +149,9 @@ inference attack, with the attacker as the detector.
 [Differential privacy](../concepts/differential-privacy.md) bounds the
 influence any single training example can have on the trained model, and
 thereby provably caps the success of any membership inference attack (Dwork
-and Roth, 2014). Its standard implementation for deep learning is DP-SGD,
-which clips per-example gradients and adds noise (Abadi et al., 2016). The
+and Roth, 2014). Its standard implementation for deep learning is
+[DP-SGD](abadi-2016-dp-sgd.md), which clips per-example gradients and adds
+noise (Abadi et al., 2016). The
 strength of the guarantee is set by the privacy parameter epsilon, and
 membership inference attacks double as empirical audits of how tight such
 guarantees are in practice (Jagielski et al., 2020; Nasr et al., 2021).
@@ -168,32 +169,33 @@ with shadow models and query access to a trained model (Shokri et al., 2017),
 and was connected to overfitting through the simple loss-threshold baseline
 (Yeom et al., 2018).
 
-By late 2021 the area had grown crowded. Attack variants refined features,
+By late 2021 the attack literature was large. Attack variants refined features,
 per-class calibration, and entropy measures (Salem et al., 2018; Song and
 Mittal, 2021; Jayaraman et al., 2021), and a per-example line of work
 calibrated each example's score against its own difficulty (Sablayrolles et
 al., 2019; Long et al., 2020), continued concurrently with this paper (Watson
 et al., 2021; Ye et al., 2021). Nearly all of it was evaluated by balanced
-accuracy or AUC. At the same time, membership inference had hardened into
-infrastructure: production privacy audits were built on attack libraries such
-as TensorFlow Privacy's membership inference tests (Song and Marn, 2020) and
-ML Privacy Meter (Murakonda and Shokri, 2020), so the strength of these
-attacks silently bounded what any audit could conclude.
+accuracy or AUC. At the same time, membership inference had become standard
+auditing practice: production privacy audits were built on attack libraries
+such as TensorFlow Privacy's membership inference tests (Song and Marn, 2020)
+and ML Privacy Meter (Murakonda and Shokri, 2020), so an audit's conclusions
+were only as strong as the attacks it ran.
 
-The theory side pulled in two directions. Memorization results showed deep
+Memorization results showed deep
 networks can fit random labels (Zhang et al., 2021) and that fitting the long
 tail of a data distribution may be necessary for accuracy (Feldman, 2020;
 Feldman and Zhang, 2020), implying real models carry per-example information
 an attacker might recover. Differential privacy offered the principled
-counterweight (Dwork and Roth, 2014; Abadi et al., 2016), with attacks
-repurposed as empirical lower bounds on its guarantees (Jagielski et al.,
-2020; Nasr et al., 2021). Meanwhile, unease about average-case reasoning was
+counterweight (Dwork and Roth, 2014), with
+[DP-SGD](abadi-2016-dp-sgd.md) as its deep-learning instantiation (Abadi et
+al., 2016) and attacks repurposed as empirical lower bounds on its guarantees
+(Jagielski et al., 2020; Nasr et al., 2021). Meanwhile, unease about average-case reasoning was
 already articulated within the privacy community (Steinke and Ullman, 2020),
 and the older security literature on spam, malware, and intrusion detection
-had long operated at low false-positive rates as a matter of course. What no
-one had settled was whether the accumulated membership inference results,
-nearly all certified by average-case metrics on small overfit models, would
-survive contact with either standard.
+had long operated at low false-positive rates as a matter of course. The
+accumulated membership inference results, nearly all evaluated by
+average-case metrics on small overfit models, had not been re-examined under
+either standard.
 
 ## Reading guidance
 
@@ -213,8 +215,8 @@ survive contact with either standard.
   and Figure 9 for how many shadow models are enough.
 - Figure 7: train-test gap versus attack success across training
   configurations.
-- Appendix A: DP-SGD against the attack; note the epsilon values at which the
-  attack is and is not stopped.
+- Appendix A: [DP-SGD](abadi-2016-dp-sgd.md) against the attack; note the
+  epsilon values at which the attack is and is not stopped.
 - Section VIII: the authors' list of prior conclusions they argue need
   re-examination.
 

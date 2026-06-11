@@ -77,3 +77,40 @@ redesigned contract from the start. Created six concept pages:
 evaluation-methodology "Why assigned" framing. References read off the paper's
 bibliography (pp. 14-16); Shokri et al. venue (S&P 2017) confirmed via DBLP.
 Stats now 2 papers, 18 concepts. Model: Fable 5, `claude-fable-5`.
+
+## [2026-06-10 23:40] generate-paper-summary | Deep Learning with Differential Privacy
+
+Compiled `wiki/papers/abadi-2016-dp-sgd.md` (Abadi et al., ACM CCS 2016;
+arXiv 1607.00133; DOI 10.1145/2976749.2978318, venue and DOI
+instructor-supplied) under a new "Differential Privacy" section. Created three
+concept pages: `gaussian-mechanism`, `privacy-budget`, and `gradient-clipping`;
+added reciprocal paper links to `differential-privacy`,
+`stochastic-gradient-descent`, `empirical-risk-minimization`, `memorization`,
+`membership-inference`, and `white-box-black-box`. Instructor supplied the
+section and a merged "Why assigned" framing (first provable guarantee,
+difficult in practice, yet the basis of nearly every deployed private system,
+federated learning especially). References read off the paper's bibliography
+(pp. 10-11). Stats now 3 papers, 21 concepts. Model: Fable 5,
+`claude-fable-5`.
+
+## [2026-06-10 23:44] reconcile | cross-link lira -> dp-sgd; codify backward paper links
+
+Linked the three DP-SGD mentions on `carlini-2022-lira.md` (Tier-1 Defenses,
+Tier-2, Reading guidance) to `abadi-2016-dp-sgd.md`, which did not exist when
+that page was compiled. Codified the rule in the op doc's citation convention:
+cited prior work with a wiki page gets a relative link (and new compiles sweep
+existing pages that cite the new paper), while forward links to follow-up work
+stay off paper pages and route through the concept layer. Model: Fable 5,
+`claude-fable-5`.
+
+## [2026-06-10 23:54] lint | sweep newspaper-drama phrasing; ban it in the style doc
+
+Instructor flagged dramatic register on the DP-SGD page ("raised the stakes
+and broke the assumptions," "the empirical face of the problem," staged
+open-question closers). Grep sweep found 14 instances of the pattern across
+all three paper pages and two concept pages; rewrote each as flat declaratives
+(worst on `abadi-2016-dp-sgd.md`, also `carlini-2022-lira.md` Tier-2,
+`madry-2018-pgd.md` Tier-2, `likelihood-ratio-test.md`,
+`empirical-risk-minimization.md`). Added "Newspaper drama" to the banned moves
+in `docs/writing-style.md` with the rejected examples. Model: Fable 5,
+`claude-fable-5`.

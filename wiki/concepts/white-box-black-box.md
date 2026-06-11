@@ -26,6 +26,7 @@ read each paper's definition rather than assuming one.
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — evaluates white-box and transfer adversaries and argues its guarantee for the first-order class.
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — its adversary is black-box, querying confidence outputs with no access to weights or gradients.
+- [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — its guarantee holds against a white-box adversary with full access to the released parameters.
 
 ## See also
 

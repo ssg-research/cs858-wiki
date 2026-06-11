@@ -9,7 +9,7 @@ paper; it never replaces it.
 
 Read this page first at the start of every session.
 
-Last compiled: 2026-06-10. Papers: 2. Concepts: 18.
+Last compiled: 2026-06-10. Papers: 3. Concepts: 21.
 
 ---
 
@@ -27,6 +27,7 @@ Paper pages are grouped by course section / week. This list is populated as
 papers are added. (Sections mirror the syllabus spreadsheet's section column.)
 
 - **Adversarial Robustness** — [madry-2018-pgd](papers/madry-2018-pgd.md)
+- **Differential Privacy** — [abadi-2016-dp-sgd](papers/abadi-2016-dp-sgd.md)
 - **Membership Inference** — [carlini-2022-lira](papers/carlini-2022-lira.md)
 
 ---

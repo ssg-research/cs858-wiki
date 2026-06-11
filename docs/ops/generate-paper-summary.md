@@ -121,6 +121,15 @@ Everything else you draft; the instructor reviews.
 - **Tier-2 cites only work prior to or contemporaneous with the paper.** Work
   that *responds* to the paper is follow-up, not background; it belongs on the
   follow-up paper's own page when that paper is compiled, never on this one.
+- **Cross-link compiled papers, backward only.** When a cited prior work has
+  its own page in `wiki/papers/`, link the mention to that page (relative
+  link, e.g. `[DP-SGD](abadi-2016-dp-sgd.md)`) in addition to the author-year
+  citation and References entry. When compiling a new paper, also sweep the
+  existing paper pages that cite it (`grep -rl "<surname>" wiki/papers/`) and
+  add the link there. The reverse direction stays off the page: a paper page
+  never links forward to papers that respond to it. Forward navigation lives
+  in the shared concept pages' "Papers that use this concept" lists, or in
+  Supplementary readings when the instructor adds one.
 
 ---
 

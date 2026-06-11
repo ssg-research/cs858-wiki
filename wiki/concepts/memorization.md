@@ -32,6 +32,7 @@ changes the model measurably is an example whose presence can be inferred.
 ## Papers that use this concept
 
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — per-example memorization differences are why its per-example hypothesis test beats global-threshold attacks, and why out-of-distribution examples are the most exposed.
+- [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the capacity of networks to encode individual examples is the leakage DP-SGD provably bounds.
 
 ## Variants and traps
 

@@ -32,6 +32,7 @@ guarantee can be expensive to reach.
 
 ## Papers that use this concept
 
+- [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the source of DP-SGD; brings the guarantee to non-convex deep network training at single-digit budgets.
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — evaluates DP-SGD as a defense and observes the gap between provable epsilon bounds and empirical attack success.
 
 ## Variants and traps
@@ -47,6 +48,8 @@ guarantee can be expensive to reach.
 
 ## See also
 
+- [Sensitivity and the Gaussian mechanism](gaussian-mechanism.md)
+- [Privacy budget and composition](privacy-budget.md)
 - [Membership inference](membership-inference.md)
 - [Memorization](memorization.md)
 - [Stochastic gradient descent](stochastic-gradient-descent.md)

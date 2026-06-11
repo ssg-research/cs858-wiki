@@ -25,7 +25,8 @@ The lemma's premise is the catch: both distributions must be known. In
 practice they are estimated, either nonparametrically from samples or by
 fitting a parametric family such as a Gaussian. The quality of the test then
 rests on the quality of the estimate, and parametric assumptions matter most in
-the distribution tails, exactly where low false-positive operation lives.
+the distribution tails, the regime that low false-positive operation depends
+on.
 
 ## Papers that use this concept
 

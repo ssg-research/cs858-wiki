@@ -12,6 +12,10 @@ here under its section heading as `[author-year-shortname](author-year-shortname
 
 - [madry-2018-pgd](madry-2018-pgd.md) — the min-max robust-optimization framing of adversarial attacks and defenses; PGD and adversarial training.
 
+## Differential Privacy
+
+- [abadi-2016-dp-sgd](abadi-2016-dp-sgd.md) — DP-SGD and the moments accountant; training deep networks under a provable (epsilon, delta) guarantee.
+
 ## Membership Inference
 
 - [carlini-2022-lira](carlini-2022-lira.md) — membership inference recast as a likelihood-ratio test (LiRA), and the case for evaluating attacks at low false-positive rates.

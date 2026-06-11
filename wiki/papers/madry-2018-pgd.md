@@ -136,10 +136,10 @@ Adversarial machine learning predates deep learning. Evasion of deployed
 classifiers such as spam filters was formalized in the 2000s (Dalvi et al.,
 2004; Globerson and Roweis, 2006), and gradient-based evasion of shallow models
 was demonstrated before deep networks took over computer vision (Biggio et al.,
-2013). The deep-learning round began when imperceptible perturbations were
-shown to fool state-of-the-art image classifiers and to transfer between models
-(Szegedy et al., 2014), followed by an explanation based on local linearity,
-the FGSM attack, and the first adversarial training (Goodfellow et al., 2015).
+2013). For deep networks, imperceptible perturbations were shown to fool
+state-of-the-art image classifiers and to transfer between models (Szegedy et
+al., 2014); an explanation based on local linearity, the FGSM attack, and the
+first adversarial training followed (Goodfellow et al., 2015).
 
 By early 2017 the defense side was a fast-growing collection of one-off
 countermeasures with a poor track record. Defensive distillation (Papernot et
