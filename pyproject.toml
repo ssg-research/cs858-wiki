@@ -1,7 +1,7 @@
 [project]
 name = "cs858-wiki"
 version = "0.1.0"
-description = "CS858 reading-companion wiki tooling: PDF reading and link checking"
+description = "CS858 reading-companion wiki tooling: arXiv fetching, PDF reading, and link checking"
 readme = "README.md"
 requires-python = ">=3.12, <3.13"
 dependencies = [
@@ -10,11 +10,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pytest>=8.0",
-    "pytest-mock>=3.0",
-    "pytest-cov>=5.0",
-    "pytest-timeout>=2.0",
-    "hypothesis>=6.0",
     "ruff>=0.8",
     "basedpyright>=1.1",
     "nox>=2024.10",
@@ -45,7 +40,6 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**" = ["ANN", "S", "D"]
 "__init__.py" = ["F401"]
 "scripts/**" = ["D"]
 
@@ -66,40 +60,3 @@ pythonVersion = "3.12"
 reportMissingTypeStubs = "none"
 reportPrivateImportUsage = "none"
 exclude = [".venv/"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = [
-    "-ra",
-    "--tb=short",
-    "--strict-markers",
-    "--import-mode=importlib",
-    "--timeout=300",
-    "-m", "not integration and not slow",
-]
-filterwarnings = [
-    "error",
-    "ignore::DeprecationWarning",
-    "ignore::PendingDeprecationWarning",
-]
-markers = [
-    "slow: tests that take more than a few seconds",
-    "integration: tests that exercise multiple real components together",
-]
-
-[tool.coverage.run]
-branch = true
-source = ["scripts"]
-omit = ["tests/*"]
-
-[tool.coverage.report]
-show_missing = true
-skip_empty = true
-fail_under = 85
-exclude_lines = [
-    "pragma: no cover",
-    "raise NotImplementedError",
-    "if TYPE_CHECKING:",
-    "@abstractmethod",
-    "if __name__ == .__main__.:",
-]

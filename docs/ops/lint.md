@@ -90,7 +90,7 @@ A quick grep surfaces the obvious schema violations:
 grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr)' wiki/papers/
 ```
 
-Any hit is a candidate violation — read it and confirm.
+Any hit is a candidate violation; read it and confirm.
 
 ## 6. Orphan concept pages
 

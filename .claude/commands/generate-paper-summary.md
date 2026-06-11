@@ -2,8 +2,8 @@
 description: Generate a CS858 reading-companion page for one paper (and its concept pages)
 ---
 
-Generate the CS858 paper page for `$1` (a PDF path — the normal case — or an
-arXiv ID).
+Generate the CS858 paper page for `$1` (an arXiv abstract URL or ID, which is
+auto-downloaded, or a path to a local PDF).
 
 Follow [docs/ops/generate-paper-summary.md](../../docs/ops/generate-paper-summary.md)
 exactly. It is the authoritative contract for the page schema, the section
@@ -28,6 +28,9 @@ not provided with the command):
 
 Constraints:
 
+- If `$1` is an arXiv URL or ID, run `uv run python3 scripts/fetch-arxiv.py "$1"`
+  first: it downloads the PDF to `raw/pdfs/<id>.pdf` and prints trusted
+  metadata. Use the printed path and metadata (see step 1 of the op).
 - One paper per invocation.
 - Slug is `author-year-shortname` (lowercase, hyphens; shortname is an obvious
   named method or a couple of distinctive title words).

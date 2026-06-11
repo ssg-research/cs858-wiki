@@ -10,7 +10,7 @@ per operation that adds, removes, or substantially edits wiki pages. Format:
 Get the timestamp with `date "+%Y-%m-%d %H:%M"` rather than guessing. Operations:
 `generate-paper-summary`, `add-concept`, `query`, `lint`, `reconcile`, `setup`.
 Body: 2-5 sentences on what was done, plus the model used (for traceability,
-since exact reproduction is not possible — see AGENTS.md).
+since exact reproduction is not possible; see AGENTS.md).
 
 ---
 

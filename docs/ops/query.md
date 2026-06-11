@@ -21,7 +21,7 @@ in).
 
 The wiki is a *reading companion*. It will tell you what a paper assumes, what
 open questions it sits inside, and which course section it belongs to. It will
-**not** tell you the paper's findings or results — those live only in the paper,
+**not** tell you the paper's findings or results; those live only in the paper,
 by design. If a question asks "what did paper X conclude," the honest answer is
 "the wiki does not summarize conclusions; read the paper," not a fabricated
 summary.
