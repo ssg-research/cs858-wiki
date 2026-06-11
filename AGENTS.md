@@ -74,6 +74,27 @@ Before executing an operation, read its playbook:
 
 ---
 
+## Git Workflow
+
+Active development happens on the **`dev`** branch. `main` is the release branch
+and is **off-limits to automated sessions**.
+
+- **Stay on `dev`** (or a short-lived topic branch off `dev`). Do all work there.
+- **Never touch `main`.** Do not check out, commit to, push to, merge into, or
+  open/merge a pull request into `main`. Promoting `dev` to `main` is a release
+  decision the instructor makes by hand, never an agent.
+- **Never rewrite shared history.** No force-push, no `git reset --hard` on a
+  pushed branch, no rebasing public commits, no branch or tag deletion, no
+  changing the `origin` remote.
+- **Never `git commit` or `git push` without explicit approval** in the current
+  session. After changes pass markdownlint and `scripts/check-links.py`, stop
+  and ask before committing.
+- Remote `origin` is `ssg-research/cs858-wiki` (private). If an action would
+  affect anything beyond committing/pushing `dev` with approval, stop and ask
+  first.
+
+---
+
 ## Index and Log Rules
 
 - Every directory in `wiki/` has an `_index.md`. Update the relevant index files
