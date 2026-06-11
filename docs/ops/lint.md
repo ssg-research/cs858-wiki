@@ -126,6 +126,20 @@ the `[text](link) — description` list-separator pattern is allowed.
 grep -rn '—' wiki/ --include="*.md" | grep -v ') —' | grep -v '^wiki/log.md' | head -20
 ```
 
+## 9. Scripts lint (ruff + types)
+
+The published artifact is `wiki/`, but the tooling in `scripts/` must stay clean
+too. Run the same linters pre-commit enforces:
+
+```bash
+uv run ruff check scripts/
+uv run basedpyright scripts/
+```
+
+Both must pass with zero findings. Resolve them rather than suppressing; only
+suppress a type error when there is genuinely no other way (prefer `cast()` at
+`Any` boundaries). This check matters only when a script changed this session.
+
 ---
 
 ## Output
