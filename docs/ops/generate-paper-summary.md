@@ -84,9 +84,11 @@ follows a URL found inside a PDF.
 
 Every page follows the house style in [docs/writing-style.md](../writing-style.md).
 Read it before drafting. In brief: write for a graduate reader new to the
-subfield, not a general audience. Terse, declarative sentences, active voice. No
-essay openers, metaphors-as-structure, second-person coaching, or manufactured
-stakes. Cite properly (see Citation convention below).
+subfield, not a general audience. Terse, declarative sentences, active voice. Say
+what something *is*, never characterize it by negating an alternative the reader
+never raised ("a privacy setting, not an evasion one"). No essay openers,
+metaphors-as-structure, second-person coaching, or manufactured stakes. Cite
+properly (see Citation convention below).
 
 ---
 
@@ -503,4 +505,7 @@ It is **not** acceptable to:
   memory.
 - Write blog-style hooks, metaphors-as-structure, or reader-coaching in place
   of declarative prose.
+- Characterize something by gratuitous negation ("X, not Y") where Y was never
+  in play. Negate only to correct a misconception the reader is likely to hold;
+  see the "Banned moves" entry in [docs/writing-style.md](../writing-style.md).
 - Leave a broken link or an orphan concept page behind.

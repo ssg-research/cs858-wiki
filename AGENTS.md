@@ -128,8 +128,10 @@ into `main` for the instructor to review and merge.
   anchors in Reading guidance instead. Motivating questions are three to five
   extremely high-level pre-questions answerable by reading the paper.
 - **Follow the house writing style** in `docs/writing-style.md` on every page:
-  terse, declarative, written for a graduate reader new to the subfield. No
-  essay openers, metaphors-as-structure, or second-person coaching.
+  terse, declarative, written for a graduate reader new to the subfield. Say what
+  something is, not what it is not: no defining a thing by negating an
+  alternative the reader never raised ("X, not Y"). No essay openers,
+  metaphors-as-structure, or second-person coaching.
 - You may answer from training knowledge, but say so explicitly. If an answer
   did not come from the wiki or a source read this session, state that upfront.
 - Bibliographic metadata: read author names, years, and DOIs off the paper
