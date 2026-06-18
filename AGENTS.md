@@ -83,23 +83,26 @@ Before executing an operation, read its playbook:
 
 ## Git Workflow
 
-Active development happens on the **`dev`** branch. `main` is the release branch.
-Agents never commit to `main` directly, but may open a pull request from `dev`
-into `main` for the instructor to review and merge.
+`main` is the trunk and the release branch, and it is **protected**: changes
+land only through a pull request, direct pushes and force-pushes are rejected,
+and the branch cannot be deleted. Protection applies to everyone, admins
+included. Merging needs no approving review; merging a pull request into `main`
+is the instructor's release decision, never an agent's.
 
-- **Stay on `dev`** (or a short-lived topic branch off `dev`). Do all work there.
-- **Never commit to `main` directly.** Do not check out, commit to, push to, or
-  merge into `main`. You **may** open a pull request from `dev` into `main`;
-  merging it is a release decision the instructor makes by hand, never an agent.
+- **Branch off `main`** with a descriptive, prefixed name (`infra/...`,
+  `paper/...`, `concept/...`, `fix/...`), for example
+  `infra/update-writing-style`. Do all work there, then open a pull request into
+  `main`.
 - **Never rewrite shared history.** No force-push, no `git reset --hard` on a
-  pushed branch, no rebasing public commits, no branch or tag deletion, no
-  changing the `origin` remote.
+  pushed branch, no rebasing public commits, no changing the `origin` remote.
+  Deleting a feature branch once it is merged is expected; do not delete a
+  branch someone else may still be working from.
 - **Never `git commit` or `git push` without explicit approval** in the current
   session. After changes pass markdownlint and `scripts/check-links.py`, stop
   and ask before committing.
 - Remote `origin` is `ssg-research/cs858-wiki` (private). If an action would
-  affect anything beyond committing/pushing `dev` and opening a pull request
-  into `main` with approval, stop and ask first.
+  affect anything beyond committing and pushing a feature branch and opening a
+  pull request into `main`, stop and ask first.
 
 ---
 
@@ -128,8 +131,10 @@ into `main` for the instructor to review and merge.
   anchors in Reading guidance instead. Motivating questions are three to five
   extremely high-level pre-questions answerable by reading the paper.
 - **Follow the house writing style** in `docs/writing-style.md` on every page:
-  terse, declarative, written for a graduate reader new to the subfield. No
-  essay openers, metaphors-as-structure, or second-person coaching.
+  terse, declarative, written for a graduate reader new to the subfield. Say what
+  something is, not what it is not: no defining a thing by negating an
+  alternative the reader never raised ("X, not Y"). No essay openers,
+  metaphors-as-structure, or second-person coaching.
 - You may answer from training knowledge, but say so explicitly. If an answer
   did not come from the wiki or a source read this session, state that upfront.
 - Bibliographic metadata: read author names, years, and DOIs off the paper

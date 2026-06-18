@@ -18,8 +18,7 @@ The Neyman-Pearson lemma gives the test its authority: among all tests with a
 given false-positive rate, thresholding the likelihood ratio achieves the
 highest true-positive rate (Neyman and Pearson, 1933). When a detection problem
 can be cast as distinguishing two known distributions, the likelihood-ratio
-test is not merely a good attack, it is the optimal one, and every other attack
-is an approximation to it.
+test is optimal, and every other attack is an approximation to it.
 
 The lemma's premise is the catch: both distributions must be known. In
 practice they are estimated, either nonparametrically from samples or by

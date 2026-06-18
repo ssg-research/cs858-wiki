@@ -53,8 +53,8 @@ variant, with code released, and closes by arguing that a body of prior
 conclusions about memorization, defenses, and "private" training algorithms
 needs re-examination under the new metric.
 
-**Threat Model:** A training-data privacy setting, not an evasion one: the
-adversary does not modify any input, and the training process is untouched. The
+**Threat Model:** A training-data privacy setting: the adversary does not
+modify any input, and the training process is untouched. The
 adversary holds a candidate example with its label and wants to learn one bit,
 whether that example was in the target model's training set. Access is
 [black-box](../concepts/white-box-black-box.md): the adversary queries the

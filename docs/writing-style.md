@@ -25,7 +25,11 @@ not popularize.
 - Terse and declarative. State the fact and move on.
 - Active voice. Avoid "has been shown to," "is believed to," and similar.
 - Short sentences. Do not chain three clauses where two sentences will do.
-- Positive framing. Say what something is, not what it is not.
+- Positive framing. Say what something *is*, not what it is not. Do not define
+  or characterize a thing by negating an alternative the reader had no reason to
+  assume; that contrast is dead weight and cutting it loses nothing. Negate only
+  to correct a misconception the reader is likely to hold, and even then prefer
+  the explicit form to a bare "X, not Y." See Banned moves.
 - Use "However," to mark a contrast. Avoid "Yet," and "Despite this," as
   sentence openers.
 - Consistent terminology. Do not vary a technical term for stylistic variety; if
@@ -89,6 +93,16 @@ Each example is from a rejected draft.
   changed, what failed, and what had not been done, in flat declaratives.
 - Filler intensifiers. Rejected: "is doing real work," "carries the central
   argument," "a striking challenge." Cut them.
+- Definition by gratuitous negation: the "X, not Y" construction where Y was
+  never in play. Rejected: "a training-data privacy setting, not an evasion one"
+  on a page that never raises evasion. State what the thing is; the negated
+  alternative is dead weight. The one license to negate is correcting a
+  misconception the reader actually holds, and even then write the explicit form
+  ("unlike Y, which one would expect because Z, this is X") rather than dropping
+  a bare "X, not Y" in for emphasis or drama. The negation is a deliberate tool,
+  not a default. Acceptable, because the negated alternative is the likely wrong
+  assumption: "sensitivity is the worst case over all adjacent datasets, not an
+  average."
 
 ## Format by section
 

@@ -114,3 +114,25 @@ all three paper pages and two concept pages; rewrote each as flat declaratives
 `empirical-risk-minimization.md`). Added "Newspaper drama" to the banned moves
 in `docs/writing-style.md` with the rejected examples. Model: Fable 5,
 `claude-fable-5`.
+
+## [2026-06-18 13:00] lint | ban definition by gratuitous negation
+
+Instructor flagged "a training-data privacy setting, not an evasion one" on
+`carlini-2022-lira.md`: defining a thing by negating an alternative (evasion)
+the page never raises. Swept every paper and concept page for the "X, not Y"
+pattern; the only other gratuitous instance was `likelihood-ratio-test.md`
+("is not merely a good attack, it is the optimal one"). Fixed both; left the
+legitimate negations (factual statements and misconception-corrections in
+"Variants and traps"). Added "Definition by gratuitous negation" to the banned
+moves in `docs/writing-style.md` with a rejected and an accepted example, and
+reinforced it in the `generate-paper-summary` playbook and `AGENTS.md`. Model:
+Opus 4.8, `claude-opus-4-8[1m]`.
+
+## [2026-06-18 13:00] infra | feature-branch workflow; protect main
+
+Replaced the long-lived `dev` branch (spent once PR #1 merged) with a
+feature-branch + pull-request model and rewrote the `AGENTS.md` Git Workflow
+section to match. Protected `main` on GitHub: merges land only via pull request
+(zero required approvals, no CI gate), direct pushes and force-pushes are
+rejected, the branch cannot be deleted, and protection applies to admins too.
+Model: Opus 4.8, `claude-opus-4-8[1m]`.
