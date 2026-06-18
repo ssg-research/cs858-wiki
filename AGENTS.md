@@ -83,13 +83,14 @@ Before executing an operation, read its playbook:
 
 ## Git Workflow
 
-Active development happens on the **`dev`** branch. `main` is the release branch
-and is **off-limits to automated sessions**.
+Active development happens on the **`dev`** branch. `main` is the release branch.
+Agents never commit to `main` directly, but may open a pull request from `dev`
+into `main` for the instructor to review and merge.
 
 - **Stay on `dev`** (or a short-lived topic branch off `dev`). Do all work there.
-- **Never touch `main`.** Do not check out, commit to, push to, merge into, or
-  open/merge a pull request into `main`. Promoting `dev` to `main` is a release
-  decision the instructor makes by hand, never an agent.
+- **Never commit to `main` directly.** Do not check out, commit to, push to, or
+  merge into `main`. You **may** open a pull request from `dev` into `main`;
+  merging it is a release decision the instructor makes by hand, never an agent.
 - **Never rewrite shared history.** No force-push, no `git reset --hard` on a
   pushed branch, no rebasing public commits, no branch or tag deletion, no
   changing the `origin` remote.
@@ -97,8 +98,8 @@ and is **off-limits to automated sessions**.
   session. After changes pass markdownlint and `scripts/check-links.py`, stop
   and ask before committing.
 - Remote `origin` is `ssg-research/cs858-wiki` (private). If an action would
-  affect anything beyond committing/pushing `dev` with approval, stop and ask
-  first.
+  affect anything beyond committing/pushing `dev` and opening a pull request
+  into `main` with approval, stop and ask first.
 
 ---
 
