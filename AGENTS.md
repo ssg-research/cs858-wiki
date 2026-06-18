@@ -83,23 +83,26 @@ Before executing an operation, read its playbook:
 
 ## Git Workflow
 
-Active development happens on the **`dev`** branch. `main` is the release branch.
-Agents never commit to `main` directly, but may open a pull request from `dev`
-into `main` for the instructor to review and merge.
+`main` is the trunk and the release branch. All work happens on short-lived
+feature branches taken off `main` and lands through a pull request that the
+instructor reviews and merges.
 
-- **Stay on `dev`** (or a short-lived topic branch off `dev`). Do all work there.
-- **Never commit to `main` directly.** Do not check out, commit to, push to, or
-  merge into `main`. You **may** open a pull request from `dev` into `main`;
-  merging it is a release decision the instructor makes by hand, never an agent.
+- **Branch off `main`** with a descriptive, prefixed name (`infra/...`,
+  `paper/...`, `concept/...`, `fix/...`), for example
+  `infra/update-writing-style`. Do all work there.
+- **Never commit to `main` directly.** Land changes by opening a pull request
+  from the feature branch into `main`; merging it is a release decision the
+  instructor makes by hand, never an agent.
 - **Never rewrite shared history.** No force-push, no `git reset --hard` on a
-  pushed branch, no rebasing public commits, no branch or tag deletion, no
-  changing the `origin` remote.
+  pushed branch, no rebasing public commits, no changing the `origin` remote.
+  Deleting a feature branch once it is merged is expected; do not delete a
+  branch someone else may still be working from.
 - **Never `git commit` or `git push` without explicit approval** in the current
   session. After changes pass markdownlint and `scripts/check-links.py`, stop
   and ask before committing.
 - Remote `origin` is `ssg-research/cs858-wiki` (private). If an action would
-  affect anything beyond committing/pushing `dev` and opening a pull request
-  into `main` with approval, stop and ask first.
+  affect anything beyond committing/pushing a feature branch and opening a pull
+  request into `main` with approval, stop and ask first.
 
 ---
 
