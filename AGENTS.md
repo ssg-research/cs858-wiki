@@ -83,16 +83,16 @@ Before executing an operation, read its playbook:
 
 ## Git Workflow
 
-`main` is the trunk and the release branch. All work happens on short-lived
-feature branches taken off `main` and lands through a pull request that the
-instructor reviews and merges.
+`main` is the trunk and the release branch, and it is **protected**: changes
+land only through a pull request, direct pushes and force-pushes are rejected,
+and the branch cannot be deleted. Protection applies to everyone, admins
+included. Merging needs no approving review; merging a pull request into `main`
+is the instructor's release decision, never an agent's.
 
 - **Branch off `main`** with a descriptive, prefixed name (`infra/...`,
   `paper/...`, `concept/...`, `fix/...`), for example
-  `infra/update-writing-style`. Do all work there.
-- **Never commit to `main` directly.** Land changes by opening a pull request
-  from the feature branch into `main`; merging it is a release decision the
-  instructor makes by hand, never an agent.
+  `infra/update-writing-style`. Do all work there, then open a pull request into
+  `main`.
 - **Never rewrite shared history.** No force-push, no `git reset --hard` on a
   pushed branch, no rebasing public commits, no changing the `origin` remote.
   Deleting a feature branch once it is merged is expected; do not delete a
@@ -101,8 +101,8 @@ instructor reviews and merges.
   session. After changes pass markdownlint and `scripts/check-links.py`, stop
   and ask before committing.
 - Remote `origin` is `ssg-research/cs858-wiki` (private). If an action would
-  affect anything beyond committing/pushing a feature branch and opening a pull
-  request into `main` with approval, stop and ask first.
+  affect anything beyond committing and pushing a feature branch and opening a
+  pull request into `main`, stop and ask first.
 
 ---
 
