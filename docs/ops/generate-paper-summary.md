@@ -187,7 +187,7 @@ reader might not know is a link. For each concept, find whether a page exists:
 # Skim every concept's routing description in one shot:
 grep -h "^description:" wiki/concepts/*.md
 # List concept slugs:
-ls wiki/concepts/ | grep -v _index
+ls wiki/concepts/ | grep -v README
 ```
 
 Read the candidate pages to confirm relevance. If a suitable page exists, link
@@ -295,11 +295,13 @@ links navigable in both directions.
 
 ### 10. Update the indexes
 
-- `wiki/papers/_index.md`: add the paper under its section heading.
-- `wiki/concepts/_index.md`: add any new concept pages.
-- `wiki/_index.md`: update the stats header (`Papers: N. Concepts: N.`) and the
-  Course sections list. Recount actual files; do not increment blindly. A quick
-  count: `ls wiki/papers/*.md | grep -v _index | wc -l`.
+- `wiki/papers/README.md`: add a table row for the paper, keeping it sorted by
+  section: `| [slug](slug.md) | Section | Year | short descriptor |`.
+- `wiki/concepts/README.md`: add a table row for each new concept page:
+  `| [slug](slug.md) | one-line description |`.
+- `wiki/README.md`: update the stats line (`Papers: N. Concepts: N.`) and the
+  papers-by-section table. Recount actual files; do not increment blindly. A
+  quick count: `ls wiki/papers/*.md | grep -v README | wc -l`.
 
 ### 11. Lint the changed files
 
@@ -312,7 +314,7 @@ Fix all findings. `check-links.py` must report zero broken links.
 
 ### 12. Log it
 
-Append an entry to `wiki/log.md` (newest at the bottom). Record the operation,
+Append an entry to `docs/log.md` (newest at the bottom). Record the operation,
 the paper, and **the model used**, since exact reproduction is impossible (see
 Reproducibility below):
 
@@ -453,7 +455,7 @@ them, so the corpus is path-dependent. What this workflow guarantees instead is
   order.
 - A fixed procedure (the numbered steps) — every paper is processed the same
   way, in the same order.
-- A logged trail — `wiki/log.md` records each compile with date, paper, and
+- A logged trail — `docs/log.md` records each compile with date, paper, and
   model, so a page can be traced to the run that produced it.
 - Citations where claims are made — every cited work has a full References
   entry read off a real source, so the instructor can verify it in seconds.

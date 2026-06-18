@@ -22,9 +22,10 @@ could read the page instead of the paper and lose nothing, the page has failed.
 |---|---|---|
 | `wiki/papers/` | One reading-companion page per primary paper | yes |
 | `wiki/concepts/` | Shared single-tier prerequisite concept pages | yes |
-| `wiki/_index.md`, `wiki/log.md` | Top index (with stats) and append-only change log | yes |
+| `wiki/README.md` | Top index (stats line and tables); every directory in `wiki/` has a `README.md` | yes |
 | `scripts/` | arXiv fetcher, PDF reader, and link checker | yes |
 | `docs/ops/` | Operational playbooks (the reproducible workflow) | yes |
+| `docs/log.md` | Append-only change log | yes |
 | `.claude/commands/` | Slash commands (`/generate-paper-summary`) | yes |
 | `raw/pdfs/` | Paper PDFs (untrusted input) | **no** (gitignored) |
 
@@ -41,10 +42,11 @@ wikilinks:
 ```markdown
 [Differential privacy](../concepts/differential-privacy.md)   # from a paper page
 [Membership inference](membership-inference.md)               # concept -> sibling concept
-[All papers](papers/_index.md)                                # from wiki/_index.md
+[All papers](papers/README.md)                                # from wiki/README.md
 ```
 
-Keep the `.md` extension. This format renders correctly in any Markdown editor,
+Directory indexes are named `README.md` (one per directory in `wiki/`); a link
+to an index targets `dir/README.md`. Keep the `.md` extension. This format renders correctly in any Markdown editor,
 on GitHub, in VS Code preview, in Obsidian, and in every static-site generator
 (a website build step can strip the extension if needed). Do **not** use
 `[[wikilink]]` syntax; it is Obsidian-specific and breaks elsewhere. The graph
@@ -102,11 +104,11 @@ and is **off-limits to automated sessions**.
 
 ## Index and Log Rules
 
-- Every directory in `wiki/` has an `_index.md`. Update the relevant index files
+- Every directory in `wiki/` has a `README.md`. Update the relevant index files
   after every write operation.
-- The stats line in `wiki/_index.md` is `Last compiled: YYYY-MM-DD. Papers: N.
-  Concepts: N.` Recount actual non-`_index` `.md` files after any add/remove.
-- `wiki/log.md` is append-only and chronological (oldest at top, newest at
+- The stats line in `wiki/README.md` is `Last compiled: YYYY-MM-DD. Papers: N.
+  Concepts: N.` Recount actual non-`README` `.md` files after any add/remove.
+- `docs/log.md` is append-only and chronological (oldest at top, newest at
   bottom). Append to the **end**. Format: `## [YYYY-MM-DD HH:MM] <operation> |
   <subject>`. Get the timestamp with `date "+%Y-%m-%d %H:%M"`. Record the model
   used, since exact reproduction is impossible (see below).
@@ -158,7 +160,7 @@ Exact reproduction is impossible: the same model and prompt produce different
 output, and paper pages depend on the concept pages produced before them, so the
 corpus is path-dependent. The workflow instead guarantees *structural*
 reproducibility: a frozen page schema, a fixed procedure, citations on claims,
-and a logged trail (date + paper + model) in `wiki/log.md`. Process the syllabus
+and a logged trail (date + paper + model) in `docs/log.md`. Process the syllabus
 in a deliberate order so shared concept pages exist before the later papers that
 reuse them.
 

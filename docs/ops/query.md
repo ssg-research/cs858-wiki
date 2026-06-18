@@ -6,7 +6,7 @@ in).
 
 ## Steps
 
-1. Read `wiki/_index.md` to orient (stats, sections, navigation).
+1. Read `wiki/README.md` to orient (stats, sections, navigation).
 2. Find the relevant pages. Match the question's topic against concept
    `description` frontmatter: `grep -h "^description:" wiki/concepts/*.md`. This
    is faster than scanning every page. For which papers use a concept,

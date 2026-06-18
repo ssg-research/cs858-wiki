@@ -41,5 +41,5 @@ Constraints:
 - Links between pages are plain relative Markdown links (`[text](../concepts/slug.md)`),
   never Obsidian `[[wikilinks]]`.
 - Finish with `uv run python3 scripts/check-links.py` (zero broken links),
-  markdownlint on the changed files, and a `wiki/log.md` entry recording the
+  markdownlint on the changed files, and a `docs/log.md` entry recording the
   model used.

@@ -8,14 +8,14 @@ for.
 
 ## Students — start here
 
-Open the **[`wiki/`](wiki/_index.md)** folder and begin at
-[`wiki/_index.md`](wiki/_index.md). Every page renders here with working links;
+Open the **[`wiki/`](wiki/README.md)** folder and begin at
+[`wiki/README.md`](wiki/README.md). Every page renders here with working links;
 follow them to the paper pages and the shared concept pages. You do not need any
 special tool; it is plain Markdown.
 
 ## What's in this repo
 
-- **[`wiki/`](wiki/_index.md)** — the content: paper pages and shared concept
+- **[`wiki/`](wiki/README.md)** — the content: paper pages and shared concept
   pages, linked with plain relative Markdown links.
 - **`docs/ops/`** — the operational playbooks (how the pages are produced).
 - **`.claude/commands/`** — the `/generate-paper-summary` slash command.

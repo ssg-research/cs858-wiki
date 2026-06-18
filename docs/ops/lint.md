@@ -27,12 +27,12 @@ Every concept page needs `title`, `type`, `tags`, `description`. Every paper
 page needs `title`, `authors`, `year`, `section`, `tags`.
 
 ```bash
-for f in $(ls wiki/concepts/*.md 2>/dev/null | grep -v _index); do
+for f in $(ls wiki/concepts/*.md 2>/dev/null | grep -v README); do
   for k in title type tags description; do
     grep -q "^$k:" "$f" || echo "concept $f missing: $k"
   done
 done
-for f in $(ls wiki/papers/*.md 2>/dev/null | grep -v _index); do
+for f in $(ls wiki/papers/*.md 2>/dev/null | grep -v README); do
   for k in title authors year section tags; do
     grep -q "^$k:" "$f" || echo "paper $f missing: $k"
   done
@@ -43,28 +43,28 @@ Any output names a page missing a required field. Should be silent.
 
 ## 3. Stale stats
 
-Verify the `wiki/_index.md` stats header matches actual file counts.
+Verify the `wiki/README.md` stats header matches actual file counts.
 
 ```bash
-echo "Papers:   $(ls wiki/papers/*.md 2>/dev/null | grep -v _index | wc -l | tr -d ' ')"
-echo "Concepts: $(ls wiki/concepts/*.md 2>/dev/null | grep -v _index | wc -l | tr -d ' ')"
-grep "Last compiled" wiki/_index.md
+echo "Papers:   $(ls wiki/papers/*.md 2>/dev/null | grep -v README | wc -l | tr -d ' ')"
+echo "Concepts: $(ls wiki/concepts/*.md 2>/dev/null | grep -v README | wc -l | tr -d ' ')"
+grep "Last compiled" wiki/README.md
 ```
 
-If counts disagree or the date is stale, update `wiki/_index.md`.
+If counts disagree or the date is stale, update `wiki/README.md`.
 
 ## 4. Index coverage
 
-Every non-`_index` page must be listed in its directory's `_index.md`, and
-every `_index.md` entry must point at a real file. `check-links.py` catches the
+Every non-`README` page must be listed in its directory's `README.md`, and
+every `README.md` entry must point at a real file. `check-links.py` catches the
 second half (dangling index links). For the first half:
 
 ```bash
-for f in $(ls wiki/papers/*.md | grep -v _index | xargs -n1 basename | sed 's/\.md$//'); do
-  grep -q "($f.md)" wiki/papers/_index.md || echo "MISSING FROM PAPERS INDEX: $f"
+for f in $(ls wiki/papers/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
+  grep -q "($f.md)" wiki/papers/README.md || echo "MISSING FROM PAPERS INDEX: $f"
 done
-for f in $(ls wiki/concepts/*.md | grep -v _index | xargs -n1 basename | sed 's/\.md$//'); do
-  grep -q "($f.md)" wiki/concepts/_index.md || echo "MISSING FROM CONCEPTS INDEX: $f"
+for f in $(ls wiki/concepts/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
+  grep -q "($f.md)" wiki/concepts/README.md || echo "MISSING FROM CONCEPTS INDEX: $f"
 done
 ```
 
@@ -98,7 +98,7 @@ Concept pages with no incoming link from any paper page (a concept nobody
 needs yet):
 
 ```bash
-for f in $(ls wiki/concepts/*.md | grep -v _index | xargs -n1 basename | sed 's/\.md$//'); do
+for f in $(ls wiki/concepts/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
   count=$(grep -rl "concepts/$f.md" wiki/papers/ 2>/dev/null | wc -l | tr -d ' ')
   [ "$count" = "0" ] && echo "ORPHAN CONCEPT: $f"
 done
@@ -123,7 +123,7 @@ Em-dashes are prohibited in prose. Use commas or shorter sentences. Exception:
 the `[text](link) — description` list-separator pattern is allowed.
 
 ```bash
-grep -rn '—' wiki/ --include="*.md" | grep -v ') —' | grep -v '^wiki/log.md' | head -20
+grep -rn '—' wiki/ --include="*.md" | grep -v ') —' | head -20
 ```
 
 ## 9. Scripts lint (ruff + types)
