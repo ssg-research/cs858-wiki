@@ -56,7 +56,7 @@ ESSENTIAL_COL = 5  # E: essential readings
 UC_PAGE = "under-construction.md"
 UC_MARK = ' <sup title="Reading companion under construction">&dagger;</sup>'
 
-HEADERS = ("#", "Paper", "Theme", "Topic", "Essential readings")
+HEADERS = ("#", "Theme", "Topic", "Primary Reading", "Essential Readings")
 
 
 @dataclass(frozen=True)
@@ -190,7 +190,10 @@ def link(title: str, href: str | None) -> str:
 
 
 def reading_cell(items: list[Reading]) -> str:
-    return "<br>".join(link(r.title, r.href) for r in items)
+    if not items:
+        return ""
+    bullets = "".join(f"<li>{link(r.title, r.href)}</li>" for r in items)
+    return f"<ul>{bullets}</ul>"
 
 
 def paper_cell(paper: Paper) -> str:
@@ -217,13 +220,13 @@ def render_table(part: Part) -> str:
     for idx, paper in enumerate(papers):
         lines.append("    <tr>")
         lines.append(f"      <td>{paper.number}</td>")
-        lines.append(f"      <td>{paper_cell(paper)}</td>")
         if idx == 0 or papers[idx - 1].theme != paper.theme:
             span = 1
             while idx + span < len(papers) and papers[idx + span].theme == paper.theme:
                 span += 1
             lines.append(f'      <td rowspan="{span}">{esc(paper.theme)}</td>')
         lines.append(f"      <td>{esc(paper.topic)}</td>")
+        lines.append(f"      <td>{paper_cell(paper)}</td>")
         lines.append(f"      <td>{reading_cell(paper.essential)}</td>")
         lines.append("    </tr>")
 

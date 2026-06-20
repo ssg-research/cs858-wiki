@@ -67,16 +67,15 @@ augmentations are guessed wrong. The privacy claim under attack is membership
 secrecy, and the attack is judged by its true-positive rate at low
 false-positive rates.
 
-## Why this paper is assigned
+## Why read this
 
 Privacy, like security, is a worst-case property: an attack that confidently
 identifies a few members has succeeded even if its average accuracy is
 unremarkable. This paper resets how membership inference is evaluated and, in
 the process, shows that years of accumulated results were measured with the
-wrong instrument. It pairs with the Madry paper as the course's second case
-study in what a security claim actually means.
+wrong instrument. It is a case study in what a security claim actually means.
 
-## Background — Tier 1 (warm-up)
+## Basic Background
 
 ### Training, confidence, and the generalization gap
 
@@ -156,7 +155,7 @@ strength of the guarantee is set by the privacy parameter epsilon, and
 membership inference attacks double as empirical audits of how tight such
 guarantees are in practice (Jagielski et al., 2020; Nasr et al., 2021).
 
-## Background — Tier 2 (field context)
+## Paper Context
 
 Membership inference predates machine learning. It was first demonstrated on
 genomic data, where an individual's presence in a study cohort could be
@@ -199,7 +198,7 @@ either standard.
 
 ## Reading guidance
 
-- Section II: background on training-data privacy; skim if the Tier-1 material
+- Section II: background on training-data privacy; skim if the basic background
   is familiar.
 - Section III-A, Definition 1: the membership inference security game.
   Definition 1 grants the adversary sampling access to the underlying data

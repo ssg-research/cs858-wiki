@@ -59,7 +59,7 @@ architecture and the weights and can compute gradients. Weaker black-box
 under the worst allowed perturbation, argued for the class of first-order
 adversaries.
 
-## Why this paper is assigned
+## Why read this
 
 Most early defenses against adversarial examples were point countermeasures,
 and many were broken shortly after publication. This paper instead fixes an
@@ -69,7 +69,7 @@ robustness on firm footing rather than as a heuristic. It is also a
 well-constructed paper, worth reading as a model for arguing an empirical
 security claim.
 
-## Background — Tier 1 (warm-up)
+## Basic Background
 
 ### Training a classifier
 
@@ -130,7 +130,7 @@ maximizer is a descent direction for the outer problem. Its assumptions, a
 smooth function and an exact inner maximum, do not hold for ReLU networks
 attacked approximately, so applying it there needs empirical justification.
 
-## Background — Tier 2 (field context)
+## Paper Context
 
 Adversarial machine learning predates deep learning. Evasion of deployed
 classifiers such as spam filters was formalized in the 2000s (Dalvi et al.,

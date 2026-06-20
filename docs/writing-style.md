@@ -43,7 +43,7 @@ not popularize.
 
 ## Links
 
-Tier-1 Background is written at **Wikipedia link density**: nearly every
+Basic Background is written at **Wikipedia link density**: nearly every
 technical term a reader new to the subfield might not know is a relative link
 to a concept page, including general machinery like stochastic gradient
 descent or white-box access. Tiny stub concept pages exist to make this
@@ -112,16 +112,16 @@ Each example is from a rejected draft.
   `**Threat Model:**` that names the adversary, its knowledge, its capability
   and budget, its timing, and the defender's claim. No methods walkthrough, no
   per-experiment numbers.
-- **Why this paper is assigned.** Two to four declarative sentences,
-  instructor-owned. No hooks.
-- **Background — Tier 1 (warm-up).** `###` subsections, one per prerequisite
-  cluster, two to five sentences each, Wikipedia link density. Covers the
-  general ML and training machinery the paper assumes as well as the
-  subfield-specific concepts. Never the paper's own content.
-- **Background — Tier 2 (field context).** Two to four declarative paragraphs:
-  the state of the field when the paper appeared. What had been tried, what had
-  broken, what was unsettled. Prior or contemporaneous citations only. Not
-  questions.
+- **Why read this.** Two to four declarative sentences on why the paper is worth
+  reading on its own terms, instructor-owned. No hooks, and no reference to the
+  paper's slot in the course sequence.
+- **Basic Background.** `###` subsections, one per prerequisite cluster, two to
+  five sentences each, Wikipedia link density. Covers the general ML and training
+  machinery the paper assumes as well as the subfield-specific concepts. Never
+  the paper's own content.
+- **Paper Context.** Two to four declarative paragraphs: the state of the field
+  when the paper appeared. What had been tried, what had broken, what was
+  unsettled. Prior or contemporaneous citations only. Not questions.
 - **Reading guidance.** A bullet list keyed by section, figure, or table, one
   line each, placed late in the page. Includes one or two neutral attention
   anchors pointing at where to slow down, without stating why it is contested.

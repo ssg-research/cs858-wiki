@@ -34,6 +34,13 @@ overview, the prerequisites, and the field context. It never walks through the
 paper's methods, evidence, or argument. If a student could read the page
 instead of the paper and lose nothing, the page has failed.
 
+**Every page stands alone.** The wiki is published as a public site and a
+student may land on any page directly. A page never assumes the reader has read
+another page or knows the course's reading order; state each point in terms of
+the paper and the field, not the paper's slot in the syllabus. Backward
+cross-links to other pages are navigation, not an assumption that the reader
+followed them.
+
 ---
 
 ## Pedagogical ground rules
@@ -57,11 +64,11 @@ These follow from standard learning theory and are not stylistic preferences:
   *site* of a tension without stating it. "Section 2: the justification for the
   choice of perturbation set is brief; note what it is." A student who slows
   down there finds the question on their own.
-- **Two background tiers serve two populations.** Tier 1 warms up the reader
-  who is new to the subfield (the expertise-reversal effect says this material
-  actively hurts experts, so it is separable and skippable). Tier 2 is the
-  experienced reader's warm-up: not concepts but *context*, what the field had
-  tried and where it stood when the paper appeared.
+- **Two background sections serve two populations.** Basic Background warms up
+  the reader who is new to the subfield (the expertise-reversal effect says this
+  material actively hurts experts, so it is separable and skippable). Paper
+  Context is the experienced reader's warm-up: not concepts but *context*, what
+  the field had tried and where it stood when the paper appeared.
 
 ---
 
@@ -100,8 +107,9 @@ it `<!-- instructor: confirm -->` if the instructor wants you to propose one:
 
 1. **Course section / week** (e.g., `Membership Inference`). Goes in frontmatter
    `section` and groups the page in the indexes.
-2. **Why this paper is assigned** — one to two sentences on the paper's *role*
-   in the course's argument. This is the only place the instructor explicitly
+2. **Why read this** — one to two sentences on why the paper is worth reading,
+   on its own terms (its significance, what makes it a good read), never its
+   slot in the course sequence. This is the only place the instructor explicitly
    editorializes.
 
 Everything else you draft; the instructor reviews.
@@ -120,7 +128,7 @@ Everything else you draft; the instructor reviews.
   own bibliography (read those PDF pages) or the cited work's arXiv abstract
   page. Never reconstruct an entry from memory; if you cannot verify it, do not
   cite it.
-- **Tier-2 cites only work prior to or contemporaneous with the paper.** Work
+- **Paper Context cites only work prior to or contemporaneous with the paper.** Work
   that *responds* to the paper is follow-up, not background; it belongs on the
   follow-up paper's own page when that paper is compiled, never on this one.
 - **Cross-link compiled papers, backward only.** When a cited prior work has
@@ -182,7 +190,8 @@ List the prerequisite ML / security concepts the paper assumes, at **Wikipedia
 link density**: not only the subfield-specific ideas (differential privacy,
 membership inference) but the general machinery (stochastic gradient descent,
 empirical risk minimization, white-box vs. black-box access, ℓp norms). The
-model for Tier 1 is a Wikipedia article: nearly every technical term a new
+model for Basic Background is a Wikipedia article: nearly every technical term a
+new
 reader might not know is a link. For each concept, find whether a page exists:
 
 ```bash
@@ -227,9 +236,9 @@ gets this paragraph, attack and defense papers alike; for papers where the
 threat model is implicit, making it explicit is the single highest-value thing
 the page does.
 
-### 5. Background pass — draft both tiers
+### 5. Background pass — draft both background sections
 
-**Tier 1 (warm-up).** Prerequisite coverage split into `###` subsections, one
+**Basic Background.** Prerequisite coverage split into `###` subsections, one
 per prerequisite cluster, at Wikipedia link density (step 3). Teach each
 prerequisite in two to five sentences and link its concept page; the depth
 lives in the concept pages. Cover the general ML and training machinery the
@@ -237,14 +246,14 @@ paper builds on, not only the subfield-specific concepts. Pitched at:
 "grad-level CS student with strong general ML but no exposure to this
 subfield." Strictly prerequisite; never paper content.
 
-**Tier 2 (field context).** Declarative prose, two to four paragraphs: the
-state of the field when the paper appeared. What had been tried, what had been
-broken and by whom, what nobody agreed on, which communities were talking past
-each other. This is the experienced reader's warm-up; they skip Tier 1 and
-read this. Properly cited (see Citation convention), **prior or
-contemporaneous work only**, and never a preview of what *this* paper does
-about any of it. Not questions: the open-tension question format is retired
-(see Pedagogical ground rules).
+**Paper Context.** Declarative prose, two to four paragraphs: the state of the
+field when the paper appeared. What had been tried, what had been broken and by
+whom, what nobody agreed on, which communities were talking past each other.
+This is the experienced reader's warm-up; they skip the Basic Background and
+read this. Properly cited (see Citation convention), **prior or contemporaneous
+work only**, and never a preview of what *this* paper does about any of it. Not
+questions: the open-tension question format is retired (see Pedagogical ground
+rules).
 
 ### 6. Engagement pass — motivating questions and reading guidance
 
@@ -354,18 +363,19 @@ headline results at abstract level, terminology decoded. Then, as its own
 paragraph: **Threat Model:** adversary, knowledge, capability, timing, and the
 defender's claim.)
 
-## Why this paper is assigned
+## Why read this
 
-(Instructor's one to two sentences: the paper's role in the course argument.)
+(Instructor's one to two sentences: why the paper is worth reading, on its own
+terms. Never its slot in the course sequence.)
 
-## Background — Tier 1 (warm-up)
+## Basic Background
 
 ### Prerequisite cluster
 
 (Two to five sentences per cluster, Wikipedia link density, concept links carry
 the depth. Prerequisite knowledge only, never this paper's content.)
 
-## Background — Tier 2 (field context)
+## Paper Context
 
 (Declarative prose: the state of the field when the paper appeared. Prior or
 contemporaneous work only, properly cited. Never this paper's position.)
@@ -390,8 +400,8 @@ or two neutral attention anchors. A roadmap, not a summary.)
 ````
 
 Required: the frontmatter, "High-level overview" (with the threat-model
-paragraph), "Why this paper is assigned," at least one Background tier, and
-"References" whenever anything is cited. The rest is optional but encouraged.
+paragraph), "Why read this," at least one Background section, and "References"
+whenever anything is cited. The rest is optional but encouraged.
 
 ---
 
@@ -438,7 +448,7 @@ textbook definition differs from field usage.)
 Concept pages are single-tier reference material, **50 to 500 words**. Stubs
 (frontmatter + short Definition + "Papers that use this concept") are valid and
 encouraged for small primitives like an optimizer or an access model. A novice
-clicks the link from a Tier-1 Background; a Tier-2 reader ignores it. The
+clicks the link from the Basic Background; an experienced reader ignores it. The
 reader does the tiering, so the page does not need two versions.
 
 `description` is required; it is the routing mechanism. Reuse existing tags
@@ -475,11 +485,11 @@ A paper page is acceptable when:
   named approach, headline results, decoded terminology, and a bolded
   **Threat Model:** paragraph. Nothing on the page goes deeper into the
   paper's own content than that.
-- Tier-1 covers only prerequisites, organized into `###` subsections at
-  Wikipedia link density, and links concept pages for depth rather than
+- Basic Background covers only prerequisites, organized into `###` subsections
+  at Wikipedia link density, and links concept pages for depth rather than
   duplicating them.
-- Tier-2 is declarative field context, cites only prior or contemporaneous
-  work, and never previews this paper's position.
+- Paper Context is declarative field context, cites only prior or
+  contemporaneous work, and never previews this paper's position.
 - Motivating questions are three to five high-level pre-questions, answerable
   by reading the paper, with no trick questions and no contested premises.
 - Reading guidance is a section-keyed bullet list with at least one neutral

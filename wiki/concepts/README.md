@@ -1,10 +1,7 @@
 # Concepts
 
-Shared prerequisite concept pages. One concept per file, named for the concept
-itself (`differential-privacy.md`, `membership-inference.md`). Each page is
-single-tier reference material written for a graduate ML student new to this
-specific subfield, and is linked from the Tier-1 Background of every paper page
-that depends on it.
+Background concepts the papers rely on. Each page is a short, self-contained
+explanation you can read on its own or reach from a paper that uses it.
 
 | Concept | Summary |
 | --- | --- |
