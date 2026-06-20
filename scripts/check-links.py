@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
-Validate that every relative Markdown link in the wiki resolves to a file.
+Validate that every relative link in the wiki resolves to a file.
 
-The CS858 wiki uses plain relative Markdown links between pages, e.g.
+The CS858 wiki links between pages with plain relative Markdown links, e.g.
     [Differential privacy](../concepts/differential-privacy.md)
-so a link is broken if its target path does not exist relative to the file
-it appears in. This is the core structural lint and needs no graph manifest.
+and, where a page needs a structure Markdown cannot express (a table with
+vertically merged cells), with relative HTML links, e.g.
+    <a href="papers/madry-2018-pgd.md">...</a>
+A link is broken if its target path does not exist relative to the file it
+appears in. This is the core structural lint and needs no graph manifest.
 
 Absolute URLs (http, https, mailto) and pure in-page anchors (#section) are
 skipped. Anchors on a file link (foo.md#bar) are validated only at the file
@@ -25,6 +28,8 @@ import sys
 
 # [text](target) — capture the target. Skip image links handled below.
 _LINK = re.compile(r"(!?)\[[^\]]*\]\(([^)\s]+?)(?:\s+\"[^\"]*\")?\)")
+# href="target" / src="target" inside inline HTML (single or double quoted).
+_HTML_LINK = re.compile(r"""(?:href|src)\s*=\s*["']([^"']+)["']""")
 
 
 def is_external(target: str) -> bool:
@@ -58,7 +63,11 @@ def find_broken(md_path: str) -> list[tuple[str, str]]:
         content = strip_code(fh.read())
     base_dir = os.path.dirname(md_path)
     broken: list[tuple[str, str]] = []
-    for is_image, target in _LINK.findall(content):
+    targets: list[tuple[str, bool]] = [
+        (target, bool(is_image)) for is_image, target in _LINK.findall(content)
+    ]
+    targets += [(target, False) for target in _HTML_LINK.findall(content)]
+    for target, is_image in targets:
         if is_external(target) or target.startswith("#"):
             continue
         path_part = target.split("#", 1)[0]

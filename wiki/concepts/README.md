@@ -6,10 +6,6 @@ single-tier reference material written for a graduate ML student new to this
 specific subfield, and is linked from the Tier-1 Background of every paper page
 that depends on it.
 
-Concept pages are created on demand by `/generate-paper-summary`. When you add
-one, add a row to the table below, keeping it alphabetical by slug:
-`| [slug](slug.md) | one-line description |`.
-
 | Concept | Summary |
 | --- | --- |
 | [adversarial-examples](adversarial-examples.md) | The evasion phenomenon: small input perturbations that flip a prediction. |

@@ -136,3 +136,26 @@ section to match. Protected `main` on GitHub: merges land only via pull request
 (zero required approvals, no CI gate), direct pushes and force-pushes are
 rejected, the branch cannot be deleted, and protection applies to admins too.
 Model: Opus 4.8, `claude-opus-4-8[1m]`.
+
+## [2026-06-19 17:34] infra | standalone reading-list index; xlsx-to-table converter
+
+Made `wiki/` self-contained for publication as a github.io submodule and rebuilt
+the landing page around the full course reading list. Copied the instructor
+syllabus to `docs/CS858-F26-papers-stripped.xlsx` (kept the `UpdatedList` sheet
+only) and added `scripts/build-paper-table.py`, a one-time converter that reads
+the sheet and emits the Part 1 / Part 2 sections as HTML tables. Markdown tables
+cannot express the spreadsheet's vertical cell merges, so each theme is rendered
+with an HTML `rowspan`; the full-width Part banners become headings. Columns are
+number, paper, theme, topic, and essential readings. Papers are renumbered
+sequentially in reading-list order, so numbering stays monotonic while the
+spreadsheet's theme order is preserved. The three written companions link to
+their pages, the other 21 link to a new `wiki/under-construction.md` placeholder
+and carry a dagger marker. Essential-reading hyperlinks (arXiv, USENIX, IEEE,
+ACM) are lifted from the sheet.
+Replaced the "Papers by section" table in `wiki/README.md` with this reading
+list and removed the "How pages are made" section; stripped the
+`/generate-paper-summary` build notes from the papers and concepts indexes so no
+published page references anything outside `wiki/`. Extended
+`scripts/check-links.py` to resolve relative HTML `href`/`src` targets, added
+`openpyxl` to the dev dependency group, and set `MD033: false` in the
+markdownlint config. Model: Opus 4.8, `claude-opus-4-8`.
