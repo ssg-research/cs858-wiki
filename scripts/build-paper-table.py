@@ -224,7 +224,7 @@ def part_heading(title: str) -> str:
 
 def render_table(part: Part) -> str:
     lines = ["<table>", "  <thead>", "    <tr>"]
-    lines += [f"      <th>{h}</th>" for h in HEADERS]
+    lines += [f'      <th scope="col">{h}</th>' for h in HEADERS]
     lines += ["    </tr>", "  </thead>", "  <tbody>"]
 
     prev_theme: str | None = None

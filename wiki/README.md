@@ -24,9 +24,9 @@ is required; expand the essential readings beneath it to see what goes alongside
 <table>
   <thead>
     <tr>
-      <th>#</th>
-      <th>Topic</th>
-      <th>Reading</th>
+      <th scope="col">#</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Reading</th>
     </tr>
   </thead>
   <tbody>
@@ -293,9 +293,9 @@ is required; expand the essential readings beneath it to see what goes alongside
 <table>
   <thead>
     <tr>
-      <th>#</th>
-      <th>Topic</th>
-      <th>Reading</th>
+      <th scope="col">#</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Reading</th>
     </tr>
   </thead>
   <tbody>
