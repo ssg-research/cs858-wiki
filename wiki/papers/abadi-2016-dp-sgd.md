@@ -68,18 +68,17 @@ inference](../concepts/membership-inference.md). The guarantee says nothing
 about secrets shared across many records, and its strength degrades as epsilon
 grows.
 
-## Why this paper is assigned
+## Why read this
 
-The defenses seen so far in the course are empirical: they hold until a
-stronger attack arrives. This paper is the course's first defense with a
-proof, a training algorithm whose privacy guarantee holds against any
-adversary, including future ones. Using it in practice is difficult, since
-clipping and noise cost accuracy and the budget constrains how long a model
+Empirical defenses hold only until a stronger attack arrives. This paper instead
+gives a defense with a proof, a training algorithm whose privacy guarantee holds
+against any adversary, including future ones. Using it in practice is difficult,
+since clipping and noise cost accuracy and the budget constrains how long a model
 can train, yet differential privacy remains the only known way to actually
 guarantee training-data privacy, and nearly every modern private training
 system, federated learning especially, builds on this algorithm in some form.
 
-## Background — Tier 1 (warm-up)
+## Basic Background
 
 ### Training neural networks
 
@@ -140,7 +139,7 @@ batch leaks nothing in that step. How tightly the accountant adds up thousands
 of sampled Gaussian steps decides how long a network can train before its
 budget is exhausted.
 
-## Background — Tier 2 (field context)
+## Paper Context
 
 Privacy-preserving learning is older than deep learning. Privacy-preserving
 data mining was posed around 2000, in both randomization and cryptographic

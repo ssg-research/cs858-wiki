@@ -1,13 +1,8 @@
 # Papers
 
-One page per primary-reading paper, grouped by course section. Each page is a
-reading companion (High-level overview with threat model, Why assigned,
-two-tier Background, Reading guidance, Motivating questions, References); it
-orients the student for a targeted read and never replaces the paper.
-
-Pages are added with `/generate-paper-summary`. When you add a paper, add a row
-to the table below, keeping it sorted by section:
-`| [author-year-shortname](author-year-shortname.md) | Section | Year | short descriptor |`.
+Pages for the primary readings. Each page is a short guide to one paper: what it
+is about, the background needed to follow it, and what to look for while reading.
+It points you into the paper; it does not stand in for it.
 
 | Paper | Section | Year | Summary |
 | --- | --- | --- | --- |
