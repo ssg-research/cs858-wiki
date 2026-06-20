@@ -4,19 +4,23 @@
 Reads ``docs/CS858-F26-papers-stripped.xlsx`` (sheet ``UpdatedList``) and prints
 the Part 1 / Part 2 sections as HTML tables.
 
-The spreadsheet groups papers under a shared theme with vertically merged cells.
-A Markdown table cannot express a vertical merge, so each theme is rendered with
-an HTML ``rowspan`` cell, the one construct that survives GitHub, GitHub Pages,
-and the common static-site generators. The full-width "Part" banners become
-Markdown headings instead of table rows.
+The spreadsheet groups papers under a shared theme. Each theme is rendered as a
+full-width section-header row (an HTML ``<th colspan>``) that introduces its
+papers; the full-width "Part" banners become Markdown headings above each table.
 
-Per-paper layout:
+Per-paper layout, under a single ``Topic`` column and a single ``Reading``
+column:
 
-* the primary paper links to its reading companion when one exists (see
-  ``READY``), otherwise to the shared ``under-construction.md`` placeholder and
-  carries a dagger marker;
-* essential readings keep the hyperlinks already stored in the spreadsheet
-  (arXiv, USENIX, IEEE, ACM, and similar).
+* the primary reading carries a "Primary" label and links to its reading
+  companion when one exists (see ``READY``), otherwise to the shared
+  ``under-construction.md`` placeholder with a dagger marker;
+* essential readings collapse into a ``<details>`` disclosure beneath the
+  primary, keeping the hyperlinks already stored in the spreadsheet (arXiv,
+  USENIX, IEEE, ACM, and similar).
+
+Internal links stay relative ``.md`` paths so they resolve when browsing the
+wiki repo directly (GitHub, VS Code, Obsidian); the website build rewrites them
+to absolute site URLs.
 
 Papers are renumbered sequentially in reading-list order, so the numbering stays
 monotonic while the spreadsheet's theme order is preserved.
@@ -56,7 +60,7 @@ ESSENTIAL_COL = 5  # E: essential readings
 UC_PAGE = "under-construction.md"
 UC_MARK = ' <sup title="Reading companion under construction">&dagger;</sup>'
 
-HEADERS = ("#", "Theme", "Topic", "Primary Reading", "Essential Readings")
+HEADERS = ("#", "Topic", "Reading")
 
 
 @dataclass(frozen=True)
@@ -189,11 +193,18 @@ def link(title: str, href: str | None) -> str:
     return f'<a href="{href.replace("&", "&amp;")}">{safe}</a>'
 
 
-def reading_cell(items: list[Reading]) -> str:
+def essential_details(items: list[Reading]) -> list[str]:
+    """The collapsible essential-readings block; empty when there are none."""
     if not items:
-        return ""
-    bullets = "".join(f"<li>{link(r.title, r.href)}</li>" for r in items)
-    return f"<ul>{bullets}</ul>"
+        return []
+    lines = [
+        "        <details>",
+        f"          <summary>Essential readings ({len(items)})</summary>",
+        "          <ul>",
+    ]
+    lines += [f"            <li>{link(r.title, r.href)}</li>" for r in items]
+    lines += ["          </ul>", "        </details>"]
+    return lines
 
 
 def paper_cell(paper: Paper) -> str:
@@ -216,18 +227,23 @@ def render_table(part: Part) -> str:
     lines += [f"      <th>{h}</th>" for h in HEADERS]
     lines += ["    </tr>", "  </thead>", "  <tbody>"]
 
-    papers = part.papers
-    for idx, paper in enumerate(papers):
+    prev_theme: str | None = None
+    for paper in part.papers:
+        if paper.theme != prev_theme:
+            lines.append("    <tr>")
+            lines.append(
+                f'      <th colspan="3" scope="colgroup">{esc(paper.theme)}</th>'
+            )
+            lines.append("    </tr>")
+            prev_theme = paper.theme
         lines.append("    <tr>")
         lines.append(f"      <td>{paper.number}</td>")
-        if idx == 0 or papers[idx - 1].theme != paper.theme:
-            span = 1
-            while idx + span < len(papers) and papers[idx + span].theme == paper.theme:
-                span += 1
-            lines.append(f'      <td rowspan="{span}">{esc(paper.theme)}</td>')
         lines.append(f"      <td>{esc(paper.topic)}</td>")
-        lines.append(f"      <td>{paper_cell(paper)}</td>")
-        lines.append(f"      <td>{reading_cell(paper.essential)}</td>")
+        lines.append("      <td>")
+        lines.append("        <strong>Primary</strong>")
+        lines.append(f"        {paper_cell(paper)}")
+        lines += essential_details(paper.essential)
+        lines.append("      </td>")
         lines.append("    </tr>")
 
     lines += ["  </tbody>", "</table>"]
