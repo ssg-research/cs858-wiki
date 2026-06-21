@@ -185,3 +185,22 @@ and `docs/writing-style.md` now use the new heading names, reframe "Why read
 this" as the paper's own significance, and carry a new "Every page stands alone"
 rule. `docs/ops/lint.md` still describes the retired Tier-2-as-questions format
 and needs a separate pass. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 13:26] generate-paper-summary | Jailbroken: How Does LLM Safety Training Fail?
+
+Compiled the reading companion for Wei, Haghtalab, and Steinhardt (2023), arXiv
+2307.02483, as `wiki/papers/wei-2023-jailbroken.md` under the "Jailbreaking LLMs"
+topic. Created seven concept pages to seed the LLM-safety cluster:
+`language-model-pretraining`, `instruction-tuning`, `rlhf`, `safety-training`,
+`jailbreak`, `red-teaming`, and `prompt-injection`, and added back-links from the
+reused `white-box-black-box` and `adversarial-examples` pages. Updated the papers,
+concepts, and top-level indexes (Papers: 4, Concepts: 28). The "Why read this"
+framing was supplied by the instructor.
+
+Also changed the workflow so a paper's `section` is taken verbatim from the
+canonical Theme/Topic reading list in `wiki/README.md` rather than invented or
+asked for (`docs/ops/generate-paper-summary.md`,
+`.claude/commands/generate-paper-summary.md`), and brought the three existing
+paper pages' `section` values and the papers index into exact agreement with
+their reading-list Topics. check-links (41 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.

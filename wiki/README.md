@@ -53,7 +53,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Jailbreaking LLMs</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Jailbroken: How Does LLM Safety Training Fail?</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/wei-2023-jailbroken.md">Jailbroken: How Does LLM Safety Training Fail?</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-19. Papers: 3. Concepts: 21.
+Last compiled: 2026-06-21. Papers: 4. Concepts: 28.

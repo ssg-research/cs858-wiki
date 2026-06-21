@@ -7,7 +7,7 @@ authors:
   - Tsipras, Dimitris
   - Vladu, Adrian
 year: 2018
-section: "Adversarial Robustness"
+section: "Adversarial Robustness of Classification Models"
 primary: true
 arxiv: "1706.06083"
 tags:

@@ -28,6 +28,7 @@ has not learned the intended concept.
 ## Papers that use this concept
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — the phenomenon the paper's min-max formulation is built to suppress.
+- [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — contrasts jailbreaks, which elicit unsafe capabilities, with adversarial examples, which induce misclassification.
 
 ## Variants and traps
 

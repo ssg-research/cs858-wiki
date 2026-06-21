@@ -9,7 +9,7 @@ authors:
   - Talwar, Kunal
   - Zhang, Li
 year: 2016
-section: "Differential Privacy"
+section: "Differential Privacy in ML"
 primary: true
 arxiv: "1607.00133"
 doi: "10.1145/2976749.2978318"

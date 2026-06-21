@@ -8,7 +8,7 @@ authors:
   - Terzis, Andreas
   - Tramèr, Florian
 year: 2022
-section: "Membership Inference"
+section: "Membership Inference Attacks"
 primary: true
 arxiv: "2112.03570"
 doi: "10.1109/SP46214.2022.9833649"
