@@ -204,3 +204,21 @@ asked for (`docs/ops/generate-paper-summary.md`,
 paper pages' `section` values and the papers index into exact agreement with
 their reading-list Topics. check-links (41 files) and markdownlint clean.
 Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 14:56] generate-paper-summary | Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
+
+Compiled the reading companion for Greshake et al. (2023), arXiv:2302.12173, as
+`wiki/papers/greshake-2023-indirect-prompt-injection.md` (Topic "Indirect Prompt
+Injection in AI Agents", taken verbatim from the reading list). Created two new
+concept stubs, `retrieval-augmented-generation` and `llm-tool-use`, and reused
+the existing `prompt-injection`, `jailbreak`, `language-model-pretraining`,
+`instruction-tuning`, `rlhf`, `safety-training`, and `white-box-black-box` pages.
+Added the reciprocal "Papers that use this concept" entries and an inline link in
+`prompt-injection`, and a backward cross-link from `wei-2023-jailbroken` (which
+cites this earlier work). Reconciled the stale v1 citation title ("More than
+You've Asked For...") to the canonical arXiv v2 title in both `prompt-injection`
+and `wei-2023-jailbroken`. Updated the papers, concepts, and top-level indexes
+(Papers: 5, Concepts: 30) and removed the row's under-construction marker. The
+"Why read this" framing was chosen by the instructor (the "named the attack
+class" option). check-links (44 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.

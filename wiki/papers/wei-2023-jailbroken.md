@@ -142,8 +142,8 @@ Academic study of attacks on safety-trained models was just beginning.
 Contemporary work attacked GPT-3.5 through a computer-security lens and
 introduced payload splitting (Kang et al., 2023), targeted extraction of
 personally identifiable information (Li et al., 2023), analyzed prompt-injection
-threats to application-integrated models (Greshake et al., 2023), and audited
-models with discrete optimization (Jones et al., 2023). A separate, older NLP
+threats to application-integrated models ([Greshake et al., 2023](greshake-2023-indirect-prompt-injection.md)),
+and audited models with discrete optimization (Jones et al., 2023). A separate, older NLP
 literature studied [adversarial examples](../concepts/adversarial-examples.md)
 and universal triggers that induce model errors (Wallace et al., 2019), surveyed
 broadly (Chakraborty et al., 2018; Zhang et al., 2020); that line aims to cause
@@ -213,9 +213,8 @@ Entries read off the paper's bibliography (arXiv 2307.02483v1, pages 11-14).
   to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned."
   arXiv:2209.07858, 2022.
 - Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., and Fritz, M.
-  "More than You've Asked For: A Comprehensive Analysis of Novel Prompt Injection
-  Threats to Application-Integrated Large Language Models." arXiv:2302.12173,
-  2023.
+  "Not what you've signed up for: Compromising Real-World LLM-Integrated
+  Applications with Indirect Prompt Injection." arXiv:2302.12173, 2023.
 - Jones, E., Dragan, A., Raghunathan, A., and Steinhardt, J. "Automatically
   Auditing Large Language Models via Discrete Optimization." arXiv:2303.04381,
   2023.

@@ -68,7 +68,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Indirect Prompt Injection in AI Agents</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/greshake-2023-indirect-prompt-injection.md">Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 4. Concepts: 28.
+Last compiled: 2026-06-21. Papers: 5. Concepts: 30.
