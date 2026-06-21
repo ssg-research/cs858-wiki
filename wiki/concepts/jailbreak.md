@@ -26,6 +26,7 @@ informally after ChatGPT's release, including role-play personas such as "DAN"
 ## Papers that use this concept
 
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — proposes two failure modes of safety training and uses them as principles for constructing jailbreaks.
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — explains prefilling, adversarial-suffix, and decoding-parameter jailbreaks as ways of getting past a shallow refusal prefix.
 
 ## See also
 

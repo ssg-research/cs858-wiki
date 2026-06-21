@@ -23,6 +23,7 @@ several that a deployed model balances, alongside language modeling and safety.
 ## Papers that use this concept
 
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — instruction following is one of the "competing objectives"; attacks such as refusal suppression exploit the model's drive to obey formatting instructions.
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — analyzes how supervised and preference-based fine-tuning leave safety behavior concentrated in early tokens.
 
 ## See also
 

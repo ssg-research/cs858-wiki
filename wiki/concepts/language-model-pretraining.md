@@ -24,6 +24,7 @@ alignment stage revisits. The canonical instance is GPT-3 (Brown et al., 2020).
 ## Papers that use this concept
 
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — both proposed failure modes are framed against the pretraining objective and the breadth of the pretraining distribution.
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — measures alignment as the per-token gap from the base model, which past the first few tokens is small.
 
 ## See also
 

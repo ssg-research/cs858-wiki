@@ -222,3 +222,17 @@ and `wei-2023-jailbroken`. Updated the papers, concepts, and top-level indexes
 "Why read this" framing was chosen by the instructor (the "named the attack
 class" option). check-links (44 files) and markdownlint clean.
 Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 15:59] generate-paper-summary | Safety Alignment Should Be Made More Than Just a Few Tokens Deep
+
+Compiled the paper page `qi-2024-shallow-safety-alignment.md` (Topic: "Safety
+Alignment and Guardrails", reading-list row 4) from arXiv 2406.05946. Added three
+new concept pages: `kl-divergence`, `decoding-strategies`, and
+`direct-preference-optimization`; reused and back-linked seven existing concepts
+(safety-training, rlhf, language-model-pretraining, instruction-tuning, jailbreak,
+stochastic-gradient-descent, adversarial-training). Paper Context sets up the
+adversarial-training defense lineage and cross-links `madry-2018-pgd` per the
+instructor; the "Why read this" uses the instructor-chosen diagnosis-to-fix angle.
+Updated the papers, concepts, and top-level indexes (Papers: 6, Concepts: 33) and
+removed the row's under-construction marker. check-links (48 files) and
+markdownlint clean. Model: Opus 4.8, `claude-opus-4-8`.

@@ -27,6 +27,7 @@ anticipated.
 ## Papers that use this concept
 
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — the paper's subject; it asks why safety training fails to suppress restricted behavior under adversarial prompts.
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — argues current safety training is "shallow," changing mostly the first few output tokens, and proposes ways to make it deeper.
 
 ## See also
 

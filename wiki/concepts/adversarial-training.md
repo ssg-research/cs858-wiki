@@ -30,6 +30,7 @@ leaving the model open to stronger ones.
 ## Papers that use this concept
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — recasts adversarial training as solving the outer minimization of a saddle-point problem and studies how strong the inner adversary must be.
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — cited as the train-against-the-attack defense tradition its deeper-alignment data augmentation draws on.
 
 ## Variants and traps
 

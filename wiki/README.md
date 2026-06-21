@@ -83,7 +83,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Safety Alignment and Guardrails</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Safety Alignment Should Be Made More Than Just a Few Tokens Deep</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/qi-2024-shallow-safety-alignment.md">Safety Alignment Should Be Made More Than Just a Few Tokens Deep</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 5. Concepts: 30.
+Last compiled: 2026-06-21. Papers: 6. Concepts: 33.
