@@ -116,7 +116,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Training-data Extraction from LLMs</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Extracting Training Data from Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/carlini-2021-extracting-training-data.md">Extracting Training Data from Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 6. Concepts: 33.
+Last compiled: 2026-06-21. Papers: 7. Concepts: 34.

@@ -111,8 +111,9 @@ dataset is itself the privacy violation (Homer et al., 2008), and was brought
 to machine learning models with query access (Shokri et al., 2017). The
 baseline attack thresholds the model's loss on the candidate example (Yeom et
 al., 2018). Membership inference also serves as the foundation of stronger
-attacks, such as training-data extraction, which need its predictions to be
-precise (Carlini et al., 2021).
+attacks, such as
+[training-data extraction](carlini-2021-extracting-training-data.md), which need
+its predictions to be precise (Carlini et al., 2021).
 
 ### Shadow models
 

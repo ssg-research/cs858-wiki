@@ -30,6 +30,7 @@ on.
 ## Papers that use this concept
 
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — frames membership inference as a likelihood-ratio test between models trained with and without the target example; the attack is named for it.
+- [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — ranks candidate sequences by the target model's perplexity relative to reference models, a likelihood-ratio style calibration of the membership signal.
 
 ## See also
 

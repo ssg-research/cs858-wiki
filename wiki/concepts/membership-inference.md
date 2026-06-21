@@ -40,6 +40,7 @@ predictions as a building block (Carlini et al., 2021).
 
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — the attack class the paper re-derives as a hypothesis test and re-evaluates at low false-positive rates.
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the canonical defense whose guarantee upper-bounds any membership inference attack.
+- [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — reduces training-data extraction to membership inference, ranking generated candidates by a calibrated membership signal.
 
 ## Variants and traps
 

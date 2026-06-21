@@ -31,6 +31,7 @@ available to whoever calls the model, they are also an attack surface.
 ## Papers that use this concept
 
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — the decoding-parameter exploit and prefilling attacks it unifies operate entirely through these inference-time controls.
+- [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — candidate generation drives the attack, varying temperature and top-k sampling and conditioning on internet text to surface more diverse memorized samples.
 
 ## See also
 

@@ -28,6 +28,7 @@ read each paper's definition rather than assuming one.
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — its adversary is black-box, querying confidence outputs with no access to weights or gradients.
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — its guarantee holds against a white-box adversary with full access to the released parameters.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — its adversary is a black-box chat user who rewrites the prompt but cannot see weights or alter the system prompt or message history.
+- [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — its adversary has only black-box query access: it samples continuations and reads sequence probabilities, with no view of weights or hidden states.
 
 ## See also
 

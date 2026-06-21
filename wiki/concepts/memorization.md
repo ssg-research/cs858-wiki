@@ -33,6 +33,7 @@ changes the model measurably is an example whose presence can be inferred.
 
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — per-example memorization differences are why its per-example hypothesis test beats global-threshold attacks, and why out-of-distribution examples are the most exposed.
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the capacity of networks to encode individual examples is the leakage DP-SGD provably bounds.
+- [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — shows large LMs memorize individual training examples verbatim and that this persists with no overfitting; defines k-eidetic memorization.
 
 ## Variants and traps
 

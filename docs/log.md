@@ -236,3 +236,20 @@ instructor; the "Why read this" uses the instructor-chosen diagnosis-to-fix angl
 Updated the papers, concepts, and top-level indexes (Papers: 6, Concepts: 33) and
 removed the row's under-construction marker. check-links (48 files) and
 markdownlint clean. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 16:42] generate-paper-summary | Extracting Training Data from Large Language Models
+
+Compiled the reading companion for Carlini et al., "Extracting Training Data from
+Large Language Models" (arXiv 2012.07805, USENIX Security 2021) as
+`wiki/papers/carlini-2021-extracting-training-data.md`, section "Training-data
+Extraction from LLMs" (reading-list row 6). Added one new concept page,
+`perplexity`; reused and back-linked seven existing concepts
+(language-model-pretraining, decoding-strategies, memorization,
+membership-inference, likelihood-ratio-test, white-box-black-box,
+differential-privacy). Cross-linked `abadi-2016-dp-sgd` (DP-SGD) backward from
+the page, and added a backward link from `carlini-2022-lira` to this page where it
+cites the extraction attack. "Why read this" confirmed with the instructor, with
+jargon trimmed at their direction. Updated the
+papers, concepts, and top-level indexes (Papers: 7, Concepts: 34) and removed the
+row's under-construction marker. check-links (50 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.
