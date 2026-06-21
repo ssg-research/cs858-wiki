@@ -29,6 +29,7 @@ read each paper's definition rather than assuming one.
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — its guarantee holds against a white-box adversary with full access to the released parameters.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — its adversary is a black-box chat user who rewrites the prompt but cannot see weights or alter the system prompt or message history.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — its adversary has only black-box query access: it samples continuations and reads sequence probabilities, with no view of weights or hidden states.
+- [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — its adversary has only black-box query access to an image classifier, reading posterior probability vectors with no view of weights, architecture, or training data.
 
 ## See also
 

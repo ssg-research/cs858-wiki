@@ -33,6 +33,7 @@ KL measurements read in the same currency.
 ## Papers that use this concept
 
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — per-token KL between an aligned model and its base model is the measurement that localizes where alignment concentrates.
+- [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — training the knockoff to imitate the victim's predictions over the transfer set is equivalent to minimizing the KL divergence between the two models there.
 
 ## Variants and traps
 

@@ -164,7 +164,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Model Extraction / Stealing</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Knockoff Nets: Stealing Functionality of Black-Box Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/orekondy-2019-knockoff-nets.md">Knockoff Nets: Stealing Functionality of Black-Box Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 8. Concepts: 35.
+Last compiled: 2026-06-21. Papers: 9. Concepts: 40.

@@ -269,3 +269,20 @@ importance plus the method's empirical-only, domain-dependent limits). Updated t
 papers, concepts, and top-level indexes (Papers: 8, Concepts: 35) and removed the
 row's under-construction marker. check-links (52 files) and markdownlint clean.
 Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 18:31] generate-paper-summary | Knockoff Nets: Stealing Functionality of Black-Box Models
+
+Compiled `wiki/papers/orekondy-2019-knockoff-nets.md` (Orekondy, Schiele, Fritz;
+CVPR 2019; arXiv 1812.02766). Section "Model Extraction / Stealing" (row 9, theme
+"Model Extraction and Distillation"), read verbatim from the reading list. Year
+keyed to the CVPR 2019 venue (verified via DBLP), not the 2018 arXiv submission
+the API reports. Created five concept pages: `model-extraction` and
+`knowledge-distillation` (fuller, central), plus stubs `convolutional-neural-network`,
+`transfer-learning`, and `reinforcement-learning`. Reused and back-linked
+`white-box-black-box`, `kl-divergence`, and `stochastic-gradient-descent`. No
+existing page cites this paper, so no backward sweep was needed. "Why read this"
+supplied by the instructor (longest-standing SOTA / reference point for
+classification model extraction; works across distributions and architectures).
+Updated the papers, concepts, and top-level indexes (Papers: 9, Concepts: 40) and
+removed the row's under-construction marker. check-links (58 files) and
+markdownlint clean. Model: Opus 4.8, `claude-opus-4-8`.
