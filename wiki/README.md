@@ -146,7 +146,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Unlearning for Generative AI</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Knowledge Unlearning for Mitigating Privacy Risks in Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/jang-2022-knowledge-unlearning.md">Knowledge Unlearning for Mitigating Privacy Risks in Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 7. Concepts: 34.
+Last compiled: 2026-06-21. Papers: 8. Concepts: 35.

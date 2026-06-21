@@ -30,6 +30,7 @@ per-example membership signal.
 ## Papers that use this concept
 
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — perplexity is the base membership-inference signal, and the improved attack ranks candidates by perplexity relative to reference models.
+- [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — perplexity rises after unlearning even where benchmark accuracy holds, since gradient ascent flattens the next-token distribution.
 
 ## See also
 

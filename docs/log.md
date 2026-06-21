@@ -253,3 +253,19 @@ jargon trimmed at their direction. Updated the
 papers, concepts, and top-level indexes (Papers: 7, Concepts: 34) and removed the
 row's under-construction marker. check-links (50 files) and markdownlint clean.
 Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 18:04] generate-paper-summary | Knowledge Unlearning for Mitigating Privacy Risks in Language Models
+
+Compiled `wiki/papers/jang-2022-knowledge-unlearning.md` (Jang et al., ICLR 2023;
+arXiv 2210.01504), section "Unlearning for Generative AI" (reading-list row 8).
+Added one new concept page, `machine-unlearning` (exact vs approximate unlearning,
+the right-to-be-forgotten motivation, relation to DP); reused and back-linked
+seven existing concepts (language-model-pretraining, stochastic-gradient-descent,
+decoding-strategies, perplexity, memorization, membership-inference,
+differential-privacy). Cross-linked `carlini-2021-extracting-training-data` and
+`abadi-2016-dp-sgd` backward from the page; no existing page cites this paper, so
+no backward sweep was needed. "Why read this" supplied by the instructor (RTBF
+importance plus the method's empirical-only, domain-dependent limits). Updated the
+papers, concepts, and top-level indexes (Papers: 8, Concepts: 35) and removed the
+row's under-construction marker. check-links (52 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.
