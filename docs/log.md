@@ -356,3 +356,13 @@ corruption landing after training rather than at inference-prompt time). Updated
 the papers, concepts, and top-level indexes (Papers: 12, Concepts: 45) and removed
 the row's under-construction marker. markdownlint clean (16 files),
 `check-links.py` clean (66 files). Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 21:03] infra | merge content batch (PR #6), retire batching note
+
+PR #6 (`content/add-papers` into `main`) merged on GitHub as squash commit
+`85d2e55`, closing out the batch of nine papers and twenty-six concept pages
+compiled since the branch opened. Fast-forwarded local `main` to match. Removed
+the "Temporary note (content batch in progress)" block from `AGENTS.md`'s Git
+Workflow section, since the batch it described is complete; future paper
+compiles resume the standard one-branch-one-PR workflow. Model: Sonnet 4.6,
+`claude-sonnet-4-6`.
