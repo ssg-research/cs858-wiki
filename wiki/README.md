@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 12. Concepts: 45.
+Last compiled: 2026-06-22. Papers: 12. Concepts: 45.

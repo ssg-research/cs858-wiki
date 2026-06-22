@@ -22,8 +22,8 @@ Internal links stay relative ``.md`` paths so they resolve when browsing the
 wiki repo directly (GitHub, VS Code, Obsidian); the website build rewrites them
 to absolute site URLs.
 
-Papers are renumbered sequentially in reading-list order, so the numbering stays
-monotonic while the spreadsheet's theme order is preserved.
+Paper numbers are read directly from the spreadsheet; the sheet is the source
+of truth for numbering.
 
 Run from the repo root::
 
@@ -47,8 +47,17 @@ SHEET = "UpdatedList"
 # Papers whose reading companion already exists, keyed by reading-list number.
 READY: dict[int, str] = {
     1: "madry-2018-pgd",
+    2: "wei-2023-jailbroken",
+    3: "greshake-2023-indirect-prompt-injection",
+    4: "qi-2024-shallow-safety-alignment",
     5: "carlini-2022-lira",
+    6: "carlini-2021-extracting-training-data",
     7: "abadi-2016-dp-sgd",
+    8: "jang-2022-knowledge-unlearning",
+    9: "orekondy-2019-knockoff-nets",
+    10: "szyller-2019-dawn",
+    11: "wang-2019-neural-cleanse",
+    12: "zou-2024-poisonedrag",
 }
 
 NUMBER_COL = 1  # A: Paper #
@@ -174,11 +183,6 @@ def parse(cells: dict[tuple[int, int], XlsxCell], max_row: int) -> list[Part]:
                 ),
             )
         )
-    position = 1
-    for part in parts:
-        for paper in part.papers:
-            paper.number = position
-            position += 1
     return parts
 
 
