@@ -34,6 +34,7 @@ read each paper's definition rather than assuming one.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — the defender has white-box access to the trained model (weights, gradients, neuron activations) but not to its training data.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — splits the attack by the adversary's knowledge of the retriever: black-box (no parameters, no queries) versus white-box (retriever parameters available to optimize against).
 - [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2023-unintended-interactions.md) — frames each risk by the access its adversary needs, reading "observables" (outputs, activations, gradients, parameters) off the model along the white-box / black-box spectrum.
+- [A Watermark for Large Language Models](../papers/kirchenbauer-2023-watermark.md) — the watermark detector is black-box to the generator, needing no model access, while embedding the watermark requires control of the sampling step.
 
 ## See also
 

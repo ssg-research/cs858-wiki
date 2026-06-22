@@ -257,10 +257,10 @@ is required; expand the essential readings beneath it to see what goes alongside
     </tr>
     <tr>
       <td>15</td>
-      <td>Media Forensics and Proactive Provanance</td>
+      <td>Media Forensics and Proactive Provenance</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">A Watermark for Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/kirchenbauer-2023-watermark.md">A Watermark for Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-22. Papers: 14. Concepts: 56.
+Last compiled: 2026-06-22. Papers: 15. Concepts: 61.

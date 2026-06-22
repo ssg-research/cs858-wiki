@@ -28,6 +28,7 @@ alignment stage revisits. The canonical instance is GPT-3 (Brown et al., 2020).
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — exploits the next-token objective directly: the likelihood the model is trained to maximize is what makes memorized sequences extractable.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — negates the next-token training objective, running gradient ascent to raise the loss on the sequences to forget.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — turns on the pretraining knowledge cutoff that motivates retrieval augmentation, the surface the attack then corrupts.
+- [A Watermark for Large Language Models](../papers/kirchenbauer-2023-watermark.md) — modifies the autoregressive sampling step of an already-pretrained model, with no retraining, so the scheme retro-fits any model that generates by sampling from a next-token distribution.
 
 ## See also
 

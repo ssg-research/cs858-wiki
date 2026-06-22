@@ -22,6 +22,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | [direct-preference-optimization](direct-preference-optimization.md) | Aligning an LM to pairwise preferences directly, without a separate reward model or RL loop; the DPO alternative to RLHF. |
 | [distributed-representations](distributed-representations.md) | Information spread across activation patterns rather than single neurons; transformer hidden states and their emergent, often linear, semantic structure. |
 | [empirical-risk-minimization](empirical-risk-minimization.md) | Average training loss as a proxy for expected loss; the baseline objective. |
+| [entropy](entropy.md) | Shannon entropy: how spread out or uncertain a discrete distribution is; the per-position uncertainty of a language model's next-token distribution. |
 | [feature-attribution](feature-attribution.md) | Post-hoc explanations attributing a prediction to inputs or training data: saliency/attribution methods, influence functions, and counterfactual recourse; transparency tools that also widen the attack surface. |
 | [fgsm](fgsm.md) | The one-step gradient-sign attack and its role as a baseline. |
 | [gaussian-mechanism](gaussian-mechanism.md) | Sensitivity and noise calibrated to it; the additive-noise recipe behind DP mechanisms. |
@@ -49,6 +50,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | [projected-gradient-descent](projected-gradient-descent.md) | Gradient step plus projection; the constrained-optimization primitive behind the PGD attack. |
 | [prompt-injection](prompt-injection.md) | Adversarial instructions in a prompt or ingested content that override the intended task; direct and indirect. |
 | [property-inference](property-inference.md) | Inferring a global property of a model's training distribution (e.g., a subgroup's fraction) rather than anything about one record; distribution inference and its distinction from attribute and membership inference. |
+| [pseudorandom-function](pseudorandom-function.md) | A keyed function whose outputs look random without the key but are reproducible with it; block ciphers (AES) and keyed cryptographic hashes (SHA-3) as instances. |
 | [red-teaming](red-teaming.md) | Probing a model for policy-violating outputs to inform safety training and as an evaluation benchmark. |
 | [reinforcement-learning](reinforcement-learning.md) | Training an agent to maximize a reward from chosen actions; policy gradients, the multi-armed bandit, and the gradient-bandit update. |
 | [retrieval-augmented-generation](retrieval-augmented-generation.md) | Conditioning generation on documents fetched at inference time; retrieved text shares the context window with the instructions. |
@@ -57,7 +59,10 @@ explanation you can read on its own or reach from a paper that uses it.
 | [roc-curves](roc-curves.md) | TPR/FPR trade-offs, AUC, balanced accuracy, and why security evaluates at low false-positive rates. |
 | [safety-training](safety-training.md) | Training a deployed LLM to refuse restricted behaviors; refusal, RLHF-for-harmlessness, Constitutional AI. |
 | [shadow-models](shadow-models.md) | Adversary-trained imitations of the target model used to calibrate membership inference attacks. |
+| [statistical-hypothesis-testing](statistical-hypothesis-testing.md) | Deciding between a null hypothesis and its alternative from a test statistic and threshold; p-values, type I and type II errors, and the one-proportion z-test. |
+| [steganography](steganography.md) | Hiding information inside ordinary-looking content so its presence is undetectable; its relation to cryptography and to digital watermarking. |
 | [stochastic-gradient-descent](stochastic-gradient-descent.md) | Minibatch gradient descent; the default optimizer and the source of attack gradients. |
+| [tokenization](tokenization.md) | Splitting text into a fixed vocabulary of subword tokens (BPE); tokens as the unit of generation, and the brittleness behind whitespace and homoglyph edits. |
 | [transfer-learning](transfer-learning.md) | Reusing representations across tasks; ImageNet pretraining then fine-tuning, for higher accuracy with less task-specific data. |
 | [transferability](transferability.md) | Adversarial examples crafted on one model often fool another; the basis of black-box transfer attacks. |
 | [white-box-black-box](white-box-black-box.md) | Adversary knowledge assumptions, from full weights to query-only access. |

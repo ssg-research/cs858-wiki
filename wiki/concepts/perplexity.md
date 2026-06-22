@@ -32,6 +32,7 @@ per-example membership signal.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — perplexity is the base membership-inference signal, and the improved attack ranks candidates by perplexity relative to reference models.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — perplexity rises after unlearning even where benchmark accuracy holds, since gradient ascent flattens the next-token distribution.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — evaluates perplexity-based detection as a defense and finds injected texts are not separable from clean corpus text by perplexity.
+- [A Watermark for Large Language Models](../papers/kirchenbauer-2023-watermark.md) — uses perplexity under a larger oracle model as the proxy for text quality, bounding the watermark's perplexity cost and plotting watermark strength against it.
 
 ## See also
 

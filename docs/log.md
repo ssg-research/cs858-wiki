@@ -422,3 +422,42 @@ Updated the papers, concepts, and top-level indexes (Papers: 14, Concepts: 56) a
 removed the row's under-construction marker. markdownlint clean (21 files),
 `check-links.py` clean (79 files). Work on branch `content/papers-13-18`. Model:
 Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-22 13:28] generate-paper-summary | A Watermark for Large Language Models
+
+Compiled the reading companion for Kirchenbauer et al. 2023 (arXiv:2301.10226),
+row 15, Topic "Media Forensics and Proactive Provanance" (used verbatim from the
+reading list, including the misspelling, so the index grouping key matches; the
+typo was flagged to the instructor in chat for them to correct in the reading
+list, not silently changed here). High-level overview pitched as a contextualized
+abstract: the green-list / red-list sampling-time scheme, soft `delta` logit bias,
+and one-proportion z-test detection, with headline results at abstract level and a
+bolded threat model (defender = model operator biasing the sampling step at
+inference; adversary = a user laundering watermarked output, with public vs
+private/keyed knowledge). Created 5 new concept pages (`statistical-hypothesis-testing`,
+`tokenization`, `steganography`, `pseudorandom-function`, `entropy`) and reused
+6 existing ones (`language-model-pretraining`, `decoding-strategies`, `perplexity`,
+`roc-curves`, `white-box-black-box`, `model-watermarking`), with reciprocal
+"Papers that use this concept" links added to each. `model-watermarking` is linked
+as the contrast case (content watermarking vs parameter watermarking). Paper Context
+cites prior or contemporaneous work only (post-hoc detection, linguistic
+steganography, model-parameter watermarking, the contemporaneous OpenAI effort);
+no existing paper page cites this work, so no backward cross-link sweep was needed
+(the lone "Kirchenbauer" hit in zou-2024-poisonedrag is a co-author of a different
+reference). Two essential readings (Tree-Ring Watermarks; Media Forensics and
+DeepFakes overview) placed in Supplementary readings. "Why read this" reproduces
+the instructor's framing verbatim. Updated the papers, concepts, and top-level
+indexes (Papers: 15, Concepts: 61) and removed the row's under-construction marker.
+markdownlint clean (15 files), `check-links.py` clean (85 files). Work on branch
+`content/papers-13-18`. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-22 13:30] fix | correct "Provanance" spelling in row 15 Topic
+
+At the instructor's request, corrected the misspelled reading-list Topic for row
+15 from "Media Forensics and Proactive Provanance" to "Media Forensics and
+Proactive Provenance" in all three places that carried it: the reading list in
+`wiki/README.md`, the `section` frontmatter of
+`wiki/papers/kirchenbauer-2023-watermark.md`, and the Section column of that
+paper's row in `wiki/papers/README.md`. The grouping key stays consistent across
+the page and indexes. markdownlint and `check-links.py` clean. Model: Opus 4.8,
+`claude-opus-4-8`.
