@@ -212,7 +212,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Preference Manipulation / RAG Poisoning</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/zou-2024-poisonedrag.md">PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 11. Concepts: 44.
+Last compiled: 2026-06-21. Papers: 12. Concepts: 45.

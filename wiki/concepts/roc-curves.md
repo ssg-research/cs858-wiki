@@ -33,6 +33,7 @@ and a linear plot hides.
 ## Papers that use this concept
 
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — argues membership inference must be evaluated by TPR at low FPR on log-scale ROC curves, and re-ranks prior attacks under that metric.
+- [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — reports the perplexity detector's ROC and AUC to show injected texts are hard to separate from clean corpus text.
 
 ## Variants and traps
 

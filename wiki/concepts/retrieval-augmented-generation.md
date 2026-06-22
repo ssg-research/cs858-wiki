@@ -26,6 +26,7 @@ property that makes retrieved content a channel for attacks.
 ## Papers that use this concept
 
 - [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — retrieval is the delivery channel for indirect prompt injection.
+- [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — corrupts the retrieval corpus so the retrieved text steers the model to an attacker-chosen answer.
 
 ## See also
 

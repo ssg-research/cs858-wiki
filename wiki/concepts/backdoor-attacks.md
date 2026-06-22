@@ -33,6 +33,7 @@ than an output an attacker plants to cause harm.
 
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — the watermark it embeds in a stolen surrogate is a backdoor: a trigger set of API queries returned with deliberately incorrect labels.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — the threat it defends against; it detects whether a trained classifier hides a backdoor, reverse-engineers the trigger, and patches the model to disable it.
+- [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — a poisoning attack adjacent to backdoors, but the planted text corrupts an inference-time retrieval corpus rather than a training set.
 
 ## Variants and traps
 

@@ -328,3 +328,31 @@ Trojans). "Why read this" drafted as a candidate marked `<!-- instructor: confir
 -->`, pending the instructor's framing. Updated the papers, concepts, and
 top-level indexes (Papers: 11, Concepts: 44) and removed the row's
 under-construction marker. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 20:16] generate-paper-summary | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
+
+Compiled the PoisonedRAG (Zou et al., 2024; arXiv:2402.07867) reading companion
+at `wiki/papers/zou-2024-poisonedrag.md`, Topic "Preference Manipulation / RAG
+Poisoning" (row 12, read verbatim from the reading list). The threat-model
+paragraph foregrounds the unusual lifecycle position: data poisoning that lands
+in the inference-time retrieval corpus, after training yet ahead of any user
+prompt, with black-box vs white-box settings keyed to the attacker's knowledge of
+the retriever. Created one new concept stub, `dense-retrieval`: the existing
+`retrieval-augmented-generation` page covers the context-window /
+instruction-boundary angle but not the embedding-similarity retrieval mechanism
+that the attack's retrieval condition and white-box optimization depend on.
+Reused and back-linked 11 existing concepts (`retrieval-augmented-generation`,
+`data-poisoning`, `backdoor-attacks`, `prompt-injection`, `jailbreak`,
+`white-box-black-box`, `adversarial-examples`, `transferability`, `perplexity`,
+`roc-curves`, `language-model-pretraining`). Added forward cross-links from the
+paper page to the already-compiled `greshake-2023-indirect-prompt-injection` and
+`wei-2023-jailbroken` pages (cited as contemporaneous related work); no backward
+sweep targets, since no existing page cites PoisonedRAG. Three citation arXiv IDs
+absent from the paper's bibliography (Carlini et al. 2023, Jain et al. 2023, Alon
+and Kamfonas 2023) were verified against the arXiv API rather than reconstructed
+from memory. "Why read this" written from the instructor's supplied framing
+(first data-poisoning attack on an LLM system through its knowledge base, with the
+corruption landing after training rather than at inference-prompt time). Updated
+the papers, concepts, and top-level indexes (Papers: 12, Concepts: 45) and removed
+the row's under-construction marker. markdownlint clean (16 files),
+`check-links.py` clean (66 files). Model: Opus 4.8, `claude-opus-4-8`.

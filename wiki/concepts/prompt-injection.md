@@ -28,6 +28,7 @@ phrase into innocuous-looking substrings, appear on both sides (Kang et al.,
 
 - [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — introduces and names indirect prompt injection, where retrieved content carries the instructions.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — its "prefix injection" and payload-splitting attacks draw on prompt-injection techniques.
+- [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — contrasted against prompt injection: it injects misleading content treated as a retrieved fact, not instructions, and argues this is both more effective and harder to detect for RAG.
 
 ## See also
 
