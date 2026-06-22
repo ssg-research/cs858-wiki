@@ -31,6 +31,8 @@ recur as off-the-shelf architecture choices throughout the literature.
 ## Papers that use this concept
 
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — both the victim models and the adversary's knockoff are CNN image classifiers; the study varies the knockoff's backbone relative to the victim's.
+- [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — the protected models and the surrogates it watermarks are CNN image classifiers, evaluated on standard datasets and backbones.
+- [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — the models it inspects, tests, and patches are CNN image classifiers for digits, traffic signs, and faces.
 
 ## See also
 

@@ -36,6 +36,7 @@ the victim (Papernot et al., 2017).
 ## Papers that use this concept
 
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — targets functionality stealing under minimal assumptions, training a "knockoff" from black-box query outputs alone.
+- [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — defends against functionality-stealing extraction by watermarking the surrogate the adversary trains, rather than preventing the extraction.
 
 ## See also
 

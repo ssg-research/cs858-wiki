@@ -8,7 +8,10 @@ explanation you can read on its own or reach from a paper that uses it.
 | [adversarial-examples](adversarial-examples.md) | The evasion phenomenon: small input perturbations that flip a prediction. |
 | [adversarial-threat-model](adversarial-threat-model.md) | How an adversary's power is specified: perturbation set, knowledge, timing. |
 | [adversarial-training](adversarial-training.md) | Training on adversarially perturbed inputs as a defense. |
+| [backdoor-attacks](backdoor-attacks.md) | A trigger-fired hidden behavior trained into a model via data poisoning; the overcapacity that enables it and its reuse as the mechanism behind black-box model watermarking. |
 | [convolutional-neural-network](convolutional-neural-network.md) | CNNs for image classification: learned convolutional filters, pooling, a softmax head, and the standard backbones (AlexNet, VGG, ResNet, DenseNet). |
+| [cryptographic-commitment](cryptographic-commitment.md) | A binding, hiding token published for a value and opened later; with a time-stamped public log it gives proof of priority for ownership claims. |
+| [data-poisoning](data-poisoning.md) | Corrupting training data to change what a model learns: availability vs targeted/integrity poisoning, backdoors as the trigger-conditioned subclass, and why training-set sanitization defenses presume data access. |
 | [decoding-strategies](decoding-strategies.md) | How an LLM turns next-token distributions into text: greedy, temperature, top-k, top-p, and prefilling. |
 | [differential-privacy](differential-privacy.md) | The formal bound on any single example's influence; DP-SGD and the epsilon guarantee. |
 | [direct-preference-optimization](direct-preference-optimization.md) | Aligning an LM to pairwise preferences directly, without a separate reward model or RL loop; the DPO alternative to RLHF. |
@@ -29,6 +32,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | [membership-inference](membership-inference.md) | Predicting whether a specific example was in a model's training set; the standard privacy audit. |
 | [memorization](memorization.md) | Per-example fitting, random-label capacity, and the long-tail argument; the signal privacy attacks exploit. |
 | [model-extraction](model-extraction.md) | Attacks that reproduce a deployed model's parameters, hyperparameters, architecture, or functionality from query access; the fidelity-versus-accuracy axes and the MLaaS setting. |
+| [model-watermarking](model-watermarking.md) | Embedding an owner-verifiable marker in a trained model; white-box (in the weights) vs black-box (backdoor-based trigger set) verification, and the assumption that the owner controls training. |
 | [perplexity](perplexity.md) | How well an LM predicts a sequence (exponentiated cross-entropy); the LM quality metric and the per-example membership signal in extraction attacks. |
 | [privacy-budget](privacy-budget.md) | The (epsilon, delta) budget, composition theorems, accountants, and amplification by subsampling. |
 | [projected-gradient-descent](projected-gradient-descent.md) | Gradient step plus projection; the constrained-optimization primitive behind the PGD attack. |

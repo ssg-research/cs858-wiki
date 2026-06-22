@@ -29,6 +29,7 @@ has not learned the intended concept.
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — the phenomenon the paper's min-max formulation is built to suppress.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — contrasts jailbreaks, which elicit unsafe capabilities, with adversarial examples, which induce misclassification.
+- [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — distinguishes a training-time backdoor trigger, which is input-agnostic, from a test-time adversarial example crafted per input against a fixed model.
 
 ## Variants and traps
 

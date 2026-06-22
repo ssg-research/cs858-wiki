@@ -27,6 +27,7 @@ design decision.
 ## Papers that use this concept
 
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — both the victim models and the adversary's knockoff are initialized from ImageNet-pretrained weights before fine-tuning, so the attack inherits the same head start as the victim.
+- [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — one of the evaluated face-recognition models is built by transfer learning, fine-tuned from a pretrained backbone.
 
 ## See also
 

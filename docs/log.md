@@ -286,3 +286,45 @@ classification model extraction; works across distributions and architectures).
 Updated the papers, concepts, and top-level indexes (Papers: 9, Concepts: 40) and
 removed the row's under-construction marker. check-links (58 files) and
 markdownlint clean. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 19:01] generate-paper-summary | DAWN: Dynamic Adversarial Watermarking of Neural Networks
+
+Compiled `wiki/papers/szyller-2019-dawn.md` (Szyller, Atli, Marchal, Asokan;
+arXiv 1906.00830; 2019). Section "Model Watermarking / Fingerprinting" (row 10,
+theme "Model Extraction and Distillation"), read verbatim from the reading list.
+Created three concept pages: `model-watermarking` and `backdoor-attacks` (central
+to the paper), plus the stub `cryptographic-commitment` for the ownership-proof
+protocol; the trusted-execution-environment idea was glossed inline rather than
+given its own page. Reused and back-linked `model-extraction`, `memorization`,
+`white-box-black-box`, and `convolutional-neural-network`. Added a backward
+cross-link to the compiled `orekondy-2019-knockoff-nets` page (Knockoff is one of
+the two extraction attacks DAWN tests against). The "dawn" grep hit on
+`carlini-2021-extracting-training-data` is the author name "Dawn Song," not a
+DAWN citation, so no backward sweep was needed. "Why read this" supplied by the
+instructor (preventing extraction without losing utility is hard while detecting
+it is easier; first defense to treat the whole system rather than the model in
+isolation, largely model-independent). Updated the papers, concepts, and
+top-level indexes (Papers: 10, Concepts: 43) and removed the row's
+under-construction marker. check-links (62 files) and markdownlint clean. Model:
+Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 19:37] generate-paper-summary | Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
+
+Compiled `wiki/papers/wang-2019-neural-cleanse.md` (Wang, Yao, Shan, Li,
+Viswanath, Zheng, Zhao; IEEE S&P 2019; DOI 10.1109/SP.2019.00031; no arXiv).
+Section "Training-data Poisoning" (row 11, theme "Data Integrity and
+Supply-Chain Security"), read verbatim from the reading list. Created one concept
+page, `data-poisoning`, as the section's umbrella concept (availability vs
+targeted/integrity poisoning, with backdoors as the trigger-conditioned subclass);
+the MAD/anomaly-index outlier test and neuron pruning were glossed inline rather
+than given their own pages, since they are the paper's method. Reused and
+back-linked `backdoor-attacks` (the existing concept from the DAWN compile),
+`convolutional-neural-network`, `white-box-black-box`, `transfer-learning`,
+`lp-norms`, `stochastic-gradient-descent`, and `adversarial-examples`. No backward
+cross-links into other compiled paper pages were needed (Neural Cleanse's cited
+prior work has no pages yet). Disambiguated three colliding "Liu" citations with
+initials (Y. Liu 2018 Trojaning, K. Liu 2018 Fine-Pruning, Y. Liu 2017 Neural
+Trojans). "Why read this" drafted as a candidate marked `<!-- instructor: confirm
+-->`, pending the instructor's framing. Updated the papers, concepts, and
+top-level indexes (Papers: 11, Concepts: 44) and removed the row's
+under-construction marker. Model: Opus 4.8, `claude-opus-4-8`.

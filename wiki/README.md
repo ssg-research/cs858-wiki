@@ -179,7 +179,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Model Watermarking / Fingerprinting</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">DAWN: Dynamic Adversarial Watermarking of Neural Networks</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/szyller-2019-dawn.md">DAWN: Dynamic Adversarial Watermarking of Neural Networks</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -197,7 +197,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Training-data Poisoning</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/wang-2019-neural-cleanse.md">Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 9. Concepts: 40.
+Last compiled: 2026-06-21. Papers: 11. Concepts: 44.

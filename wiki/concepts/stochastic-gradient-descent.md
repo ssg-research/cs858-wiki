@@ -29,6 +29,7 @@ attacks.
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — inspects per-token gradient norms during fine-tuning to show where safety alignment is undone.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — unlearning is the SGD update run uphill: gradient ascent that maximizes the loss on the target sequences.
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — trains both the victim classifiers and the knockoff by SGD on a cross-entropy loss.
+- [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — reverse-engineers a candidate trigger by gradient-descent optimization over the input mask and pattern rather than over model weights.
 
 ## See also
 
