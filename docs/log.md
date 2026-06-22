@@ -366,3 +366,16 @@ the "Temporary note (content batch in progress)" block from `AGENTS.md`'s Git
 Workflow section, since the batch it described is complete; future paper
 compiles resume the standard one-branch-one-PR workflow. Model: Sonnet 4.6,
 `claude-sonnet-4-6`.
+
+## [2026-06-22 09:27] generate-paper-summary | Representation Engineering: A Top-Down Approach to AI Transparency
+
+Compiled the reading companion for Zou et al. (2023), 'Representation
+Engineering: A Top-Down Approach to AI Transparency' (arXiv:2310.01405), filed
+under the Mechanistic Interpretability for AI safety topic. Added three new
+concept pages: mechanistic-interpretability, linear-probing, and
+principal-component-analysis, with reciprocal links added to
+language-model-pretraining, white-box-black-box, safety-training, rlhf, and
+jailbreak. Updated wiki/papers/README.md, wiki/concepts/README.md, and the
+wiki/README.md reading list row and stats line (Papers: 13, Concepts: 48).
+Zero broken links (check-links.py) and markdownlint clean. Model: Sonnet 4.6,
+`claude-sonnet-4-6`.

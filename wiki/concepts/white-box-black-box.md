@@ -33,6 +33,7 @@ read each paper's definition rather than assuming one.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — both the extraction adversary and the owner's ownership check operate over black-box query access to a prediction API.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — the defender has white-box access to the trained model (weights, gradients, neuron activations) but not to its training data.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — splits the attack by the adversary's knowledge of the retriever: black-box (no parameters, no queries) versus white-box (retriever parameters available to optimize against).
+- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — requires white-box access to a model's weights and every layer's activations to read or edit its internal representations.
 
 ## See also
 

@@ -27,14 +27,17 @@ explanation you can read on its own or reach from a paper that uses it.
 | [knowledge-distillation](knowledge-distillation.md) | Training a student to match a teacher's output distribution (soft labels); its equivalence to minimizing KL and its link to model extraction. |
 | [language-model-pretraining](language-model-pretraining.md) | Autoregressive next-token pretraining; the pretraining objective, distribution, and base model. |
 | [likelihood-ratio-test](likelihood-ratio-test.md) | Deciding between two hypotheses by their likelihood ratio; Neyman-Pearson optimality. |
+| [linear-probing](linear-probing.md) | A classifier trained on a frozen network's activations to test what is linearly decodable from them; correlational unless paired with a manipulation experiment. |
 | [llm-tool-use](llm-tool-use.md) | An LLM emitting calls to external tools and acting on their outputs; chaining calls toward a goal yields an agent. |
 | [lp-norms](lp-norms.md) | ℓ0 / ℓ2 / ℓ-infinity balls as perturbation budgets and proxies for perceptual similarity. |
 | [machine-unlearning](machine-unlearning.md) | Removing chosen training data's influence from a trained model without full retraining; exact vs approximate unlearning and the right-to-be-forgotten motivation. |
 | [membership-inference](membership-inference.md) | Predicting whether a specific example was in a model's training set; the standard privacy audit. |
+| [mechanistic-interpretability](mechanistic-interpretability.md) | Reverse-engineering a network into named circuits of neurons or attention heads connected node-to-node; induction heads and the IOI circuit as worked examples. |
 | [memorization](memorization.md) | Per-example fitting, random-label capacity, and the long-tail argument; the signal privacy attacks exploit. |
 | [model-extraction](model-extraction.md) | Attacks that reproduce a deployed model's parameters, hyperparameters, architecture, or functionality from query access; the fidelity-versus-accuracy axes and the MLaaS setting. |
 | [model-watermarking](model-watermarking.md) | Embedding an owner-verifiable marker in a trained model; white-box (in the weights) vs black-box (backdoor-based trigger set) verification, and the assumption that the owner controls training. |
 | [perplexity](perplexity.md) | How well an LM predicts a sequence (exponentiated cross-entropy); the LM quality metric and the per-example membership signal in extraction attacks. |
+| [principal-component-analysis](principal-component-analysis.md) | Unsupervised dimensionality reduction: the orthogonal directions capturing the most variance in a dataset, ranked by variance explained. |
 | [privacy-budget](privacy-budget.md) | The (epsilon, delta) budget, composition theorems, accountants, and amplification by subsampling. |
 | [projected-gradient-descent](projected-gradient-descent.md) | Gradient step plus projection; the constrained-optimization primitive behind the PGD attack. |
 | [prompt-injection](prompt-injection.md) | Adversarial instructions in a prompt or ingested content that override the intended task; direct and indirect. |
