@@ -5,6 +5,7 @@ explanation you can read on its own or reach from a paper that uses it.
 
 | Concept | Summary |
 | --- | --- |
+| [activation-steering](activation-steering.md) | Steering a frozen model at inference by adding a vector to its hidden activations; difference-of-activation steering vectors, ActAdd, and ITI. |
 | [adversarial-examples](adversarial-examples.md) | The evasion phenomenon: small input perturbations that flip a prediction. |
 | [adversarial-threat-model](adversarial-threat-model.md) | How an adversary's power is specified: perturbation set, knowledge, timing. |
 | [adversarial-training](adversarial-training.md) | Training on adversarially perturbed inputs as a defense. |
@@ -16,6 +17,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | [dense-retrieval](dense-retrieval.md) | Retrieving documents by embedding the query and passages and ranking by vector similarity (top-k); the neural alternative to BM25 and the retriever inside RAG. |
 | [differential-privacy](differential-privacy.md) | The formal bound on any single example's influence; DP-SGD and the epsilon guarantee. |
 | [direct-preference-optimization](direct-preference-optimization.md) | Aligning an LM to pairwise preferences directly, without a separate reward model or RL loop; the DPO alternative to RLHF. |
+| [distributed-representations](distributed-representations.md) | Information spread across activation patterns rather than single neurons; transformer hidden states and their emergent, often linear, semantic structure. |
 | [empirical-risk-minimization](empirical-risk-minimization.md) | Average training loss as a proxy for expected loss; the baseline objective. |
 | [fgsm](fgsm.md) | The one-step gradient-sign attack and its role as a baseline. |
 | [gaussian-mechanism](gaussian-mechanism.md) | Sensitivity and noise calibrated to it; the additive-noise recipe behind DP mechanisms. |
@@ -27,14 +29,17 @@ explanation you can read on its own or reach from a paper that uses it.
 | [knowledge-distillation](knowledge-distillation.md) | Training a student to match a teacher's output distribution (soft labels); its equivalence to minimizing KL and its link to model extraction. |
 | [language-model-pretraining](language-model-pretraining.md) | Autoregressive next-token pretraining; the pretraining objective, distribution, and base model. |
 | [likelihood-ratio-test](likelihood-ratio-test.md) | Deciding between two hypotheses by their likelihood ratio; Neyman-Pearson optimality. |
+| [linear-probing](linear-probing.md) | Training a simple classifier on a layer's activations to test what it encodes; locating concept directions, and the decodable-versus-used caveat. |
 | [llm-tool-use](llm-tool-use.md) | An LLM emitting calls to external tools and acting on their outputs; chaining calls toward a goal yields an agent. |
 | [lp-norms](lp-norms.md) | ℓ0 / ℓ2 / ℓ-infinity balls as perturbation budgets and proxies for perceptual similarity. |
 | [machine-unlearning](machine-unlearning.md) | Removing chosen training data's influence from a trained model without full retraining; exact vs approximate unlearning and the right-to-be-forgotten motivation. |
+| [mechanistic-interpretability](mechanistic-interpretability.md) | The bottom-up program of reverse-engineering a network into circuits of neurons and features; its identified circuits, labor cost, and the top-down contrast. |
 | [membership-inference](membership-inference.md) | Predicting whether a specific example was in a model's training set; the standard privacy audit. |
 | [memorization](memorization.md) | Per-example fitting, random-label capacity, and the long-tail argument; the signal privacy attacks exploit. |
 | [model-extraction](model-extraction.md) | Attacks that reproduce a deployed model's parameters, hyperparameters, architecture, or functionality from query access; the fidelity-versus-accuracy axes and the MLaaS setting. |
 | [model-watermarking](model-watermarking.md) | Embedding an owner-verifiable marker in a trained model; white-box (in the weights) vs black-box (backdoor-based trigger set) verification, and the assumption that the owner controls training. |
 | [perplexity](perplexity.md) | How well an LM predicts a sequence (exponentiated cross-entropy); the LM quality metric and the per-example membership signal in extraction attacks. |
+| [principal-component-analysis](principal-component-analysis.md) | The orthogonal directions of greatest variance in a dataset; a low-dimensional summary used to recover salient directions in neural activations. |
 | [privacy-budget](privacy-budget.md) | The (epsilon, delta) budget, composition theorems, accountants, and amplification by subsampling. |
 | [projected-gradient-descent](projected-gradient-descent.md) | Gradient step plus projection; the constrained-optimization primitive behind the PGD attack. |
 | [prompt-injection](prompt-injection.md) | Adversarial instructions in a prompt or ingested content that override the intended task; direct and indirect. |

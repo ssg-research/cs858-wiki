@@ -357,6 +357,28 @@ the papers, concepts, and top-level indexes (Papers: 12, Concepts: 45) and remov
 the row's under-construction marker. markdownlint clean (16 files),
 `check-links.py` clean (66 files). Model: Opus 4.8, `claude-opus-4-8`.
 
+## [2026-06-22 10:37] generate-paper-summary | Representation Engineering: A Top-Down Approach to AI Transparency
+
+Compiled the reading companion for Zou et al. (2023), arXiv:2310.01405, as
+`wiki/papers/zou-2023-representation-engineering.md`, Topic "Mechanistic
+Interpretability for AI safety" (row 13, theme "Cross-Cutting Topics", read
+verbatim from the reading list). Created five new concept pages seeding the
+interpretability cluster: `distributed-representations`,
+`principal-component-analysis` (stub), `linear-probing`, `activation-steering`,
+and `mechanistic-interpretability`. No existing page cites this work, so no
+backward cross-link sweep was needed; the two essential readings (Arditi et al.
+2024 refusal direction, Zou et al. 2024 circuit breakers) are 2024 follow-up
+work, so they sit in Supplementary readings rather than Paper Context. The threat
+model is framed around white-box access to internal activations and the dual-use
+of representation control. "Why read this" follows the instructor's framing that
+interpretability is one of the few routes to learning how and why a model works,
+rendered to fit the paper's top-down, representation-level position rather than
+the bottom-up circuit-level program it contrasts itself with. Updated the papers,
+concepts, and top-level indexes (Papers: 13, Concepts: 50) and removed the row's
+under-construction marker. markdownlint clean (9 files), `check-links.py` clean
+(72 files). Work on branch `content/papers-13-18`. Model: Opus 4.8,
+`claude-opus-4-8`.
+
 ## [2026-06-21 21:03] infra | merge content batch (PR #6), retire batching note
 
 PR #6 (`content/add-papers` into `main`) merged on GitHub as squash commit

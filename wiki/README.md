@@ -230,7 +230,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Mechanistic Interpretability for AI safety</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Representation Engineering: A Top-Down Approach to AI Transparency</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/zou-2023-representation-engineering.md">Representation Engineering: A Top-Down Approach to AI Transparency</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-21. Papers: 12. Concepts: 45.
+Last compiled: 2026-06-22. Papers: 13. Concepts: 50.
