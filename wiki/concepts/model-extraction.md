@@ -37,6 +37,7 @@ the victim (Papernot et al., 2017).
 
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — targets functionality stealing under minimal assumptions, training a "knockoff" from black-box query outputs alone.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — defends against functionality-stealing extraction by watermarking the surrogate the adversary trains, rather than preventing the extraction.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2023-unintended-interactions.md) — model theft is one of its security risks; surveys how watermarking and fingerprinting defenses, and a model's own overfitting, change extraction's success.
 
 ## See also
 

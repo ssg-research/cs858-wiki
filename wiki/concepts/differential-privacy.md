@@ -36,6 +36,7 @@ guarantee can be expensive to reach.
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — evaluates DP-SGD as a defense and observes the gap between provable epsilon bounds and empirical attack success.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — weighs differentially private training as the principled mitigation against the extraction it demonstrates, and notes its utility cost.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — positions post-hoc unlearning against DP, trading the worst-case (epsilon, delta) certificate for empirical protection of named sequences without retraining.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2023-unintended-interactions.md) — one of its privacy defenses; traces how DP-SGD's curbing of memorization lowers some risks while its uneven effect across subgroups raises others.
 
 ## Variants and traps
 

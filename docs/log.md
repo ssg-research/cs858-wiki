@@ -388,3 +388,37 @@ the "Temporary note (content batch in progress)" block from `AGENTS.md`'s Git
 Workflow section, since the batch it described is complete; future paper
 compiles resume the standard one-branch-one-PR workflow. Model: Sonnet 4.6,
 `claude-sonnet-4-6`.
+
+## [2026-06-22 11:23] generate-paper-summary | SoK: Unintended Interactions among Machine Learning Defenses and Risks
+
+Compiled the reading companion for Duddu, Szyller, and Asokan (2023),
+arXiv:2312.04542 (IEEE S&P 2024), as
+`wiki/papers/duddu-2023-unintended-interactions.md`, Topic "Unintended
+Interactions among ML Defenses and Risks" (row 14, theme "Cross-Cutting Topics",
+read verbatim from the reading list). Because the SoK spans the whole field, the
+High-level overview stays at the level of the framework's claim (overfitting and
+memorization conjectured as the two shared causes of cross-effects, mediated by
+data/algorithm/model factors) rather than the dense taxonomy and symbols; the
+threat model is written as a meta-model over the many per-risk adversaries.
+Created six new concept pages backfilling the shared layer with first-class risk
+and defense families: `overfitting`, `algorithmic-fairness`, `feature-attribution`,
+`data-reconstruction`, `property-inference`, and `attribute-inference` (the last
+two cross-disambiguated against each other and against membership inference);
+fingerprinting and outlier removal were glossed inline against existing pages.
+Reused and added reciprocal "Papers that use this concept" backlinks on eleven
+existing concepts (`adversarial-examples`, `data-poisoning`, `backdoor-attacks`,
+`model-extraction`, `membership-inference`, `adversarial-training`,
+`model-watermarking`, `differential-privacy`, `empirical-risk-minimization`,
+`memorization`, `white-box-black-box`). No existing page cites this 2023 SoK, so
+no backward paper cross-link sweep was needed; the two essential readings
+(Szyller and Asokan 2023 conflicting interactions, and the 2024 combining-defenses
+follow-up) sit in Supplementary readings. Paper Context cites only prior or
+contemporaneous interaction studies, with author lists rendered as the SoK's own
+bibliography prints them (first author + et al. where it abbreviates) rather than
+reconstructed. "Why read this" follows the instructor's framing (techniques are
+studied in isolation, but a deployed system faces many risks at once and a defense
+against one can shift vulnerability to another), rendered on the paper's own terms.
+Updated the papers, concepts, and top-level indexes (Papers: 14, Concepts: 56) and
+removed the row's under-construction marker. markdownlint clean (21 files),
+`check-links.py` clean (79 files). Work on branch `content/papers-13-18`. Model:
+Opus 4.8, `claude-opus-4-8`.

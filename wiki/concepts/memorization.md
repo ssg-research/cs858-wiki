@@ -36,6 +36,7 @@ changes the model measurably is an example whose presence can be inferred.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — shows large LMs memorize individual training examples verbatim and that this persists with no overfitting; defines k-eidetic memorization.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — targets the per-example memorization that makes specific sequences extractable, and edits it away with gradient ascent.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — relies on a surrogate's capacity to memorize a small set of deliberately mislabeled queries, which embeds as the watermark.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2023-unintended-interactions.md) — one of the two phenomena, alongside overfitting, the framework conjectures as the shared cause of all the interactions it maps.
 
 ## Variants and traps
 

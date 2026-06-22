@@ -33,6 +33,7 @@ read each paper's definition rather than assuming one.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — both the extraction adversary and the owner's ownership check operate over black-box query access to a prediction API.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — the defender has white-box access to the trained model (weights, gradients, neuron activations) but not to its training data.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — splits the attack by the adversary's knowledge of the retriever: black-box (no parameters, no queries) versus white-box (retriever parameters available to optimize against).
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2023-unintended-interactions.md) — frames each risk by the access its adversary needs, reading "observables" (outputs, activations, gradients, parameters) off the model along the white-box / black-box spectrum.
 
 ## See also
 

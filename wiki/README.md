@@ -245,7 +245,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Unintended Interactions among ML Defenses and Risks</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">SoK: Unintended Interactions among Machine Learning Defenses and Risks</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/duddu-2023-unintended-interactions.md">SoK: Unintended Interactions among Machine Learning Defenses and Risks</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-22. Papers: 13. Concepts: 50.
+Last compiled: 2026-06-22. Papers: 14. Concepts: 56.

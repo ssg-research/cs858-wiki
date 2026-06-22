@@ -9,16 +9,20 @@ explanation you can read on its own or reach from a paper that uses it.
 | [adversarial-examples](adversarial-examples.md) | The evasion phenomenon: small input perturbations that flip a prediction. |
 | [adversarial-threat-model](adversarial-threat-model.md) | How an adversary's power is specified: perturbation set, knowledge, timing. |
 | [adversarial-training](adversarial-training.md) | Training on adversarially perturbed inputs as a defense. |
+| [algorithmic-fairness](algorithmic-fairness.md) | Group fairness across sensitive subgroups under metrics like demographic parity and equalized odds; discriminatory behavior as the risk and group-fairness constraints as the defense. |
+| [attribute-inference](attribute-inference.md) | Inferring a record's hidden sensitive attribute value from a model's observables; distinct from membership and property inference, and the "just imputation?" debate. |
 | [backdoor-attacks](backdoor-attacks.md) | A trigger-fired hidden behavior trained into a model via data poisoning; the overcapacity that enables it and its reuse as the mechanism behind black-box model watermarking. |
 | [convolutional-neural-network](convolutional-neural-network.md) | CNNs for image classification: learned convolutional filters, pooling, a softmax head, and the standard backbones (AlexNet, VGG, ResNet, DenseNet). |
 | [cryptographic-commitment](cryptographic-commitment.md) | A binding, hiding token published for a value and opened later; with a time-stamped public log it gives proof of priority for ownership claims. |
 | [data-poisoning](data-poisoning.md) | Corrupting training data to change what a model learns: availability vs targeted/integrity poisoning, backdoors as the trigger-conditioned subclass, and why training-set sanitization defenses presume data access. |
+| [data-reconstruction](data-reconstruction.md) | Privacy attacks that recover whole training records or their content: model inversion, gradient inversion, and verbatim extraction; recovers content where membership inference recovers a bit. |
 | [decoding-strategies](decoding-strategies.md) | How an LLM turns next-token distributions into text: greedy, temperature, top-k, top-p, and prefilling. |
 | [dense-retrieval](dense-retrieval.md) | Retrieving documents by embedding the query and passages and ranking by vector similarity (top-k); the neural alternative to BM25 and the retriever inside RAG. |
 | [differential-privacy](differential-privacy.md) | The formal bound on any single example's influence; DP-SGD and the epsilon guarantee. |
 | [direct-preference-optimization](direct-preference-optimization.md) | Aligning an LM to pairwise preferences directly, without a separate reward model or RL loop; the DPO alternative to RLHF. |
 | [distributed-representations](distributed-representations.md) | Information spread across activation patterns rather than single neurons; transformer hidden states and their emergent, often linear, semantic structure. |
 | [empirical-risk-minimization](empirical-risk-minimization.md) | Average training loss as a proxy for expected loss; the baseline objective. |
+| [feature-attribution](feature-attribution.md) | Post-hoc explanations attributing a prediction to inputs or training data: saliency/attribution methods, influence functions, and counterfactual recourse; transparency tools that also widen the attack surface. |
 | [fgsm](fgsm.md) | The one-step gradient-sign attack and its role as a baseline. |
 | [gaussian-mechanism](gaussian-mechanism.md) | Sensitivity and noise calibrated to it; the additive-noise recipe behind DP mechanisms. |
 | [gradient-clipping](gradient-clipping.md) | Norm-rescaling gradients; a training stabilizer that, per example, becomes a sensitivity bound. |
@@ -38,11 +42,13 @@ explanation you can read on its own or reach from a paper that uses it.
 | [memorization](memorization.md) | Per-example fitting, random-label capacity, and the long-tail argument; the signal privacy attacks exploit. |
 | [model-extraction](model-extraction.md) | Attacks that reproduce a deployed model's parameters, hyperparameters, architecture, or functionality from query access; the fidelity-versus-accuracy axes and the MLaaS setting. |
 | [model-watermarking](model-watermarking.md) | Embedding an owner-verifiable marker in a trained model; white-box (in the weights) vs black-box (backdoor-based trigger set) verification, and the assumption that the owner controls training. |
+| [overfitting](overfitting.md) | The train-test generalization gap, the bias-variance picture, and dataset size and model capacity as the levers; the aggregate signal privacy and robustness attacks both interact with. |
 | [perplexity](perplexity.md) | How well an LM predicts a sequence (exponentiated cross-entropy); the LM quality metric and the per-example membership signal in extraction attacks. |
 | [principal-component-analysis](principal-component-analysis.md) | The orthogonal directions of greatest variance in a dataset; a low-dimensional summary used to recover salient directions in neural activations. |
 | [privacy-budget](privacy-budget.md) | The (epsilon, delta) budget, composition theorems, accountants, and amplification by subsampling. |
 | [projected-gradient-descent](projected-gradient-descent.md) | Gradient step plus projection; the constrained-optimization primitive behind the PGD attack. |
 | [prompt-injection](prompt-injection.md) | Adversarial instructions in a prompt or ingested content that override the intended task; direct and indirect. |
+| [property-inference](property-inference.md) | Inferring a global property of a model's training distribution (e.g., a subgroup's fraction) rather than anything about one record; distribution inference and its distinction from attribute and membership inference. |
 | [red-teaming](red-teaming.md) | Probing a model for policy-violating outputs to inform safety training and as an evaluation benchmark. |
 | [reinforcement-learning](reinforcement-learning.md) | Training an agent to maximize a reward from chosen actions; policy gradients, the multi-armed bandit, and the gradient-bandit update. |
 | [retrieval-augmented-generation](retrieval-augmented-generation.md) | Conditioning generation on documents fetched at inference time; retrieved text shares the context window with the instructions. |

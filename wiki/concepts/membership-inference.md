@@ -42,6 +42,7 @@ predictions as a building block (Carlini et al., 2021).
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the canonical defense whose guarantee upper-bounds any membership inference attack.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — reduces training-data extraction to membership inference, ranking generated candidates by a calibrated membership signal.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — measures privacy on targeted extraction rather than membership-inference recall, and contrasts the two as risk metrics.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2023-unintended-interactions.md) — a central privacy risk in its map, and the source of its running example: adversarial training, a robustness defense, raises membership-inference exposure.
 
 ## Variants and traps
 
