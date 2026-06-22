@@ -89,12 +89,6 @@ and the branch cannot be deleted. Protection applies to everyone, admins
 included. Merging needs no approving review; merging a pull request into `main`
 is the instructor's release decision, never an agent's.
 
-> **Temporary note (content batch in progress).** While the current batch of
-> reading companions is being added, commit each new paper compile directly to
-> the long-lived `content/add-papers` branch (PR #6) instead of opening a branch
-> and PR per paper; the batch is squash-merged into `main` once. When you compile
-> the final paper of the batch, remove this note.
-
 - **Branch off `main`** with a descriptive, prefixed name (`infra/...`,
   `paper/...`, `concept/...`, `fix/...`), for example
   `infra/update-writing-style`. Do all work there, then open a pull request into
