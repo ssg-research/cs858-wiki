@@ -99,18 +99,30 @@ properly (see Citation convention below).
 
 ---
 
-## Inputs the instructor supplies
+## The paper's section comes from the canonical reading list
 
-Two parts of the page are editorial and the instructor owns them. Ask for them
-up front if they were not passed with the command; draft a candidate and mark
-it `<!-- instructor: confirm -->` if the instructor wants you to propose one:
+The reading list in [wiki/README.md](../../wiki/README.md) is the canonical
+source for every topic area. It is a two-level taxonomy: each primary paper sits
+in one row under a **Theme** (the `colgroup` header spanning a block of rows,
+e.g. "Inference-Time Integrity of Model Behavior") and carries a **Topic** (the
+Topic column of that row, e.g. "Jailbreaking LLMs"). Do not invent a section name
+and do not ask the instructor for one. Read the paper's row off the reading list
+and use its **Topic** verbatim as the frontmatter `section` and as the grouping
+key in the indexes; the `section` value must match the reading-list Topic
+exactly. If the paper has no row in the reading list, stop and ask the
+instructor where it belongs; adding a topic area is the instructor's call, not
+the agent's.
 
-1. **Course section / week** (e.g., `Membership Inference`). Goes in frontmatter
-   `section` and groups the page in the indexes.
-2. **Why read this** — one to two sentences on why the paper is worth reading,
-   on its own terms (its significance, what makes it a good read), never its
-   slot in the course sequence. This is the only place the instructor explicitly
-   editorializes.
+## The one input the instructor supplies
+
+One part of the page is editorial and the instructor owns it. Ask for it up
+front if it was not passed with the command; draft a candidate and mark it
+`<!-- instructor: confirm -->` if the instructor wants you to propose one:
+
+- **Why read this** — one to two sentences on why the paper is worth reading, on
+  its own terms (its significance, what makes it a good read), never its slot in
+  the course sequence. This is the only place the instructor explicitly
+  editorializes.
 
 Everything else you draft; the instructor reviews.
 
@@ -306,13 +318,18 @@ links navigable in both directions.
 
 ### 10. Update the indexes
 
-- `wiki/papers/README.md`: add a table row for the paper, keeping it sorted by
-  section: `| [slug](slug.md) | Section | Year | short descriptor |`.
+- `wiki/papers/README.md`: add a table row for the paper, with the canonical
+  Topic in the Section column, ordered to follow the reading list:
+  `| [slug](slug.md) | Section | Year | short descriptor |`.
 - `wiki/concepts/README.md`: add a table row for each new concept page:
   `| [slug](slug.md) | one-line description |`.
-- `wiki/README.md`: update the stats line (`Papers: N. Concepts: N.`) and the
-  papers-by-section table. Recount actual files; do not increment blindly. A
-  quick count: `ls wiki/papers/*.md | grep -v README | wc -l`.
+- `wiki/README.md`: in the reading list, find the paper's row and replace its
+  `under-construction.md` placeholder link with a relative link to the new page
+  (`papers/<slug>.md`), and delete the trailing
+  `<sup ...>&dagger;</sup>` "under construction" marker on that row. Then update
+  the stats line (`Last compiled: YYYY-MM-DD. Papers: N. Concepts: N.`). Recount
+  actual files; do not increment blindly. A quick count:
+  `ls wiki/papers/*.md | grep -v README | wc -l`.
 
 ### 11. Lint the changed files
 
@@ -345,7 +362,7 @@ title: "Full paper title"
 authors:
   - Last, First
 year: YYYY
-section: "Course section / week"
+section: "Topic, verbatim from the wiki/README.md reading list"
 primary: true
 arxiv: "XXXX.XXXXX"      # omit if none
 doi: "10.xxxx/xxxxx"     # omit if none

@@ -23,6 +23,7 @@ perceptual similarity, which has no closed form.
 ## Papers that use this concept
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — fixes the perturbation set to an ℓ-infinity ball.
+- [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — measures each reverse-engineered trigger's size by the ℓ1 norm of its mask, then flags the label whose trigger is an outlier in that norm.
 
 ## Variants and traps
 

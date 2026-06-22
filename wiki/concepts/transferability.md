@@ -25,6 +25,7 @@ weaker protection than it appears.
 ## Papers that use this concept
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — uses transfer attacks as its black-box evaluation setting.
+- [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — in the black-box setting the injected texts must be retrieved and effective against retrievers and LLMs the attacker cannot query.
 
 ## See also
 

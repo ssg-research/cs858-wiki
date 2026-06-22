@@ -185,3 +185,174 @@ and `docs/writing-style.md` now use the new heading names, reframe "Why read
 this" as the paper's own significance, and carry a new "Every page stands alone"
 rule. `docs/ops/lint.md` still describes the retired Tier-2-as-questions format
 and needs a separate pass. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 13:26] generate-paper-summary | Jailbroken: How Does LLM Safety Training Fail?
+
+Compiled the reading companion for Wei, Haghtalab, and Steinhardt (2023), arXiv
+2307.02483, as `wiki/papers/wei-2023-jailbroken.md` under the "Jailbreaking LLMs"
+topic. Created seven concept pages to seed the LLM-safety cluster:
+`language-model-pretraining`, `instruction-tuning`, `rlhf`, `safety-training`,
+`jailbreak`, `red-teaming`, and `prompt-injection`, and added back-links from the
+reused `white-box-black-box` and `adversarial-examples` pages. Updated the papers,
+concepts, and top-level indexes (Papers: 4, Concepts: 28). The "Why read this"
+framing was supplied by the instructor.
+
+Also changed the workflow so a paper's `section` is taken verbatim from the
+canonical Theme/Topic reading list in `wiki/README.md` rather than invented or
+asked for (`docs/ops/generate-paper-summary.md`,
+`.claude/commands/generate-paper-summary.md`), and brought the three existing
+paper pages' `section` values and the papers index into exact agreement with
+their reading-list Topics. check-links (41 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 14:56] generate-paper-summary | Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
+
+Compiled the reading companion for Greshake et al. (2023), arXiv:2302.12173, as
+`wiki/papers/greshake-2023-indirect-prompt-injection.md` (Topic "Indirect Prompt
+Injection in AI Agents", taken verbatim from the reading list). Created two new
+concept stubs, `retrieval-augmented-generation` and `llm-tool-use`, and reused
+the existing `prompt-injection`, `jailbreak`, `language-model-pretraining`,
+`instruction-tuning`, `rlhf`, `safety-training`, and `white-box-black-box` pages.
+Added the reciprocal "Papers that use this concept" entries and an inline link in
+`prompt-injection`, and a backward cross-link from `wei-2023-jailbroken` (which
+cites this earlier work). Reconciled the stale v1 citation title ("More than
+You've Asked For...") to the canonical arXiv v2 title in both `prompt-injection`
+and `wei-2023-jailbroken`. Updated the papers, concepts, and top-level indexes
+(Papers: 5, Concepts: 30) and removed the row's under-construction marker. The
+"Why read this" framing was chosen by the instructor (the "named the attack
+class" option). check-links (44 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 15:59] generate-paper-summary | Safety Alignment Should Be Made More Than Just a Few Tokens Deep
+
+Compiled the paper page `qi-2024-shallow-safety-alignment.md` (Topic: "Safety
+Alignment and Guardrails", reading-list row 4) from arXiv 2406.05946. Added three
+new concept pages: `kl-divergence`, `decoding-strategies`, and
+`direct-preference-optimization`; reused and back-linked seven existing concepts
+(safety-training, rlhf, language-model-pretraining, instruction-tuning, jailbreak,
+stochastic-gradient-descent, adversarial-training). Paper Context sets up the
+adversarial-training defense lineage and cross-links `madry-2018-pgd` per the
+instructor; the "Why read this" uses the instructor-chosen diagnosis-to-fix angle.
+Updated the papers, concepts, and top-level indexes (Papers: 6, Concepts: 33) and
+removed the row's under-construction marker. check-links (48 files) and
+markdownlint clean. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 16:42] generate-paper-summary | Extracting Training Data from Large Language Models
+
+Compiled the reading companion for Carlini et al., "Extracting Training Data from
+Large Language Models" (arXiv 2012.07805, USENIX Security 2021) as
+`wiki/papers/carlini-2021-extracting-training-data.md`, section "Training-data
+Extraction from LLMs" (reading-list row 6). Added one new concept page,
+`perplexity`; reused and back-linked seven existing concepts
+(language-model-pretraining, decoding-strategies, memorization,
+membership-inference, likelihood-ratio-test, white-box-black-box,
+differential-privacy). Cross-linked `abadi-2016-dp-sgd` (DP-SGD) backward from
+the page, and added a backward link from `carlini-2022-lira` to this page where it
+cites the extraction attack. "Why read this" confirmed with the instructor, with
+jargon trimmed at their direction. Updated the
+papers, concepts, and top-level indexes (Papers: 7, Concepts: 34) and removed the
+row's under-construction marker. check-links (50 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 18:04] generate-paper-summary | Knowledge Unlearning for Mitigating Privacy Risks in Language Models
+
+Compiled `wiki/papers/jang-2022-knowledge-unlearning.md` (Jang et al., ICLR 2023;
+arXiv 2210.01504), section "Unlearning for Generative AI" (reading-list row 8).
+Added one new concept page, `machine-unlearning` (exact vs approximate unlearning,
+the right-to-be-forgotten motivation, relation to DP); reused and back-linked
+seven existing concepts (language-model-pretraining, stochastic-gradient-descent,
+decoding-strategies, perplexity, memorization, membership-inference,
+differential-privacy). Cross-linked `carlini-2021-extracting-training-data` and
+`abadi-2016-dp-sgd` backward from the page; no existing page cites this paper, so
+no backward sweep was needed. "Why read this" supplied by the instructor (RTBF
+importance plus the method's empirical-only, domain-dependent limits). Updated the
+papers, concepts, and top-level indexes (Papers: 8, Concepts: 35) and removed the
+row's under-construction marker. check-links (52 files) and markdownlint clean.
+Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 18:31] generate-paper-summary | Knockoff Nets: Stealing Functionality of Black-Box Models
+
+Compiled `wiki/papers/orekondy-2019-knockoff-nets.md` (Orekondy, Schiele, Fritz;
+CVPR 2019; arXiv 1812.02766). Section "Model Extraction / Stealing" (row 9, theme
+"Model Extraction and Distillation"), read verbatim from the reading list. Year
+keyed to the CVPR 2019 venue (verified via DBLP), not the 2018 arXiv submission
+the API reports. Created five concept pages: `model-extraction` and
+`knowledge-distillation` (fuller, central), plus stubs `convolutional-neural-network`,
+`transfer-learning`, and `reinforcement-learning`. Reused and back-linked
+`white-box-black-box`, `kl-divergence`, and `stochastic-gradient-descent`. No
+existing page cites this paper, so no backward sweep was needed. "Why read this"
+supplied by the instructor (longest-standing SOTA / reference point for
+classification model extraction; works across distributions and architectures).
+Updated the papers, concepts, and top-level indexes (Papers: 9, Concepts: 40) and
+removed the row's under-construction marker. check-links (58 files) and
+markdownlint clean. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 19:01] generate-paper-summary | DAWN: Dynamic Adversarial Watermarking of Neural Networks
+
+Compiled `wiki/papers/szyller-2019-dawn.md` (Szyller, Atli, Marchal, Asokan;
+arXiv 1906.00830; 2019). Section "Model Watermarking / Fingerprinting" (row 10,
+theme "Model Extraction and Distillation"), read verbatim from the reading list.
+Created three concept pages: `model-watermarking` and `backdoor-attacks` (central
+to the paper), plus the stub `cryptographic-commitment` for the ownership-proof
+protocol; the trusted-execution-environment idea was glossed inline rather than
+given its own page. Reused and back-linked `model-extraction`, `memorization`,
+`white-box-black-box`, and `convolutional-neural-network`. Added a backward
+cross-link to the compiled `orekondy-2019-knockoff-nets` page (Knockoff is one of
+the two extraction attacks DAWN tests against). The "dawn" grep hit on
+`carlini-2021-extracting-training-data` is the author name "Dawn Song," not a
+DAWN citation, so no backward sweep was needed. "Why read this" supplied by the
+instructor (preventing extraction without losing utility is hard while detecting
+it is easier; first defense to treat the whole system rather than the model in
+isolation, largely model-independent). Updated the papers, concepts, and
+top-level indexes (Papers: 10, Concepts: 43) and removed the row's
+under-construction marker. check-links (62 files) and markdownlint clean. Model:
+Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 19:37] generate-paper-summary | Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
+
+Compiled `wiki/papers/wang-2019-neural-cleanse.md` (Wang, Yao, Shan, Li,
+Viswanath, Zheng, Zhao; IEEE S&P 2019; DOI 10.1109/SP.2019.00031; no arXiv).
+Section "Training-data Poisoning" (row 11, theme "Data Integrity and
+Supply-Chain Security"), read verbatim from the reading list. Created one concept
+page, `data-poisoning`, as the section's umbrella concept (availability vs
+targeted/integrity poisoning, with backdoors as the trigger-conditioned subclass);
+the MAD/anomaly-index outlier test and neuron pruning were glossed inline rather
+than given their own pages, since they are the paper's method. Reused and
+back-linked `backdoor-attacks` (the existing concept from the DAWN compile),
+`convolutional-neural-network`, `white-box-black-box`, `transfer-learning`,
+`lp-norms`, `stochastic-gradient-descent`, and `adversarial-examples`. No backward
+cross-links into other compiled paper pages were needed (Neural Cleanse's cited
+prior work has no pages yet). Disambiguated three colliding "Liu" citations with
+initials (Y. Liu 2018 Trojaning, K. Liu 2018 Fine-Pruning, Y. Liu 2017 Neural
+Trojans). "Why read this" drafted as a candidate marked `<!-- instructor: confirm
+-->`, pending the instructor's framing. Updated the papers, concepts, and
+top-level indexes (Papers: 11, Concepts: 44) and removed the row's
+under-construction marker. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-21 20:16] generate-paper-summary | PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
+
+Compiled the PoisonedRAG (Zou et al., 2024; arXiv:2402.07867) reading companion
+at `wiki/papers/zou-2024-poisonedrag.md`, Topic "Preference Manipulation / RAG
+Poisoning" (row 12, read verbatim from the reading list). The threat-model
+paragraph foregrounds the unusual lifecycle position: data poisoning that lands
+in the inference-time retrieval corpus, after training yet ahead of any user
+prompt, with black-box vs white-box settings keyed to the attacker's knowledge of
+the retriever. Created one new concept stub, `dense-retrieval`: the existing
+`retrieval-augmented-generation` page covers the context-window /
+instruction-boundary angle but not the embedding-similarity retrieval mechanism
+that the attack's retrieval condition and white-box optimization depend on.
+Reused and back-linked 11 existing concepts (`retrieval-augmented-generation`,
+`data-poisoning`, `backdoor-attacks`, `prompt-injection`, `jailbreak`,
+`white-box-black-box`, `adversarial-examples`, `transferability`, `perplexity`,
+`roc-curves`, `language-model-pretraining`). Added forward cross-links from the
+paper page to the already-compiled `greshake-2023-indirect-prompt-injection` and
+`wei-2023-jailbroken` pages (cited as contemporaneous related work); no backward
+sweep targets, since no existing page cites PoisonedRAG. Three citation arXiv IDs
+absent from the paper's bibliography (Carlini et al. 2023, Jain et al. 2023, Alon
+and Kamfonas 2023) were verified against the arXiv API rather than reconstructed
+from memory. "Why read this" written from the instructor's supplied framing
+(first data-poisoning attack on an LLM system through its knowledge base, with the
+corruption landing after training rather than at inference-prompt time). Updated
+the papers, concepts, and top-level indexes (Papers: 12, Concepts: 45) and removed
+the row's under-construction marker. markdownlint clean (16 files),
+`check-links.py` clean (66 files). Model: Opus 4.8, `claude-opus-4-8`.

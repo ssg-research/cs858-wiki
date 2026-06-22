@@ -53,7 +53,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Jailbreaking LLMs</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Jailbroken: How Does LLM Safety Training Fail?</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/wei-2023-jailbroken.md">Jailbroken: How Does LLM Safety Training Fail?</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -68,7 +68,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Indirect Prompt Injection in AI Agents</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/greshake-2023-indirect-prompt-injection.md">Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -83,7 +83,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Safety Alignment and Guardrails</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Safety Alignment Should Be Made More Than Just a Few Tokens Deep</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/qi-2024-shallow-safety-alignment.md">Safety Alignment Should Be Made More Than Just a Few Tokens Deep</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -116,7 +116,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Training-data Extraction from LLMs</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Extracting Training Data from Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/carlini-2021-extracting-training-data.md">Extracting Training Data from Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -146,7 +146,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Unlearning for Generative AI</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Knowledge Unlearning for Mitigating Privacy Risks in Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/jang-2022-knowledge-unlearning.md">Knowledge Unlearning for Mitigating Privacy Risks in Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -164,7 +164,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Model Extraction / Stealing</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Knockoff Nets: Stealing Functionality of Black-Box Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/orekondy-2019-knockoff-nets.md">Knockoff Nets: Stealing Functionality of Black-Box Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -179,7 +179,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Model Watermarking / Fingerprinting</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">DAWN: Dynamic Adversarial Watermarking of Neural Networks</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/szyller-2019-dawn.md">DAWN: Dynamic Adversarial Watermarking of Neural Networks</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -197,7 +197,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Training-data Poisoning</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/wang-2019-neural-cleanse.md">Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -212,7 +212,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Preference Manipulation / RAG Poisoning</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/zou-2024-poisonedrag.md">PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -433,4 +433,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-19. Papers: 3. Concepts: 21.
+Last compiled: 2026-06-21. Papers: 12. Concepts: 45.

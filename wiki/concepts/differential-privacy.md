@@ -34,6 +34,8 @@ guarantee can be expensive to reach.
 
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the source of DP-SGD; brings the guarantee to non-convex deep network training at single-digit budgets.
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — evaluates DP-SGD as a defense and observes the gap between provable epsilon bounds and empirical attack success.
+- [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — weighs differentially private training as the principled mitigation against the extraction it demonstrates, and notes its utility cost.
+- [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — positions post-hoc unlearning against DP, trading the worst-case (epsilon, delta) certificate for empirical protection of named sequences without retraining.
 
 ## Variants and traps
 
