@@ -89,6 +89,7 @@ and the branch cannot be deleted. Protection applies to everyone, admins
 included. Merging needs no approving review; merging a pull request into `main`
 is the instructor's release decision, never an agent's.
 
+- **Always start by syncing main:** Your absolute first action on any task must be to run `git checkout main && git pull` to ensure you are starting from the latest state and to minimize the chance of merge conflicts. Never create a branch from an outdated working state.
 - **Branch off `main`** with a descriptive, prefixed name (`infra/...`,
   `paper/...`, `concept/...`, `fix/...`), for example
   `infra/update-writing-style`. Do all work there, then open a pull request into
