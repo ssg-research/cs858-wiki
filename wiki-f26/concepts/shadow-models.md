@@ -8,6 +8,8 @@ tags:
   - attack
 ---
 
+[Home page](../README.md)
+
 # Shadow models
 
 ## Definition
@@ -47,6 +49,8 @@ the main assumption is access to enough data from the target's distribution.
 - [Membership inference](membership-inference.md)
 - [Memorization](memorization.md)
 - [White-box and black-box access](white-box-black-box.md)
+
+[Home page](../README.md)
 
 ## References
 

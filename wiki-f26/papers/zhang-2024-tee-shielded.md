@@ -23,6 +23,8 @@ tags:
   - evaluation
 ---
 
+[Home page](../README.md)
+
 # No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML
 
 ## High-level overview
@@ -229,6 +231,8 @@ al., 2022).
 ## Supplementary readings
 
 - [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287) — the foundational TEE-plus-accelerator partition idea this line of defenses descends from.
+
+[Home page](../README.md)
 
 ## References
 

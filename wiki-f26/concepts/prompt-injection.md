@@ -8,6 +8,8 @@ tags:
   - attack
 ---
 
+[Home page](../README.md)
+
 # Prompt injection
 
 ## Definition
@@ -34,6 +36,8 @@ phrase into innocuous-looking substrings, appear on both sides (Kang et al.,
 
 - [Jailbreak (LLM)](jailbreak.md)
 - [Safety training (LLM harmlessness)](safety-training.md)
+
+[Home page](../README.md)
 
 ## References
 

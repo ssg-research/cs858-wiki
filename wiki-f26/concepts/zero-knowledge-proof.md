@@ -7,6 +7,8 @@ tags:
   - zero-knowledge-proof
 ---
 
+[Home page](../README.md)
+
 # Zero-knowledge proof
 
 ## Definition
@@ -58,6 +60,8 @@ prove.
 - [Cryptographic commitment](cryptographic-commitment.md)
 - [Secure inference](secure-inference.md)
 - [Secure multiparty computation](secure-multiparty-computation.md)
+
+[Home page](../README.md)
 
 ## References
 

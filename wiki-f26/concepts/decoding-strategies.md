@@ -7,6 +7,8 @@ tags:
   - llm
 ---
 
+[Home page](../README.md)
+
 # Decoding and sampling strategies
 
 ## Definition

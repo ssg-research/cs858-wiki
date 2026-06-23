@@ -33,6 +33,8 @@ tags:
   - alignment
 ---
 
+[Home page](../README.md)
+
 # Representation Engineering: A Top-Down Approach to AI Transparency
 
 ## High-level overview
@@ -250,6 +252,8 @@ safety-relevant concepts.
 
 - [Refusal in Language Models Is Mediated by a Single Direction](https://arxiv.org/abs/2406.11717) — a sharp instance of the RepE thesis: one safety-relevant behavior, refusal, turns out to be governed by a single direction that can be read and steered.
 - [Improving Alignment and Robustness with Circuit Breakers](https://arxiv.org/abs/2406.04313) — a defense built by operating on representations, remapping harmful internal states, an application of representation control to robustness.
+
+[Home page](../README.md)
 
 ## References
 

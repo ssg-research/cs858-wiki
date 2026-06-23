@@ -7,6 +7,8 @@ tags:
   - machine-learning
 ---
 
+[Home page](../README.md)
+
 # Reinforcement learning
 
 ## Definition
@@ -34,6 +36,8 @@ for actions the learner chooses, not a target it is told to reproduce.
 ## See also
 
 - [Stochastic gradient descent](stochastic-gradient-descent.md)
+
+[Home page](../README.md)
 
 ## References
 

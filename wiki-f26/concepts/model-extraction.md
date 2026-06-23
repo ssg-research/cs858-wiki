@@ -8,6 +8,8 @@ tags:
   - machine-learning
 ---
 
+[Home page](../README.md)
+
 # Model extraction
 
 ## Definition
@@ -46,6 +48,8 @@ the victim (Papernot et al., 2017).
 
 - [White-box and black-box access](white-box-black-box.md)
 - [Knowledge distillation](knowledge-distillation.md)
+
+[Home page](../README.md)
 
 ## References
 

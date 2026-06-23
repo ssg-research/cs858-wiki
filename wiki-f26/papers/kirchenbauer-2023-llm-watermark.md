@@ -19,6 +19,8 @@ tags:
   - statistics
 ---
 
+[Home page](../README.md)
+
 # A Watermark for Large Language Models
 
 ## High-level overview
@@ -238,6 +240,8 @@ output was announced as work in progress (Aaronson, 2022).
 
 - [Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust](https://arxiv.org/abs/2305.20030) — the analogue for diffusion-image provenance, a contrast in modality.
 - [Media Forensics and DeepFakes: An Overview](https://arxiv.org/abs/2001.06564) — the detection-after-the-fact tradition this proactive approach departs from.
+
+[Home page](../README.md)
 
 ## References
 

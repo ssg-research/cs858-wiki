@@ -25,6 +25,8 @@ tags:
   - membership-inference
 ---
 
+[Home page](../README.md)
+
 # Extracting Training Data from Large Language Models
 
 ## High-level overview
@@ -196,6 +198,8 @@ a violation: when it moves data out of the context for which it was shared.
    training and test loss?
 4. How does the amount of extractable data change with model size?
 5. Which defenses does the paper weigh, and what does each one cost?
+
+[Home page](../README.md)
 
 ## References
 

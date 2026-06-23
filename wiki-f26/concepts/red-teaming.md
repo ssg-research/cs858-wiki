@@ -8,6 +8,8 @@ tags:
   - evaluation
 ---
 
+[Home page](../README.md)
+
 # Red teaming (language models)
 
 ## Definition
@@ -29,6 +31,8 @@ still succeeds on them has defeated the cases safety training targeted directly.
 
 - [Safety training (LLM harmlessness)](safety-training.md)
 - [Jailbreak (LLM)](jailbreak.md)
+
+[Home page](../README.md)
 
 ## References
 

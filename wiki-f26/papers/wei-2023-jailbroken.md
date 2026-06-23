@@ -15,6 +15,8 @@ tags:
   - attack
 ---
 
+[Home page](../README.md)
+
 # Jailbroken: How Does LLM Safety Training Fail?
 
 ## High-level overview
@@ -191,6 +193,8 @@ had not been given.
 
 - [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) — a white-box, optimization-based route to jailbreaks, complementing this paper's black-box, conceptual route.
 - [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) — automates black-box jailbreak discovery with an attacker model in the loop.
+
+[Home page](../README.md)
 
 ## References
 

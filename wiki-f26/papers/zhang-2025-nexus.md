@@ -24,6 +24,8 @@ tags:
   - language-models
 ---
 
+[Home page](../README.md)
+
 # Secure Transformer Inference Made Non-interactive
 
 ## High-level overview
@@ -235,6 +237,8 @@ argmax over a full vocabulary is impractical.
 ## Supplementary readings
 
 - [BumbleBee: Secure Two-party Inference Framework for Large Transformers](https://eprint.iacr.org/2023/1678) — the interactive two-party baseline this non-interactive approach is measured against.
+
+[Home page](../README.md)
 
 ## References
 

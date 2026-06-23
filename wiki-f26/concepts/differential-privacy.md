@@ -8,6 +8,8 @@ tags:
   - defense
 ---
 
+[Home page](../README.md)
+
 # Differential privacy
 
 ## Definition
@@ -59,6 +61,8 @@ guarantee can be expensive to reach.
 - [Membership inference](membership-inference.md)
 - [Memorization](memorization.md)
 - [Stochastic gradient descent](stochastic-gradient-descent.md)
+
+[Home page](../README.md)
 
 ## References
 

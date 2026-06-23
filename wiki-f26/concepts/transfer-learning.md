@@ -8,6 +8,8 @@ tags:
   - machine-learning
 ---
 
+[Home page](../README.md)
+
 # Transfer learning
 
 ## Definition
@@ -35,6 +37,8 @@ design decision.
 
 - [Convolutional neural network](convolutional-neural-network.md)
 - [Knowledge distillation](knowledge-distillation.md)
+
+[Home page](../README.md)
 
 ## References
 

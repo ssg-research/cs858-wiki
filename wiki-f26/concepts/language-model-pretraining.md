@@ -7,6 +7,8 @@ tags:
   - pretraining
 ---
 
+[Home page](../README.md)
+
 # Language model pretraining
 
 ## Definition
@@ -40,6 +42,8 @@ alignment stage revisits. The canonical instance is GPT-3 (Brown et al., 2020).
 
 - [Instruction tuning](instruction-tuning.md)
 - [Reinforcement learning from human feedback (RLHF)](rlhf.md)
+
+[Home page](../README.md)
 
 ## References
 

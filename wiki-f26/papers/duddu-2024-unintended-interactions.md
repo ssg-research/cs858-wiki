@@ -16,6 +16,8 @@ tags:
   - survey
 ---
 
+[Home page](../README.md)
+
 # SoK: Unintended Interactions among Machine Learning Defenses and Risks
 
 ## High-level overview
@@ -202,6 +204,8 @@ interpretability, and privacy (Ferry et al., 2023).
 
 - [Conflicting Interactions Among Protection Mechanisms for Machine Learning Models](https://arxiv.org/abs/2207.01991) — the precursor from two of the same authors; it documents that combining defenses can make each less effective, the observation this SoK generalizes into a framework.
 - [Combining Machine Learning Defenses without Conflicts](https://arxiv.org/abs/2411.09776) — a later follow-up that builds on this systematization to compose multiple defenses while avoiding the conflicts it catalogues.
+
+[Home page](../README.md)
 
 ## References
 

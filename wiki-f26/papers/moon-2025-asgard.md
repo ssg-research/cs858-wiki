@@ -17,6 +17,8 @@ tags:
   - defense
 ---
 
+[Home page](../README.md)
+
 # ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
 
 ## High-level overview
@@ -224,6 +226,8 @@ enclave.
 ## Supplementary readings
 
 - [ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional Neural Networks](https://arxiv.org/abs/2011.05905) — a TrustZone-based on-device protection that offloads transformed weights to the untrusted accelerator, a point of contrast with the virtualization-based design.
+
+[Home page](../README.md)
 
 ## References
 

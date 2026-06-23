@@ -16,6 +16,8 @@ tags:
   - attack
 ---
 
+[Home page](../README.md)
+
 # PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
 
 ## High-level overview
@@ -208,6 +210,8 @@ existed but had not been examined against corruption of a retrieval corpus.
 
 - [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/abs/2406.18382) — manipulating the content an LLM retrieves so it favors an attacker's preferred answer, a related angle on corrupting what the model reads.
 - [Certifiably Robust RAG against Retrieval Corruption](https://arxiv.org/abs/2405.15556) — a defense direction aimed at exactly this class of attack, giving guarantees when a bounded number of retrieved passages are malicious.
+
+[Home page](../README.md)
 
 ## References
 

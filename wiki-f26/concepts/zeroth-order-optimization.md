@@ -8,6 +8,8 @@ tags:
   - language-models
 ---
 
+[Home page](../README.md)
+
 # Zeroth-order optimization
 
 ## Definition
@@ -54,6 +56,8 @@ differential-privacy literature adopted ZO as a base optimizer.
 - [Stochastic gradient descent](stochastic-gradient-descent.md)
 - [Gradient clipping](gradient-clipping.md)
 - [Differential privacy](differential-privacy.md)
+
+[Home page](../README.md)
 
 ## References
 

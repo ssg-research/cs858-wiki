@@ -7,6 +7,8 @@ tags:
   - optimization
 ---
 
+[Home page](../README.md)
+
 # Stochastic gradient descent
 
 ## Definition

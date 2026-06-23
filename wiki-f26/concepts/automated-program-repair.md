@@ -7,6 +7,8 @@ tags:
   - software-security
 ---
 
+[Home page](../README.md)
+
 # Automated program repair
 
 ## Definition
@@ -33,6 +35,8 @@ that the exploited weakness is gone.
 
 - [Software vulnerability (CWE)](software-vulnerability.md)
 - [Large language models for code](code-language-models.md)
+
+[Home page](../README.md)
 
 ## References
 

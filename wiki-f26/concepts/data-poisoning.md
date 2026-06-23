@@ -8,6 +8,8 @@ tags:
   - machine-learning
 ---
 
+[Home page](../README.md)
+
 # Data poisoning
 
 ## Definition
@@ -51,6 +53,8 @@ whose poison samples leave clean-input accuracy untouched.
 - [Backdoor attacks](backdoor-attacks.md)
 - [Adversarial examples](adversarial-examples.md)
 - [Memorization](memorization.md)
+
+[Home page](../README.md)
 
 ## References
 

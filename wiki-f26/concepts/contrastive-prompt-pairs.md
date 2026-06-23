@@ -7,6 +7,8 @@ tags:
   - language-models
 ---
 
+[Home page](../README.md)
+
 # Contrastive prompt pairs
 
 ## Definition
@@ -30,6 +32,8 @@ honesty and sycophancy.
 
 - [Activation steering](activation-steering.md)
 - [Linear representation hypothesis](linear-representation-hypothesis.md)
+
+[Home page](../README.md)
 
 ## References
 

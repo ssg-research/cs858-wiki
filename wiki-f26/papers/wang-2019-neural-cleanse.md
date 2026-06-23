@@ -19,6 +19,8 @@ tags:
   - threat-model
 ---
 
+[Home page](../README.md)
+
 # Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
 
 ## High-level overview
@@ -205,6 +207,8 @@ from the trained model alone.
 5. Which assumptions about the backdoor (a single target label, a small compact
    trigger) does the approach rely on, and what happens as an attacker relaxes
    them?
+
+[Home page](../README.md)
 
 ## References
 

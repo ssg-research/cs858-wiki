@@ -8,6 +8,8 @@ tags:
   - privacy
 ---
 
+[Home page](../README.md)
+
 # Likelihood-ratio test
 
 ## Definition
@@ -37,6 +39,8 @@ on.
 - [ROC curves and detection metrics](roc-curves.md)
 - [Membership inference](membership-inference.md)
 - [Shadow models](shadow-models.md)
+
+[Home page](../README.md)
 
 ## References
 
