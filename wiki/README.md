@@ -257,7 +257,7 @@ is required; expand the essential readings beneath it to see what goes alongside
     </tr>
     <tr>
       <td>15</td>
-      <td>Media Forensics and Proactive Provanance</td>
+      <td>Media Forensics and Proactive Provenance</td>
       <td>
         <strong>Primary</strong>
         <a href="under-construction.md">A Watermark for Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
