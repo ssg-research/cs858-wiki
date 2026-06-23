@@ -162,7 +162,8 @@ routes around that refusal, and steering methods have also been used for
 ([training-data extraction](carlini-2021-extracting-training-data.md); Carlini et
 al., 2021).
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By 2023, evidence had accumulated that network internals are not the chaos they
 appear to be. Word embeddings carry interpretable directions for semantic
@@ -211,6 +212,8 @@ not been done was to characterize them as one area, supply stronger baselines fo
 reading and control, and test the same recipe across a broad set of
 safety-relevant concepts.
 
+</details>
+
 ## Reading guidance
 
 - Section 1 and Figure 2: the top-down versus bottom-up framing and the
@@ -248,14 +251,18 @@ safety-relevant concepts.
 5. What separates this top-down approach from mechanistic interpretability, and
    what does each one buy?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Refusal in Language Models Is Mediated by a Single Direction](https://arxiv.org/abs/2406.11717) — a sharp instance of the RepE thesis: one safety-relevant behavior, refusal, turns out to be governed by a single direction that can be read and steered.
 - [Improving Alignment and Robustness with Circuit Breakers](https://arxiv.org/abs/2406.04313) — a defense built by operating on representations, remapping harmful internal states, an application of representation control to robustness.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Adebayo, J., Gilmer, J., Muelly, M., Goodfellow, I., Hardt, M., and Kim, B.
   "Sanity Checks for Saliency Maps." Advances in Neural Information Processing
@@ -336,3 +343,5 @@ safety-relevant concepts.
 - Wang, K. R., Variengien, A., Conmy, A., Shlegeris, B., and Steinhardt, J.
   "Interpretability in the Wild: a Circuit for Indirect Object Identification in
   GPT-2 Small." International Conference on Learning Representations (ICLR), 2023.
+
+</details>

@@ -158,7 +158,8 @@ strength of the guarantee is set by the privacy parameter epsilon, and
 membership inference attacks double as empirical audits of how tight such
 guarantees are in practice (Jagielski et al., 2020; Nasr et al., 2021).
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Membership inference predates machine learning. It was first demonstrated on
 genomic data, where an individual's presence in a study cohort could be
@@ -199,6 +200,8 @@ accumulated membership inference results, nearly all evaluated by
 average-case metrics on small overfit models, had not been re-examined under
 either standard.
 
+</details>
+
 ## Reading guidance
 
 - Section II: background on training-data privacy; skim if the basic background
@@ -238,7 +241,8 @@ either standard.
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off the paper's bibliography (arXiv 2112.03570v2, pages 14-16);
 venue for Shokri et al. confirmed via DBLP.
@@ -310,3 +314,5 @@ venue for Shokri et al. confirmed via DBLP.
 - Zhang, C., Bengio, S., Hardt, M., Recht, B., and Vinyals, O. "Understanding
   Deep Learning (Still) Requires Rethinking Generalization." Communications of
   the ACM, 64(3), 2021.
+
+</details>

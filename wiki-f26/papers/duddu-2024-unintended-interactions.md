@@ -139,7 +139,8 @@ influential training records behind a prediction, or a counterfactual that would
 change the outcome. Neither defense requires retraining, and both expose
 information about the model's decision boundary and training data.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Individual interactions were documented before any unifying account. Adversarial
 training, applied to resist evasion, raises a model's vulnerability to membership
@@ -158,6 +159,8 @@ fairness, and privacy without naming their underlying causes (Gittens et al.,
 mechanisms, showing that combining defenses can make each less effective (Szyller
 and Asokan, 2023). A contemporaneous SoK examined the interplay of fairness,
 interpretability, and privacy (Ferry et al., 2023).
+
+</details>
 
 ## Reading guidance
 
@@ -200,14 +203,18 @@ interpretability, and privacy (Ferry et al., 2023).
 5. What kind of evidence does the paper offer for an interaction, and what does it
    deliberately decline to claim?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Conflicting Interactions Among Protection Mechanisms for Machine Learning Models](https://arxiv.org/abs/2207.01991) — the precursor from two of the same authors; it documents that combining defenses can make each less effective, the observation this SoK generalizes into a framework.
 - [Combining Machine Learning Defenses without Conflicts](https://arxiv.org/abs/2411.09776) — a later follow-up that builds on this systematization to compose multiple defenses while avoiding the conflicts it catalogues.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Abadi, M., Chu, A., Goodfellow, I., McMahan, H. B., Mironov, I., Talwar, K.,
   and Zhang, L. "Deep Learning with Differential Privacy." ACM Conference on
@@ -261,3 +268,5 @@ interpretability, and privacy (Ferry et al., 2023).
 - Zhang, C., Bengio, S., Hardt, M., Recht, B., and Vinyals, O. "Understanding Deep
   Learning Requires Rethinking Generalization." International Conference on
   Learning Representations (ICLR), 2017.
+
+</details>

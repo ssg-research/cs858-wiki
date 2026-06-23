@@ -132,7 +132,8 @@ maximizer is a descent direction for the outer problem. Its assumptions, a
 smooth function and an exact inner maximum, do not hold for ReLU networks
 attacked approximately, so applying it there needs empirical justification.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Adversarial machine learning predates deep learning. Evasion of deployed
 classifiers such as spam filters was formalized in the 2000s (Dalvi et al.,
@@ -164,6 +165,8 @@ solved well enough for the min-max guarantee to mean anything, and what an
 evaluation would have to show before the security community, with its norms of
 explicit threat models and adaptive adversaries, would accept an ML
 benchmark-style robustness number.
+
+</details>
 
 ## Reading guidance
 
@@ -197,7 +200,8 @@ benchmark-style robustness number.
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 All entries read off the paper's bibliography (arXiv 1706.06083v4, pages
 16-18).
@@ -238,3 +242,5 @@ All entries read off the paper's bibliography (arXiv 1706.06083v4, pages
   Conference on Learning Representations (ICLR), 2014.
 - Wald, A. "Statistical Decision Functions Which Minimize the Maximum Risk."
   Annals of Mathematics, 1945.
+
+</details>

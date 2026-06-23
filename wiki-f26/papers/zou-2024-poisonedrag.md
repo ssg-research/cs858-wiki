@@ -137,7 +137,8 @@ score are evaluated with [ROC curves and AUC](../concepts/roc-curves.md), readin
 the true-positive rate against the false-positive rate, since a detector that
 only works at a high false-positive rate is not deployable.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By 2024, RAG was an established technique for grounding language models in
 external text (Lewis et al., 2020), built on dense retrievers such as Dense
@@ -167,6 +168,8 @@ fraction of Wikipedia (Carlini et al., 2023). Input-level defenses developed for
 prompt injection and jailbreaks, such as paraphrasing the input and
 perplexity-based detection (Jain et al., 2023; Alon and Kamfonas, 2023),
 existed but had not been examined against corruption of a retrieval corpus.
+
+</details>
 
 ## Reading guidance
 
@@ -206,14 +209,18 @@ existed but had not been examined against corruption of a retrieval corpus.
 5. What do the evaluated input-level defenses rely on, and why might injected
    texts that read as ordinary content slip past them?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/abs/2406.18382) — manipulating the content an LLM retrieves so it favors an attacker's preferred answer, a related angle on corrupting what the model reads.
 - [Certifiably Robust RAG against Retrieval Corruption](https://arxiv.org/abs/2405.15556) — a defense direction aimed at exactly this class of attack, giving guarantees when a bounded number of retrieved passages are malicious.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Zou, W., Geng, R., Wang, B., and Jia, J. "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models." 2024. arXiv:2402.07867.
 - Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-t., Rocktäschel, T., et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." NeurIPS, 2020.
@@ -228,3 +235,5 @@ existed but had not been examined against corruption of a retrieval corpus.
 - Carlini, N., Jagielski, M., Choquette-Choo, C.A., Paleka, D., Pearce, W., Anderson, H., Terzis, A., Thomas, K., and Tramèr, F. "Poisoning Web-Scale Training Datasets Is Practical." 2023. arXiv:2302.10149.
 - Jain, N., Schwarzschild, A., Wen, Y., Somepalli, G., Kirchenbauer, J., Chiang, P.-y., Goldblum, M., Saha, A., Geiping, J., and Goldstein, T. "Baseline Defenses for Adversarial Attacks Against Aligned Language Models." 2023. arXiv:2309.00614.
 - Alon, G., and Kamfonas, M. "Detecting Language Model Attacks with Perplexity." 2023. arXiv:2308.14132.
+
+</details>

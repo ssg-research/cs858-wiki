@@ -133,7 +133,7 @@ Everything else you draft; the instructor reviews.
 - Inline citations are author-year at the end of the clause: "defensive
   distillation was broken within a year (Carlini and Wagner, 2017)." Do not
   open sentences with author names.
-- Every page that cites anything carries a `## References` section at the
+- Every page that cites anything carries a References section at the
   bottom with one full entry per cited work: authors, title, venue, year, and
   the arXiv ID when the source you read prints one.
 - Bibliographic data comes from a source read this session: the citing paper's
@@ -266,7 +266,8 @@ This is the experienced reader's warm-up; they skip the Basic Background and
 read this. Properly cited (see Citation convention), **prior or contemporaneous
 work only**, and never a preview of what *this* paper does about any of it. Not
 questions: the open-tension question format is retired (see Pedagogical ground
-rules).
+rules). On the page it renders inside a collapsed `<details>` block, the heading
+as its toggle (see the schema skeleton).
 
 ### 6. Engagement pass — motivating questions and reading guidance
 
@@ -289,12 +290,13 @@ picks up the paper.
 If the instructor supplied supplementary / extra readings for this paper, list
 them with a one-line "why it's here" framing each. Link to a paper page if one
 exists; otherwise an external link is fine. By default only primary papers get
-full pages.
+full pages. On the page this section renders inside a collapsed `<details>`
+block, the heading as its toggle (see the schema skeleton).
 
 ### 8. Write the paper page
 
 Assemble `wiki-f26/papers/<slug>.md` using the Paper Page Schema below, ending with
-the `## References` section for everything cited anywhere on the page.
+the References section for everything cited anywhere on the page.
 
 - **Slug:** `author-year-shortname`, lowercase, hyphens only.
   - `author` = first author's surname.
@@ -394,10 +396,13 @@ terms. Never its slot in the course sequence.)
 (Two to five sentences per cluster, Wikipedia link density, concept links carry
 the depth. Prerequisite knowledge only, never this paper's content.)
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 (Declarative prose: the state of the field when the paper appeared. Prior or
 contemporaneous work only, properly cited. Never this paper's position.)
+
+</details>
 
 ## Reading guidance
 
@@ -409,18 +414,30 @@ or two neutral attention anchors. A roadmap, not a summary.)
 1. (An extremely high-level pre-question, answerable by reading the paper.)
 2. ...
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Title](link) — why it's here.
 
-## References
+</details>
+
+<details>
+<summary><h2>References</h2></summary>
 
 - Last, F., Last, F., and Last, F. "Title." Venue, Year.
+
+</details>
 ````
 
 Required: the frontmatter, "High-level overview" (with the threat-model
 paragraph), "Why read this," at least one Background section, and "References"
 whenever anything is cited. The rest is optional but encouraged.
+
+Paper Context, Supplementary readings, and References each render inside a
+collapsed `<details>` block (shown in the skeleton above) so the visible page
+stays short. Write the heading as an inline `<h2>` on the `<summary>` line, and
+keep one blank line after `</summary>` so the body stays Markdown and its
+relative links remain checkable.
 
 ---
 

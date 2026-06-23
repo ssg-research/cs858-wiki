@@ -150,7 +150,8 @@ with a provable guarantee (Dwork and Roth, 2014). It addresses data privacy rath
 than model stealing, and its accuracy cost is the reason the on-device line looks
 to hardware instead.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Putting a model on a user's device exposes its weights, turning model stealing and
 membership inference into cheap white-box attacks. The algorithmic protections do
@@ -185,6 +186,8 @@ false-positive rates (Carlini et al., 2022). An on-device adversary also holds
 public pretrained models and datasets, which transfer-learning attacks convert
 into knowledge of a target's architecture and weights (Wang et al., 2018; Chen et
 al., 2022).
+
+</details>
 
 ## Reading guidance
 
@@ -228,13 +231,17 @@ al., 2022).
 5. What would it take for a partition to reach the security of shielding the whole
    model without paying its full cost?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287) — the foundational TEE-plus-accelerator partition idea this line of defenses descends from.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off this paper's bibliography (PDF pages 15-18).
 
@@ -259,3 +266,5 @@ Entries read off this paper's bibliography (PDF pages 15-18).
 - Tramèr, F., Zhang, F., Juels, A., Reiter, M. K., and Ristenpart, T. "Stealing Machine Learning Models via Prediction APIs." USENIX Security Symposium, 2016.
 - Wang, B., Yao, Y., Viswanath, B., Zheng, H., and Zhao, B. Y. "With Great Training Comes Great Vulnerability: Practical Attacks Against Transfer Learning." USENIX Security Symposium, 2018.
 - Yeom, S., Giacomelli, I., Fredrikson, M., and Jha, S. "Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting." IEEE Computer Security Foundations Symposium (CSF), 2018.
+
+</details>

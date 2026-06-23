@@ -131,7 +131,8 @@ trained model (its weights, and therefore its gradients and internal neuron
 activations) but not to the data it was trained on. This access is what lets the
 method optimize over inputs and inspect which neurons a trigger excites.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By 2019 the opacity of deep networks was a recognized obstacle: a trained model
 is a sequence of weights with no human-readable account of its behavior, so there
@@ -166,6 +167,8 @@ also distinct from the test-time evasion threat of adversarial examples (Szegedy
 et al., 2014), against which a separate and by then well-worn cycle of defenses
 and breaks had played out. No general tool existed to detect and repair a backdoor
 from the trained model alone.
+
+</details>
 
 ## Reading guidance
 
@@ -210,7 +213,8 @@ from the trained model alone.
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Chen, X., Liu, C., Li, B., Lu, K., and Song, D. "Targeted Backdoor Attacks on Deep Learning Systems Using Data Poisoning." arXiv:1712.05526, 2017.
 - Gu, T., Dolan-Gavitt, B., and Garg, S. "BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain." Machine Learning and Computer Security Workshop, 2017. arXiv:1708.06733.
@@ -220,3 +224,5 @@ from the trained model alone.
 - Liu, Y., Xie, Y., and Srivastava, A. "Neural Trojans." IEEE International Conference on Computer Design (ICCD), 2017.
 - Steinhardt, J., Koh, P.W., and Liang, P.S. "Certified Defenses for Data Poisoning Attacks." Advances in Neural Information Processing Systems (NIPS), 2017.
 - Szegedy, C., Zaremba, W., Sutskever, I., Bruna, J., Erhan, D., Goodfellow, I., and Fergus, R. "Intriguing Properties of Neural Networks." International Conference on Learning Representations (ICLR), 2014.
+
+</details>

@@ -167,7 +167,8 @@ parties jointly compute over private inputs revealing only the output. A
 such as a model, so later proofs refer to one fixed object. These are the
 alternative roots of trust against which a hardware-attestation scheme is measured.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Trusted execution environments are the substrate of confidential computing, and a
 large body of work uses them to protect the *confidentiality* of models and data:
@@ -212,6 +213,8 @@ al., 2023; Zhang et al., 2022). The recurring obstacle for the cryptographic rou
 is cost: proving a single iteration of VGG-11 training runs to minutes (Abbaszadeh
 et al., 2024).
 
+</details>
+
 ## Reading guidance
 
 - Section 2: background on large language models, TEEs, and attestation protocols.
@@ -254,14 +257,18 @@ et al., 2024).
 5. Where does the framework draw its trust boundary, and what does it place outside
    it?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Laminator: Verifiable ML Property Cards using Hardware-assisted Attestations](https://arxiv.org/abs/2406.17548) — the hardware-attestation property-card approach this paper extends to large generative models.
 - [Sentry: Authenticating Machine Learning Artifacts on the Fly](https://arxiv.org/pdf/2510.00554) — authenticating ML artifacts at use time, an adjacent take on trustworthy provenance.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off this paper's bibliography (PDF pages 13-14).
 
@@ -290,3 +297,5 @@ Entries read off this paper's bibliography (PDF pages 13-14).
 - Wilke, L., Sieck, F., and Eisenbarth, T. "TDXdown: Single-Stepping and Instruction Counting Attacks Against Intel TDX." ACM SIGSAC Conference on Computer and Communications Security (CCS), 2024.
 - Zhang, Z., et al. "No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML." IEEE Symposium on Security and Privacy (S&P), 2024.
 - Zhang, R., et al. "'Adversarial Examples' for Proof-of-Learning." IEEE Symposium on Security and Privacy (S&P), 2022.
+
+</details>

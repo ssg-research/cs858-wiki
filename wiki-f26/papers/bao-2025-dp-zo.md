@@ -158,7 +158,8 @@ et al., 2021). Differential privacy is the principled counter to both: bounding
 any record's influence provably caps the success of any such attack, which is
 the guarantee this line of work targets.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Differentially private deep learning standardized on DP-SGD, which clips
 per-example gradients and adds Gaussian noise to their sum
@@ -189,6 +190,8 @@ per step and clips each one (Liu et al., 2025). These methods inherit MeZO's
 memory savings over DP-SGD, reported at around an eightfold reduction on a
 355M-parameter model, but a utility gap to first-order private training remained
 on several benchmarks when this paper appeared.
+
+</details>
 
 ## Reading guidance
 
@@ -227,14 +230,18 @@ on several benchmarks when this paper appeared.
 5. Where does private zeroth-order fine-tuning still trail first-order methods,
    and where does it pull ahead?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [PrivateFL: Accurate, Differentially Private Federated Learning via Personalized Data Transformation](https://www.usenix.org/system/files/usenixsecurity23-yang-yuchen.pdf) — a different lever on the DP utility problem, applied in federated learning.
 - [Local and Central Differential Privacy for Robustness and Privacy in Federated Learning](https://arxiv.org/abs/2009.03561) — the local-versus-central DP distinction that frames where the noise is added.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off the paper's bibliography (USENIX Security 2025 proceedings,
 pages 16-21); the Carlini et al. extraction paper is listed there as a 2020
@@ -285,3 +292,5 @@ preprint and is cited here by its USENIX Security 2021 publication.
 - Zhang, L., Li, B., Thekumparampil, K. K., Oh, S., and He, N. "DPZero: Private
   Fine-Tuning of Language Models without Backpropagation." arXiv:2310.09639,
   2024.
+
+</details>

@@ -131,7 +131,8 @@ to recurrent language models (McMahan et al., 2018). The guarantee comes at a
 cost in accuracy and training time, and that cost falls hardest on the long-tail
 examples that contribute most to quality.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 When this paper appeared, the prevailing intuition held that privacy leakage
 tracks overfitting (Yeom et al., 2018). Large language models were trained once,
@@ -162,6 +163,8 @@ designing autocomplete models to avoid memorizing user data (Chen et al., 2019;
 Ramaswamy et al., 2020). The framework of privacy as contextual integrity
 (Nissenbaum, 2004) offered one way to say when reproducing public text is still
 a violation: when it moves data out of the context for which it was shared.
+
+</details>
 
 ## Reading guidance
 
@@ -201,7 +204,8 @@ a violation: when it moves data out of the context for which it was shared.
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Abadi, M., Chu, A., Goodfellow, I., McMahan, H.B., Mironov, I., Talwar, K., and
   Zhang, L. "Deep Learning with Differential Privacy." ACM Conference on Computer
@@ -254,3 +258,5 @@ a violation: when it moves data out of the context for which it was shared.
   Ohrimenko, O., Köpf, B., and Brockschmidt, M. "Analyzing Information Leakage of
   Updates to Natural Language Models." ACM Conference on Computer and
   Communications Security (CCS), 2020.
+
+</details>

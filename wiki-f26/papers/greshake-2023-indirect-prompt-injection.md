@@ -123,7 +123,8 @@ weights, gradients, or training data
 relaxes the access requirement further: the attacker influences the model without
 querying it, by seeding content the victim's model will retrieve.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By early 2023, attacks on LLMs through their prompts were documented under the
 assumption that the attacker is the user. Prompt injection was shown to override
@@ -156,6 +157,8 @@ instruction tuning and RLHF for helpfulness and harmlessness (Ouyang et al.,
 around a user prompting the model directly; instructions reaching the model
 through retrieved data fell outside that picture of the threat.
 
+</details>
+
 ## Reading guidance
 
 - **Section 2 (Preliminaries and Related Work).** The building blocks: tool-augmented and agentic LLMs, prior prompt injection, and the "LLMs as computers" analogy the threat model rests on.
@@ -173,14 +176,18 @@ through retrieved data fell outside that picture of the threat.
 4. The paper organizes its findings as a taxonomy. At a high level, what are its axes, and what is each meant to capture?
 5. Which of the demonstrated harms depend on the model having tools or memory, and which need only its text output?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated LLM Agents](https://arxiv.org/abs/2403.02691) — a benchmark that quantifies indirect prompt injection against tool-using agents, the measurement this paper leaves to future work.
 - [Formalizing and Benchmarking Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2310.12815) — a formal framework and shared benchmark unifying prompt-injection attacks with candidate defenses.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off the paper's bibliography (arXiv 2302.12173, pages 13-14).
 
@@ -232,3 +239,5 @@ Entries read off the paper's bibliography (arXiv 2302.12173, pages 13-14).
 - Yao, S., Zhao, J., Yu, D., Shafran, I., Narasimhan, K. R., and Cao, Y. "ReAct:
   Synergizing Reasoning and Acting in Language Models." International Conference
   on Learning Representations (ICLR), 2023.
+
+</details>
