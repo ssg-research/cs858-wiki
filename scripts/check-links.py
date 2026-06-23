@@ -26,6 +26,8 @@ import os
 import re
 import sys
 
+WIKI_DIR = "wiki-f26"
+
 # [text](target) — capture the target. Skip image links handled below.
 _LINK = re.compile(r"(!?)\[[^\]]*\]\(([^)\s]+?)(?:\s+\"[^\"]*\")?\)")
 # href="target" / src="target" inside inline HTML (single or double quoted).
@@ -81,7 +83,7 @@ def find_broken(md_path: str) -> list[tuple[str, str]]:
 
 
 def main() -> int:
-    md_files = sorted(glob.glob("wiki/**/*.md", recursive=True))
+    md_files = sorted(glob.glob(f"{WIKI_DIR}/**/*.md", recursive=True))
     md_files += sorted(glob.glob("docs/**/*.md", recursive=True))
 
     total_broken = 0

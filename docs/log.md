@@ -688,3 +688,7 @@ Updated the papers list table in `wiki/papers/README.md` to include columns for 
 ## [2026-06-23 11:03] update-table | wiki/papers/README.md
 
 Updated the papers list table in `wiki/papers/README.md` to format authors using 'et al.' when there are more than two authors. Did not add publication column as that information is not available in the frontmatter. Model: Gemini 3.1 Pro (High).
+
+## [2026-06-23 13:21] rename | wiki to wiki-f26
+
+Renamed the `wiki` folder to `wiki-f26` and updated all internal references in playbooks, scripts, and commands to use the new path. Hard-coded paths in Bash scripts were extracted to `WIKI_DIR` variables where possible. Model: Gemini 3.1 Pro (High).

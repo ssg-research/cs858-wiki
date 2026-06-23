@@ -4,8 +4,8 @@
 `<paper>` is an arXiv abstract URL or ID (the easy path, auto-downloaded) or a
 path to a local PDF already sitting in `raw/pdfs/`.
 
-This operation produces **one paper page** in `wiki/papers/` and creates or
-updates the shared `wiki/concepts/` pages it depends on. Authoring is
+This operation produces **one paper page** in `wiki-f26/papers/` and creates or
+updates the shared `wiki-f26/concepts/` pages it depends on. Authoring is
 instructor + AI co-produced; students never write or edit these pages.
 
 This doc is the operational contract: page schema, section structure, concept
@@ -101,7 +101,7 @@ properly (see Citation convention below).
 
 ## The paper's section comes from the canonical reading list
 
-The reading list in [wiki/README.md](../../wiki/README.md) is the canonical
+The reading list in [wiki-f26/README.md](../../wiki-f26/README.md) is the canonical
 source for every topic area. It is a two-level taxonomy: each primary paper sits
 in one row under a **Theme** (the `colgroup` header spanning a block of rows,
 e.g. "Inference-Time Integrity of Model Behavior") and carries a **Topic** (the
@@ -144,10 +144,10 @@ Everything else you draft; the instructor reviews.
   that *responds* to the paper is follow-up, not background; it belongs on the
   follow-up paper's own page when that paper is compiled, never on this one.
 - **Cross-link compiled papers, backward only.** When a cited prior work has
-  its own page in `wiki/papers/`, link the mention to that page (relative
+  its own page in `wiki-f26/papers/`, link the mention to that page (relative
   link, e.g. `[DP-SGD](abadi-2016-dp-sgd.md)`) in addition to the author-year
   citation and References entry. When compiling a new paper, also sweep the
-  existing paper pages that cite it (`grep -rl "<surname>" wiki/papers/`) and
+  existing paper pages that cite it (`grep -rl "<surname>" wiki-f26/papers/`) and
   add the link there. The reverse direction stays off the page: a paper page
   never links forward to papers that respond to it. Forward navigation lives
   in the shared concept pages' "Papers that use this concept" lists, or in
@@ -207,10 +207,11 @@ new
 reader might not know is a link. For each concept, find whether a page exists:
 
 ```bash
+WIKI_DIR="wiki-f26"
 # Skim every concept's routing description in one shot:
-grep -h "^description:" wiki/concepts/*.md
+grep -h "^description:" $WIKI_DIR/concepts/*.md
 # List concept slugs:
-ls wiki/concepts/ | grep -v README
+ls $WIKI_DIR/concepts/ | grep -v README
 ```
 
 Read the candidate pages to confirm relevance. If a suitable page exists, link
@@ -292,7 +293,7 @@ full pages.
 
 ### 8. Write the paper page
 
-Assemble `wiki/papers/<slug>.md` using the Paper Page Schema below, ending with
+Assemble `wiki-f26/papers/<slug>.md` using the Paper Page Schema below, ending with
 the `## References` section for everything cited anywhere on the page.
 
 - **Slug:** `author-year-shortname`, lowercase, hyphens only.
@@ -318,24 +319,25 @@ links navigable in both directions.
 
 ### 10. Update the indexes
 
-- `wiki/papers/README.md`: add a table row for the paper, with the canonical
+- `wiki-f26/papers/README.md`: add a table row for the paper, with the canonical
   Topic in the Section column, ordered to follow the reading list:
   `| [slug](slug.md) | Section | Year | short descriptor |`.
-- `wiki/concepts/README.md`: add a table row for each new concept page:
+- `wiki-f26/concepts/README.md`: add a table row for each new concept page:
   `| [slug](slug.md) | one-line description |`.
-- `wiki/README.md`: in the reading list, find the paper's row and replace its
+- `wiki-f26/README.md`: in the reading list, find the paper's row and replace its
   `under-construction.md` placeholder link with a relative link to the new page
   (`papers/<slug>.md`), and delete the trailing
   `<sup ...>&dagger;</sup>` "under construction" marker on that row. Then update
   the stats line (`Last compiled: YYYY-MM-DD. Papers: N. Concepts: N.`). Recount
   actual files; do not increment blindly. A quick count:
-  `ls wiki/papers/*.md | grep -v README | wc -l`.
+  `ls wiki-f26/papers/*.md | grep -v README | wc -l`.
 
 ### 11. Lint the changed files
 
 ```bash
+WIKI_DIR="wiki-f26"
 uv run python3 scripts/check-links.py
-npx --no-install markdownlint-cli2 "wiki/papers/<slug>.md" "wiki/concepts/<new>.md"
+npx --no-install markdownlint-cli2 "$WIKI_DIR/papers/<slug>.md" "$WIKI_DIR/concepts/<new>.md"
 ```
 
 Fix all findings. `check-links.py` must report zero broken links.
@@ -362,7 +364,7 @@ title: "Full paper title"
 authors:
   - Last, First
 year: YYYY
-section: "Topic, verbatim from the wiki/README.md reading list"
+section: "Topic, verbatim from the wiki-f26/README.md reading list"
 primary: true
 arxiv: "XXXX.XXXXX"      # omit if none
 doi: "10.xxxx/xxxxx"     # omit if none

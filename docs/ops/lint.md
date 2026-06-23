@@ -27,12 +27,13 @@ Every concept page needs `title`, `type`, `tags`, `description`. Every paper
 page needs `title`, `authors`, `year`, `section`, `tags`.
 
 ```bash
-for f in $(ls wiki/concepts/*.md 2>/dev/null | grep -v README); do
+WIKI_DIR="wiki-f26"
+for f in $(ls $WIKI_DIR/concepts/*.md 2>/dev/null | grep -v README); do
   for k in title type tags description; do
     grep -q "^$k:" "$f" || echo "concept $f missing: $k"
   done
 done
-for f in $(ls wiki/papers/*.md 2>/dev/null | grep -v README); do
+for f in $(ls $WIKI_DIR/papers/*.md 2>/dev/null | grep -v README); do
   for k in title authors year section tags; do
     grep -q "^$k:" "$f" || echo "paper $f missing: $k"
   done
@@ -43,15 +44,16 @@ Any output names a page missing a required field. Should be silent.
 
 ## 3. Stale stats
 
-Verify the `wiki/README.md` stats header matches actual file counts.
+Verify the `wiki-f26/README.md` stats header matches actual file counts.
 
 ```bash
-echo "Papers:   $(ls wiki/papers/*.md 2>/dev/null | grep -v README | wc -l | tr -d ' ')"
-echo "Concepts: $(ls wiki/concepts/*.md 2>/dev/null | grep -v README | wc -l | tr -d ' ')"
-grep "Last compiled" wiki/README.md
+WIKI_DIR="wiki-f26"
+echo "Papers:   $(ls $WIKI_DIR/papers/*.md 2>/dev/null | grep -v README | wc -l | tr -d ' ')"
+echo "Concepts: $(ls $WIKI_DIR/concepts/*.md 2>/dev/null | grep -v README | wc -l | tr -d ' ')"
+grep "Last compiled" $WIKI_DIR/README.md
 ```
 
-If counts disagree or the date is stale, update `wiki/README.md`.
+If counts disagree or the date is stale, update `wiki-f26/README.md`.
 
 ## 4. Index coverage
 
@@ -60,11 +62,12 @@ every `README.md` entry must point at a real file. `check-links.py` catches the
 second half (dangling index links). For the first half:
 
 ```bash
-for f in $(ls wiki/papers/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
-  grep -q "($f.md)" wiki/papers/README.md || echo "MISSING FROM PAPERS INDEX: $f"
+WIKI_DIR="wiki-f26"
+for f in $(ls $WIKI_DIR/papers/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
+  grep -q "($f.md)" $WIKI_DIR/papers/README.md || echo "MISSING FROM PAPERS INDEX: $f"
 done
-for f in $(ls wiki/concepts/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
-  grep -q "($f.md)" wiki/concepts/README.md || echo "MISSING FROM CONCEPTS INDEX: $f"
+for f in $(ls $WIKI_DIR/concepts/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
+  grep -q "($f.md)" $WIKI_DIR/concepts/README.md || echo "MISSING FROM CONCEPTS INDEX: $f"
 done
 ```
 
@@ -87,7 +90,8 @@ page and confirm:
 A quick grep surfaces the obvious schema violations:
 
 ```bash
-grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr)' wiki/papers/
+WIKI_DIR="wiki-f26"
+grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr)' $WIKI_DIR/papers/
 ```
 
 Any hit is a candidate violation; read it and confirm.
@@ -98,8 +102,9 @@ Concept pages with no incoming link from any paper page (a concept nobody
 needs yet):
 
 ```bash
-for f in $(ls wiki/concepts/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
-  count=$(grep -rl "concepts/$f.md" wiki/papers/ 2>/dev/null | wc -l | tr -d ' ')
+WIKI_DIR="wiki-f26"
+for f in $(ls $WIKI_DIR/concepts/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
+  count=$(grep -rl "concepts/$f.md" $WIKI_DIR/papers/ 2>/dev/null | wc -l | tr -d ' ')
   [ "$count" = "0" ] && echo "ORPHAN CONCEPT: $f"
 done
 ```
@@ -110,7 +115,8 @@ worth reviewing.
 ## 7. Markdownlint
 
 ```bash
-npx --no-install markdownlint-cli2 "wiki/**/*.md" "docs/**/*.md"
+WIKI_DIR="wiki-f26"
+npx --no-install markdownlint-cli2 "$WIKI_DIR/**/*.md" "docs/**/*.md"
 ```
 
 Must be 0 errors. `--no-install` uses the existing global install and skips the
@@ -123,12 +129,13 @@ Em-dashes are prohibited in prose. Use commas or shorter sentences. Exception:
 the `[text](link) — description` list-separator pattern is allowed.
 
 ```bash
-grep -rn '—' wiki/ --include="*.md" | grep -v ') —' | head -20
+WIKI_DIR="wiki-f26"
+grep -rn '—' $WIKI_DIR/ --include="*.md" | grep -v ') —' | head -20
 ```
 
 ## 9. Scripts lint (ruff + types)
 
-The published artifact is `wiki/`, but the tooling in `scripts/` must stay clean
+The published artifact is `wiki-f26/`, but the tooling in `scripts/` must stay clean
 too. Run the same linters pre-commit enforces:
 
 ```bash
