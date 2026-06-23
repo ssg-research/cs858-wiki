@@ -25,6 +25,7 @@ too large and the noise (scaled to C) swamps the signal.
 ## Papers that use this concept
 
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — per-example clipping is the sensitivity bound at the core of DP-SGD; the paper chooses C from the median of unclipped gradient norms.
+- [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — clips an aggregated zeroth-order estimate rather than a first-order gradient, and ties the resulting clipping bias to the private optimizer's convergence.
 
 ## See also
 

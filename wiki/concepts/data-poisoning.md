@@ -35,6 +35,7 @@ whose poison samples leave clean-input accuracy untouched.
 
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — defends against backdoors planted by poisoning training data with trigger-stamped, mislabeled inputs, in a setting where the defender holds only the trained model and so cannot sanitize the training set.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — relocates poisoning from the training set to a deployed RAG system's inference-time knowledge base, which no model is trained on.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — covers poisoning as a surveyed risk with outlier removal as its defense, and notes how watermarking reuses poisoning to plant ownership markers.
 
 ## Variants and traps
 

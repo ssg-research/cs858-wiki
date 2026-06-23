@@ -33,6 +33,8 @@ available to whoever calls the model, they are also an attack surface.
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — the decoding-parameter exploit and prefilling attacks it unifies operate entirely through these inference-time controls.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — candidate generation drives the attack, varying temperature and top-k sampling and conditioning on internet text to surface more diverse memorized samples.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — measures extraction with greedy decoding and compares against a differentially private decoding baseline that interpolates the logits toward uniform before nucleus sampling.
+- [A Watermark for Large Language Models](../papers/kirchenbauer-2023-llm-watermark.md) — embeds the watermark during decoding by modifying the logits before sampling, and marks most strongly under multinomial sampling and beam search.
+- [Examining Zero-Shot Vulnerability Repair with Large Language Models](../papers/pearce-2023-vulnerability-repair.md) — sweeps temperature and top-p to tune how the code models sample candidate patches, settling on a fixed top-p with a temperature ensemble.
 
 ## See also
 

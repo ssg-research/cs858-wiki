@@ -34,6 +34,7 @@ KL measurements read in the same currency.
 
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — per-token KL between an aligned model and its base model is the measurement that localizes where alignment concentrates.
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — training the knockoff to imitate the victim's predictions over the transfer set is equivalent to minimizing the KL divergence between the two models there.
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — its information-theoretic defense minimizes the mutual information between clean and perturbed predictions, the KL divergence between their joint distribution and the product of the marginals.
 
 ## Variants and traps
 

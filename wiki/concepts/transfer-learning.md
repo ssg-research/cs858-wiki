@@ -28,6 +28,8 @@ design decision.
 
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — both the victim models and the adversary's knockoff are initialized from ImageNet-pretrained weights before fine-tuning, so the attack inherits the same head start as the victim.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — one of the evaluated face-recognition models is built by transfer learning, fine-tuned from a pretrained backbone.
+- [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — private fine-tuning of a pretrained language model on a downstream task, the language-model instance of the pretrain-then-fine-tune paradigm.
+- [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — public pretrained backbones build the victim and also initialize the adversary's surrogate, the on-device adversary's main resource.
 
 ## See also
 

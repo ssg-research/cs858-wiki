@@ -31,6 +31,7 @@ leaving the model open to stronger ones.
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — recasts adversarial training as solving the outer minimization of a saddle-point problem and studies how strong the inner adversary must be.
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — cited as the train-against-the-attack defense tradition its deeper-alignment data augmentation draws on.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — surveys adversarial training as a defense whose effect on overfitting and memorization raises or lowers susceptibility to membership inference and other risks.
 
 ## Variants and traps
 

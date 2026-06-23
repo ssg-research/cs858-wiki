@@ -42,6 +42,11 @@ predictions as a building block (Carlini et al., 2021).
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the canonical defense whose guarantee upper-bounds any membership inference attack.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — reduces training-data extraction to membership inference, ranking generated candidates by a calibrated membership signal.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — measures privacy on targeted extraction rather than membership-inference recall, and contrasts the two as risk metrics.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — uses membership inference as a recurring risk and shows that many defenses, by changing overfitting or memorization, move susceptibility to it.
+- [Secure Transformer Inference Made Non-interactive](../papers/zhang-2025-nexus.md) — motivates the protocol's encrypted argmax: returning only the top label, rather than the full logit vector, limits the membership-inference leakage of a secure-inference result.
+- [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — the leakage its differentially private fine-tuning provably bounds for the fine-tuning dataset.
+- [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — the training-data privacy attack, paired with model stealing, used to test whether a TEE partition matches the shielding-whole-model baseline.
+- [ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments](../papers/moon-2025-asgard.md) — a stolen on-device model also enables membership inference, one of the privacy harms that motivate keeping the model confidential.
 
 ## Variants and traps
 

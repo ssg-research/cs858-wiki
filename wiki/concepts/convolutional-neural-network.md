@@ -33,6 +33,10 @@ recur as off-the-shelf architecture choices throughout the literature.
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — both the victim models and the adversary's knockoff are CNN image classifiers; the study varies the knockoff's backbone relative to the victim's.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — the protected models and the surrogates it watermarks are CNN image classifiers, evaluated on standard datasets and backbones.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — the models it inspects, tests, and patches are CNN image classifiers for digits, traffic signs, and faces.
+- [Secure Transformer Inference Made Non-interactive](../papers/zhang-2025-nexus.md) — secure inference, interactive and non-interactive alike, matured on CNN classifiers (the prior protocols it contrasts with) before this work extended the non-interactive setting to transformers.
+- [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — the partitioned and attacked models are standard CNN image classifiers (ResNet, VGG, AlexNet).
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — the protected models and the adversary's substitutes are CNN image classifiers, evaluated on Caltech256, CUB200, CIFAR100, and CIFAR10.
+- [ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments](../papers/moon-2025-asgard.md) — the protected on-device models are compact CNNs (MobileNet-class detectors) and small transformers run on a mobile NPU.
 
 ## See also
 

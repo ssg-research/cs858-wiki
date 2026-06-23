@@ -36,6 +36,10 @@ guarantee can be expensive to reach.
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — evaluates DP-SGD as a defense and observes the gap between provable epsilon bounds and empirical attack success.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — weighs differentially private training as the principled mitigation against the extraction it demonstrates, and notes its utility cost.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — positions post-hoc unlearning against DP, trading the worst-case (epsilon, delta) certificate for empirical protection of named sequences without retraining.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — treats DP-SGD as a defense and surveys its unintended effects on robustness, fairness, and other risks through its regularizing reduction of memorization.
+- [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — targets the (epsilon, delta) guarantee for fine-tuning data and attacks the utility cost of clipping and noise with a gradient-free optimizer.
+- [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — the formal alternative for bounding membership leakage, set aside as too costly and silent on model stealing, motivating the hardware-partition line.
+- [PAL\*M: Property Attestation for Large Generative Models](../papers/chantasantitam-2026-palm.md) — names differential privacy among the security properties the cryptographic-proof alternative can verify, alongside its own hardware-rooted attestations of training and inference.
 
 ## Variants and traps
 

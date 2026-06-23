@@ -28,6 +28,7 @@ informally after ChatGPT's release, including role-play personas such as "DAN"
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — proposes two failure modes of safety training and uses them as principles for constructing jailbreaks.
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — explains prefilling, adversarial-suffix, and decoding-parameter jailbreaks as ways of getting past a shallow refusal prefix.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — names jailbreaking as orthogonal: it steers a RAG answer through corrupted retrieved content rather than by bypassing a safety refusal.
+- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — demonstrates harmlessness control that holds a refusal under an adversarial-suffix jailbreak by steering internal representations.
 
 ## See also
 

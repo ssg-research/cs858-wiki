@@ -366,3 +366,317 @@ the "Temporary note (content batch in progress)" block from `AGENTS.md`'s Git
 Workflow section, since the batch it described is complete; future paper
 compiles resume the standard one-branch-one-PR workflow. Model: Sonnet 4.6,
 `claude-sonnet-4-6`.
+
+## [2026-06-23 02:24] generate-paper-summary | Representation Engineering: A Top-Down Approach to AI Transparency
+
+Compiled reading companion #13 (`wiki/papers/zou-2023-representation-engineering.md`,
+arXiv 2310.01405), section "Mechanistic Interpretability for AI safety," framed as
+top-down interpretability/transparency with a white-box, analyst-controlled threat
+model. Created five concept pages: `mechanistic-interpretability`,
+`linear-representation-hypothesis`, `linear-probing`, `activation-steering`,
+`contrastive-prompt-pairs`. Reused eight: `language-model-pretraining`,
+`instruction-tuning`, `rlhf`, `safety-training`, `jailbreak`, `red-teaming`,
+`white-box-black-box`, `memorization` (RepE added to each one's "Papers that use
+this concept" list). Added one backward cross-link from the paper page to
+`carlini-2021-extracting-training-data` (RepE cites it; used in the memorization
+background); no existing paper page cites RepE, so no reciprocal link was added.
+All citation entries (31 on the paper page, plus the concept-page references) were
+read off the paper's own bibliography this session (PDF pages 30-38); arXiv IDs
+surfaced there include TruthfulQA 2109.07958, Activation Addition 2308.10248, and
+Induction Heads 2209.11895. Bibliographic metadata (title, authors, year, arXiv
+ID) came from the instructor-supplied verified list, not re-resolved. Indexes
+updated (Papers: 13, Concepts: 50) and the row-13 under-construction marker
+removed. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 02:52] generate-paper-summary | SoK: Unintended Interactions among Machine Learning Defenses and Risks
+
+Compiled the reading companion for paper 14 (Cross-Cutting Topics). Created two
+concept pages: `group-fairness` and `model-explanations`. Reused eleven existing
+concept pages, adding this paper to each one's "Papers that use this concept"
+list: `adversarial-examples`, `adversarial-training`, `data-poisoning`,
+`backdoor-attacks`, `model-extraction`, `membership-inference`,
+`differential-privacy`, `model-watermarking`, `memorization`,
+`empirical-risk-minimization`, `white-box-black-box`. Added six backward
+cross-links from the paper page to compiled papers the SoK cites: `madry-2018-pgd`,
+`carlini-2022-lira`, `carlini-2021-extracting-training-data`, `abadi-2016-dp-sgd`,
+`orekondy-2019-knockoff-nets`, `szyller-2019-dawn`. Verified that the SoK does not
+cite `wang-2019-neural-cleanse` or `jang-2022-knowledge-unlearning`, so neither was
+linked; no existing paper page cites this SoK, so no reciprocal link was added. The
+required threat-model paragraph is written as a scope paragraph, since a SoK has no
+single threat model. All twenty citation entries on the paper page were read off
+the SoK bibliography this session (PDF pages 15-19); where that bibliography printed
+"First-author et al.", the reference entry uses that form rather than reconstructing
+names from memory. Indexes updated (Papers: 14, Concepts: 52), the row-14
+under-construction marker removed, and `14: "duddu-2024-unintended-interactions"`
+added to the `build-paper-table.py` READY dict. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 03:05] generate-paper-summary | A Watermark for Large Language Models
+
+Compiled the reading companion for paper 15 (Cross-Cutting Topics, Topic "Media
+Forensics and Proactive Provenance"). Created one concept page, `llm-watermarking`,
+framing output/text watermarking for provenance as a family (decoding-time
+logit/sampling biasing versus post-hoc editing, statistical detection) kept
+general so it does not stand in for this founding paper; no entropy concept page
+was created, since the audience's probability fluency covers next-token-distribution
+entropy and the paper's "spike entropy" is its own construct. Reused five existing
+concept pages, adding this paper to each one's "Papers that use this concept" list:
+`language-model-pretraining`, `decoding-strategies`, `perplexity`, `roc-curves`,
+and `model-watermarking` (the last carries the model-weight-watermarking contrast).
+No backward cross-links were added: the only paper page matching a search for this
+work, `zou-2024-poisonedrag`, matched on the coauthor surname "Kirchenbauer" in an
+unrelated reference (Jain et al., 2023), not a citation of this paper, and no
+existing paper page cites it. All twenty-three citation entries on the paper page
+were read off this paper's bibliography this session (arXiv 2301.10226v4, PDF pages
+13-17); `doi:` is omitted because the arXiv PDF prints none for the paper. Indexes
+updated (Papers: 15, Concepts: 53), the row-15 under-construction marker and dagger
+removed, and `15: "kirchenbauer-2023-llm-watermark"` added to the
+`build-paper-table.py` READY dict. The "Why read this" section carries an
+`<!-- instructor: confirm -->` marker on a drafted candidate. Model: Opus 4.8,
+`claude-opus-4-8`.
+
+## [2026-06-23 03:23] generate-paper-summary | Examining Zero-Shot Vulnerability Repair with Large Language Models
+
+Compiled the reading companion for Pearce et al. (IEEE S&P 2023, arXiv 2112.02125),
+reading-list paper 16 under "AI for Cybersecurity". Created four concept stubs:
+`software-vulnerability` (CWE), `automated-program-repair`, `code-language-models`
+(Codex / code completion), and `zero-shot-prompting`. Reused
+`language-model-pretraining` (the pretrained base of the code models),
+`white-box-black-box` (black-box API access), and `decoding-strategies` (the
+temperature / top-p sweep), adding a reciprocal role line to each. No backward
+cross-links were added: the two paper pages matching a search for "Pearce" matched
+unrelated authors (Adam Pearce in `zou-2023-representation-engineering`, Will Pearce
+in `zou-2024-poisonedrag`), not this work, and no existing paper page cites it; this
+paper's bibliography cites no compiled wiki paper. The fifteen citation entries on
+the paper page were read off this paper's bibliography this session (PDF pages
+14-15); `doi:` is omitted because the arXiv PDF prints none. Indexes updated (Papers:
+16, Concepts: 57), the row-16 under-construction link and dagger replaced, and
+`16: "pearce-2023-vulnerability-repair"` added to the `build-paper-table.py` READY
+dict. The "Why read this" section carries an `<!-- instructor: confirm -->` marker on
+a drafted candidate. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 03:44] generate-paper-summary | Secure Transformer Inference Made Non-interactive
+
+Compiled the reading companion for Zhang et al. (NDSS 2025, IACR ePrint 2024/136,
+DOI 10.14722/ndss.2025.230868), reading-list paper 17 and the first of the Part-2
+cluster on cryptographic and hardware defenses, under "Leakage Resistance (Client
+Data): Software". NEXUS is the first non-interactive protocol for secure transformer
+inference, built on RNS-CKKS fully homomorphic encryption. Created four general,
+reusable cryptography concept stubs written for reuse by the later cluster papers
+(secure inference, trusted execution, zero-knowledge proofs, attestation):
+`homomorphic-encryption` (partially/leveled/fully HE, CKKS, bootstrapping),
+`secure-multiparty-computation` (2PC, garbled circuits, secret sharing, semi-honest
+vs malicious, the simulation paradigm), `secure-inference` (the private-inference
+problem setting across HE/MPC/TEE instantiations and its round/bandwidth cost axes),
+and `ciphertext-packing` (SIMD batching of homomorphic ciphertexts). Reused
+`language-model-pretraining` (the pretrained BERT/GPT transformers run under
+encryption), `membership-inference` (the logit-vector leakage that motivates
+returning only the argmax label), and `convolutional-neural-network` (the models
+prior secure-inference protocols targeted before transformers), adding a reciprocal
+role line to each. No backward cross-links: none of this paper's cited works has a
+wiki paper page, and no existing page cites it. The DOI is printed on the PDF title
+page; `arxiv:` is omitted because the paper is not on arXiv. The 24 citation entries
+on the paper page were read off this paper's bibliography this session (PDF pages
+14-17). Indexes updated (Papers: 17, Concepts: 61), the row-17 under-construction
+link and dagger replaced, and `17: "zhang-2025-nexus"` added to the
+`build-paper-table.py` READY dict. The "Why read this" section carries an
+`<!-- instructor: confirm -->` marker on a drafted candidate. Model: Opus 4.8,
+`claude-opus-4-8`.
+
+## [2026-06-23 04:00] generate-paper-summary | BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking
+
+Compiled reading companion 18 (`elatali-2024-blime`, NDSS 2024, arXiv 2204.09649),
+the hardware paper in the "Leakage Resistance (Client Data)" theme. Created two
+general, reusable hardware-security concept stubs seeded for the rest of the Part-2
+cluster: `trusted-execution-environment` (enclaves, isolation, remote attestation,
+SGX / TrustZone / SEV / Sanctum, and their side-channel and run-time-attack limits)
+and `taint-tracking` (dynamic information-flow tracking, software vs hardware tag
+bits, explicit vs implicit flows, the confidentiality / integrity dual). The later
+hardware papers (No Privacy Left Outside, ASGARD) reuse these. Reused
+`secure-inference` (the outsourced-computation framing; added the hardware
+instantiation as a reciprocal role line and a TEE see-also link) and
+`homomorphic-encryption` (the FHE baseline whose overhead motivates the hardware
+approach). `secure-multiparty-computation` was considered but not linked: the paper
+neither builds on nor centrally compares against MPC. No backward cross-links: none
+of this paper's cited works has a wiki page, and no existing page (duddu-2024
+included) cites it. The DOI is read off the PDF title page; `arxiv:` retained. The
+22 citation entries on the paper page were read off this paper's bibliography this
+session (PDF pages 14-16). Indexes updated (Papers: 18, Concepts: 63), the row-18
+under-construction link and dagger replaced, and `18: "elatali-2024-blime"` added
+to the `build-paper-table.py` READY dict. The "Why read this" section carries an
+`<!-- instructor: confirm -->` marker on a drafted candidate. Model: Opus 4.8,
+`claude-opus-4-8`.
+
+## [2026-06-23 04:09] generate-paper-summary | Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs
+
+Compiled paper 19 (`bao-2025-dp-zo`, USENIX Security 2025) as software-side
+training-data leakage resistance via differential privacy. Created one concept
+page, `zeroth-order-optimization` (gradient-free two-point/SPSA estimation and the
+MeZO line for memory-efficient LLM fine-tuning), and reused nine existing pages:
+`differential-privacy`, `privacy-budget`, `gaussian-mechanism`, `gradient-clipping`,
+`stochastic-gradient-descent`, `membership-inference`, `memorization`,
+`language-model-pretraining`, and `transfer-learning`. Used `transfer-learning`
+rather than `instruction-tuning` for the fine-tuning prerequisite, since the paper
+does task-specific supervised fine-tuning, not instruction following; no PEFT/LoRA
+or federated-learning page, as the paper centrally uses neither. Backward
+cross-links to three compiled pages it cites: `abadi-2016-dp-sgd` (DP-SGD),
+`carlini-2022-lira` (membership inference), and
+`carlini-2021-extracting-training-data` (training-data extraction); no existing page
+cites this paper. No arXiv ID and no DOI on the PDF title page, so both are omitted
+from frontmatter. The 15 citation entries were read off this paper's bibliography
+this session (USENIX Security 2025 proceedings, pages 16-21); the Carlini et al.
+extraction paper is listed there as a 2020 preprint and is cited by its USENIX
+Security 2021 publication. Indexes updated (Papers: 19, Concepts: 64), the row-19
+under-construction link and dagger replaced, and `19: "bao-2025-dp-zo"` added to the
+`build-paper-table.py` READY dict. The "Why read this" section carries an
+`<!-- instructor: confirm -->` marker on a drafted candidate. Model: Opus 4.8,
+`claude-opus-4-8`.
+
+## [2026-06-23 04:29] generate-paper-summary | No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML
+
+Compiled `wiki/papers/zhang-2024-tee-shielded.md` (reading-list #20, "Leakage
+Resistance (Training Data): Hardware") from arXiv 2310.07152 (IEEE S&P 2024).
+Created one concept page, `model-partitioning` (splitting a DNN across a TEE and an
+untrusted accelerator, the on-device TSDP setting, and the security-versus-utility
+trade-off), and reused ten existing pages: `trusted-execution-environment`,
+`model-extraction`, `membership-inference`, `white-box-black-box`,
+`convolutional-neural-network`, `transfer-learning`, `shadow-models`,
+`differential-privacy`, `secure-multiparty-computation`, and
+`homomorphic-encryption`. Did not create a `side-channel-attacks` page: the paper
+explicitly puts TEE side channels out of scope, so the existing
+`trusted-execution-environment` page covers that limit and inline glossing
+suffices. Backward cross-links to two compiled pages it cites:
+`orekondy-2019-knockoff-nets` (model stealing, ref [79]) and `carlini-2022-lira`
+(membership inference, ref [18]); the paper does not cite BliMe or the Carlini 2021
+LLM-extraction page, and no existing page cites this paper. The 21 citation entries
+were read off this paper's bibliography this session (PDF pages 15-18). arXiv prints
+the v1 year as 2023, but the venue is IEEE S&P 2024, so frontmatter uses year 2024;
+no DOI on the title page, so it is omitted. Indexes updated (Papers: 20, Concepts:
+65), the row-20 under-construction link and dagger replaced, and
+`20: "zhang-2024-tee-shielded"` added to the `build-paper-table.py` READY dict. The
+"Why read this" section carries an `<!-- instructor: confirm -->` marker on a
+drafted candidate. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 04:42] generate-paper-summary | ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks
+
+Compiled `wiki/papers/tang-2024-modelguard.md` (Tang et al., USENIX Security 2024;
+Duke University and Accenture). The paper is not on arXiv, so the frontmatter omits
+`arxiv:`; the title page prints no DOI, so `doi:` is omitted too, and `year` is 2024.
+Created one concept page, `mutual-information` (the information-leakage measure the
+defense minimizes, with its rate-distortion role), and reused eight existing
+concepts: `model-extraction`, `white-box-black-box`, `knowledge-distillation`,
+`convolutional-neural-network`, `stochastic-gradient-descent`, `kl-divergence`,
+`lp-norms`, and `roc-curves`, adding ModelGuard to each one's "Papers that use this
+concept" list. The only backward cross-link is `orekondy-2019-knockoff-nets`
+(Knockoff Nets, cited as ref [35]); DAWN (Szyller et al., 2019) is absent from this
+paper's bibliography, so it gets no citation or link despite the topical adjacency,
+and no existing page cites this paper. The 21 citation entries were read off the
+paper's bibliography this session (PDF pages 14-15). Indexes updated (Papers: 21,
+Concepts: 66), the row-21 under-construction link and dagger replaced with the new
+page, and `21: "tang-2024-modelguard"` added to the `build-paper-table.py` READY
+dict. The "Why read this" section carries an `<!-- instructor: confirm -->` marker
+on a drafted candidate. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 04:56] generate-paper-summary | ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
+
+Compiled `wiki/papers/moon-2025-asgard.md` (Moon et al., NDSS 2025; Yonsei
+University). The paper is not on arXiv, so the frontmatter omits `arxiv:`; the
+title page prints `doi: 10.14722/ndss.2025.240449` and the venue year is 2025.
+Created one concept page, `hardware-virtualization` (hypervisors and the Arm
+virtualization extensions, EL2, two-stage address translation, and the IOMMU, the
+substrate beneath virtualization-based TEEs), and reused five existing concepts:
+`trusted-execution-environment`, `model-partitioning`, `model-extraction`,
+`convolutional-neural-network`, and `membership-inference`, adding ASGARD to each
+one's "Papers that use this concept" list. Backward cross-links go to
+`zhang-2024-tee-shielded` (the TSDP in-security study, cited as ref [95]) and
+`carlini-2021-extracting-training-data` (training-data leakage, ref [16]); the
+paper does not cite Knockoff Nets or any other compiled extraction page, and no
+existing page cites this paper. The 17 citation entries were read off this paper's
+bibliography this session (PDF pages 14-16). Indexes updated (Papers: 22, Concepts:
+67), the row-22 under-construction link and dagger replaced with the new page, and
+`22: "moon-2025-asgard"` added to the `build-paper-table.py` READY dict. The "Why
+read this" section carries an `<!-- instructor: confirm -->` marker on a drafted
+candidate. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 05:08] generate-paper-summary | zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference
+
+Compiled `wiki/papers/qu-2025-zkgpt.md` (Qu et al., USENIX Security 2025; IACR
+ePrint 2025/1184; NUS and HKUST), reading-list paper 23 and the first of the
+"Regulatory Compliance" theme, under section "Regulatory Compliance: Software".
+zkGPT applies zero-knowledge proofs to LLM-inference integrity: a service provider
+proves a claimed output is the correct result of running a committed model on a
+given input, hiding the weights, with a succinct non-interactive proof. The paper
+is not on arXiv, and the title page prints no DOI (only an ISBN and a USENIX URL),
+so the frontmatter omits both `arxiv:` and `doi:`; `year` is 2025. Created one
+general, reusable concept page, `zero-knowledge-proof` (prover/verifier,
+completeness/soundness/zero-knowledge, interactive vs non-interactive via
+Fiat-Shamir, succinct proofs / zk-SNARKs, and the arithmetic-circuit model with the
+quantization it forces on ML), written for reuse by the final cluster paper (PAL*M,
+property attestation); verifiable computation was folded into this page rather than
+given its own. Reused `cryptographic-commitment` (the polynomial commitment that
+fixes the model) and `language-model-pretraining` (the pretrained GPT-2 transformer
+whose layers form the proof circuit), adding zkGPT to each one's "Papers that use
+this concept" list. No backward cross-links: zkGPT's bibliography cites none of the
+compiled wiki pages (NEXUS / `zhang-2025-nexus` is absent, confirmed by scanning the
+full reference list), and no existing page cites zkGPT. The 26 citation entries on
+the paper page were read off this paper's bibliography this session (PDF pages
+15-18); both supplied supplementary readings were verified present in-bib (Garg et
+al., CCS 2023; Abbaszadeh et al., 2024). Indexes updated (Papers: 23, Concepts: 68),
+the row-23 under-construction link and dagger replaced with the new page, and
+`23: "qu-2025-zkgpt"` added to the `build-paper-table.py` READY dict. The "Why read
+this" section carries an `<!-- instructor: confirm -->` marker on a drafted
+candidate. Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 05:20] generate-paper-summary | PAL*M: Property Attestation for Large Generative Models
+
+Compiled `wiki/papers/chantasantitam-2026-palm.md` (Chantasantitam et al., 2026;
+arXiv 2601.16199), reading-list #24, "Regulatory Compliance: Hardware", the
+trusted-hardware counterpart to zkGPT. Created one concept page,
+`remote-attestation` (the root of trust, the signed measurement/quote, and
+property-based attestation with reference values from a trusted authority). Reused
+eight existing concept pages with reciprocal links: `trusted-execution-environment`,
+`zero-knowledge-proof`, `cryptographic-commitment`, `secure-multiparty-computation`,
+`hardware-virtualization`, `language-model-pretraining`, `differential-privacy`, and
+`group-fairness`. Added backward cross-links to `elatali-2024-blime` (cited as a
+side-channel mitigation) and `zhang-2024-tee-shielded` (cited in the
+TEE-confidentiality thread), the only compiled papers in PAL*M's bibliography; the
+SoK (`duddu-2024-unintended-interactions`) and `qu-2025-zkgpt` are not cited, and no
+existing page cites PAL*M since it is the newest. The 25 citation entries were read
+off this paper's bibliography this session (PDF pages 13-14). Indexes updated
+(Papers: 24, Concepts: 69); the row-24 under-construction link and dagger were
+replaced with the new page, the now-unused dagger footnote line was removed (this
+was the last placeholder), and `24: "chantasantitam-2026-palm"` was added to the
+`build-paper-table.py` READY dict. The "Why read this" section carries an
+`<!-- instructor: confirm -->` marker on a drafted candidate. Model: Opus 4.8,
+`claude-opus-4-8`.
+
+## [2026-06-23 06:19] review+fix | adversarial review of the 12 new reading companions
+
+Ran independent adversarial review (three clean-context Opus 4.8 reviewers, one
+per four-paper cluster, each fact-checking threat models and headline numbers
+against the source PDFs), then a second-engine Codex review of all twelve pages.
+Combined verdict: zero blockers on factual accuracy (every threat model and
+headline result verified against the PDFs; no fabricated citations, no invented
+arXiv IDs, no follow-up work cited as background). The findings were cardinal-rule
+creep and citation hygiene. Applied fixes across eight paper pages and one concept
+page: demoted reading-guidance bullets that taught a construction down to neutral
+anchors (NEXUS, Representation Engineering, PAL\*M); re-scoped a ModelGuard Basic
+Background subsection from paper-specific construction to generic prerequisites;
+trimmed headline numbers and construction detail out of three "Why read this"
+sections (NEXUS, zkGPT, PAL\*M); abstracted the NEXUS overview bandwidth figures to
+orders of magnitude; corrected the zkGPT overview (a "smaller proof" claim became a
+communication claim, since the compared scheme is interactive VOLE) and made the
+zkGPT threat model state that cross-query model continuity rests on a published,
+persistent commitment; corrected the BliMe "Why read this" so it no longer implies
+arbitrary server software can usefully compute on blinded data (non-compliant
+operations fault, and useful computation must be BliMe-compliant); disambiguated
+two distinct "Yu et al., 2019" citations on the BliMe page (2019a for OISA, 2019b
+for STT); de-passivized a paragraph and trimmed a thesis-preview clause on the SoK
+page; softened a TEE-shielded threat-model verb (the adversary reads, and in
+principle can tamper, rather than "manipulates"); and scoped a four-method
+attribution citation on the model-explanations concept page to Integrated
+Gradients alone. check-links clean (102 files); markdownlint clean (97 files); no
+prose em-dashes. Noted for the instructor, not changed: "et al."-truncated
+reference author lists on the SoK and PAL\*M pages, the zkLLM venue on the zkGPT
+page, the ASGARD image-size figure (faithful to the paper's abstract), and a
+pre-existing openpyxl pyright stub warning on `build-paper-table.py`. Model:
+Opus 4.8, `claude-opus-4-8`.

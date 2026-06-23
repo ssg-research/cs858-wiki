@@ -58,6 +58,18 @@ READY: dict[int, str] = {
     10: "szyller-2019-dawn",
     11: "wang-2019-neural-cleanse",
     12: "zou-2024-poisonedrag",
+    13: "zou-2023-representation-engineering",
+    14: "duddu-2024-unintended-interactions",
+    15: "kirchenbauer-2023-llm-watermark",
+    16: "pearce-2023-vulnerability-repair",
+    17: "zhang-2025-nexus",
+    18: "elatali-2024-blime",
+    19: "bao-2025-dp-zo",
+    20: "zhang-2024-tee-shielded",
+    21: "tang-2024-modelguard",
+    22: "moon-2025-asgard",
+    23: "qu-2025-zkgpt",
+    24: "chantasantitam-2026-palm",
 }
 
 NUMBER_COL = 1  # A: Paper #

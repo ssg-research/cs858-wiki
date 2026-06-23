@@ -34,6 +34,8 @@ and how hard it is to remove by retraining.
 ## Papers that use this concept
 
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — moves the watermark from the trained model to the prediction API, so the extraction adversary's own surrogate training embeds a trigger set the owner can later verify.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — treats watermarking and fingerprinting as ownership defenses and surveys how their reliance on memorization interacts with privacy and fairness risks.
+- [A Watermark for Large Language Models](../papers/kirchenbauer-2023-llm-watermark.md) — marks the model's generated text for provenance rather than its weights for ownership, the output-watermarking counterpart to these model-marking schemes.
 
 ## Variants and traps
 

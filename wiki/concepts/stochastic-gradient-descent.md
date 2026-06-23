@@ -30,6 +30,8 @@ attacks.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — unlearning is the SGD update run uphill: gradient ascent that maximizes the loss on the target sequences.
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — trains both the victim classifiers and the knockoff by SGD on a cross-entropy loss.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — reverse-engineers a candidate trigger by gradient-descent optimization over the input mask and pattern rather than over model weights.
+- [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — replaces backpropagated SGD gradients with forward-pass zeroth-order estimates to cut the memory of private fine-tuning.
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — the adversary trains its substitute by SGD on the target's returned predictions, and the defense perturbs those predictions to enlarge that training loss.
 
 ## See also
 

@@ -32,6 +32,7 @@ the main assumption is access to enough data from the target's distribution.
 ## Papers that use this concept
 
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — trains IN/OUT shadow models per example to estimate the two loss distributions its likelihood-ratio test compares.
+- [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — the membership-inference attacks train shadow models on a shadow data split to calibrate the decision against each partition scheme.
 
 ## Variants and traps
 

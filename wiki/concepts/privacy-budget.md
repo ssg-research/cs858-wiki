@@ -34,6 +34,7 @@ can train within a fixed budget.
 ## Papers that use this concept
 
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — its moments accountant tracks higher moments of the privacy loss across sampled Gaussian steps, cutting the reported epsilon severalfold for the same training run.
+- [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — composes the per-iteration noise across fine-tuning steps with subsampling amplification under Rényi DP accounting, and spends part of the budget on releasing the private dataset size.
 
 ## Variants and traps
 
