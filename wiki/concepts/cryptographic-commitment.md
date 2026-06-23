@@ -29,6 +29,8 @@ checks the opened values against a suspected model.
 ## Papers that use this concept
 
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — the owner registers commitments to the protected model and to each client's watermark on a public bulletin board, so a trusted judge can later confirm ownership and its priority in time.
+- [zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference](../papers/qu-2025-zkgpt.md) — a polynomial commitment to the model weights fixes one model in advance, so the zero-knowledge proof certifies inference under the committed weights and the prover cannot swap models between queries.
+- [PAL\*M: Property Attestation for Large Generative Models](../papers/chantasantitam-2026-palm.md) — notes the cryptographic-attestation alternative, where publicly verifiable commitments bind a model's training and inference for auditing, in contrast to its own hardware-rooted measurements.
 
 ## See also
 

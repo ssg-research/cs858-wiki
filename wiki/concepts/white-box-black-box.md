@@ -33,6 +33,11 @@ read each paper's definition rather than assuming one.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — both the extraction adversary and the owner's ownership check operate over black-box query access to a prediction API.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — the defender has white-box access to the trained model (weights, gradients, neuron activations) but not to its training data.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — splits the attack by the adversary's knowledge of the retriever: black-box (no parameters, no queries) versus white-box (retriever parameters available to optimize against).
+- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — its analyst has white-box access to the model's internal activations at every layer and token, the access representation reading and control require.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — spans defenses and risks across both white-box and black-box access to the model, defining its observables over that range.
+- [Examining Zero-Shot Vulnerability Repair with Large Language Models](../papers/pearce-2023-vulnerability-repair.md) — the developer or repair pipeline has black-box access to the commercial code models, seeing only generated completions through an API, not weights or gradients.
+- [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — the protection goal is downgrading white-box stealing and membership inference to black-box label-only attacks; the paper measures how far short the partitions fall.
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — its adversary has black-box query access to the prediction API, reading perturbed confidence vectors, and in the strong case additionally knows the target's architecture.
 
 ## See also
 

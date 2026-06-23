@@ -31,6 +31,7 @@ for example by [clipping](gradient-clipping.md), before the mechanism applies.
 ## Papers that use this concept
 
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — adds Gaussian noise to clipped, summed per-example gradients at every training step.
+- [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — adds Gaussian noise calibrated to the clipped sensitivity of each record's aggregated zeroth-order update.
 
 ## Variants and traps
 

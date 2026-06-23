@@ -24,6 +24,7 @@ robust training objectives address.
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — its saddle-point objective is ERM with the per-example loss replaced by the worst-case loss within a perturbation set.
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — ERM's drive to lower training-example loss is the asymmetry between seen and unseen data that membership inference exploits.
 - [Deep Learning with Differential Privacy](../papers/abadi-2016-dp-sgd.md) — the objective DP-SGD minimizes under a privacy constraint.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — uses the train-test generalization gap, overfitting, as one of the two conjectured causes underlying defense-risk interactions.
 
 ## See also
 

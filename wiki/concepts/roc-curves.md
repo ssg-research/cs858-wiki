@@ -34,6 +34,8 @@ and a linear plot hides.
 
 - [Membership Inference Attacks From First Principles](../papers/carlini-2022-lira.md) — argues membership inference must be evaluated by TPR at low FPR on log-scale ROC curves, and re-ranks prior attacks under that metric.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — reports the perplexity detector's ROC and AUC to show injected texts are hard to separate from clean corpus text.
+- [A Watermark for Large Language Models](../papers/kirchenbauer-2023-llm-watermark.md) — reports detection as ROC curves and AUC across watermark parameters, with the z-test thresholded at very low false-positive rates.
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — measures one downstream utility of the perturbed confidence vectors by the AUROC of an out-of-distribution detector as the distortion budget grows.
 
 ## Variants and traps
 

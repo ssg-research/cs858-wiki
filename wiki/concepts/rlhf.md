@@ -25,6 +25,7 @@ stay in the loss, alignment adjusts the base model rather than replacing it.
 
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — the persistence of the pretraining objective inside the RLHF loss is central to its argument that scaling will not remove "competing objectives."
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — uses the KL-penalty view of alignment to argue that current safety alignment concentrates in the first few output tokens.
+- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — targets honesty and harmlessness in RLHF-aligned models and steers them at inference rather than through the alignment loss.
 
 ## See also
 

@@ -230,7 +230,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Mechanistic Interpretability for AI safety</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Representation Engineering: A Top-Down Approach to AI Transparency</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/zou-2023-representation-engineering.md">Representation Engineering: A Top-Down Approach to AI Transparency</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -245,7 +245,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Unintended Interactions among ML Defenses and Risks</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">SoK: Unintended Interactions among Machine Learning Defenses and Risks</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/duddu-2024-unintended-interactions.md">SoK: Unintended Interactions among Machine Learning Defenses and Risks</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -260,7 +260,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Media Forensics and Proactive Provenance</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">A Watermark for Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/kirchenbauer-2023-llm-watermark.md">A Watermark for Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -275,7 +275,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>AI for Cybersecurity</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Examining Zero-Shot Vulnerability Repair with Large Language Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/pearce-2023-vulnerability-repair.md">Examining Zero-Shot Vulnerability Repair with Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -307,7 +307,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Software</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Secure Transformer Inference Made Non-interactive</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/zhang-2025-nexus.md">Secure Transformer Inference Made Non-interactive</a>
         <details>
           <summary>Essential readings (1)</summary>
           <ul>
@@ -321,7 +321,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Hardware</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/elatali-2024-blime.md">BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking</a>
         <details>
           <summary>Essential readings (1)</summary>
           <ul>
@@ -338,7 +338,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Software</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/bao-2025-dp-zo.md">Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -353,7 +353,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Hardware</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/zhang-2024-tee-shielded.md">No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML</a>
         <details>
           <summary>Essential readings (1)</summary>
           <ul>
@@ -370,7 +370,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Software</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/tang-2024-modelguard.md">ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks</a>
         <details>
           <summary>Essential readings (1)</summary>
           <ul>
@@ -384,7 +384,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Hardware</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/moon-2025-asgard.md">ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments</a>
         <details>
           <summary>Essential readings (1)</summary>
           <ul>
@@ -401,7 +401,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Software</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/qu-2025-zkgpt.md">zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -416,7 +416,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Hardware</td>
       <td>
         <strong>Primary</strong>
-        <a href="under-construction.md">PAL*M: Property Attestation for Large Generative Models</a> <sup title="Reading companion under construction">&dagger;</sup>
+        <a href="papers/chantasantitam-2026-palm.md">PAL*M: Property Attestation for Large Generative Models</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -429,8 +429,6 @@ is required; expand the essential readings beneath it to see what goes alongside
   </tbody>
 </table>
 
-<sup>&dagger;</sup> Reading companion under construction; the link opens a placeholder page.
-
 ---
 
-Last compiled: 2026-06-22. Papers: 12. Concepts: 45.
+Last compiled: 2026-06-23. Papers: 24. Concepts: 69.

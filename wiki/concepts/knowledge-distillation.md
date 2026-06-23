@@ -34,6 +34,7 @@ match the teacher's training data, turns distillation into a tool for
 ## Papers that use this concept
 
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — frames the knockoff's training as distillation under weaker assumptions: the teacher is a black box, and the transfer images can come from a different distribution than the victim's training data.
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — the functionality-stealing attacker it defends against distills the target's returned confidence vectors into a substitute, which the defense perturbs to corrupt that distillation.
 
 ## See also
 

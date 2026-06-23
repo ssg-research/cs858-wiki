@@ -37,6 +37,10 @@ the victim (Papernot et al., 2017).
 
 - [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — targets functionality stealing under minimal assumptions, training a "knockoff" from black-box query outputs alone.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — defends against functionality-stealing extraction by watermarking the surrogate the adversary trains, rather than preventing the extraction.
+- [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — covers model extraction as the unauthorized-model-ownership risk, with watermarking and fingerprinting as the defenses whose side effects it surveys.
+- [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — model stealing is one of the two attacks used to score each TEE-partition defense, recovering near-white-box copies from the offloaded weights.
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — defends against extraction by perturbing the prediction API's returned confidence vectors, posed as a constrained optimization that covers both parameter-stealing and functionality-stealing.
+- [ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments](../papers/moon-2025-asgard.md) — defends the on-device model against an REE-side adversary that dumps or reproduces it during inference, holding the whole model confidential in a virtualization-based enclave.
 
 ## See also
 

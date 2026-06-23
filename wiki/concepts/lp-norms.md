@@ -24,6 +24,7 @@ perceptual similarity, which has no closed form.
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — fixes the perturbation set to an ℓ-infinity ball.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — measures each reverse-engineered trigger's size by the ℓ1 norm of its mask, then flags the label whose trigger is an outlier in that norm.
+- [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — bounds the perturbation applied to each returned confidence vector by an ℓ1 distortion budget, the utility constraint the defense optimizes under.
 
 ## Variants and traps
 
