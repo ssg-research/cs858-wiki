@@ -680,3 +680,11 @@ reference author lists on the SoK and PAL\*M pages, the zkLLM venue on the zkGPT
 page, the ASGARD image-size figure (faithful to the paper's abstract), and a
 pre-existing openpyxl pyright stub warning on `build-paper-table.py`. Model:
 Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-23 10:56] update-table | wiki/papers/README.md
+
+Updated the papers list table in `wiki/papers/README.md` to include columns for Paper Title, Authors, Section, and Year by parsing the frontmatter of each paper file. Model: Gemini 3.1 Pro (High).
+
+## [2026-06-23 11:03] update-table | wiki/papers/README.md
+
+Updated the papers list table in `wiki/papers/README.md` to format authors using 'et al.' when there are more than two authors. Did not add publication column as that information is not available in the frontmatter. Model: Gemini 3.1 Pro (High).
