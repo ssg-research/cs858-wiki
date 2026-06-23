@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One-time generator for the reading-list tables in ``wiki/README.md``.
+"""One-time generator for the reading-list tables in ``wiki-f26/README.md``.
 
 Reads ``docs/CS858-F26-papers-stripped.xlsx`` (sheet ``UpdatedList``) and prints
 the Part 1 / Part 2 sections as HTML tables.
@@ -29,7 +29,7 @@ Run from the repo root::
 
     uv run python3 scripts/build-paper-table.py > /tmp/reading-list.md
 
-The output is spliced into ``wiki/README.md`` by hand so the surrounding prose
+The output is spliced into ``wiki-f26/README.md`` by hand so the surrounding prose
 stays under editorial control.
 """
 

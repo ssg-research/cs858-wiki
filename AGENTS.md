@@ -20,16 +20,16 @@ could read the page instead of the paper and lose nothing, the page has failed.
 
 | Path | Contents | Tracked? |
 |---|---|---|
-| `wiki/papers/` | One reading-companion page per primary paper | yes |
-| `wiki/concepts/` | Shared single-tier prerequisite concept pages | yes |
-| `wiki/README.md` | Top index (stats line and tables); every directory in `wiki/` has a `README.md` | yes |
+| `wiki-f26/papers/` | One reading-companion page per primary paper | yes |
+| `wiki-f26/concepts/` | Shared single-tier prerequisite concept pages | yes |
+| `wiki-f26/README.md` | Top index (stats line and tables); every directory in `wiki-f26/` has a `README.md` | yes |
 | `scripts/` | arXiv fetcher, PDF reader, and link checker | yes |
 | `docs/ops/` | Operational playbooks (the reproducible workflow) | yes |
 | `docs/log.md` | Append-only change log | yes |
 | `.claude/commands/` | Slash commands (`/generate-paper-summary`) | yes |
 | `raw/pdfs/` | Paper PDFs (untrusted input) | **no** (gitignored) |
 
-The published artifact is `wiki/`; the reproducible workflow is `docs/ops/` +
+The published artifact is `wiki-f26/`; the reproducible workflow is `docs/ops/` +
 `scripts/` + `.claude/`.
 
 ---
@@ -42,10 +42,10 @@ wikilinks:
 ```markdown
 [Differential privacy](../concepts/differential-privacy.md)   # from a paper page
 [Membership inference](membership-inference.md)               # concept -> sibling concept
-[All papers](papers/README.md)                                # from wiki/README.md
+[All papers](papers/README.md)                                # from wiki-f26/README.md
 ```
 
-Directory indexes are named `README.md` (one per directory in `wiki/`); a link
+Directory indexes are named `README.md` (one per directory in `wiki-f26/`); a link
 to an index targets `dir/README.md`. Keep the `.md` extension. This format renders correctly in any Markdown editor,
 on GitHub, in VS Code preview, in Obsidian, and in every static-site generator
 (a website build step can strip the extension if needed). Do **not** use
@@ -58,8 +58,8 @@ and link tooling parse this Markdown-link format; wikilinks are invisible to it.
 
 | If the input is... | Create a... | In... |
 |---|---|---|
-| One primary-reading paper (PDF or arXiv ID) | Paper page | `wiki/papers/<slug>.md` |
-| A prerequisite idea/method appearing across papers | Concept page | `wiki/concepts/<concept>.md` |
+| One primary-reading paper (PDF or arXiv ID) | Paper page | `wiki-f26/papers/<slug>.md` |
+| A prerequisite idea/method appearing across papers | Concept page | `wiki-f26/concepts/<concept>.md` |
 
 **Slug convention:** paper pages use `author-year-shortname`, lowercase, hyphens
 only (first author surname, year, then an obvious named method or a couple of
@@ -108,9 +108,9 @@ is the instructor's release decision, never an agent's.
 
 ## Index and Log Rules
 
-- Every directory in `wiki/` has a `README.md`. Update the relevant index files
+- Every directory in `wiki-f26/` has a `README.md`. Update the relevant index files
   after every write operation.
-- The stats line in `wiki/README.md` is `Last compiled: YYYY-MM-DD. Papers: N.
+- The stats line in `wiki-f26/README.md` is `Last compiled: YYYY-MM-DD. Papers: N.
   Concepts: N.` Recount actual non-`README` `.md` files after any add/remove.
 - `docs/log.md` is append-only and chronological (oldest at top, newest at
   bottom). Append to the **end**. Format: `## [YYYY-MM-DD HH:MM] <operation> |
@@ -148,7 +148,8 @@ is the instructor's release decision, never an agent's.
   PATH; invoke via npx:
 
   ```bash
-  npx --no-install markdownlint-cli2 "wiki/papers/foo.md" "wiki/concepts/bar.md"
+WIKI_DIR="wiki-f26"
+  npx --no-install markdownlint-cli2 "$WIKI_DIR/papers/foo.md" "$WIKI_DIR/concepts/bar.md"
   ```
 
   If `--no-install` errors with "not found," fall back to `--yes` (auto-installs
@@ -175,8 +176,8 @@ reuse them.
 ## Finding related pages
 
 No graph manifest. At this scale the files are the graph: to find concept pages
-relevant to a new paper, skim `grep -h "^description:" wiki/concepts/*.md`; to
-find which papers already use a concept, `grep -rl "concepts/<slug>.md" wiki/papers/`.
+relevant to a new paper, skim `grep -h "^description:" wiki-f26/concepts/*.md`; to
+find which papers already use a concept, `grep -rl "concepts/<slug>.md" wiki-f26/papers/`.
 `scripts/check-links.py` covers structural integrity (every relative link
 resolves).
 

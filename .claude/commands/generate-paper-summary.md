@@ -26,7 +26,7 @@ The two rules that override everything else:
 
 The paper's `section` is not an editorial input: it is the **Topic** of the
 paper's row in the canonical reading list in
-[wiki/README.md](../../wiki/README.md), used verbatim. Look it up there; do not
+[wiki-f26/README.md](../../wiki-f26/README.md), used verbatim. Look it up there; do not
 invent it or ask for it. If the paper has no row yet, stop and ask the instructor
 where it belongs.
 

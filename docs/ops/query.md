@@ -6,11 +6,11 @@ in).
 
 ## Steps
 
-1. Read `wiki/README.md` to orient (stats, sections, navigation).
+1. Read `wiki-f26/README.md` to orient (stats, sections, navigation).
 2. Find the relevant pages. Match the question's topic against concept
-   `description` frontmatter: `grep -h "^description:" wiki/concepts/*.md`. This
+   `description` frontmatter: `grep -h "^description:" wiki-f26/concepts/*.md`. This
    is faster than scanning every page. For which papers use a concept,
-   `grep -rl "concepts/<slug>.md" wiki/papers/`.
+   `grep -rl "concepts/<slug>.md" wiki-f26/papers/`.
 3. Read the matched concept and paper pages.
 4. Answer with citations to wiki pages, as relative Markdown links.
 5. Do not invent claims the wiki does not support.

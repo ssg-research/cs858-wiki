@@ -30,7 +30,7 @@ repos:
     hooks:
       - id: markdownlint
         args: ["--fix"]
-        files: ^(wiki|docs)/
+        files: ^(wiki-f26|docs)/
 
   # basedpyright runs via uv so it uses the version from uv.lock.
   - repo: local

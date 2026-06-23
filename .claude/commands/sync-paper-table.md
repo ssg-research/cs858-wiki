@@ -1,8 +1,8 @@
 ---
-description: Regenerate the reading-list tables in wiki/README.md from the spreadsheet
+description: Regenerate the reading-list tables in wiki-f26/README.md from the spreadsheet
 ---
 
-Sync the paper table in `wiki/README.md` to the current spreadsheet.
+Sync the paper table in `wiki-f26/README.md` to the current spreadsheet.
 
 ## Steps
 
@@ -15,7 +15,7 @@ Sync the paper table in `wiki/README.md` to the current spreadsheet.
    Capture the full stdout. The output begins with `### Part 1:` and ends with
    the closing `</table>` of Part 2.
 
-2. **Identify the replacement zone.** In `wiki/README.md`, the zone to replace
+2. **Identify the replacement zone.** In `wiki-f26/README.md`, the zone to replace
    is the block that starts at the line `### Part 1: Risks to trustworthiness in ML`
    and ends at the closing `</table>` tag (just before the `<sup>&dagger;</sup>`
    footnote line). Do not touch anything outside this zone.
@@ -31,7 +31,8 @@ Sync the paper table in `wiki/README.md` to the current spreadsheet.
 5. **Lint and verify.**
 
    ```bash
-   npx --no-install markdownlint-cli2 "wiki/README.md"
+WIKI_DIR="wiki-f26"
+   npx --no-install markdownlint-cli2 "$WIKI_DIR/README.md"
    uv run python3 scripts/check-links.py
    ```
 
