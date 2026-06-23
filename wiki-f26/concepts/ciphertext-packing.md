@@ -7,6 +7,8 @@ tags:
   - cryptography
 ---
 
+[Home page](../README.md)
+
 # Ciphertext packing (SIMD batching)
 
 ## Definition
@@ -40,6 +42,8 @@ filled ones.
 
 - [Homomorphic encryption](homomorphic-encryption.md)
 - [Secure inference](secure-inference.md)
+
+[Home page](../README.md)
 
 ## References
 

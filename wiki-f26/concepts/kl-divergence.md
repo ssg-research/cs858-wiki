@@ -8,6 +8,8 @@ tags:
   - alignment
 ---
 
+[Home page](../README.md)
+
 # Kullback-Leibler divergence
 
 ## Definition

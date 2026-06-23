@@ -20,6 +20,8 @@ tags:
   - right-to-be-forgotten
 ---
 
+[Home page](../README.md)
+
 # Knowledge Unlearning for Mitigating Privacy Risks in Language Models
 
 ## High-level overview
@@ -206,6 +208,8 @@ large language model had not been studied.
 4. What does unlearning cost in general language-model capability, and how does
    that cost change with model size?
 5. Which properties of the data being forgotten make unlearning easier or harder?
+
+[Home page](../README.md)
 
 ## References
 

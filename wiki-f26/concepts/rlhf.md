@@ -7,6 +7,8 @@ tags:
   - rlhf
 ---
 
+[Home page](../README.md)
+
 # Reinforcement learning from human feedback (RLHF)
 
 ## Definition
@@ -32,6 +34,8 @@ stay in the loss, alignment adjusts the base model rather than replacing it.
 - [Instruction tuning](instruction-tuning.md)
 - [Safety training (LLM harmlessness)](safety-training.md)
 - [Language model pretraining](language-model-pretraining.md)
+
+[Home page](../README.md)
 
 ## References
 

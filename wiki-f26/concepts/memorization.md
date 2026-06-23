@@ -8,6 +8,8 @@ tags:
   - machine-learning
 ---
 
+[Home page](../README.md)
+
 # Memorization
 
 ## Definition
@@ -54,6 +56,8 @@ changes the model measurably is an example whose presence can be inferred.
 - [Membership inference](membership-inference.md)
 - [Empirical risk minimization](empirical-risk-minimization.md)
 - [Differential privacy](differential-privacy.md)
+
+[Home page](../README.md)
 
 ## References
 

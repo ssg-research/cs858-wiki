@@ -20,6 +20,8 @@ tags:
   - computer-vision
 ---
 
+[Home page](../README.md)
+
 # ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks
 
 ## High-level overview
@@ -229,6 +231,8 @@ mechanism had received little attention.
 ## Supplementary readings
 
 - [Beowulf: Mitigating Model Extraction Attacks Via Reshaping Decision Regions](https://dl.acm.org/doi/pdf/10.1145/3658644.3670267) — a different defense lever against extraction, reshaping the target's decision regions rather than perturbing the returned probabilities.
+
+[Home page](../README.md)
 
 ## References
 

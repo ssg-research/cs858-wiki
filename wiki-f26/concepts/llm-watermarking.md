@@ -8,6 +8,8 @@ tags:
   - language-models
 ---
 
+[Home page](../README.md)
+
 # LLM watermarking
 
 ## Definition
@@ -54,6 +56,8 @@ images or audio (Katzenbeisser and Petitcolas, 2000).
 - [Model watermarking](model-watermarking.md)
 - [Decoding strategies](decoding-strategies.md)
 - [Perplexity](perplexity.md)
+
+[Home page](../README.md)
 
 ## References
 

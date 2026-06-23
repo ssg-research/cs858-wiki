@@ -7,6 +7,8 @@ tags:
   - alignment
 ---
 
+[Home page](../README.md)
+
 # Instruction tuning
 
 ## Definition
@@ -31,6 +33,8 @@ several that a deployed model balances, alongside language modeling and safety.
 - [Language model pretraining](language-model-pretraining.md)
 - [Reinforcement learning from human feedback (RLHF)](rlhf.md)
 - [Safety training (LLM harmlessness)](safety-training.md)
+
+[Home page](../README.md)
 
 ## References
 

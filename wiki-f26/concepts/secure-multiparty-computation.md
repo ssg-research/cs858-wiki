@@ -8,6 +8,8 @@ tags:
   - privacy
 ---
 
+[Home page](../README.md)
+
 # Secure multiparty computation
 
 ## Definition

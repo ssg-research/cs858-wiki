@@ -7,6 +7,8 @@ tags:
   - evasion
 ---
 
+[Home page](../README.md)
+
 # Projected gradient descent
 
 ## Definition

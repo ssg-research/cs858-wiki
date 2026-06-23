@@ -19,6 +19,8 @@ tags:
   - attack
 ---
 
+[Home page](../README.md)
+
 # Membership Inference Attacks From First Principles
 
 ## High-level overview
@@ -233,6 +235,8 @@ either standard.
    models also vulnerable?
 5. What do these results change about how the privacy of a trained model
    should be audited?
+
+[Home page](../README.md)
 
 ## References
 

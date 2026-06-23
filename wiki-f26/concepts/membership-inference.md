@@ -8,6 +8,8 @@ tags:
   - attack
 ---
 
+[Home page](../README.md)
+
 # Membership inference
 
 ## Definition
@@ -65,6 +67,8 @@ predictions as a building block (Carlini et al., 2021).
 - [Memorization](memorization.md)
 - [ROC curves and detection metrics](roc-curves.md)
 - [Differential privacy](differential-privacy.md)
+
+[Home page](../README.md)
 
 ## References
 

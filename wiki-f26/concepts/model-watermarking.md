@@ -9,6 +9,8 @@ tags:
   - threat-model
 ---
 
+[Home page](../README.md)
+
 # Model watermarking
 
 ## Definition
@@ -50,6 +52,8 @@ and how hard it is to remove by retraining.
 - [Backdoor attacks](backdoor-attacks.md)
 - [Model extraction](model-extraction.md)
 - [Cryptographic commitment](cryptographic-commitment.md)
+
+[Home page](../README.md)
 
 ## References
 

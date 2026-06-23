@@ -18,6 +18,8 @@ tags:
   - machine-learning
 ---
 
+[Home page](../README.md)
+
 # zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference
 
 ## High-level overview
@@ -203,6 +205,8 @@ These target the same auditability aim at training time.
 
 - [Experimenting with Zero-Knowledge Proofs of Training](https://dl.acm.org/doi/10.1145/3576915.3623202) — proving how a model was trained, the training-time counterpart to proving inference.
 - [Zero-Knowledge Proofs of Training for Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3658644.3670316) — a later, scaled proof-of-training system for deep networks, the same compliance goal at training time.
+
+[Home page](../README.md)
 
 ## References
 

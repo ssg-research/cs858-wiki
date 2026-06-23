@@ -8,6 +8,8 @@ tags:
   - privacy
 ---
 
+[Home page](../README.md)
+
 # Trusted execution environment
 
 ## Definition
@@ -54,6 +56,8 @@ side-channel attacks.
 
 - [Taint tracking](taint-tracking.md)
 - [Secure inference](secure-inference.md)
+
+[Home page](../README.md)
 
 ## References
 

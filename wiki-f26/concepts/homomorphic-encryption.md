@@ -8,6 +8,8 @@ tags:
   - privacy
 ---
 
+[Home page](../README.md)
+
 # Homomorphic encryption
 
 ## Definition
@@ -61,6 +63,8 @@ parties jointly compute over several rounds of communication.
 - [Secure multiparty computation](secure-multiparty-computation.md)
 - [Secure inference](secure-inference.md)
 - [Ciphertext packing (SIMD batching)](ciphertext-packing.md)
+
+[Home page](../README.md)
 
 ## References
 

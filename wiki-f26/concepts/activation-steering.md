@@ -8,6 +8,8 @@ tags:
   - language-models
 ---
 
+[Home page](../README.md)
+
 # Activation steering
 
 ## Definition
@@ -32,6 +34,8 @@ can perturb unrelated behavior.
 - [Linear representation hypothesis](linear-representation-hypothesis.md)
 - [Contrastive prompt pairs](contrastive-prompt-pairs.md)
 - [Red teaming (language models)](red-teaming.md)
+
+[Home page](../README.md)
 
 ## References
 

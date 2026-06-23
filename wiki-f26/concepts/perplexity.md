@@ -7,6 +7,8 @@ tags:
   - privacy
 ---
 
+[Home page](../README.md)
+
 # Perplexity
 
 ## Definition

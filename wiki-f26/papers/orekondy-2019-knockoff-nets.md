@@ -16,6 +16,8 @@ tags:
   - reinforcement-learning
 ---
 
+[Home page](../README.md)
+
 # Knockoff Nets: Stealing Functionality of Black-Box Models
 
 ## High-level overview
@@ -197,6 +199,8 @@ the meaning of its outputs.
    outcome?
 5. What can the victim change about its API responses to resist the attack, and at
    what cost to its own users?
+
+[Home page](../README.md)
 
 ## References
 

@@ -8,6 +8,8 @@ tags:
   - adversarial-training
 ---
 
+[Home page](../README.md)
+
 # Robust optimization
 
 ## Definition
@@ -51,6 +53,8 @@ approximation.
 - [Adversarial threat model](adversarial-threat-model.md)
 - [Empirical risk minimization](empirical-risk-minimization.md)
 - [Adversarial examples](adversarial-examples.md)
+
+[Home page](../README.md)
 
 ## References
 

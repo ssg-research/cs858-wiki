@@ -18,6 +18,8 @@ tags:
   - computer-vision
 ---
 
+[Home page](../README.md)
+
 # DAWN: Dynamic Adversarial Watermarking of Neural Networks
 
 ## High-level overview
@@ -212,6 +214,8 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
    client-specific watermark provide?
 5. What has to be trusted, and what has to be assumed about the adversary, for an
    ownership claim to hold up?
+
+[Home page](../README.md)
 
 ## References
 

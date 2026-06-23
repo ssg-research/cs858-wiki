@@ -7,6 +7,8 @@ tags:
   - rlhf
 ---
 
+[Home page](../README.md)
+
 # Direct preference optimization (DPO)
 
 ## Definition
@@ -35,6 +37,8 @@ safety behavior in deployed models.
 - [Reinforcement learning from human feedback (RLHF)](rlhf.md)
 - [Instruction tuning](instruction-tuning.md)
 - [Safety training (LLM harmlessness)](safety-training.md)
+
+[Home page](../README.md)
 
 ## References
 

@@ -7,6 +7,8 @@ tags:
   - retrieval
 ---
 
+[Home page](../README.md)
+
 # Retrieval-augmented generation
 
 ## Definition

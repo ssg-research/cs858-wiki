@@ -19,6 +19,8 @@ tags:
   - defense
 ---
 
+[Home page](../README.md)
+
 # BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking
 
 ## High-level overview
@@ -229,6 +231,8 @@ protections or pays a substantial performance cost.
 ## Supplementary readings
 
 - [Origami Inference: Private Inference Using Hardware Enclaves](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9582200) — an enclave-based approach to private inference, a point of contrast with confidentiality enforced by hardware taint tracking.
+
+[Home page](../README.md)
 
 ## References
 

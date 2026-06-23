@@ -7,6 +7,8 @@ tags:
   - differential-privacy
 ---
 
+[Home page](../README.md)
+
 # Gradient clipping
 
 ## Definition

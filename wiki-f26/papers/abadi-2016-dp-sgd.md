@@ -20,6 +20,8 @@ tags:
   - dp-sgd
 ---
 
+[Home page](../README.md)
+
 # Deep Learning with Differential Privacy
 
 ## High-level overview
@@ -209,6 +211,8 @@ Rothblum, 2016; Bun and Steinke, 2016).
    values the paper reports?
 5. Which parts of a realistic model does the paper train privately, and which
    does it source from data treated as public?
+
+[Home page](../README.md)
 
 ## References
 

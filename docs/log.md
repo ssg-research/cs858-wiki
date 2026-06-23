@@ -692,3 +692,5 @@ Updated the papers list table in `wiki/papers/README.md` to format authors using
 ## [2026-06-23 13:21] rename | wiki to wiki-f26
 
 Renamed the `wiki` folder to `wiki-f26` and updated all internal references in playbooks, scripts, and commands to use the new path. Hard-coded paths in Bash scripts were extracted to `WIKI_DIR` variables where possible. Model: Gemini 3.1 Pro (High).
+
+## [2026-06-23 13:57] update | Add home links to paper and concept pages (Gemini 3.1 Pro)
