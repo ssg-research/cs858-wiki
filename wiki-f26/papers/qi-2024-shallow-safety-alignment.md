@@ -174,19 +174,6 @@ al., 2023), whose KL penalty keeps the aligned policy near the base model.
 - Section 5: related work, placing the paper among the superficial-alignment and
   token-dynamics lines.
 
-## Motivating questions
-
-1. What does it mean for safety alignment to be "shallow," and how could you
-   measure how deep an alignment is?
-2. Why might adjusting only a model's first few output tokens be enough to make it
-   look safe under standard testing?
-3. Which inference-time and fine-tuning attacks does a single underlying property
-   help explain at once?
-4. If alignment were pushed deeper, which exploits would you expect that to help
-   against, and what would it cost the model's usefulness?
-5. What can a defender constrain during fine-tuning to keep safety from
-   unraveling, and why might that be cheap?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

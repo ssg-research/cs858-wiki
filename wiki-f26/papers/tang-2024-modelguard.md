@@ -218,19 +218,6 @@ mechanism had received little attention.
   runnable Partial Bayes Attack and the perfect Bayes Attack, and the restriction
   of the evaluation to classification.
 
-## Motivating questions
-
-1. What does an information-theoretic defense guarantee, and against which model
-   extraction adversaries does that guarantee hold?
-2. How is the trade-off between defense strength and benign utility expressed and
-   constrained in the formulation?
-3. Why do prediction-perturbation defenses that ignore the attacker's knowledge of
-   the defense lose much of their protection against an adaptive attacker?
-4. What is gained by posing output perturbation as a single optimization problem
-   that covers both parameter-stealing and functionality-stealing?
-5. How does a guarantee against the optimal recovery relate to the specific
-   attacks the defense is evaluated against?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

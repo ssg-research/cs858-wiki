@@ -199,19 +199,6 @@ large language model had not been studied.
 - Appendix B (Perplexity): perplexity rises after unlearning even where the
   benchmark accuracies do not; note the explanation given for the discrepancy.
 
-## Motivating questions
-
-1. Why does retraining-based privacy (data sanitization, differential privacy)
-   become impractical once individuals can request deletion after a model is
-   deployed?
-2. What does it mean to "forget" a token sequence by gradient ascent, and how
-   does the paper decide when a sequence counts as forgotten?
-3. What kind of privacy protection does unlearning provide, and against which
-   adversary, compared with the guarantee differential privacy provides?
-4. What does unlearning cost in general language-model capability, and how does
-   that cost change with model size?
-5. Which properties of the data being forgotten make unlearning easier or harder?
-
 [Home page](../README.md)
 
 <details>

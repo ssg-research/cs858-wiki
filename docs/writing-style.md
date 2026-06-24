@@ -126,8 +126,9 @@ Each example is from a rejected draft.
 - **Reading guidance.** A bullet list keyed by section, figure, or table, one
   line each, placed late in the page. Includes one or two neutral attention
   anchors pointing at where to slow down, without stating why it is contested.
-- **Motivating questions.** Three to five numbered, extremely high-level
-  pre-questions answerable by reading the paper. Reading goals, not a quiz.
+- **Motivating questions.** Staff-side archive only (`agent_docs/`); not on
+  the student-facing page. Three to five high-level pre-questions per paper,
+  answerable by reading it. Students generate their own.
 - **Supplementary readings.** Optional. Extra readings the instructor supplied,
   one bullet each with a one-line "why it's here" framing. Renders inside a
   collapsed `<details>` block, the heading as its toggle.

@@ -244,19 +244,6 @@ et al., 2024).
   cases. Note what the formal model abstracts away, for example the GPU and trust
   domain assumed to be one trust boundary.
 
-## Motivating questions
-
-1. What kinds of property can the framework attest about a model or its data, and
-   what must a verifier trust to believe an attestation?
-2. What does rooting an attestation in trusted hardware buy compared with a purely
-   cryptographic proof, and what does it cost?
-3. What about large generative models and their datasets makes property attestation
-   harder than for small, CPU-only classifiers?
-4. How can a provider attest a property of a model or dataset without revealing the
-   model or dataset to the verifier?
-5. Where does the framework draw its trust boundary, and what does it place outside
-   it?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

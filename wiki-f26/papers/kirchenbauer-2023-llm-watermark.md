@@ -227,18 +227,6 @@ output was announced as work in progress (Aaronson, 2022).
 - Section 9: the open questions left for future work, including robust hashing
   and detection over a streaming or partially watermarked span.
 
-## Motivating questions
-
-1. What does detecting the watermark require, and what access to the model or
-   its API does it assume?
-2. What does adding the watermark cost in the quality of the generated text?
-3. How does the predictability of a passage, its entropy, affect whether it can
-   be watermarked at all?
-4. What kinds of editing or rewriting could remove the watermark, and what does
-   each cost the party attempting it?
-5. What can the model provider keep secret or tune per context, and what must a
-   detector know to run the test?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

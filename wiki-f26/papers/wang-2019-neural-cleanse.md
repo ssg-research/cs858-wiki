@@ -197,20 +197,6 @@ from the trained model alone.
   source-label-specific or "partial" backdoors). Attention anchor: note which
   variant the base method struggles with and what change it needs to handle it.
 
-## Motivating questions
-
-1. What must the defender be able to observe about a model to run this defense,
-   and what is assumed to be out of reach?
-2. What property of a backdoor does the detection method exploit, and why would a
-   clean model not exhibit it?
-3. The method recovers a trigger that need not match the one the attacker used.
-   What makes a recovered trigger good enough to drive mitigation?
-4. What does it cost, in accuracy on clean inputs, to patch a model once a
-   backdoor is found?
-5. Which assumptions about the backdoor (a single target label, a small compact
-   trigger) does the approach rely on, and what happens as an attacker relaxes
-   them?
-
 [Home page](../README.md)
 
 <details>

@@ -189,20 +189,6 @@ the meaning of its outputs.
   rounding the returned probabilities. Attention anchor: note what the defender is
   assumed able to change, and what the paper reports it costs the attack.
 
-## Motivating questions
-
-1. What must the adversary know about the victim model and its training data for
-   the attack to work, and what does it only need query access to?
-2. The knockoff is trained on images the adversary chose, which may come from a
-   different distribution than the victim's training data. What does that buy, and
-   what does it cost in task accuracy?
-3. How does the way the adversary selects its query images affect how many paid
-   queries the attack needs?
-4. How does the knockoff's architecture, relative to the victim's, change the
-   outcome?
-5. What can the victim change about its API responses to resist the attack, and at
-   what cost to its own users?
-
 [Home page](../README.md)
 
 <details>

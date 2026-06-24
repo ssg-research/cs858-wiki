@@ -191,17 +191,6 @@ a violation: when it moves data out of the context for which it was shared.
 - Appendix A and C: the categorization of the 604 memorized samples and the case
   studies, including the personally identifiable categories.
 
-## Motivating questions
-
-1. What does it mean, precisely, for a language model to memorize a training
-   example, and how does the paper turn that into something testable?
-2. What access to the model does the attack require, and which deployed models
-   does that put at risk?
-3. How can extraction succeed when the model has almost no gap between its
-   training and test loss?
-4. How does the amount of extractable data change with model size?
-5. Which defenses does the paper weigh, and what does each one cost?
-
 [Home page](../README.md)
 
 <details>

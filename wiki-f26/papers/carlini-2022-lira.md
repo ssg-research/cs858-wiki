@@ -225,20 +225,6 @@ either standard.
 - Section VIII: the authors' list of prior conclusions they argue need
   re-examination.
 
-## Motivating questions
-
-1. What should it mean for a membership inference attack to "succeed," and how
-   does the paper argue success should be measured?
-2. Can an attack with high average accuracy be useless to a practical
-   adversary, and can a low-accuracy attack be dangerous?
-3. What does the strongest attack need to know about the target model, its
-   training data, and its training procedure, and how gracefully does it
-   degrade when each assumption fails?
-4. Is overfitting required for membership inference, or are well-generalizing
-   models also vulnerable?
-5. What do these results change about how the privacy of a trained model
-   should be audited?
-
 [Home page](../README.md)
 
 <details>

@@ -205,19 +205,6 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
   for why some evasions are not considered realistic turns on which adversary goal
   each one sacrifices; note that cost.
 
-## Motivating questions
-
-1. Why are watermarks embedded into the model at training time ineffective once a
-   model's functionality is stolen through its prediction API?
-2. What does it mean to embed a watermark by altering API responses rather than by
-   training the protected model, and what guarantee does that give the owner?
-3. What does the defense cost the honest clients of the API, and what does it cost
-   an adversary who tries to avoid or remove the watermark?
-4. Beyond detecting that a model was stolen, what additional information can a
-   client-specific watermark provide?
-5. What has to be trusted, and what has to be assumed about the adversary, for an
-   ownership claim to hold up?
-
 [Home page](../README.md)
 
 <details>

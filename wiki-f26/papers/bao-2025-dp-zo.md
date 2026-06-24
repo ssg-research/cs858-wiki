@@ -217,19 +217,6 @@ on several benchmarks when this paper appeared.
 - Section 7: related work, placing the method among the DP fine-tuning,
   zeroth-order, and clipping lines.
 
-## Motivating questions
-
-1. What does differential privacy guarantee for a single fine-tuning record
-   here, and against which adversaries?
-2. Why does a gradient-free optimizer reduce the memory cost of private
-   fine-tuning relative to DP-SGD?
-3. Why is the clipping that differential privacy requires especially costly for
-   zeroth-order updates, and how does the method address it?
-4. What does the approach cost, in computation and in convergence, relative to
-   first-order private fine-tuning?
-5. Where does private zeroth-order fine-tuning still trail first-order methods,
-   and where does it pull ahead?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

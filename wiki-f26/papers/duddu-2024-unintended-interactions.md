@@ -190,19 +190,6 @@ interpretability, and privacy (Ferry et al., 2023).
   and how the framework would extend to new causes, defenses, and generative
   models.
 
-## Motivating questions
-
-1. When a model owner deploys a defense against one risk, what makes it plausible
-   that an unrelated risk gets worse, or better, as a side effect?
-2. What two properties of how a model fits its training data does the paper
-   propose as the common cause of these interactions, and why those two?
-3. How can a small set of factors describing the data, the training algorithm, and
-   the model serve as a shared vocabulary for both defenses and risks?
-4. Given a defense and a risk that have never been studied together, what would
-   let you conjecture whether the defense raises or lowers that risk?
-5. What kind of evidence does the paper offer for an interaction, and what does it
-   deliberately decline to claim?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

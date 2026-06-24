@@ -202,19 +202,6 @@ Rothblum, 2016; Bun and Steinke, 2016).
 - Section 6: the map of prior private-learning approaches and the contrast
   with Shokri and Shmatikov (2015).
 
-## Motivating questions
-
-1. What does it cost, in accuracy and in training mechanics, to train a deep
-   network with a provable privacy guarantee?
-2. Where in the training pipeline is privacy enforced, and why there rather
-   than by perturbing the final trained model?
-3. What determines how fast training spends its privacy budget, and what does
-   tighter accounting of the same noise change?
-4. What do epsilon and delta promise for a single training record at the
-   values the paper reports?
-5. Which parts of a realistic model does the paper train privately, and which
-   does it source from data treated as public?
-
 [Home page](../README.md)
 
 <details>

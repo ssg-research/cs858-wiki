@@ -191,19 +191,6 @@ These target the same auditability aim at training time.
 - Appendix B: the completeness and soundness argument, reduced to the soundness of
   GKR and Lasso. Note the cases the soundness proof splits the cheating prover into.
 
-## Motivating questions
-
-1. What statement does the proof establish, and what does it keep hidden from the
-   verifier?
-2. Why must a transformer be quantized and written as an arithmetic circuit before
-   it can be proved, and which layers does that make expensive?
-3. What makes the non-linear layers (GeLU, softmax, normalization) harder to prove
-   than the large matrix multiplications?
-4. How are the costs split between the prover, the verifier, and the proof size,
-   and what does making the proof non-interactive change?
-5. What can a verifier or regulator conclude from a commitment plus a proof that a
-   bare API response does not support?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 
