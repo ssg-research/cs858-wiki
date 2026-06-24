@@ -152,7 +152,8 @@ Returning a model's full probability vector leaks information that
 less. Computing that argmax under encryption, over a vocabulary of tens of
 thousands of tokens, is a distinct cost in any such protocol.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Secure inference was developed first for
 [convolutional networks](../concepts/convolutional-neural-network.md). One line
@@ -192,6 +193,8 @@ argmax of Phoenix compares every element against the others and so scales
 linearly with the number of classes (Jovanovic et al., 2022). None of these
 methods supports the nonlinear functions a transformer needs, and a linear-cost
 argmax over a full vocabulary is impractical.
+
+</details>
 
 ## Reading guidance
 
@@ -234,13 +237,17 @@ argmax over a full vocabulary is impractical.
 5. How close to plaintext does encrypted inference stay in accuracy, and what
    governs the gap?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [BumbleBee: Secure Two-party Inference Framework for Large Transformers](https://eprint.iacr.org/2023/1678) — the interactive two-party baseline this non-interactive approach is measured against.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off this paper's bibliography (PDF pages 14-17).
 
@@ -313,3 +320,5 @@ Entries read off this paper's bibliography (PDF pages 14-17).
 - Shokri, R., Stronati, M., Song, C., and Shmatikov, V. "Membership Inference
   Attacks Against Machine Learning Models." IEEE Symposium on Security and
   Privacy (S&P), 2017.
+
+</details>

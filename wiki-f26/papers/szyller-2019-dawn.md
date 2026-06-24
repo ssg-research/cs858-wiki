@@ -140,7 +140,8 @@ isolated hardware enclave that runs verification code with integrity and
 confidentiality guarantees), runs the verification on the secret values and the
 suspect API and reports the verdict.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 DNN watermarking emerged between 2017 and 2019. The first scheme embedded a
 marker directly into a trained network's weights, which required white-box access
@@ -171,6 +172,8 @@ to simple models or to specific attacks (Kesarwani et al., 2018; Quiring et al.,
 2018; Lee et al., 2018). Against this backdrop, existing watermarks were shown
 ineffective at protecting models from extraction, because the surrogate is
 trained by the adversary rather than the owner (Zhang et al., 2018).
+
+</details>
 
 ## Reading guidance
 
@@ -217,7 +220,8 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Adi, Y., Baum, C., Cisse, M., Pinkas, B., and Keshet, J. "Turning Your Weakness Into a Strength: Watermarking Deep Neural Networks by Backdooring." USENIX Security Symposium, 2018.
 - Chen, X., Liu, C., Li, B., Lu, K., and Song, D. "Targeted Backdoor Attacks on Deep Learning Systems Using Data Poisoning." arXiv:1712.05526, 2017.
@@ -236,3 +240,5 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
 - Uchida, Y., Nagai, Y., Sakazawa, S., and Satoh, S. "Embedding Watermarks into Deep Neural Networks." ACM International Conference on Multimedia Retrieval (ICMR), 2017.
 - Zhang, C., Bengio, S., Hardt, M., Recht, B., and Vinyals, O. "Understanding Deep Learning Requires Rethinking Generalization." International Conference on Learning Representations (ICLR), 2017. arXiv:1611.03530.
 - Zhang, J., Gu, Z., Jang, J., Wu, H., Stoecklin, M.Ph., Huang, H., and Molloy, I. "Protecting Intellectual Property of Deep Neural Networks with Watermarking." ACM Asia Conference on Computer and Communications Security (AsiaCCS), 2018.
+
+</details>

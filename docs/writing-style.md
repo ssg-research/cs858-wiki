@@ -54,7 +54,7 @@ possible; link to them rather than glossing a term inline for the third time.
 - Any claim about prior work or the state of the field carries an inline
   author-year citation at the end of the clause: "(Goodfellow et al., 2015)."
 - Do not open a sentence with author names. State the finding, then cite it.
-- Every page that cites anything ends with a `## References` section holding
+- Every page that cites anything ends with a References section holding
   one full entry per cited work: authors, title, venue, year, and the arXiv ID
   when the source you read prints one.
 - Bibliographic data comes from a source read this session (the citing paper's
@@ -121,13 +121,18 @@ Each example is from a rejected draft.
   the paper's own content.
 - **Paper Context.** Two to four declarative paragraphs: the state of the field
   when the paper appeared. What had been tried, what had broken, what was
-  unsettled. Prior or contemporaneous citations only. Not questions.
+  unsettled. Prior or contemporaneous citations only. Not questions. Renders
+  inside a collapsed `<details>` block, the heading as its toggle.
 - **Reading guidance.** A bullet list keyed by section, figure, or table, one
   line each, placed late in the page. Includes one or two neutral attention
   anchors pointing at where to slow down, without stating why it is contested.
 - **Motivating questions.** Three to five numbered, extremely high-level
   pre-questions answerable by reading the paper. Reading goals, not a quiz.
+- **Supplementary readings.** Optional. Extra readings the instructor supplied,
+  one bullet each with a one-line "why it's here" framing. Renders inside a
+  collapsed `<details>` block, the heading as its toggle.
 - **References.** Full bibliographic entries for everything cited on the page.
+  Renders inside a collapsed `<details>` block, the heading as its toggle.
 - **Concept pages.** Same register. Definitions are declarative and
   self-contained, 50 to 500 words; stubs are valid.
 

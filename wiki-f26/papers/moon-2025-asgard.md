@@ -138,7 +138,8 @@ device's untrusted accelerator, in the clear or under obfuscation, for speed. Th
 split trades protection for latency, and the offloaded part is the side an
 adversary can read.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 On-device model protection grew up on Arm TrustZone, hosting inference in the
 secure world (Arm Limited, 2021). Two design lines emerged, each constrained by
@@ -178,6 +179,8 @@ ships yet, leaving the widespread base of legacy Armv8-A devices without it. The
 virtualization-based TEEs provide enclaves for CPU workloads; on existing
 Armv8-A hardware they do not pass an SoC-integrated accelerator through to an
 enclave.
+
+</details>
 
 ## Reading guidance
 
@@ -223,13 +226,17 @@ enclave.
 5. How close to unprotected on-device inference can a protected design come in
    run-time cost?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional Neural Networks](https://arxiv.org/abs/2011.05905) — a TrustZone-based on-device protection that offloads transformed weights to the untrusted accelerator, a point of contrast with the virtualization-based design.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off this paper's bibliography (PDF pages 14-16).
 
@@ -250,3 +257,5 @@ Entries read off this paper's bibliography (PDF pages 14-16).
 - Sun, Z., Sun, R., Liu, C., Chowdhury, A. R., Lu, L., and Jha, S. "ShadowNet: A Secure and Efficient On-Device Model Inference System for Convolutional Neural Networks." IEEE Symposium on Security and Privacy (S&P), 2023.
 - Tramèr, F. and Boneh, D. "Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware." International Conference on Learning Representations (ICLR), 2019.
 - Zhang, Z., Gong, C., Cai, Y., Yuan, Y., Liu, B., Li, D., Guo, Y., and Chen, X. "No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML." IEEE Symposium on Security and Privacy (S&P), 2024.
+
+</details>

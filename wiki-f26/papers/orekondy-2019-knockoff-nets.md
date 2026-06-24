@@ -125,7 +125,8 @@ the natural framing is
 instance is the multi-armed bandit, which trades off exploring uncertain actions
 against exploiting ones already known to pay well (Sutton and Barto, 1998).
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By 2018, several attacks recovered information about a deployed model through its
 query interface. One line recovered model parameters directly: for simple model
@@ -155,6 +156,8 @@ under a labeling budget (Settles and Craven, 2008). What had not been establishe
 was how far a copy of a model's *function*, rather than its parameters, could be
 pushed by an adversary holding neither the victim's data nor its architecture nor
 the meaning of its outputs.
+
+</details>
 
 ## Reading guidance
 
@@ -202,7 +205,8 @@ the meaning of its outputs.
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Buciluǎ, C., Caruana, R., and Niculescu-Mizil, A. "Model Compression." ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2006.
 - Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., and Fei-Fei, L. "ImageNet: A Large-Scale Hierarchical Image Database." IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2009.
@@ -219,3 +223,5 @@ the meaning of its outputs.
 - Sutton, R.S. and Barto, A.G. "Introduction to Reinforcement Learning." MIT Press, 1998.
 - Tramèr, F., Zhang, F., Juels, A., Reiter, M.K., and Ristenpart, T. "Stealing Machine Learning Models via Prediction APIs." USENIX Security Symposium, 2016.
 - Wang, B. and Gong, N.Z. "Stealing Hyperparameters in Machine Learning." IEEE Symposium on Security and Privacy (S&P), 2018.
+
+</details>

@@ -123,7 +123,8 @@ through its interface without its weights, gradients, or training data. It is
 the access an ordinary API or chat user has, and the setting in which these
 attacks operate.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By early 2023, the deployed assistants (ChatGPT, Claude, GPT-4, Bard) were
 aligned with a shared toolkit: supervised instruction tuning and RLHF for
@@ -152,6 +153,8 @@ broadly (Chakraborty et al., 2018; Zhang et al., 2020); that line aims to cause
 mistakes, whereas a jailbreak aims to unlock a capability. A systematic,
 conceptual account of why jailbreaks succeed, grounded in the training pipeline,
 had not been given.
+
+</details>
 
 ## Reading guidance
 
@@ -189,14 +192,18 @@ had not been given.
 5. Why does the paper argue that scaling models up will not, on its own, remove
    these vulnerabilities?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) — a white-box, optimization-based route to jailbreaks, complementing this paper's black-box, conceptual route.
 - [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) — automates black-box jailbreak discovery with an attacker model in the loop.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off the paper's bibliography (arXiv 2307.02483v1, pages 11-14).
 
@@ -244,3 +251,5 @@ Entries read off the paper's bibliography (arXiv 2307.02483v1, pages 11-14).
 - Zhang, W. E., Sheng, Q. Z., Alhazmi, A., and Li, C. "Adversarial Attacks on
   Deep-Learning Models in Natural Language Processing: A Survey." ACM
   Transactions on Intelligent Systems and Technology (TIST), 11(3):1-41, 2020.
+
+</details>

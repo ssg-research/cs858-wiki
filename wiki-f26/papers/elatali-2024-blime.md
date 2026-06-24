@@ -137,7 +137,8 @@ resolved, as exploited by Spectre and Meltdown (Kocher et al., 2019; Lipp et al.
 constant-time, or data-oblivious, programming: the program's control flow, memory
 addresses, and instruction timing are written never to depend on secret values.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Confidential computing in industry rests on trusted execution environments. Intel
 SGX, Arm TrustZone, and academic designs such as Sanctum isolate a workload from a
@@ -182,6 +183,8 @@ transcript inside a TEE (Lee et al., 2021); oblivious-RAM constructions hide
 memory-access patterns at additional cost (Goldreich and Ostrovsky, 1996; Stefanov
 et al., 2018). Each of these either relies on the application to invoke its
 protections or pays a substantial performance cost.
+
+</details>
 
 ## Reading guidance
 
@@ -228,13 +231,17 @@ protections or pays a substantial performance cost.
 4. What does the guarantee cost in performance and in hardware complexity?
 5. What does the machine-checked proof establish, and over what model?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Origami Inference: Private Inference Using Hardware Enclaves](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9582200) — an enclave-based approach to private inference, a point of contrast with confidentiality enforced by hardware taint tracking.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off this paper's bibliography (PDF pages 14-16).
 
@@ -305,3 +312,5 @@ Entries read off this paper's bibliography (PDF pages 14-16).
 - Zhao, J., Korpan, B., Gonzalez, A., and Asanovic, K. "SonicBOOM: The 3rd
   Generation Berkeley Out-of-Order Machine." Workshop on Computer Architecture
   Research with RISC-V (CARRV), 2020.
+
+</details>

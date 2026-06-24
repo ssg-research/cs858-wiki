@@ -130,7 +130,8 @@ arithmetization, range checks and table lookups, are handled by lookup arguments
 which let the prover show that secret values lie in a public table; zkGPT uses the
 Lasso lookup argument (Setty et al., 2024).
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Zero-knowledge proofs for machine learning began with small models and vision.
 Verified decision-tree predictions came first (Zhang et al., 2020), followed by a
@@ -161,6 +162,8 @@ zero-knowledge proofs of training: an early exploration of the problem (Garg et 
 2024), a confidential proof of fair tree training (Shamsabadi et al., 2023), and
 trustless audits that reveal neither data nor model (Waiwitlikhit et al., 2024).
 These target the same auditability aim at training time.
+
+</details>
 
 ## Reading guidance
 
@@ -201,14 +204,18 @@ These target the same auditability aim at training time.
 5. What can a verifier or regulator conclude from a commitment plus a proof that a
    bare API response does not support?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Experimenting with Zero-Knowledge Proofs of Training](https://dl.acm.org/doi/10.1145/3576915.3623202) — proving how a model was trained, the training-time counterpart to proving inference.
 - [Zero-Knowledge Proofs of Training for Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3658644.3670316) — a later, scaled proof-of-training system for deep networks, the same compliance goal at training time.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off this paper's bibliography (PDF pages 15-18).
 
@@ -237,3 +244,5 @@ Entries read off this paper's bibliography (PDF pages 15-18).
 - Waiwitlikhit, S., Stoica, I., Sun, Y., Hashimoto, T., and Kang, D. "Trustless Audits without Revealing Data or Models." International Conference on Machine Learning (ICML), 2024.
 - Weng, C., Yang, K., Xie, X., Katz, J., and Wang, X. "Mystique: Efficient Conversions for Zero-Knowledge Proofs with Applications to Machine Learning." USENIX Security Symposium, 2021.
 - Zhang, J., Fang, Z., Zhang, Y., and Song, D. "Zero Knowledge Proofs for Decision Tree Predictions and Accuracy." ACM Conference on Computer and Communications Security (CCS), 2020.
+
+</details>

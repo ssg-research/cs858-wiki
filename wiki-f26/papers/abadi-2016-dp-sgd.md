@@ -141,7 +141,8 @@ batch leaks nothing in that step. How tightly the accountant adds up thousands
 of sampled Gaussian steps decides how long a network can train before its
 budget is exhausted.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 Privacy-preserving learning is older than deep learning. Privacy-preserving
 data mining was posed around 2000, in both randomization and cryptographic
@@ -180,6 +181,8 @@ accuracy at a single-digit budget. Tighter accounting tools, concentrated
 differential privacy among them, were in concurrent development (Dwork and
 Rothblum, 2016; Bun and Steinke, 2016).
 
+</details>
+
 ## Reading guidance
 
 - Section 2: the (epsilon, delta) definition, the Gaussian mechanism, and
@@ -214,7 +217,8 @@ Rothblum, 2016; Bun and Steinke, 2016).
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off the paper's bibliography (arXiv 1607.00133v2, pages 10-11).
 
@@ -267,3 +271,5 @@ Entries read off the paper's bibliography (arXiv 1607.00133v2, pages 10-11).
   Differentially Private Updates." IEEE GlobalSIP, 2013.
 - Sweeney, L. "k-Anonymity: A Model for Protecting Privacy." International
   Journal of Uncertainty, Fuzziness and Knowledge-Based Systems, 10(5), 2002.
+
+</details>

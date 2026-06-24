@@ -156,7 +156,8 @@ which is the provenance setting the green-list method targets. Watermarking
 discrete text has historically been harder than watermarking continuous media
 such as images or audio, because small edits to wording are conspicuous.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By late 2022 the public release of capable chat models had sharpened concern
 about machine-generated text at scale: automated misinformation and bot content,
@@ -192,6 +193,8 @@ adversarial edits (Wolff and Wolff, 2022); deployed tools of this kind, such as
 GPTZero, drew scrutiny over false positives on atypical human writing (Tian,
 2023). Concurrently, a cryptographic approach to watermarking language-model
 output was announced as work in progress (Aaronson, 2022).
+
+</details>
 
 ## Reading guidance
 
@@ -236,14 +239,18 @@ output was announced as work in progress (Aaronson, 2022).
 5. What can the model provider keep secret or tune per context, and what must a
    detector know to run the test?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust](https://arxiv.org/abs/2305.20030) — the analogue for diffusion-image provenance, a contrast in modality.
 - [Media Forensics and DeepFakes: An Overview](https://arxiv.org/abs/2001.06564) — the detection-after-the-fact tradition this proactive approach departs from.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 Entries read off the paper's bibliography (arXiv 2301.10226v4, pages 13-17).
 
@@ -270,3 +277,5 @@ Entries read off the paper's bibliography (arXiv 2301.10226v4, pages 13-17).
 - Zellers, R., Holtzman, A., Rashkin, H., Bisk, Y., Farhadi, A., Roesner, F., and Choi, Y. "Defending Against Neural Fake News." Advances in Neural Information Processing Systems (NeurIPS), 2019.
 - Zhang, S., Roller, S., Goyal, N., Artetxe, M., Chen, M., Chen, S., Dewan, C., Diab, M., Li, X., Lin, X. V., Mihaylov, T., Ott, M., Shleifer, S., Shuster, K., Simig, D., Koura, P. S., Sridhar, A., Wang, T., and Zettlemoyer, L. "OPT: Open Pre-trained Transformer Language Models." 2022.
 - Ziegler, Z., Deng, Y., and Rush, A. "Neural Linguistic Steganography." Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019.
+
+</details>

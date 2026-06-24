@@ -135,7 +135,8 @@ Yu et al., 2022) or at decoding time (Majmudar et al., 2022). Both families
 require committing to what counts as private before training, and retraining to
 revise that choice.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By 2022 the privacy risk of language models was well documented. Extraction
 attacks recovered verbatim training data, personally identifiable information
@@ -169,6 +170,8 @@ privacy and measured how much memorized training data a model sheds over
 training, in image and audio models (Jagielski et al., 2022). These methods
 forgot whole classes in classifiers; forgetting specific token sequences in a
 large language model had not been studied.
+
+</details>
 
 ## Reading guidance
 
@@ -211,7 +214,8 @@ large language model had not been studied.
 
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Abadi, M., Chu, A., Goodfellow, I., McMahan, H.B., Mironov, I., Talwar, K., and
   Zhang, L. "Deep Learning with Differential Privacy." ACM SIGSAC Conference on
@@ -286,3 +290,5 @@ large language model had not been studied.
 - Zhang, S., Roller, S., Goyal, N., Artetxe, M., Chen, M., Chen, S., Dewan, C.,
   Diab, M., Li, X., Lin, X.V., et al. "OPT: Open Pre-trained Transformer Language
   Models." arXiv:2205.01068, 2022.
+
+</details>

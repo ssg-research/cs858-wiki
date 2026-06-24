@@ -119,7 +119,8 @@ cross-entropy (next-token) loss and the
 a parallel view during fine-tuning: which token positions carry the largest loss
 and drive the largest weight updates.
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By 2024, aligned LLMs had been shown vulnerable to a varied and growing set of
 exploits, mostly studied in isolation. Adversarial-suffix attacks optimize a
@@ -150,6 +151,8 @@ boundary, with input and output classifiers screening prompts and responses (Ina
 et al., 2023). The alignment itself came from the supervised and
 preference-optimization stack, RLHF (Ouyang et al., 2022) and DPO (Rafailov et
 al., 2023), whose KL penalty keeps the aligned policy near the base model.
+
+</details>
 
 ## Reading guidance
 
@@ -184,14 +187,18 @@ al., 2023), whose KL penalty keeps the aligned policy near the base model.
 5. What can a defender constrain during fine-tuning to keep safety from
    unraveling, and why might that be cheap?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations](https://arxiv.org/abs/2312.06674) — the system-boundary approach to safety, screening prompts and responses with a separate classifier rather than changing the model's alignment.
 - [SecAlign: Defending Against Prompt Injection with Preference Optimization](https://arxiv.org/abs/2410.05451) — a preference-optimization defense that hardens the model itself, a useful contrast to deepening safety alignment.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Goodfellow, I. J., Shlens, J., and Szegedy, C. "Explaining and Harnessing
   Adversarial Examples." International Conference on Learning Representations
@@ -238,3 +245,5 @@ al., 2023), whose KL penalty keeps the aligned policy near the base model.
 - Zou, A., Wang, Z., Kolter, J. Z., and Fredrikson, M. "Universal and
   Transferable Adversarial Attacks on Aligned Language Models." arXiv:2307.15043,
   2023.
+
+</details>

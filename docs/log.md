@@ -696,3 +696,16 @@ Renamed the `wiki` folder to `wiki-f26` and updated all internal references in p
 ## [2026-06-23 13:57] update | Add home links to paper and concept pages (Gemini 3.1 Pro)
 
 ## [2026-06-23 14:04] infra | Mandate syncing main first in AGENTS.md (Gemini 3.1 Pro)
+
+## [2026-06-23 17:35] fix | Collapse deeper-context sections behind `<details>` (#15)
+
+Wrapped Paper Context, References, and Supplementary readings on all 24 paper
+pages in a collapsed `<details>` block to shorten the visible page (issue #15,
+PR 1 of 3). The section heading is an inline `<h2>` inside `<summary>`, so it
+stays an H2 and acts as the click-to-expand toggle; the body stays Markdown so
+its relative links remain checkable by `scripts/check-links.py`. Updated the
+schema to match: the page-template skeleton, the per-section descriptions, and
+the "Required" note in `docs/ops/generate-paper-summary.md`, and the "Format by
+section" list in `docs/writing-style.md` (added a Supplementary readings
+bullet). markdownlint clean (24 paper pages plus the two schema files);
+`check-links.py` clean (102 files). Model: Opus 4.8, `claude-opus-4-8`.

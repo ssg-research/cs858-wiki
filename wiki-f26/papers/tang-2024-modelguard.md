@@ -142,7 +142,8 @@ vector change. Confidence values also feed downstream uses such as
 out-of-distribution detection, whose quality is read from the area under a
 [ROC curve](../concepts/roc-curves.md) (AUROC).
 
-## Paper Context
+<details>
+<summary><h2>Paper Context</h2></summary>
 
 By 2024 model extraction was an established threat against deployed prediction
 APIs. Early attacks solved the parameters or a functionally exact equation of
@@ -181,6 +182,8 @@ recovers much of the signal (Lee et al., 2019), and a defense-penetrating attack
 adds a detector that identifies the defense before recovering (Chen et al.,
 2023). How to perturb outputs with a guarantee that survives an attacker who knows the
 mechanism had received little attention.
+
+</details>
 
 ## Reading guidance
 
@@ -228,13 +231,17 @@ mechanism had received little attention.
 5. How does a guarantee against the optimal recovery relate to the specific
    attacks the defense is evaluated against?
 
-## Supplementary readings
+<details>
+<summary><h2>Supplementary readings</h2></summary>
 
 - [Beowulf: Mitigating Model Extraction Attacks Via Reshaping Decision Regions](https://dl.acm.org/doi/pdf/10.1145/3658644.3670267) — a different defense lever against extraction, reshaping the target's decision regions rather than perturbing the returned probabilities.
 
+</details>
+
 [Home page](../README.md)
 
-## References
+<details>
+<summary><h2>References</h2></summary>
 
 - Adi, Y., Baum, C., Cisse, M., Pinkas, B., and Keshet, J. "Turning Your Weakness Into a Strength: Watermarking Deep Neural Networks by Backdooring." USENIX Security Symposium, 2018.
 - Cao, X., Jia, J., and Gong, N.Z. "IPGuard: Protecting Intellectual Property of Deep Neural Networks via Fingerprinting the Classification Boundary." ACM Asia Conference on Computer and Communications Security (AsiaCCS), 2021.
@@ -257,3 +264,5 @@ mechanism had received little attention.
 - Tramèr, F., Zhang, F., Juels, A., Reiter, M.K., and Ristenpart, T. "Stealing Machine Learning Models via Prediction APIs." USENIX Security Symposium, 2016.
 - Truong, J.-B., Maini, P., Walls, R.J., and Papernot, N. "Data-Free Model Extraction." IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2021.
 - Yan, H., Li, X., Li, H., Li, J., Sun, W., and Li, F. "Monitoring-Based Differential Privacy Mechanism Against Query Flooding-Based Model Extraction Attack." IEEE Transactions on Dependable and Secure Computing (TDSC), 2021.
+
+</details>
