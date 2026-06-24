@@ -709,3 +709,18 @@ the "Required" note in `docs/ops/generate-paper-summary.md`, and the "Format by
 section" list in `docs/writing-style.md` (added a Supplementary readings
 bullet). markdownlint clean (24 paper pages plus the two schema files);
 `check-links.py` clean (102 files). Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-24 17:22] remove-motivating-questions | all 24 paper pages
+
+Removed the `## Motivating questions` section from all 24 paper pages. The
+questions are preserved in `agent_docs/motivating-questions.md` (gitignored,
+local only), one entry per paper with a direct link to the paper. Students
+generate their own pre-questions; the archived questions serve as staff-side
+seminar discussion catalysts. Updated schema to match: page-template skeleton
+in `docs/ops/generate-paper-summary.md` (removed the section, updated step 6
+to route questions to the archive and ask the user for the canonical link,
+updated pedagogy ground rules and quality checklist); `docs/writing-style.md`
+"Format by section" (restated Motivating questions as staff-side archive only);
+`docs/ops/lint.md` pedagogy checks (dropped the Motivating-questions-answerable
+check, added Motivating questions to the schema-violation grep). Model:
+claude-sonnet-4-6.

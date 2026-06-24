@@ -168,14 +168,6 @@ through retrieved data fell outside that picture of the threat.
 - **Figures 4-9.** The per-attack data-flow diagrams; each shows where the injection enters and how data or control returns to the attacker.
 - **Appendix (prompts and outputs).** The actual injection prompts and model transcripts; the strongest real-world payloads were deliberately withheld.
 
-## Motivating questions
-
-1. What makes an injection "indirect," and how does the attacker reach a victim's model without ever using its interface?
-2. Why does the paper describe processing retrieved content as analogous to executing code, and what follows from that analogy?
-3. Against what kind of adversary is the threat defined: what must the attacker control, and what do they need to know about the target model?
-4. The paper organizes its findings as a taxonomy. At a high level, what are its axes, and what is each meant to capture?
-5. Which of the demonstrated harms depend on the model having tools or memory, and which need only its text output?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

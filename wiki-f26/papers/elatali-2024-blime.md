@@ -220,17 +220,6 @@ protections or pays a substantial performance cost.
   map of taint tracking, data-oblivious execution, and point side-channel
   defenses.
 
-## Motivating questions
-
-1. What exactly does the hardware guarantee about a client's data, and against an
-   adversary with which powers?
-2. What does hardware-enforced taint tracking provide that an isolated enclave
-   does not?
-3. How does blinded data move into and out of the system, and what do the
-   encryption engine and the hardware security module each do?
-4. What does the guarantee cost in performance and in hardware complexity?
-5. What does the machine-checked proof establish, and over what model?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

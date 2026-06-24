@@ -213,19 +213,6 @@ enclave.
 - Section VIII: the related-work map, separating TrustZone peripheral extension,
   hardware GPU TEEs, and accelerator I/O virtualization.
 
-## Motivating questions
-
-1. What asset does ASGARD's enclave protect, and against an adversary with what
-   control of the device?
-2. What does a virtualization-based TEE provide over a TrustZone-based one for
-   hosting a model and an accelerator together?
-3. What is the trade-off between the size of the trusted computing base and the
-   protection or performance the design can offer?
-4. What does it take to keep accelerated, enclave-hosted inference compatible
-   with unmodified proprietary device software?
-5. How close to unprotected on-device inference can a protected design come in
-   run-time cost?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

@@ -179,19 +179,6 @@ had not been given.
   attack details, and examples live in the appendices; the strongest prompts are
   deliberately withheld.
 
-## Motivating questions
-
-1. What does the paper mean by a "jailbreak," and how does eliciting a restricted
-   behavior differ from causing a model to make an error?
-2. The paper names two failure modes of safety training. At a high level, what is
-   each, and what part of the training pipeline does each one blame?
-3. Against what kind of adversary are these attacks defined: what can the attacker
-   observe, and what can it change?
-4. How is the success of a jailbreak measured across many prompts and several
-   models?
-5. Why does the paper argue that scaling models up will not, on its own, remove
-   these vulnerabilities?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

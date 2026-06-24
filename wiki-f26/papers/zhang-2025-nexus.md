@@ -224,19 +224,6 @@ argmax over a full vocabulary is impractical.
 - Appendix D: the formal simulation-based security statement and the semi-honest
   definition the paper adopts from Delphi.
 
-## Motivating questions
-
-1. What does the protocol keep secret from each party, and under what assumption
-   about how the parties behave?
-2. What does making the protocol non-interactive buy, and what does it cost in
-   computation?
-3. Which layers of a transformer are hard to evaluate under encryption, and why
-   are the nonlinear ones harder than the matrix multiplications?
-4. How does the cost of the final argmax depend on the size of the model's
-   vocabulary?
-5. How close to plaintext does encrypted inference stay in accuracy, and what
-   governs the gap?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

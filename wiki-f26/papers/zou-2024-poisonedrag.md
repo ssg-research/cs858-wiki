@@ -196,19 +196,6 @@ existed but had not been examined against corruption of a retrieval corpus.
   malicious texts produced. Reading one shows concretely what an injected text
   looks like.
 
-## Motivating questions
-
-1. What must an injected text accomplish for the attack to work, and which
-   component of the RAG pipeline does each requirement act on?
-2. What does the attacker need to know or access, and how does the attack change
-   between black-box and white-box knowledge of the retriever?
-3. How does corrupting a knowledge base differ from injecting instructions into a
-   prompt and from poisoning a model's training data?
-4. How many malicious texts, relative to the size of the knowledge database, does
-   the attack require, and what does that imply for real-world feasibility?
-5. What do the evaluated input-level defenses rely on, and why might injected
-   texts that read as ordinary content slip past them?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

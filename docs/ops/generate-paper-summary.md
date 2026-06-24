@@ -47,14 +47,14 @@ followed them.
 
 These follow from standard learning theory and are not stylistic preferences:
 
-- **Motivating questions are pre-questions** (advance organizers). Questions
-  given before reading improve comprehension, but *specific* pre-questions cause
-  tunnel vision, where the reader learns only the targeted material. So
-  motivating questions are few (three to five) and extremely high-level: "What
-  guarantee does this method give, and against whom?" "How much does it cost in
-  accuracy?" They are answerable, at a high level, by reading the paper. They
-  are never quiz questions, never trick questions, and never questions whose
-  premise is itself contested in the field.
+- **Motivating questions are staff-side discussion catalysts**, not
+  student-facing advance organizers. They are produced during the page-authoring
+  session and archived in `agent_docs/motivating-questions.md`; they never
+  appear on the published page. Students generate their own pre-questions before
+  reading; that generation effect produces better retention and discussion than
+  handing questions over. Three to five extremely high-level questions per
+  paper, answerable by reading it. Never quiz questions, never trick questions,
+  never questions whose premise the field disputes.
 - **Never author the field's open tensions as questions.** The generation
   effect: an insight a student produces is retained and transferred far better
   than one they are handed. The deep open questions (the genuinely unresolved
@@ -269,14 +269,18 @@ questions: the open-tension question format is retired (see Pedagogical ground
 rules). On the page it renders inside a collapsed `<details>` block, the heading
 as its toggle (see the schema skeleton).
 
-### 6. Engagement pass — motivating questions and reading guidance
+### 6. Engagement pass — motivating questions (archive) and reading guidance
 
-**Motivating questions.** Three to five extremely high-level pre-questions
-that give the student reading goals and open a curiosity gap. Shape: "What
-sort of guarantee does this method give, and against which adversaries?" "How
-much does the defense cost in clean accuracy?" Answerable, at a high level, by
-reading the paper. Never a quiz, never trick questions, never a question whose
-premise the field disputes.
+**Motivating questions (staff-side archive only).** Draft three to five
+extremely high-level pre-questions: "What sort of guarantee does this method
+give, and against which adversaries?" "How much does the defense cost in clean
+accuracy?" Answerable, at a high level, by reading the paper. Never a quiz,
+never trick questions, never a question whose premise the field disputes.
+
+Write these to `agent_docs/motivating-questions.md` (gitignored, local only),
+not to the paper page. Each entry in the archive is headed by the paper title
+as a link to the paper. Ask the user for the canonical link for this paper
+(arXiv abstract URL or DOI); do not auto-derive it.
 
 **Reading guidance.** A bullet list keyed by section, figure, or table: one
 line each on what that part contains and its role. Include one or two
@@ -409,11 +413,6 @@ contemporaneous work only, properly cited. Never this paper's position.)
 (A bullet list keyed by section / figure / table, one line each, including one
 or two neutral attention anchors. A roadmap, not a summary.)
 
-## Motivating questions
-
-1. (An extremely high-level pre-question, answerable by reading the paper.)
-2. ...
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 
@@ -526,8 +525,6 @@ A paper page is acceptable when:
   duplicating them.
 - Paper Context is declarative field context, cites only prior or
   contemporaneous work, and never previews this paper's position.
-- Motivating questions are three to five high-level pre-questions, answerable
-  by reading the paper, with no trick questions and no contested premises.
 - Reading guidance is a section-keyed bullet list with at least one neutral
   attention anchor, placed late in the page.
 - Every citation has a full References entry read off a source from this
@@ -544,8 +541,6 @@ It is **not** acceptable to:
   abstract-level overview.
 - Author the field's open tensions as questions anywhere on the page (students
   generate those; the page only places attention anchors).
-- Write quiz-style or trick motivating questions, or questions whose premise
-  the field disputes.
 - Cite follow-up work (work that responds to this paper) as background.
 - Cite anything without a full References entry, or reconstruct an entry from
   memory.

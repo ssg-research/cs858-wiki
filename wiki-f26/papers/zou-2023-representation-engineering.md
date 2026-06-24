@@ -236,21 +236,6 @@ safety-relevant concepts.
 - Appendix A: the explicit contrast between mechanistic interpretability and
   representation reading.
 
-## Motivating questions
-
-1. What does it mean to treat a high-level concept such as honesty as a direction
-   in a model's internal activations, and what access does reading or steering
-   that direction require?
-2. What kinds of claim do the reading experiments support, and what would it take
-   to show that a direction causally drives a model's behavior rather than merely
-   correlating with it?
-3. How is one basic recipe applied across targets as different as truthfulness,
-   harmlessness, and memorization?
-4. When a model is steered toward an attribute such as honesty or harmlessness,
-   what does the intervention cost in its other behavior or usefulness?
-5. What separates this top-down approach from mechanistic interpretability, and
-   what does each one buy?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 

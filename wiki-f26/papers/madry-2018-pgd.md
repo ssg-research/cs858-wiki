@@ -185,19 +185,6 @@ benchmark-style robustness number.
 - Appendix A: the statement of Danskin's theorem; note which of its assumptions
   hold for a ReLU network attacked by an approximate maximizer.
 
-## Motivating questions
-
-1. What does this paper formally mean by "robust," and against which class of
-   adversaries does its claim hold?
-2. What sort of guarantee does adversarial training aim to give, and what
-   evidence does the paper offer that the guarantee is reachable in practice?
-3. How much does adversarial training affect model utility (accuracy on
-   unperturbed inputs), and what does it cost in training compute?
-4. Does a robust network need to differ from an ordinarily accurate one, in
-   size or otherwise?
-5. How do the authors expose their robustness claims to falsification by other
-   researchers?
-
 [Home page](../README.md)
 
 <details>

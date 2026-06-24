@@ -77,21 +77,18 @@ These are CS858-specific and the reason the wiki exists. Read each changed paper
 page and confirm:
 
 - **No pre-digestion.** No "Summary," "Key findings," "Contributions," "Results,"
-  or "TLDR" section. No Tier-2 question that states the paper's own position.
-  This is the most important check; flag any violation.
-- **Tier-1 is prerequisite-only.** It explains background concepts, not what the
-  paper does to them.
-- **Tier-2 is questions.** A numbered list in interrogative form, each
-  position-forcing, none generic; none settled by this paper alone.
-- **Motivating questions are answerable by the paper.** Each should make a
-  student want to read it, and reading it should resolve it. (Student discussion
-  prompts are not wiki-authored, so they do not appear on the page.)
+  "TLDR," or "Motivating questions" section. This is the most important check;
+  flag any violation.
+- **Basic Background is prerequisite-only.** It explains background concepts,
+  not what the paper does to them.
+- **No authored tensions as questions.** Reading guidance places neutral
+  attention anchors; open-tension questions are for students to generate.
 
 A quick grep surfaces the obvious schema violations:
 
 ```bash
 WIKI_DIR="wiki-f26"
-grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr)' $WIKI_DIR/papers/
+grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr|motivating questions)' $WIKI_DIR/papers/
 ```
 
 Any hit is a candidate violation; read it and confirm.

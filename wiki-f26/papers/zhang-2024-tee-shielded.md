@@ -217,20 +217,6 @@ al., 2022).
 - Appendix A: the meta-review and the authors' response, including the reviewers'
   concern about the one-time-pad feature-encryption assumption in TeeSlice.
 
-## Motivating questions
-
-1. When part of a model runs inside a TEE and the rest runs on an untrusted GPU,
-   what does the shielding actually protect, and against an adversary with what
-   access?
-2. How is the security of a partitioning scheme measured, and which attacks serve
-   as the yardstick?
-3. What is the trade-off between how much of the model is shielded in the TEE and
-   the model's inference speed and accuracy?
-4. What information beyond the device does a realistic adversary bring, and how
-   does that change the protection a given partition offers?
-5. What would it take for a partition to reach the security of shielding the whole
-   model without paying its full cost?
-
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 
