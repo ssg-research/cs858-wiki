@@ -36,31 +36,29 @@ prompt to the server in the clear and trusts the server with it.
 client obtains the model's prediction while the server learns nothing about the
 input and the client learns nothing about the weights beyond the result.
 Protocols that did this for transformers had been interactive, with client and
-server exchanging many rounds of messages and large volumes of data, because the
+server exchanging many rounds of messages and large volumes of data because the
 nonlinear layers were evaluated with
 [secure two-party computation](../concepts/secure-multiparty-computation.md).
 This paper presents NEXUS, the first non-interactive protocol for secure
-transformer inference. "Non-interactive" here means the client speaks once: it
-sends a single encrypted input and receives a single encrypted result, with no
-further communication while the server computes.
+transformer inference: the client speaks once, sending a single encrypted input
+and receiving a single encrypted result with no further communication while the
+server computes.
 
 NEXUS has the client encrypt its input under
 [RNS-CKKS fully homomorphic encryption](../concepts/homomorphic-encryption.md), a
 scheme whose ciphertexts support both addition and multiplication, so the server
 evaluates the whole model, linear and nonlinear layers alike, on encrypted data
-without any round trip. To make that affordable the paper introduces several
-primitives: SIMD ciphertext compression and decompression, which keep a packed
-ciphertext's slots fully used during homomorphic matrix multiplication (see
-[ciphertext packing](../concepts/ciphertext-packing.md)); SIMD slot folding,
-which aggregates across a ciphertext's slots in a logarithmic number of
-rotations; and a secure argmax whose cost grows with the logarithm of the
-vocabulary size rather than linearly, which matters because a transformer's
-output layer ranges over tens of thousands of tokens.
+without any round trip. To keep that affordable the paper introduces packing and
+compression primitives that keep a ciphertext's
+[SIMD slots](../concepts/ciphertext-packing.md) fully used, and a secure argmax
+whose cost grows with the logarithm of the vocabulary size rather than linearly,
+so even the vocabulary-sized output layer over tens of thousands of tokens stays
+tractable under encryption.
 
-Measured against interactive baselines, NEXUS cuts bandwidth by more than two
-orders of magnitude while keeping runtime comparable, and its non-interactive
-structure admits a GPU implementation that the interactive baselines cannot use,
-at accuracy close to plaintext inference on the reported tasks.
+Against interactive baselines, NEXUS cuts bandwidth by more than two orders of
+magnitude while keeping runtime comparable, and its non-interactive structure
+admits a GPU implementation the interactive baselines cannot use, at accuracy
+close to plaintext inference on the reported tasks.
 
 **Threat Model:** Two parties run a single round of communication: a client
 holding a private input and a server holding a private model. Both are
@@ -68,16 +66,15 @@ holding a private input and a server holding a private model. Both are
 and computationally bounded, so each follows the protocol exactly but may try to
 infer the other's secret from its own view. A corrupted server must learn
 nothing about the client's input; a corrupted client must learn nothing about
-the model's weights beyond what the returned prediction reveals. As is standard
-for this setting, the model's architecture is treated as public; the protected
-secrets are the input values and the weight values. Security is argued in the simulation paradigm, with
-each party's view shown reproducible from its own input and the output alone, so
-only homomorphic ciphertexts and the final result cross the wire. The guarantee
-does not cover a malicious party that deviates from the protocol. What the output
-itself reveals is limited by design: the protocol returns the argmax label rather
-than the full logit vector, which bounds the
-[membership-inference](../concepts/membership-inference.md) leakage that a
-probability vector would carry.
+the model's weights beyond what the returned prediction reveals. The model's
+architecture is treated as public; the protected secrets are the input values
+and the weight values. Security is argued in the simulation paradigm, each
+party's view shown reproducible from its own input and the output alone, so only
+homomorphic ciphertexts and the final result cross the wire. The guarantee does
+not cover a malicious party that deviates from the protocol. By design the
+protocol returns only the argmax label rather than the full logit vector,
+limiting the residual [membership-inference](../concepts/membership-inference.md)
+leakage carried through the output itself.
 
 ## Why read this
 
