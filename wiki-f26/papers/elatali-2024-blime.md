@@ -29,49 +29,40 @@ A client that outsources computation to a cloud server must send its data there
 to be processed, which exposes that data to whoever controls the server.
 [Secure inference](../concepts/secure-inference.md) and related forms of
 outsourced computation address this for machine-learning workloads, and the two
-standard tools each carry a cost. [Fully homomorphic encryption](../concepts/homomorphic-encryption.md)
-keeps the data encrypted throughout but runs orders of magnitude slower than
-plaintext. A [trusted execution environment](../concepts/trusted-execution-environment.md)
+standard tools each carry a cost.
+[Fully homomorphic encryption](../concepts/homomorphic-encryption.md) keeps the
+data encrypted throughout but runs orders of magnitude slower than plaintext. A
+[trusted execution environment](../concepts/trusted-execution-environment.md)
 runs at near-native speed but has repeatedly leaked enclave data through run-time
-and side-channel attacks. BliMe (Blinded Memory) takes a third route: a small set
-of instruction-set-architecture (ISA) extensions, paired with a fixed-function
+and side-channel attacks.
+
+BliMe (Blinded Memory) takes a third route: a small set of
+instruction-set-architecture (ISA) extensions, paired with a fixed-function
 hardware security module (HSM) and an encryption engine, that let an untrusted
-server compute on a client's data while the hardware prevents that data from
-leaving the system in any observable form.
+server compute on a client's plaintext data while the hardware enforces a
+[taint-tracking](../concepts/taint-tracking.md) policy on it. The client's data
+and every value derived from it carry a hardware "blinded" mark and may not reach
+any observable output, including the side channels that defeat enclaves; such
+data leaves the system only by re-encryption under the client's key. The authors
+implement the extensions on a speculative out-of-order RISC-V core, BOOM (Zhao et
+al., 2020), report moderate run-time overhead in the single-digit to
+low-tens-of-percent range with minimal power and area cost, and give a
+machine-checked proof that the policy preserves the confidentiality of blinded
+data on a simplified model ISA.
 
-The client encrypts its data and sends it to the server, which passes the
-ciphertext through the encryption engine; the engine atomically decrypts it and
-marks the resulting plaintext as "blinded," a hardware taint carried alongside
-the value in registers, caches, memory, and buses. From there the CPU enforces a
-[taint-tracking](../concepts/taint-tracking.md) policy: every value derived from
-blinded data is itself blinded, and blinded data may not influence any observable
-output. It cannot steer a branch, serve as a memory address, set an instruction's
-timing, or drive a speculation decision, since each of those is a channel through
-which its value could leak. Results leave the system only by passing back through
-the encryption engine, which re-encrypts under the client's key and clears the
-blinded mark. The authors implement the extensions on a speculative out-of-order
-RISC-V core, BOOM (Zhao et al., 2020), report moderate run-time overhead in the
-single-digit to low-tens-of-percent range with minimal power and area cost, and
-give a machine-checked proof that the policy preserves the confidentiality of
-blinded data on a simplified model ISA.
-
-**Threat Model:** A client outsources computation to a remote server and wants the
-confidentiality of its input preserved, revealing nothing beyond the data's
+**Threat Model:** A client outsources computation to a remote server and wants
+the confidentiality of its input preserved, revealing nothing beyond the data's
 length. The adversary controls all server software, including the operating
-system and the third-party application that processes the data, and may run
-malware, exploit memory-safety bugs in that software at run time, and observe side
-channels such as memory-access patterns, cache state, and instruction timing. The
-adversary cannot break the hardware: the BliMe CPU extensions, the encryption
-engine, and the HSM are assumed correct, and attacks requiring physical access
-(power analysis, fault injection, direct access to the memory bus) are out of
-scope. Before sending data, the client uses
-[remote attestation](../concepts/trusted-execution-environment.md) to confirm it
-is talking to genuine BliMe hardware. Under these assumptions the defender's claim
-is that no blinded value, and nothing derived from it, can reach an observable
-output except by re-encryption under the originating client's key, with the policy
-enforced in hardware and machine-checked on a model of the ISA. The guarantee
-differs from a classic enclave: confidentiality comes from tracking the data
-wherever it flows, rather than from confining it to an isolated region of memory.
+system and the third-party application that processes the data, and can observe
+side channels such as memory-access patterns, cache state, and instruction
+timing. The adversary cannot break the hardware: the BliMe hardware is assumed
+correct, and attacks requiring physical access (power analysis, fault injection,
+direct access to the memory bus) are out of scope. Before sending data, the
+client uses [remote attestation](../concepts/trusted-execution-environment.md) to
+confirm it is talking to genuine BliMe hardware. Under these assumptions the
+defender's claim is that no blinded value, and nothing derived from it, can reach
+an observable output except by re-encryption under the originating client's key,
+with the policy enforced in hardware and machine-checked on a model of the ISA.
 
 ## Why read this
 
