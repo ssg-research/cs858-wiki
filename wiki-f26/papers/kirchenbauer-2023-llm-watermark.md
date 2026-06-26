@@ -31,33 +31,26 @@ and excluding machine text from web-scale training corpora. This work embeds a
 watermark into generated text at decoding time so that the source of a passage
 can later be established from the text alone. The watermark is a hidden
 statistical pattern, imperceptible to a human reader yet detectable by an
-algorithm that holds the right key. Before each token is sampled, the method
-seeds a pseudo-random generator from a hash of the preceding token, uses that
-seed to split the vocabulary into a "green list" and a "red list," and then
-softly promotes the green-list tokens by adding a constant to their logits.
-Across a span of tokens, watermarked text carries far more green-list tokens
-than a human writer would produce by chance.
+algorithm that holds the right key. It marks the output text rather than the
+model's weights, and serves provenance, telling machine text from human text,
+rather than ownership. At each step the method biases the logits toward a
+pseudo-random "green list," a per-position partition of the token vocabulary
+that shifts with the preceding context. Watermarked text then carries far more
+green-list tokens across a span than a human writer would produce by chance.
 
-Detection needs neither the model nor its parameters nor its API, only the text
-and the hashing scheme. A detector recomputes the green list at each position,
-counts green-list tokens, and applies a one-proportion z-test against the null
-hypothesis that the text was written with no knowledge of the green-list rule,
-which yields an interpretable p-value and a controllable false-positive rate.
-How strongly a passage can be watermarked depends on its entropy: high-entropy
-spans, where the model has many plausible next tokens, absorb the green-list
-bias with little change to the text, while low-entropy spans, where one
-continuation is nearly forced, carry almost no signal and resist watermarking.
-The authors derive an information-theoretic analysis relating watermark strength
-to a measure of next-token-distribution entropy, report that the watermark is
-detectable from short spans with negligible cost to text quality measured by
+Detection reads the candidate text alone and applies a statistical test,
+yielding an interpretable p-value and a controllable false-positive rate. How strongly a passage can be
+watermarked depends on its entropy: high-entropy spans, where the model has many
+plausible next tokens, absorb the green-list bias with little change to the
+text, while low-entropy spans, where one continuation is nearly forced, carry
+almost no signal and resist watermarking. The authors derive an
+information-theoretic analysis relating watermark strength to
+next-token-distribution entropy, report that the watermark is detectable from
+spans as short as 25 tokens with negligible cost to text quality measured by
 [perplexity](../concepts/perplexity.md), and study how it degrades under attacks
-that edit, paraphrase, or otherwise rewrite the text. Experiments use a
+that edit, paraphrase, or rewrite the text. Experiments use a
 multi-billion-parameter model from the Open Pre-trained Transformer (OPT) family
-(Zhang et al., 2022). Decoded terminology: the watermark marks the output text
-rather than the model's weights, and serves provenance (telling machine text
-from human text) rather than ownership; the green list and red list are a
-per-position pseudo-random partition of the token vocabulary, not fixed word
-sets.
+(Zhang et al., 2022).
 
 **Threat Model:** The watermark is embedded by the model provider, the party
 that controls decoding and can modify the model's output logits before a token

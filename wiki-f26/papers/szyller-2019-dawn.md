@@ -25,39 +25,32 @@ tags:
 ## High-level overview
 
 A trained model exposed through a prediction API can be copied by
-[model extraction](../concepts/model-extraction.md): an adversary queries the
-API, collects the returned labels, and trains a surrogate that reproduces the
+[model extraction](../concepts/model-extraction.md): an adversary queries the API,
+collects the returned labels, and trains a surrogate that reproduces the
 victim's functionality. Existing
 [model watermarking](../concepts/model-watermarking.md) schemes embed an
-ownership marker into the model at training time, so the owner can later prove a
-suspect model is a copy. Against extraction they fail, because the adversary, not
-the owner, trains the surrogate, and nothing the owner placed in the original
-model is guaranteed to carry over.
+ownership marker into the model at training time. Against extraction they fail,
+because the adversary, not the owner, trains the surrogate, and nothing the owner
+placed in the original model carries over.
 
 This work introduces DAWN (Dynamic Adversarial Watermarking of Neural Networks),
 a watermarking approach for deterring intellectual-property theft via model
 extraction. DAWN is a component placed in front of the prediction API rather than
 a change to the protected model. For a small, client-specific fraction of
 incoming queries (under 0.5%), it returns a deliberately altered label instead of
-the model's true prediction. If a client uses its query responses to train a
-surrogate, those altered query-label pairs act as a [backdoor](../concepts/backdoor-attacks.md)
-trigger set that the surrogate learns. The owner can then query a suspected model
-with that trigger set and check whether the planted responses reappear, turning a
-property the adversary unknowingly trained into evidence of theft. The label
-changes are keyed and deterministic, so repeated or near-identical queries get
-consistent answers and an adversary cannot single out the altered ones. The
-watermark is also specific to each client, so a verified mark links a surrogate
-back to the client whose queries trained it.
+the model's true prediction. If a client trains a surrogate on its query
+responses, those altered query-label pairs become a [backdoor](../concepts/backdoor-attacks.md)
+trigger set the surrogate learns, and the owner can later query a suspect model
+and check whether the planted responses reappear. The mark is client-specific, so
+a verified surrogate links back to the client whose queries trained it. Here the
+watermark is embedded by the adversary who trains the surrogate rather than by
+the defender, inverting the usual watermarking setup.
 
 The paper reports that DAWN watermarks every surrogate produced by two
 extraction attacks, including the functionality-stealing attack of
 [Knockoff Nets](orekondy-2019-knockoff-nets.md) (Orekondy et al., 2019), lets the
 owner demonstrate ownership with high confidence, and costs honest clients a
-negligible drop in accuracy (0.03 to 0.5%). Decoded terminology: the "watermark"
-here is a trigger set (a backdoor), not a marker embedded in the weights; the
-"oracle" is the ground-truth labeling function the model approximates; and the
-"adversary" is a model thief who trains the surrogate, so the watermark is
-embedded by the attacker rather than by the defender.
+negligible drop in accuracy (0.03 to 0.5%).
 
 **Threat Model:** The adversary mounts model extraction against a victim's
 prediction API over [black-box](../concepts/white-box-black-box.md) query access:
