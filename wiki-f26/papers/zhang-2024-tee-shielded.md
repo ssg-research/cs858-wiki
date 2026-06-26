@@ -30,54 +30,49 @@ tags:
 ## High-level overview
 
 On-device machine learning ships a trained model to a phone or IoT device, where
-the device owner can read its weights directly. That white-box access makes two
-attacks cheap: [model stealing](../concepts/model-extraction.md) (MS), which
-reproduces the model's weights or functionality, and the
-[membership inference attack](../concepts/membership-inference.md) (MIA), which
-recovers whether a record was in the training set. Hosting the whole model in a
-[trusted execution environment](../concepts/trusted-execution-environment.md)
-(TEE), a hardware-isolated enclave the rest of the device cannot read, downgrades
-both to the harder black-box setting, but a TEE runs a deep network far slower
-than a GPU, up to about 50 times. TEE-Shielded DNN Partition (TSDP) is the class
-of defenses that splits the difference: a privacy-sensitive subset of the network
+the party holding the device can read its weights directly. That
+white-box access makes two attacks cheap: [model
+stealing](../concepts/model-extraction.md) (MS), which reproduces a model's
+weights or functionality, and the [membership inference
+attack](../concepts/membership-inference.md) (MIA), which recovers whether a
+record was in the training set. Hosting the whole model in a [trusted execution
+environment](../concepts/trusted-execution-environment.md) (TEE) downgrades both
+to the harder black-box setting, but a TEE runs a deep network up to about 50
+times slower than a GPU. TEE-Shielded DNN Partition (TSDP) is the class of
+defenses that splits the difference: a privacy-sensitive subset of the network
 runs inside the TEE while the rest is offloaded to the device's untrusted GPU for
-speed (see [model partitioning](../concepts/model-partitioning.md)). Existing TSDP
-work assumes the offloaded part exposes no more than a black-box interface.
+speed (see [model partitioning](../concepts/model-partitioning.md)). Every TSDP
+scheme assumes the offloaded part exposes no more than a black-box interface.
 
 This paper is the first systematic security evaluation of that assumption. It
-surveys TSDP schemes published from 2018 to 2023 and sorts them into five
-partition strategies by where the shielded subset sits: deep layers, shallow
-layers, intermediate layers, the large-magnitude weights of each layer, or the
-non-linear layers with the offloaded linear layers obfuscated. It then benchmarks
-a representative of each with both MS and MIA, driven by an adversary that uses
-public pretrained models and datasets to turn the offloaded weights into a
-surrogate. At an abstract level the measurements run against the schemes: model
-stealing reaches several times the accuracy of the shielding-whole-model baseline
-and membership inference stays consistently above it, close to fully white-box
-quality, so the deployed partitions do not deliver the black-box-level protection
-they claim. The paper also reports that the "sweet spot" partition, the one giving
-the most security at the least utility cost, shifts across models and datasets,
-which makes it hard to set in advance. It closes with TeeSlice, a
-partition-before-training design that isolates privacy-bearing weights into small
-slices and reaches shielding-whole-model security at over ten times less TEE
-overhead with no accuracy loss.
+surveys TSDP schemes published from 2018 to 2023, sorts them into five partition
+strategies by which part of the network the TEE shields, and benchmarks a
+representative of each with both MS and MIA under one practical adversary. The
+measurements run against the schemes: model stealing reaches several times the
+accuracy of the shielding-whole-model baseline, and membership inference stays
+consistently above it, close to fully white-box quality. The deployed partitions
+do not deliver the black-box-level protection they claim. The "sweet spot"
+partition, the one giving the most security at the least utility cost, shifts
+across models and datasets, so it cannot be set in advance. The paper closes with
+TeeSlice, a partition-before-training design that isolates privacy-bearing weights
+into small slices and reaches shielding-whole-model security at over ten times
+less TEE overhead with no accuracy loss.
 
 **Threat Model:** A model owner (the defender) ships a model to a device whose
 rich execution environment, the ordinary operating system, applications, and the
-device user, is untrusted and adversarial. The adversary reads the offloaded part of the model
-running outside the TEE, and in principle can tamper with it, and observes the
-TEE's inputs and outputs, which return predicted labels only (label-only outputs); it cannot
-break the TEE, whose internal data, code, and computation are assumed secure, and
-side-channel attacks against the TEE are out of scope. Beyond the device the
-adversary holds abundant public information: pretrained models and public datasets
-it uses to infer the protected model's architecture and to initialize a surrogate
-from the offloaded weights, plus a limited query budget against the deployed
-label-only model (under one percent of the training-set size). The protected
-assets are the model, against extraction, and the training-data privacy that model
-leakage would expose, against membership inference. The defender's claim, which
-the paper measures, is that shielding a privacy-sensitive subset in the TEE
-downgrades white-box MS and MIA to the much harder black-box label-only setting,
-matching the protection of shielding the entire model.
+device user, is adversarial. The adversary reads, and in principle can tamper
+with, the offloaded part of the model running outside the TEE, and observes the
+TEE's inputs and outputs, which return predicted labels only (label-only outputs).
+It cannot break the TEE, whose internal data and computation are assumed secure,
+and side channels against the TEE are out of scope. Beyond the device the
+adversary holds public pretrained models and datasets, used to infer the protected
+model's architecture and to initialize a surrogate, plus a query budget against
+the deployed label-only model under one percent of the training-set size. The
+protected assets are the model, against extraction, and the training-data privacy
+that model leakage would expose, against membership inference. The defender's
+claim, which the paper measures, is that shielding a privacy-sensitive subset
+downgrades white-box MS and MIA to the black-box label-only setting, matching the
+protection of shielding the entire model.
 
 ## Why read this
 

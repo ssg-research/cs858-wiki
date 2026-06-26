@@ -29,55 +29,49 @@ tags:
 A classifier served through a prediction API can be copied by
 [model extraction](../concepts/model-extraction.md): an adversary queries the
 Machine-Learning-as-a-Service (MLaaS) system, collects the returned confidence
-vectors, and trains a substitute model that reproduces the target's parameters or
-its functionality. One defense family, prediction perturbation, alters the
-confidence vectors the API returns so that a substitute trained on them comes out
-worse, while honest users still get useful predictions. Earlier perturbation
-defenses set the alteration heuristically. They pay a large utility cost for the
-protection they buy, and an adaptive attacker, one that knows the defense is in
-place and tries to undo it, recovers much of the signal before training.
+vectors, and trains a substitute that reproduces the target's parameters or its
+functionality. Prediction-perturbation defenses alter the returned confidence
+vectors so a substitute trained on them comes out worse, while honest users keep
+useful predictions. Earlier perturbation defenses set the alteration
+heuristically, pay a large utility cost, and lose ground to an adaptive attacker,
+one that knows the defense is in place and tries to undo it, which recovers much
+of the signal before training.
 
-This work introduces ModelGuard, a prediction-perturbation defense derived from a
-constrained optimization problem: choose the perturbed confidence vector that
-maximizes the loss an attacker incurs when training a substitute, subject to
-utility constraints that bound the per-query distortion (in `ℓ1` norm) and keep
-the top-1 label unchanged. The formulation unifies the parameter-stealing and the
-functionality-stealing goals into a single objective, so one defense covers both.
-Two variants solve it under different assumptions about the attacker's recovery
-step. ModelGuard-W assumes a weak adaptive attacker that trains directly on the
-perturbed outputs.
-ModelGuard-S targets the optimal recovery, the Bayes estimator that an
-unboundedly capable adaptive attacker would use, and defends an
-information-theoretic lower bound on the attacker's loss. Decoded: an
-"information-theoretic defense" here perturbs the outputs to minimize the
+ModelGuard derives the perturbation from a constrained optimization: choose the
+perturbed confidence vector that maximizes the loss an adversary incurs when
+training a substitute, subject to utility constraints that bound the per-query
+`ℓ1` distortion and keep the top-1 label unchanged. A single objective covers
+both the parameter-stealing and the functionality-stealing goals. Two variants
+solve it under different assumptions about the adversary recovery step.
+ModelGuard-W assumes a weak adaptive attacker that trains directly on the
+perturbed outputs. ModelGuard-S targets the optimal recovery, the Bayes estimator
+an unboundedly capable adaptive attacker would use, and defends an
+information-theoretic lower bound on that adversary's substitute-training loss:
+the defense minimizes the
 [mutual information](../concepts/mutual-information.md) between the clean
-predictions and the ones returned, so the bound on what the attacker can recover
-holds against any recovery procedure, not one fixed attack. Minimizing that
-mutual information under the distortion budget is a rate-distortion problem.
-Across image-classification benchmarks, and against a strong
-Bayes-estimator adaptive attack the paper also constructs to stress-test
-defenses, ModelGuard-S reports a better privacy-utility balance than prior
-perturbation defenses.
+predictions and the returned ones under the distortion budget, a rate-distortion
+problem, so the bound holds against any recovery procedure rather than one fixed
+attack. Across image-classification benchmarks, and against a strong
+Bayes-estimator adaptive attack the paper constructs to stress-test defenses,
+ModelGuard-S reports a better privacy-utility balance than prior perturbation
+defenses.
 
 **Threat Model:** The adversary mounts query-based model extraction against a
-victim's prediction API over [black-box](../concepts/white-box-black-box.md)
-access: it submits inputs and reads back the confidence-score vector over the
-classes, with no side channel exposing anything more. It cannot read the
-confidential training set, but it knows the input domain and queries with natural
-or synthetic data from a similar domain, and in the strong case it knows the
-target's architecture and uses the same one for its substitute. Its query budget
-is unlimited, so it may repeat any query, which lets it average out a randomized
-defense and reduces the problem to defeating a deterministic one. It is adaptive:
-it knows the perturbation mechanism, can reproduce it, and applies a recovery
-function to the returned vectors to estimate the clean predictions before
-training the substitute toward a parameter-stealing or functionality-stealing
-goal. The defender controls the prediction API and perturbs each returned vector
-under two utility constraints, a bounded `ℓ1` distortion and an unchanged top-1
-label, plus the validity constraint that the output stay a probability vector. It
-protects the confidentiality of the model's parameters and functionality, and its
-claim for the information-theoretic variant is a lower bound on the attacker's
-substitute-training loss that holds against the optimal recovery, while honest
-users keep high utility.
+victim, the prediction API and the model behind it, over
+[black-box](../concepts/white-box-black-box.md) access to the confidence-score
+vector over classes, with no side channel. It does not see the confidential
+training set, but it knows the input domain and queries with natural or synthetic
+data from a similar domain; in the strong case it knows the target's architecture
+and matches it in its substitute. Its query budget is unlimited, so repeating any
+query averages out a randomized defense and reduces the problem to defeating a
+deterministic one. As an adaptive attacker, it knows and can reproduce the
+perturbation mechanism, then applies a recovery function to the returned vectors
+to estimate the clean predictions before training. The defender controls the
+prediction API and perturbs each returned vector under a bounded `ℓ1` distortion,
+an unchanged top-1 label, and the validity constraint that the output stay a
+probability vector. Its claim for the information-theoretic variant is a lower
+bound on substitute-training loss that holds against the optimal recovery, while
+honest users keep high utility.
 
 ## Why read this
 

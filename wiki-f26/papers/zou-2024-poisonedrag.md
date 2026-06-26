@@ -22,53 +22,49 @@ tags:
 
 ## High-level overview
 
-Retrieval-augmented generation (RAG) answers a question by first retrieving
-relevant texts from a knowledge database (a corpus such as Wikipedia, news
-articles, or an enterprise document store) and placing them in a language
-model's context, so the model can ground its answer in up-to-date or
-domain-specific text it was never trained on. This paper asks what happens when
-that knowledge database is not trusted. It introduces PoisonedRAG, presented as
-the first knowledge corruption attack on RAG: an attacker inserts a small number
-of crafted texts into the corpus so that, for a question the attacker chose in
-advance (the "target question"), the system returns an answer the attacker chose
-in advance (the "target answer"). The worked example throughout is making the
-system answer "Tim Cook" to "Who is the CEO of OpenAI?".
+[Retrieval-augmented generation](../concepts/retrieval-augmented-generation.md)
+(RAG) answers a question by retrieving relevant texts from a knowledge database
+and placing them in a language model's context, so the model grounds its answer
+in retrieved text rather than its fixed training knowledge. This paper asks what happens when that knowledge database
+is not trusted. It introduces PoisonedRAG, presented as the first knowledge
+corruption attack on RAG: an adversary inserts a small number of crafted texts
+into the corpus so that, for a question the adversary chose in advance (the
+"target question"), the system returns an answer the adversary chose in advance
+(the "target answer"). The worked example throughout is making the system
+answer "Tim Cook" to "Who is the CEO of OpenAI?".
 
-For the attack to land, an injected text has to clear two hurdles, which the
-paper names the retrieval condition and the generation condition: it must rank
-highly enough to actually be retrieved for the target question, and once in the
-context it must steer the model to the target answer. The paper studies how to
-satisfy both at once under two assumptions about the attacker's knowledge of the
-retriever (black-box and white-box). Reported results, at the level of the
+An injected text succeeds only if it is retrieved for the target question and,
+once in the context, steers the model to the target answer. The paper crafts
+texts that do both, under two assumptions about the adversary's knowledge of
+the retriever: black-box (no access to the retriever's parameters, the main and
+stronger setting) and white-box. Reported results, at the level of the
 abstract, are high attack success rates from injecting only a handful of texts
-(on the order of five per target question) into databases holding millions of
-texts, across several question-answering datasets and language models, and
-several input-level defenses that do not stop it.
+per target question into databases holding millions of texts: 97% on the
+Natural Questions dataset from five texts per question against a corpus of
+roughly 2.7 million clean texts. The attack holds across several
+question-answering datasets and language models, and against several
+input-level defenses.
 
-This is a different attack from prompt injection, with which it is easily
-confused. Prompt injection smuggles *instructions* into content the model reads
-("ignore your task and output X"); PoisonedRAG injects *misleading content* that
-reads as ordinary text, so the model is misled by what it treats as a credible
-retrieved fact rather than by a hidden command. It is also distinct from
-classical data poisoning, which corrupts the *training set* of a model or
-retriever; here nothing in training is touched.
+This differs from [prompt injection](../concepts/prompt-injection.md), with
+which it is easily confused. Prompt injection smuggles *instructions* into
+content the model reads ("ignore your task and output X"); PoisonedRAG injects
+*misleading content* that reads as ordinary text, so the model is misled by
+what it treats as a credible retrieved fact rather than by a hidden command.
 
 **Threat Model:** The adversary picks one or more target questions and a target
-answer for each, and injects a few malicious texts into the RAG knowledge
-database, for example by editing Wikipedia pages, posting web content that will
-be crawled into the corpus, or acting as an insider with write access to a
-private database. The adversary cannot read the other (clean) texts in the
-database and cannot access or query the language model. Knowledge of the
-retriever splits the settings: in the black-box setting the adversary cannot
-access the retriever's parameters or query it (the paper's main, stronger
-assumption); in the white-box setting the adversary has the retriever's
-parameters, which the paper motivates by the common practice of deploying a
-publicly available retriever. The attack acts neither at training time nor at the
-moment of a user's prompt, but on the data the deployed system retrieves at
-inference: the corruption is placed into the corpus ahead of time and waits to be
-retrieved. The attacker's goal is the chosen target answer for the chosen target
-question; the defender's hoped-for recourse, which the paper evaluates, is
-detecting or neutralizing the injected texts with input-level defenses.
+answer for each, then injects a few malicious texts into the RAG knowledge
+database, for instance by editing a public source the corpus is built from or
+through insider write access to a private one. The adversary cannot read the
+other (clean) texts in the database and cannot access or query the language
+model. Knowledge of the retriever splits the settings: in the black-box setting
+the adversary cannot access the retriever's parameters or query it (the paper's
+main, stronger assumption); in the white-box setting the adversary holds the
+retriever's parameters, which the paper motivates by the common practice of
+deploying a publicly available retriever. The corruption is placed into the
+corpus ahead of time and retrieved at inference, acting on the data the deployed
+system consults rather than on training or on the user's prompt. The defender,
+the party running input-level defenses the paper evaluates, aims to detect or
+neutralize the injected texts.
 
 ## Why read this
 
