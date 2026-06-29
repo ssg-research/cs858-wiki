@@ -22,46 +22,42 @@ tags:
 ## High-level overview
 
 Large language models deployed as assistants are
-[safety-trained](../concepts/safety-training.md) to refuse a set of restricted
-behaviors, such as giving harmful instructions or leaking personal data.
-"[Jailbreak](../concepts/jailbreak.md)" prompts route around those refusals and
-elicit the behavior anyway. This paper asks why safety training fails against
-such prompts and turns the answer into a method for constructing attacks.
+[safety-trained](../concepts/safety-training.md) to refuse restricted behaviors.
+"[Jailbreak](../concepts/jailbreak.md)" prompts elicit those behaviors anyway.
+This paper explains why safety training fails against such prompts and turns the
+explanation into a recipe for building attacks.
 
-It proposes two failure modes of current safety training. **Competing
-objectives**: a model is trained for several objectives at once,
-[language modeling](../concepts/language-model-pretraining.md),
+It proposes two failure modes. **Competing objectives**: a model is trained at
+once for [language modeling](../concepts/language-model-pretraining.md),
 [instruction following](../concepts/instruction-tuning.md), and safety, and a
-prompt can be built that forces a choice in which obeying the first two implies
-violating the third (for instance, requiring the reply to open with a fixed
-affirmative prefix, after which a refusal becomes improbable). **Mismatched
-generalization**: pretraining spans a far wider range of inputs than safety
-training, so a prompt placed in that gap, such as one encoded in Base64, is
-understood by the model yet missed by its refusal behavior. Each principle
-yields a family of concrete attacks, and the two can be composed.
+prompt can be built that forces obeying the first two to mean violating the
+third. **Mismatched generalization**: pretraining spans a far wider range of
+inputs than safety training, so a prompt placed in that gap is understood by the
+model yet missed by its refusal behavior. Each principle yields a family of
+concrete attacks, and the two compose.
 
 The paper evaluates these attacks on GPT-4, Claude v1.3, and the smaller GPT-3.5
 Turbo, drawing prompts from the model creators' own
-[red-teaming](../concepts/red-teaming.md) sets and from a larger held-out set.
-Attacks built from the two principles outperform the ad hoc jailbreaks
-circulating online, and their combinations succeed on the large majority of
-restricted prompts. The paper argues these failures are tied to how the models
-are trained rather than to their scale, so larger models alone will not remove
-them, and it calls for "safety-capability parity," safety mechanisms as
-sophisticated as the model they guard.
+[red-teaming](../concepts/red-teaming.md) sets and a larger held-out set. Attacks
+built from the two principles outperform ad hoc jailbreaks, and their
+combinations succeed on the large majority of restricted prompts. The paper
+argues these failures follow from how the models are trained rather than from
+their scale, so larger models alone will not remove them, and calls for
+"safety-capability parity," safety mechanisms as sophisticated as the model they
+guard.
 
 **Threat Model:** The adversary is a user of the deployed chat interface who
 wants to elicit a restricted behavior. Access is
-[black-box](../concepts/white-box-black-box.md): the attacker queries the model
+[black-box](../concepts/white-box-black-box.md): the adversary queries the model
 through the chat interface, with no view of weights or training data and no
-ability to set the system prompt or alter the message history. The attacker's
-lever is the prompt itself, rewriting a refused request into a modified prompt
-using transformations that are generally input-agnostic and human-readable; the
-attack may be adaptive, choosing the next prompt from the model's replies to
-earlier variants, though most attacks succeed without adaptivity. The attack
-acts at inference time only, with no access to training. The defender is the
-model provider, which offers a safety-trained model that refuses restricted
-behaviors and is claimed to resist adversarial misuse.
+ability to set the system prompt or alter the message history. The lever is the
+prompt itself, rewriting a refused request into a modified prompt using
+transformations that are generally input-agnostic and human-readable; the attack
+may be adaptive, choosing the next prompt from the model's replies to earlier
+variants, though most attacks succeed without adaptivity. The attack acts at
+inference time only, with no access to training. The defender is the model
+provider, which serves a safety-trained model that refuses restricted behaviors
+and is claimed to resist adversarial misuse.
 
 ## Why read this
 
