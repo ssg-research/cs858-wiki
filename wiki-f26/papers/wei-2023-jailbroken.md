@@ -17,7 +17,7 @@ tags:
 
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 ---
 
@@ -188,9 +188,6 @@ had not been given.
 </details>
 
 ---
-
-### [Wiki Home](../README.md)
-
 <details>
 <summary><h4>References</h4></summary>
 

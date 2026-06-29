@@ -8,7 +8,7 @@ tags:
   - machine-learning
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Linear probing
 
@@ -32,8 +32,6 @@ _No reading-companion page currently uses this concept._
 - [Linear representation hypothesis](linear-representation-hypothesis.md)
 - [Activation steering](activation-steering.md)
 - [Mechanistic interpretability](mechanistic-interpretability.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

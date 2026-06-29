@@ -22,7 +22,7 @@ tags:
 
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 ---
 
@@ -201,9 +201,6 @@ large language model had not been studied.
 </details>
 
 ---
-
-### [Wiki Home](../README.md)
-
 <details>
 <summary><h4>References</h4></summary>
 

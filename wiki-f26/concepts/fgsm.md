@@ -8,7 +8,7 @@ tags:
   - adversarial-training
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Fast Gradient Sign Method (FGSM)
 
@@ -52,8 +52,6 @@ approximation is poor, the single step misses higher-loss points that iterated,
 - [Projected gradient descent](projected-gradient-descent.md)
 - [Adversarial training](adversarial-training.md)
 - [Robust optimization](robust-optimization.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

@@ -7,7 +7,7 @@ tags:
   - language-models
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Contrastive prompt pairs
 
@@ -32,8 +32,6 @@ _No reading-companion page currently uses this concept._
 
 - [Activation steering](activation-steering.md)
 - [Linear representation hypothesis](linear-representation-hypothesis.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

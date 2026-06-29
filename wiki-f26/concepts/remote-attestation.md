@@ -7,7 +7,7 @@ tags:
   - hardware-security
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Remote attestation
 
@@ -55,8 +55,6 @@ datasheet, and inference card a third party can check rather than take on faith.
 
 - [Trusted execution environment](trusted-execution-environment.md)
 - [Zero-knowledge proof](zero-knowledge-proof.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

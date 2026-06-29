@@ -19,7 +19,7 @@ tags:
 
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 ---
 
@@ -173,9 +173,6 @@ through retrieved data fell outside that picture of the threat.
 </details>
 
 ---
-
-### [Wiki Home](../README.md)
-
 <details>
 <summary><h4>References</h4></summary>
 

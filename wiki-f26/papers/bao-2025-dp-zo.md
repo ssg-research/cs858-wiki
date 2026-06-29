@@ -21,7 +21,7 @@ tags:
 
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 ---
 
@@ -221,9 +221,6 @@ on several benchmarks when this paper appeared.
 </details>
 
 ---
-
-### [Wiki Home](../README.md)
-
 <details>
 <summary><h4>References</h4></summary>
 

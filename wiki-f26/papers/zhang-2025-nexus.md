@@ -26,7 +26,7 @@ tags:
 
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 ---
 
@@ -233,9 +233,6 @@ argmax over a full vocabulary is impractical.
 </details>
 
 ---
-
-### [Wiki Home](../README.md)
-
 <details>
 <summary><h4>References</h4></summary>
 

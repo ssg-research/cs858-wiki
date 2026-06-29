@@ -8,7 +8,7 @@ tags:
   - robust-optimization
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Adversarial training
 
@@ -52,8 +52,6 @@ leaving the model open to stronger ones.
 - [Fast Gradient Sign Method (FGSM)](fgsm.md)
 - [Gradient masking](gradient-masking.md)
 - [Adversarial examples](adversarial-examples.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

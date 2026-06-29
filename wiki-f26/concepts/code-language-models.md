@@ -7,7 +7,7 @@ tags:
   - language-models
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Large language models for code
 
@@ -35,8 +35,6 @@ readily as secure ones.
 - [Language model pretraining](language-model-pretraining.md)
 - [Zero-shot prompting](zero-shot-prompting.md)
 - [Decoding and sampling strategies](decoding-strategies.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

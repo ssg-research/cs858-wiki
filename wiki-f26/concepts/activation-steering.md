@@ -8,7 +8,7 @@ tags:
   - language-models
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Activation steering
 
@@ -34,8 +34,6 @@ _No reading-companion page currently uses this concept._
 - [Linear representation hypothesis](linear-representation-hypothesis.md)
 - [Contrastive prompt pairs](contrastive-prompt-pairs.md)
 - [Red teaming (language models)](red-teaming.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

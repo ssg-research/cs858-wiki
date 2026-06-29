@@ -7,7 +7,7 @@ tags:
   - defense
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Model explanations
 
@@ -36,8 +36,6 @@ extraction.
 - [Mechanistic interpretability](mechanistic-interpretability.md)
 - [Membership inference](membership-inference.md)
 - [Memorization](memorization.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

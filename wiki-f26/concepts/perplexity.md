@@ -7,7 +7,7 @@ tags:
   - privacy
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Perplexity
 

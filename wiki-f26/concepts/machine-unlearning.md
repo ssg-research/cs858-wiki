@@ -8,7 +8,7 @@ tags:
   - right-to-be-forgotten
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Machine unlearning
 
@@ -55,8 +55,6 @@ et al., 2022).
 - [Differential privacy](differential-privacy.md)
 - [Memorization](memorization.md)
 - [Language model pretraining](language-model-pretraining.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

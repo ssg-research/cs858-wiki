@@ -8,7 +8,7 @@ tags:
   - threat-model
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Adversarial examples
 
@@ -50,8 +50,6 @@ has not learned the intended concept.
 - [Fast Gradient Sign Method (FGSM)](fgsm.md)
 - [Adversarial training](adversarial-training.md)
 - [Transferability](transferability.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

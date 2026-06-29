@@ -7,7 +7,7 @@ tags:
   - llm
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Dense retrieval
 
@@ -41,8 +41,6 @@ against directly.
 
 - [Retrieval-augmented generation](retrieval-augmented-generation.md)
 - [Adversarial examples](adversarial-examples.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

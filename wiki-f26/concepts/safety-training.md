@@ -8,7 +8,7 @@ tags:
   - llm-safety
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Safety training (LLM harmlessness)
 
@@ -37,8 +37,6 @@ anticipated.
 - [Reinforcement learning from human feedback (RLHF)](rlhf.md)
 - [Jailbreak (LLM)](jailbreak.md)
 - [Red teaming (language models)](red-teaming.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

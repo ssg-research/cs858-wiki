@@ -8,7 +8,7 @@ tags:
   - privacy
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Secure inference
 
@@ -65,8 +65,6 @@ matrix products and of a vocabulary-sized argmax.
 - [Secure multiparty computation](secure-multiparty-computation.md)
 - [Trusted execution environment](trusted-execution-environment.md)
 - [Ciphertext packing (SIMD batching)](ciphertext-packing.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 
