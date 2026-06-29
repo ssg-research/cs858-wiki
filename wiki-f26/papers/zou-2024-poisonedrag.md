@@ -204,6 +204,8 @@ existed but had not been examined against corruption of a retrieval corpus.
 
 </details>
 
+---
+
 ### [Wiki Home](../README.md)
 
 <details>

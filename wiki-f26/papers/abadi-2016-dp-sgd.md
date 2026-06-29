@@ -200,6 +200,8 @@ Rothblum, 2016; Bun and Steinke, 2016).
 
 </details>
 
+---
+
 ### [Wiki Home](../README.md)
 
 <details>

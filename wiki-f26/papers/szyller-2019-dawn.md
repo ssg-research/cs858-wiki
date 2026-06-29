@@ -202,6 +202,8 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
 
 </details>
 
+---
+
 ### [Wiki Home](../README.md)
 
 <details>

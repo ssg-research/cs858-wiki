@@ -197,6 +197,8 @@ interpretability, and privacy (Ferry et al., 2023).
 
 </details>
 
+---
+
 ### [Wiki Home](../README.md)
 
 <details>

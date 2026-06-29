@@ -232,6 +232,8 @@ argmax over a full vocabulary is impractical.
 
 </details>
 
+---
+
 ### [Wiki Home](../README.md)
 
 <details>

@@ -220,6 +220,8 @@ on several benchmarks when this paper appeared.
 
 </details>
 
+---
+
 ### [Wiki Home](../README.md)
 
 <details>
