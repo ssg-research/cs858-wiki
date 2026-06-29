@@ -28,33 +28,29 @@ tags:
 ## High-level overview
 
 The safety alignment of current large language models is brittle: simple attacks,
-and even well-intentioned fine-tuning, can return an aligned model to harmful
-behavior. This paper argues that a single underlying property explains much of
-that brittleness, which it names **shallow safety alignment**. A shallowly
-aligned model adapts its generative distribution over only the first few output
-tokens, enough to start a response with a refusal prefix such as "I cannot
-fulfill your request." Past those opening tokens, its token-by-token behavior is
-largely that of the unaligned base model it started from. Safety, in such a
-model, is a thin shell over the first few tokens.
+and even benign fine-tuning, can return an aligned model to harmful behavior.
+This paper argues that one underlying property explains much of that brittleness,
+which it names **shallow safety alignment**. A shallowly aligned model adapts its
+generative distribution over only the first few output tokens, enough to open a
+response with a refusal prefix such as "I cannot fulfill your request." Past those
+opening tokens, its behavior is largely that of the unaligned base model it
+started from.
 
-Through case studies on open models such as Llama-2 (Touvron et al., 2023) and
-Gemma (Gemma Team, 2024), the paper gives evidence that current alignment is
-shallow in this sense, measuring per-token [KL divergence](../concepts/kl-divergence.md)
-between an aligned model and its base model and finding the change concentrated in
-the earliest token positions. It then uses this one notion to account for a
-cluster of separately discovered exploits: adversarial-suffix attacks, prefilling
-attacks, decoding-parameter exploits, and fine-tuning attacks all turn out to
-work by getting past, or rewriting, those first few tokens.
+Case studies on open models, including Llama-2 (Touvron et al., 2023) and Gemma
+(Gemma Team, 2024), give evidence that current alignment is shallow in this sense:
+the change it makes to the base model is concentrated in the earliest output-token
+positions. The paper then uses this single notion to account for a cluster of
+separately discovered exploits: adversarial-suffix attacks, prefilling attacks,
+decoding-parameter exploits, and fine-tuning attacks all work by getting past, or
+rewriting, those first few tokens.
 
-On the constructive side, the paper introduces two prototype mitigations that
-push alignment deeper. A data-augmentation scheme trains the model to recover,
-returning to a refusal, even after a harmful response has already begun, so that
-suppression of harmful content extends beyond the opening tokens. A token-wise
-constrained fine-tuning objective holds the early-token distribution close to the
-aligned model during downstream fine-tuning. At an abstract level, deepening the
-alignment improves robustness to several inference-time exploits, and the
-constraint keeps safety durable through both adversarial and benign fine-tuning,
-at utility comparable to standard fine-tuning.
+The paper also introduces two prototype mitigations that push alignment deeper. A
+data-augmentation scheme deepens refusal beyond the opening tokens, and a
+token-wise constrained fine-tuning objective limits early-token drift during
+downstream fine-tuning. Deepening alignment improves robustness to several
+inference-time exploits, and the constraint keeps safety durable through both
+adversarial and benign fine-tuning, at utility comparable to standard
+fine-tuning.
 
 **Threat Model:** The paper is defense-side, but it characterizes a family of
 adversaries against a [safety-aligned](../concepts/safety-training.md) model. The

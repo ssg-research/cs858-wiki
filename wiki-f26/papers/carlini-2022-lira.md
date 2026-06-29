@@ -25,35 +25,27 @@ tags:
 
 ## High-level overview
 
-A [membership inference attack](../concepts/membership-inference.md) queries a
-trained model to predict whether a specific example was in its training set. It
-is the simplest attack on training-data privacy and the de facto tool for
-auditing whether a model leaks its data. This paper makes two coupled
-contributions, one methodological and one technical. The methodological
-contribution is an argument about measurement: membership inference attacks had
-been evaluated by average-case metrics such as balanced accuracy and
-[AUC](../concepts/roc-curves.md), but privacy is a worst-case property, so an
+[Membership inference attacks](../concepts/membership-inference.md) are the de
+facto tool for auditing whether a trained model leaks its data. This paper
+re-examines the problem from two angles, one about measurement and one about
+attack design. The measurement argument: privacy is a worst-case property, so an
 attack should be judged by its true-positive rate at very low false-positive
-rates (whether it can identify even a few members with near-zero false
-accusations), read off a log-scale ROC curve. Re-evaluated this way, most prior
-attacks fail outright, and their accuracy rankings do not predict their low-FPR
-rankings.
+rates, read off a log-scale [ROC curve](../concepts/roc-curves.md), rather than
+by average-case metrics such as balanced accuracy and
+[AUC](../concepts/roc-curves.md). Re-evaluated this way, most prior attacks fail
+outright, and their average-case rankings do not predict their low-FPR rankings.
 
-The technical contribution is the Likelihood Ratio Attack (LiRA). "First
-principles" here means deriving the attack from optimal hypothesis testing
-rather than from heuristics: membership inference is recast as a
-[likelihood-ratio test](../concepts/likelihood-ratio-test.md) between two
-worlds, models trained with the target example and models trained without it.
-The two per-example loss distributions are estimated by training
-[shadow models](../concepts/shadow-models.md) and fitting Gaussians to
-logit-scaled model confidences. At a false-positive rate of 0.1%, LiRA is
-roughly ten times more powerful than prior attacks, while also dominating them
-on the old average-case metrics, and it remains effective against
-well-generalizing models that earlier attacks could barely touch. The paper
-ships an online variant (shadow models trained per query) and a cheaper offline
-variant, with code released, and closes by arguing that a body of prior
-conclusions about memorization, defenses, and "private" training algorithms
-needs re-examination under the new metric.
+The attack is the Likelihood Ratio Attack (LiRA), derived from optimal hypothesis
+testing: membership inference is recast as a per-example
+[likelihood-ratio test](../concepts/likelihood-ratio-test.md), with the two loss
+distributions it compares estimated from
+[shadow models](../concepts/shadow-models.md) the adversary trains. At a
+false-positive rate of 0.1%, LiRA is roughly ten times more powerful than prior
+attacks, and it also dominates them on the old average-case metrics and stays
+effective against well-generalizing models that earlier attacks could barely
+touch. The paper ships an online and a cheaper offline variant, releases code,
+and argues that prior conclusions about memorization, defenses, and "private"
+training algorithms need re-examination under the new metric.
 
 **Threat Model:** A training-data privacy setting: the adversary does not
 modify any input, and the training process is untouched. The

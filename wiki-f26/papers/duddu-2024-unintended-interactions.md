@@ -22,31 +22,27 @@ tags:
 
 ## High-level overview
 
-A machine learning model faces several risks at once. An adversary may evade it
-at test time, poison its training data, steal its functionality, infer whether a
-record was in its training set, or expose discriminatory behaviour across groups.
-Each risk has its own defenses. Deploying a defense against one risk routinely
-changes the model's susceptibility to a different, unrelated risk, sometimes
-lowering it and sometimes raising it. Adding [adversarial training](../concepts/adversarial-training.md)
-to resist evasion, for instance, makes [membership inference](../concepts/membership-inference.md)
+A machine learning model faces many risks at once, and each risk has its own
+defenses. Deploying a defense against one risk routinely changes the model's
+susceptibility to a different risk, sometimes lowering it and sometimes raising
+it. Adding [adversarial training](../concepts/adversarial-training.md) to resist
+evasion, for instance, makes [membership inference](../concepts/membership-inference.md)
 easier (Song et al., 2019; Hayes, 2020). This systematization of knowledge (SoK)
 collects these unintended interactions and explains them within one framework.
 
-The framework rests on a single conjecture: two properties of how a model fits
-its training data, [overfitting](../concepts/empirical-risk-minimization.md) and
-[memorization](../concepts/memorization.md), are the common causes underlying the
-interactions. A defense takes effect by inducing or suppressing overfitting or
-memorization, and that same change moves the model's exposure to other risks. The
-paper identifies a small set of underlying factors, drawn from the characteristics
-of the training data, the training algorithm, and the model, that govern
-overfitting and memorization, and uses them as a shared vocabulary for reasoning
-about any defense and any risk together. It surveys the published interactions and
-situates each within this framework, then distills a guideline for conjecturing
-the direction of an interaction that has not yet been studied.
+The framework rests on a single conjecture:
+[overfitting](../concepts/empirical-risk-minimization.md) and
+[memorization](../concepts/memorization.md), two properties of how a model fits
+its training data, are the common causes underlying the interactions. A defense
+takes effect by inducing or suppressing overfitting or memorization, and that
+same change moves the model's exposure to other risks. The framework names a
+small set of underlying factors that govern overfitting and memorization, drawn
+from the training data, the training algorithm, and the model. The paper surveys
+the published interactions against this framework, then distills a guideline for
+conjecturing the direction of an interaction not yet studied.
 
-Across the literature the framework accommodates the reported interactions,
-spanning seven defenses and eight risks drawn from security, privacy, and
-fairness. Using the guideline, the paper conjectures two previously unstudied
+The framework accommodates the reported interactions, spanning seven defenses and
+eight risks. Using the guideline, the paper conjectures two previously unstudied
 interactions and validates them empirically: enforcing
 [group fairness](../concepts/group-fairness.md) lowers the success of data
 reconstruction, and releasing [model explanations](../concepts/model-explanations.md)
@@ -64,11 +60,10 @@ inference, and discriminatory behaviour. The settings range over
 [white-box and black-box](../concepts/white-box-black-box.md) access, train-time
 and inference-time action, and take classifiers as the primary object with
 generative models discussed as an extension. The framework's claim is explanatory
-and predictive rather than adversarial: overfitting, memorization, and the factors
-that drive them are the common causes that determine whether deploying a given
-defense increases or decreases susceptibility to a given risk, and the guideline
-uses them to conjecture the direction of an unstudied interaction. The framework
-asserts correlation, not causation, and its conjectures are checked empirically.
+and predictive rather than adversarial: overfitting, memorization, and the
+factors that drive them determine whether deploying a given defense increases or
+decreases susceptibility to a given risk. The framework asserts correlation, not
+causation, and its conjectures are checked empirically.
 
 ## Why read this
 
