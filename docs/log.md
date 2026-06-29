@@ -738,3 +738,23 @@ the paper and concept page-template skeletons plus a new page-chrome note in
 `Wiki Home` headings per page are intentional navigation chrome. markdownlint
 clean apart from MD001 (heading-increment), ignored for these styling-only
 pages; `check-links.py` clean (102 files). Model: Opus 4.8, `claude-opus-4-8`.
+
+## [2026-06-29 11:08] content + schema | Tighten High-level overviews (#15 PR 3)
+
+Tightened the High-level overview on all 24 paper pages to a contextualized
+abstract of about 350 words of body prose plus the bolded Threat Model
+paragraph, processed in six batches of four in descending word-count order. The
+cuts removed method-walkthrough creep, cross-section redundancy (facts owned by
+the Threat Model paragraph, Basic Background, or Paper Context), and filler. The
+Threat Model paragraphs were tightened by the same rule (define a role once,
+then reuse the role word), with one canonical word per shared role enforced
+across each overview and the generic phrase "adversarial attack" replaced by
+"adaptive attack" or plain "attack." Each batch was approved against an in-file
+[old]/[new] diff before finalizing and committed on its own: 438c81c, bbca14d,
+97ced08, 9643e84, 900ae87, 311209b. Schema updated to match:
+`docs/writing-style.md` (the Format-by-section overview bullet gained the
+~350-word body target and the state-each-fact-once rule; a new Role terminology
+section records the canonical role lexicon; a new banned move bans the generic
+"adversarial attack") and `docs/ops/generate-paper-summary.md` (the
+overview-pass description, the page-template skeleton, and the quality bar).
+Model: claude-opus-4-8.

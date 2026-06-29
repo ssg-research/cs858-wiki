@@ -233,7 +233,12 @@ abstract level, and decodes any terminology that means something different
 across communities. Reading the abstract does not equal understanding the
 paper, so stating results here does not spoon-feed; what stays out is the *how*
 and the *evidence* (no methods walkthrough, no results tables, no
-per-experiment numbers).
+per-experiment numbers). Target about 350 words of body prose, plus the bolded
+Threat Model paragraph on top. State each fact once: the body does not repeat
+what the Threat Model paragraph, Basic Background, or Paper Context owns. Use
+one canonical word per role across the body and Threat Model paragraph, and
+never write the generic phrase "adversarial attack" (see the role terminology
+and banned moves in `../writing-style.md`).
 
 End the overview with a separate bolded paragraph:
 
@@ -385,10 +390,11 @@ tags:
 
 ## High-level overview
 
-(One to three paragraphs: a contextualized abstract. Problem, named approach,
-headline results at abstract level, terminology decoded. Then, as its own
-paragraph: **Threat Model:** adversary, knowledge, capability, timing, and the
-defender's claim.)
+(About 350 words of body prose, a contextualized abstract: problem, named
+approach, headline results at abstract level, terminology decoded. Then, as its
+own paragraph: **Threat Model:** adversary, knowledge, capability, timing, and
+the defender's claim. State each fact once; the body does not repeat what the
+Threat Model paragraph, Basic Background, or Paper Context owns.)
 
 ## Why read this
 
@@ -532,8 +538,11 @@ A paper page is acceptable when:
 
 - The High-level overview reads like a contextualized abstract: problem,
   named approach, headline results, decoded terminology, and a bolded
-  **Threat Model:** paragraph. Nothing on the page goes deeper into the
-  paper's own content than that.
+  **Threat Model:** paragraph. The body runs about 350 words (the Threat Model
+  paragraph is additional), states each fact once without repeating what the
+  Threat Model paragraph, Basic Background, or Paper Context owns, keeps one
+  canonical word per role, and avoids the generic phrase "adversarial attack."
+  Nothing on the page goes deeper into the paper's own content than that.
 - Basic Background covers only prerequisites, organized into `###` subsections
   at Wikipedia link density, and links concept pages for depth rather than
   duplicating them.
