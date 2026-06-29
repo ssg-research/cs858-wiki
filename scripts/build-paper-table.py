@@ -11,8 +11,8 @@ papers; the full-width "Part" banners become Markdown headings above each table.
 Per-paper layout, under a single ``Topic`` column and a single ``Reading``
 column:
 
-* the primary reading carries a "Primary" label and links to its reading
-  companion when one exists (see ``READY``), otherwise to the shared
+* the assigned reading carries an "Assigned reading" label and links to its
+  reading companion when one exists (see ``READY``), otherwise to the shared
   ``under-construction.md`` placeholder with a dagger marker;
 * essential readings collapse into a ``<details>`` disclosure beneath the
   primary, keeping the hyperlinks already stored in the spreadsheet (arXiv,
@@ -256,7 +256,7 @@ def render_table(part: Part) -> str:
         lines.append(f"      <td>{paper.number}</td>")
         lines.append(f"      <td>{esc(paper.topic)}</td>")
         lines.append("      <td>")
-        lines.append("        <strong>Primary</strong>")
+        lines.append("        <strong>Assigned reading</strong>")
         lines.append(f"        {paper_cell(paper)}")
         lines += essential_details(paper.essential)
         lines.append("      </td>")
