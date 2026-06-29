@@ -7,7 +7,7 @@ tags:
   - defense
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Model explanations
 
@@ -37,7 +37,7 @@ extraction.
 - [Membership inference](membership-inference.md)
 - [Memorization](memorization.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

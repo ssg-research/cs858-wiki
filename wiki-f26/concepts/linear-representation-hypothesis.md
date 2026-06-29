@@ -8,7 +8,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Linear representation hypothesis
 
@@ -35,7 +35,7 @@ space and need not align with individual neurons (Elhage et al., 2022).
 - [Activation steering](activation-steering.md)
 - [Contrastive prompt pairs](contrastive-prompt-pairs.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

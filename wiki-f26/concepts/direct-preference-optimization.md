@@ -7,7 +7,7 @@ tags:
   - rlhf
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Direct preference optimization (DPO)
 
@@ -38,7 +38,7 @@ safety behavior in deployed models.
 - [Instruction tuning](instruction-tuning.md)
 - [Safety training (LLM harmlessness)](safety-training.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

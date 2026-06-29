@@ -19,7 +19,7 @@ tags:
   - attack
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Membership Inference Attacks From First Principles
 
@@ -225,7 +225,7 @@ either standard.
 - Section VIII: the authors' list of prior conclusions they argue need
   re-examination.
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

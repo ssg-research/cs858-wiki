@@ -7,7 +7,7 @@ tags:
   - optimization
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Empirical risk minimization
 

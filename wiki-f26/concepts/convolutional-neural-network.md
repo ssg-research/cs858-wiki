@@ -7,7 +7,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Convolutional neural network
 
@@ -45,7 +45,7 @@ recur as off-the-shelf architecture choices throughout the literature.
 - [Stochastic gradient descent](stochastic-gradient-descent.md)
 - [Transfer learning](transfer-learning.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

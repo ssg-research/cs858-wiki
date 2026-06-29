@@ -8,7 +8,7 @@ tags:
   - model-extraction
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Knowledge distillation
 
@@ -44,7 +44,7 @@ match the teacher's training data, turns distillation into a tool for
 - [Model extraction](model-extraction.md)
 - [Transfer learning](transfer-learning.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

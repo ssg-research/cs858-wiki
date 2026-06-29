@@ -8,7 +8,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Transfer learning
 
@@ -38,7 +38,7 @@ design decision.
 - [Convolutional neural network](convolutional-neural-network.md)
 - [Knowledge distillation](knowledge-distillation.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

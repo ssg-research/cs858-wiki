@@ -19,7 +19,7 @@ tags:
   - threat-model
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
 
@@ -197,7 +197,7 @@ from the trained model alone.
   source-label-specific or "partial" backdoors). Attention anchor: note which
   variant the base method struggles with and what change it needs to handle it.
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

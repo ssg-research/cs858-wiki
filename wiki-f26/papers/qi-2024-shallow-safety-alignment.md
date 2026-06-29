@@ -21,7 +21,7 @@ tags:
   - defense
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Safety Alignment Should Be Made More Than Just a Few Tokens Deep
 
@@ -182,7 +182,7 @@ al., 2023), whose KL penalty keeps the aligned policy near the base model.
 
 </details>
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

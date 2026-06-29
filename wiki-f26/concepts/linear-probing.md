@@ -8,7 +8,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Linear probing
 
@@ -33,7 +33,7 @@ that read or edit concepts along directions in activation space.
 - [Activation steering](activation-steering.md)
 - [Mechanistic interpretability](mechanistic-interpretability.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

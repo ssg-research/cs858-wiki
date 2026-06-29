@@ -23,7 +23,7 @@ tags:
   - evaluation
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML
 
@@ -224,7 +224,7 @@ al., 2022).
 
 </details>
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

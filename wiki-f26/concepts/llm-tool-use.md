@@ -7,7 +7,7 @@ tags:
   - agents
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # LLM tool use
 

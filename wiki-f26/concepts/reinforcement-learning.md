@@ -7,7 +7,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Reinforcement learning
 
@@ -37,7 +37,7 @@ for actions the learner chooses, not a target it is told to reproduce.
 
 - [Stochastic gradient descent](stochastic-gradient-descent.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

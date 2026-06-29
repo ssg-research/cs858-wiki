@@ -379,6 +379,8 @@ tags:
   - tag2
 ---
 
+### [Wiki Home](../README.md)
+
 # Paper title
 
 ## High-level overview
@@ -420,6 +422,8 @@ or two neutral attention anchors. A roadmap, not a summary.)
 
 </details>
 
+### [Wiki Home](../README.md)
+
 <details>
 <summary><h2>References</h2></summary>
 
@@ -438,6 +442,12 @@ stays short. Write the heading as an inline `<h2>` on the `<summary>` line, and
 keep one blank line after `</summary>` so the body stays Markdown and its
 relative links remain checkable.
 
+Every page is bookended by a `### [Wiki Home](../README.md)` link: one directly
+below the frontmatter and above the H1, and the same link again immediately
+before the References block on pages that cite anything. It is page chrome, so
+it sits outside the content sections above. Concept pages follow the same
+convention.
+
 ---
 
 ## Concept Page Schema
@@ -452,6 +462,8 @@ tags:
   - tag1
   - tag2
 ---
+
+### [Wiki Home](../README.md)
 
 # Concept name
 
@@ -474,6 +486,8 @@ textbook definition differs from field usage.)
 ## See also
 
 (Optional. Relative links to adjacent concept pages.)
+
+### [Wiki Home](../README.md)
 
 ## References
 

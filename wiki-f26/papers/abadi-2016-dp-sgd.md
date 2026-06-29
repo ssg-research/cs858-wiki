@@ -20,7 +20,7 @@ tags:
   - dp-sgd
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Deep Learning with Differential Privacy
 
@@ -202,7 +202,7 @@ Rothblum, 2016; Bun and Steinke, 2016).
 - Section 6: the map of prior private-learning approaches and the contrast
   with Shokri and Shmatikov (2015).
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

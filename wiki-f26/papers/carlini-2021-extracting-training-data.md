@@ -25,7 +25,7 @@ tags:
   - membership-inference
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Extracting Training Data from Large Language Models
 
@@ -191,7 +191,7 @@ a violation: when it moves data out of the context for which it was shared.
 - Appendix A and C: the categorization of the 604 memorized samples and the case
   studies, including the personally identifiable categories.
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

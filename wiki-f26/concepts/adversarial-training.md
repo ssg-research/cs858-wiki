@@ -8,7 +8,7 @@ tags:
   - robust-optimization
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Adversarial training
 
@@ -53,7 +53,7 @@ leaving the model open to stronger ones.
 - [Gradient masking](gradient-masking.md)
 - [Adversarial examples](adversarial-examples.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

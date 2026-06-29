@@ -8,7 +8,7 @@ tags:
   - threat-model
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Adversarial examples
 
@@ -50,7 +50,7 @@ has not learned the intended concept.
 - [Adversarial training](adversarial-training.md)
 - [Transferability](transferability.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

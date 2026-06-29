@@ -7,7 +7,7 @@ tags:
   - zero-knowledge-proof
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Zero-knowledge proof
 
@@ -61,7 +61,7 @@ prove.
 - [Secure inference](secure-inference.md)
 - [Secure multiparty computation](secure-multiparty-computation.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

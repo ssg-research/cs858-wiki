@@ -9,7 +9,7 @@ tags:
   - threat-model
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Model watermarking
 
@@ -53,7 +53,7 @@ and how hard it is to remove by retraining.
 - [Model extraction](model-extraction.md)
 - [Cryptographic commitment](cryptographic-commitment.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

@@ -724,3 +724,17 @@ updated pedagogy ground rules and quality checklist); `docs/writing-style.md`
 `docs/ops/lint.md` pedagogy checks (dropped the Motivating-questions-answerable
 check, added Motivating questions to the schema-violation grep). Model:
 claude-sonnet-4-6.
+
+## [2026-06-29 11:03] fix | Home link to Wiki Home H3 heading (issue #22)
+
+Restyled the home navigation link on all 93 content pages (24 paper, 69
+concept) from the plain inline `[Home page](../README.md)` to an H3 heading
+`### [Wiki Home](../README.md)`, so it reads as a prominent navigation button.
+Both placements changed: the top link below the frontmatter and above the H1,
+and the bottom link before the References block. Updated the schema to match:
+the paper and concept page-template skeletons plus a new page-chrome note in
+`docs/ops/generate-paper-summary.md`. Disabled markdownlint MD024
+(no-duplicate-heading) in `.markdownlint.json`, since the two identical
+`Wiki Home` headings per page are intentional navigation chrome. markdownlint
+clean apart from MD001 (heading-increment), ignored for these styling-only
+pages; `check-links.py` clean (102 files). Model: Opus 4.8, `claude-opus-4-8`.

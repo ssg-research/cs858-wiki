@@ -17,7 +17,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # PAL\*M: Property Attestation for Large Generative Models
 
@@ -252,7 +252,7 @@ et al., 2024).
 
 </details>
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

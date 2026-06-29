@@ -20,7 +20,7 @@ tags:
   - right-to-be-forgotten
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Knowledge Unlearning for Mitigating Privacy Risks in Language Models
 
@@ -199,7 +199,7 @@ large language model had not been studied.
 - Appendix B (Perplexity): perplexity rises after unlearning even where the
   benchmark accuracies do not; note the explanation given for the discrepancy.
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

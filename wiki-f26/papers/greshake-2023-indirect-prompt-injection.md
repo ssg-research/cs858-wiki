@@ -17,7 +17,7 @@ tags:
   - attack
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
 
@@ -176,7 +176,7 @@ through retrieved data fell outside that picture of the threat.
 
 </details>
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

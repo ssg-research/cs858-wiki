@@ -7,7 +7,7 @@ tags:
   - language-models
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Zero-shot prompting
 
@@ -34,7 +34,7 @@ prompt is the surrounding source and comments with no example fixes attached.
 - [Language model pretraining](language-model-pretraining.md)
 - [Large language models for code](code-language-models.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

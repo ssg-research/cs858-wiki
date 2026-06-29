@@ -8,7 +8,7 @@ tags:
   - privacy
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Likelihood-ratio test
 
@@ -40,7 +40,7 @@ on.
 - [Membership inference](membership-inference.md)
 - [Shadow models](shadow-models.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

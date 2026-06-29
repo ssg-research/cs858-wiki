@@ -8,7 +8,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Mechanistic interpretability
 
@@ -37,7 +37,7 @@ scaled to small models and narrow tasks.
 - [Linear representation hypothesis](linear-representation-hypothesis.md)
 - [Activation steering](activation-steering.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

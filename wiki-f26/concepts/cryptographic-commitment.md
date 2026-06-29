@@ -7,7 +7,7 @@ tags:
   - ip-protection
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Cryptographic commitment
 

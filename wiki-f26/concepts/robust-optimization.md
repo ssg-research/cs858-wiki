@@ -8,7 +8,7 @@ tags:
   - adversarial-training
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Robust optimization
 
@@ -54,7 +54,7 @@ approximation.
 - [Empirical risk minimization](empirical-risk-minimization.md)
 - [Adversarial examples](adversarial-examples.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

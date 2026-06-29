@@ -8,7 +8,7 @@ tags:
   - attack
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Jailbreak (LLM)
 
@@ -38,7 +38,7 @@ informally after ChatGPT's release, including role-play personas such as "DAN"
 - [Prompt injection](prompt-injection.md)
 - [Red teaming (language models)](red-teaming.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

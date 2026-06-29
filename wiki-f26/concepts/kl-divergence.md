@@ -8,7 +8,7 @@ tags:
   - alignment
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Kullback-Leibler divergence
 
