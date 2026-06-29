@@ -8,7 +8,7 @@ tags:
   - model-extraction
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Mutual information
 
@@ -41,7 +41,7 @@ allowed distortion.
 
 - [Kullback-Leibler divergence](kl-divergence.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

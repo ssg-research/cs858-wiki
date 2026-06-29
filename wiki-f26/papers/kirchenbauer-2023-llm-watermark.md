@@ -19,7 +19,7 @@ tags:
   - statistics
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # A Watermark for Large Language Models
 
@@ -235,7 +235,7 @@ output was announced as work in progress (Aaronson, 2022).
 
 </details>
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

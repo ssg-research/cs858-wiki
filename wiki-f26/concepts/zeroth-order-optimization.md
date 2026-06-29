@@ -8,7 +8,7 @@ tags:
   - language-models
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Zeroth-order optimization
 
@@ -57,7 +57,7 @@ differential-privacy literature adopted ZO as a base optimizer.
 - [Gradient clipping](gradient-clipping.md)
 - [Differential privacy](differential-privacy.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

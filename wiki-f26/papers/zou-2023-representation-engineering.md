@@ -33,7 +33,7 @@ tags:
   - alignment
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Representation Engineering: A Top-Down Approach to AI Transparency
 
@@ -244,7 +244,7 @@ safety-relevant concepts.
 
 </details>
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

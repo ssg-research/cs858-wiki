@@ -16,7 +16,7 @@ tags:
   - reinforcement-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Knockoff Nets: Stealing Functionality of Black-Box Models
 
@@ -189,7 +189,7 @@ the meaning of its outputs.
   rounding the returned probabilities. Attention anchor: note what the defender is
   assumed able to change, and what the paper reports it costs the attack.
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

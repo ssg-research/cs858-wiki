@@ -8,7 +8,7 @@ tags:
   - attack
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Prompt injection
 
@@ -37,7 +37,7 @@ phrase into innocuous-looking substrings, appear on both sides (Kang et al.,
 - [Jailbreak (LLM)](jailbreak.md)
 - [Safety training (LLM harmlessness)](safety-training.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

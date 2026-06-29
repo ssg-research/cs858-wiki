@@ -17,7 +17,7 @@ tags:
   - evasion
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Towards Deep Learning Models Resistant to Adversarial Attacks
 
@@ -185,7 +185,7 @@ benchmark-style robustness number.
 - Appendix A: the statement of Danskin's theorem; note which of its assumptions
   hold for a ReLU network attacked by an approximate maximizer.
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

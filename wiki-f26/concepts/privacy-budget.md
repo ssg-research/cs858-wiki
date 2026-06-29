@@ -7,7 +7,7 @@ tags:
   - privacy
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Privacy budget and composition
 
@@ -52,7 +52,7 @@ can train within a fixed budget.
 - [Differential privacy](differential-privacy.md)
 - [Sensitivity and the Gaussian mechanism](gaussian-mechanism.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

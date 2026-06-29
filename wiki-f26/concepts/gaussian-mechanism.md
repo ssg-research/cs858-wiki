@@ -8,7 +8,7 @@ tags:
   - defense
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Sensitivity and the Gaussian mechanism
 
@@ -49,7 +49,7 @@ for example by [clipping](gradient-clipping.md), before the mechanism applies.
 - [Gradient clipping](gradient-clipping.md)
 - [Privacy budget and composition](privacy-budget.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

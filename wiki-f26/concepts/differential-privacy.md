@@ -8,7 +8,7 @@ tags:
   - defense
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Differential privacy
 
@@ -62,7 +62,7 @@ guarantee can be expensive to reach.
 - [Memorization](memorization.md)
 - [Stochastic gradient descent](stochastic-gradient-descent.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

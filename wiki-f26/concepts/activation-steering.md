@@ -8,7 +8,7 @@ tags:
   - language-models
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Activation steering
 
@@ -35,7 +35,7 @@ can perturb unrelated behavior.
 - [Contrastive prompt pairs](contrastive-prompt-pairs.md)
 - [Red teaming (language models)](red-teaming.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

@@ -8,7 +8,7 @@ tags:
   - privacy
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Homomorphic encryption
 
@@ -64,7 +64,7 @@ parties jointly compute over several rounds of communication.
 - [Secure inference](secure-inference.md)
 - [Ciphertext packing (SIMD batching)](ciphertext-packing.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

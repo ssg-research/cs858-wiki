@@ -7,7 +7,7 @@ tags:
   - llm
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Decoding and sampling strategies
 

@@ -18,7 +18,7 @@ tags:
   - computer-vision
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # DAWN: Dynamic Adversarial Watermarking of Neural Networks
 
@@ -205,7 +205,7 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
   for why some evasions are not considered realistic turns on which adversary goal
   each one sacrifices; note that cost.
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

@@ -8,7 +8,7 @@ tags:
   - threat-model
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Transferability
 
@@ -34,7 +34,7 @@ weaker protection than it appears.
 - [White-box and black-box access](white-box-black-box.md)
 - [Adversarial examples](adversarial-examples.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

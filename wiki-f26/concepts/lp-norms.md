@@ -7,7 +7,7 @@ tags:
   - adversarial-examples
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # ℓp norms
 

@@ -8,7 +8,7 @@ tags:
   - attack
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Membership inference
 
@@ -68,7 +68,7 @@ predictions as a building block (Carlini et al., 2021).
 - [ROC curves and detection metrics](roc-curves.md)
 - [Differential privacy](differential-privacy.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

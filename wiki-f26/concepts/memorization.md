@@ -8,7 +8,7 @@ tags:
   - machine-learning
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Memorization
 
@@ -57,7 +57,7 @@ changes the model measurably is an example whose presence can be inferred.
 - [Empirical risk minimization](empirical-risk-minimization.md)
 - [Differential privacy](differential-privacy.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

@@ -8,7 +8,7 @@ tags:
   - llm-safety
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Safety training (LLM harmlessness)
 
@@ -38,7 +38,7 @@ anticipated.
 - [Jailbreak (LLM)](jailbreak.md)
 - [Red teaming (language models)](red-teaming.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 

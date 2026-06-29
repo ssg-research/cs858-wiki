@@ -7,7 +7,7 @@ tags:
   - retrieval
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # Retrieval-augmented generation
 

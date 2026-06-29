@@ -16,7 +16,7 @@ tags:
   - survey
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # SoK: Unintended Interactions among Machine Learning Defenses and Risks
 
@@ -198,7 +198,7 @@ interpretability, and privacy (Ferry et al., 2023).
 
 </details>
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 <details>
 <summary><h2>References</h2></summary>

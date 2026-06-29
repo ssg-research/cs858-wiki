@@ -8,7 +8,7 @@ tags:
   - language-models
 ---
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 # LLM watermarking
 
@@ -57,7 +57,7 @@ images or audio (Katzenbeisser and Petitcolas, 2000).
 - [Decoding strategies](decoding-strategies.md)
 - [Perplexity](perplexity.md)
 
-[Home page](../README.md)
+### [Wiki Home](../README.md)
 
 ## References
 
