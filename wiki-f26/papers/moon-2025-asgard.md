@@ -26,52 +26,50 @@ tags:
 On-device deep learning runs [DNN](../concepts/convolutional-neural-network.md)
 inference on a user's phone or IoT device, keeping sensitive inputs such as faces
 and fingerprints off remote servers. The same shift hands the device the model
-itself, and an adversary who controls the device's untrusted software can read or
-dump the model's weights during inference. That untrusted software, the ordinary
-operating system, applications, and the accelerators they drive, is the rich
-execution environment (REE). Prior protections host inference inside a
+itself, where an adversary who controls the rich execution environment (REE), the
+device's untrusted software stack, can read or dump the model's weights during
+inference. Prior protections host inference inside a
 [trusted execution environment](../concepts/trusted-execution-environment.md)
 (TEE) built on Arm TrustZone, the hardware-isolated secure world of a mobile SoC,
-but they hit two walls. Solutions that keep the whole model in the TEE either run
-on the CPU only, losing the device's accelerator, or must port the proprietary
-accelerator software into TrustZone's specialized secure-world OS. Solutions that
-offload part of inference to the REE to use its accelerator either leave that part
-unprotected or pay heavy run-time cost obfuscating and de-obfuscating it across
-the secure boundary (see [model partitioning](../concepts/model-partitioning.md)).
+but they hit two walls. Keeping the whole model in the TEE either runs on the CPU
+only, losing the device's accelerator, or must port proprietary accelerator
+software into TrustZone's specialized secure-world OS. Offloading part of
+inference to the REE to use its accelerator either leaves that part unprotected
+or pays heavy run-time cost obfuscating it across the secure boundary (see
+[model partitioning](../concepts/model-partitioning.md)).
 
 ASGARD is the first virtualization-based TEE for on-device DNN protection on
 legacy Armv8-A SoCs. A virtualization-based TEE realizes an enclave as a virtual
 machine isolated by a small trusted hypervisor (see
 [hardware virtualization](../concepts/hardware-virtualization.md)), in place of
 TrustZone's two-world split. ASGARD extends such an enclave to hold the entire
-model together with an SoC-integrated accelerator, a neural processing unit (NPU),
-through secure I/O passthrough, so inference runs fully accelerated inside the
-enclave. The design keeps the trusted computing base (TCB), the hardware and
-software whose correctness the protection assumes, small: its isolation monitor
-runs at the hypervisor exception level (EL2) and never modifies the proprietary
-EL3 secure monitor, and the enclave reuses the unmodified vendor accelerator
-driver stack. Implemented on a commodity Android board (Rockchip RK3588S with a
-Rockchip NPU) without changing Rockchip- or Arm-proprietary software, ASGARD adds
-roughly two thousand lines to the hypervisor and ships an enclave image of about
-17 MB, and reaches DNN inference latency on par with or below unprotected
-accelerated inference, in one case slightly faster, by coalescing accelerator
-interrupts that would otherwise force costly exits out of the enclave.
+model together with an SoC-integrated accelerator, a neural processing unit
+(NPU), through secure I/O passthrough, so inference runs fully accelerated inside
+the enclave while keeping the trusted computing base (TCB) small: the isolation
+monitor sits at the hypervisor exception level (EL2) and leaves the proprietary
+EL3 secure monitor and the vendor accelerator driver stack unmodified. On a
+commodity Android board (Rockchip RK3588S) with no changes to Rockchip- or
+Arm-proprietary software, ASGARD adds roughly two thousand lines to the
+hypervisor, ships an enclave image of about 17 MB, and reaches DNN inference
+latency on par with or below unprotected accelerated inference, in one case
+slightly faster, by coalescing accelerator interrupts that would otherwise force
+costly exits out of the enclave.
 
 **Threat Model:** Three parties take part. A remote model provider ships a model
-it wants to protect; an on-device, REE-side privileged adversary aims to steal
-that model; and a trusted DNN-serving enclave runs on ASGARD-extended platform
-software. The adversary fully controls the REE, including the host operating
-system, applications, and the unprivileged hypervisor that manages resources, and
-seeks to read or dump the model's weights and architecture while it is in use for
-inference. Trusted are the small privileged hypervisor at EL2 that enforces
-isolation between domains, the EL3 secure monitor, and the secure world, which on
-Armv8-A can access the normal world regardless. The protected asset is the model,
-kept confidential in transit, at rest, and in use; the accelerator sits behind an
-IOMMU and exposes a reset interface. The defender's claim is software-secure
-enclaves against REE-side software adversaries on commodity Armv8-A hardware.
-Physical attacks and side channels are out of scope, and the paper notes the
-guarantee can be strengthened to hardware-secure enclaves where additional
-hardware support (such as Arm's Confidential Compute Architecture) is available.
+it wants to protect; an REE-side privileged adversary on the device aims to steal
+it; and a trusted DNN-serving enclave runs on ASGARD-extended platform software.
+The adversary fully controls the REE, down to the unprivileged hypervisor that
+manages resources, and seeks to read or dump the model's weights and architecture
+while it is in use for inference. Trusted are the small privileged hypervisor at
+EL2 that enforces isolation between domains, the EL3 secure monitor, and the
+secure world, which on Armv8-A can access the normal world regardless. The
+protected asset is the model, kept confidential in transit, at rest, and in use;
+the accelerator sits behind an IOMMU and exposes a reset interface. The
+defender's claim is software-secure enclaves against REE-side software
+adversaries on commodity Armv8-A hardware. Physical attacks and side channels are
+out of scope. The paper notes the guarantee can be strengthened to
+hardware-secure enclaves where additional hardware support, such as Arm's
+Confidential Compute Architecture, is available.
 
 ## Why read this
 

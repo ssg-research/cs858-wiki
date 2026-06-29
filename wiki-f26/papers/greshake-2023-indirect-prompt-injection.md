@@ -23,53 +23,45 @@ tags:
 
 ## High-level overview
 
-Large language models are increasingly wrapped inside applications that let them
+Large language models are increasingly wrapped inside applications that
 [retrieve documents](../concepts/retrieval-augmented-generation.md) and
 [call external tools](../concepts/llm-tool-use.md): search-augmented chatbots,
-code assistants, email and office copilots, browser plugins. These applications
-feed the model text from sources the user and developer do not control, and that
-text shares one context window with the developer's instructions. The paper
-observes that this blurs the line between data and instructions, and asks what an
-adversary can do who never touches the user's interface at all.
+code assistants, email and office copilots, browser plugins. The paper observes
+that retrieval blurs the line between data and instructions, since retrieved
+text and the developer's instructions share one context window.
 
 It introduces and names **indirect prompt injection**. Rather than typing a
-malicious prompt into a model they control, the attacker plants instructions
-inside content likely to be retrieved, a web page, an email, a code repository, a
-shared memory store, and waits for a victim's model to ingest it. Once ingested,
-the injected text steers the model. The paper frames the consequence in classical
-computer-security terms: processing untrusted retrieved data is analogous to
-arbitrary code execution, where here the "code" is natural-language instructions
-and "execution" is the model carrying out attacker-chosen actions. From this it
-derives a taxonomy, organized from a security perspective rather than an ML one,
-of injection methods (passive retrieval, active delivery such as email,
-user-driven, and hidden), of threats (information gathering, fraud, intrusion,
-malware, manipulated content, and availability), and of who is harmed (end users,
-developers, automated systems, and the model's own availability).
+malicious prompt into a model they control, the adversary plants instructions
+inside content likely to be retrieved, such as a web page, an email, or a code
+repository, and waits for a victim's model to ingest it. Once ingested, the
+injected text steers the model toward adversary-chosen actions. The paper frames
+this in classical computer-security terms: processing untrusted retrieved data
+is analogous to arbitrary code execution, where the "code" is natural-language
+instructions. From this it derives a taxonomy, organized from a security rather
+than an ML perspective, of how injections are delivered, what harms they cause,
+and who is affected.
 
-The paper demonstrates the attacks against deployed, black-box systems, including
-Bing Chat (then GPT-4 backed) and GitHub Copilot, and against synthetic GPT-4
-applications the authors built with search, email, memory, and HTTP tools. The
-demonstrations are qualitative: injected instructions steer a model across a
-conversation, persist across sessions through a memory store, exfiltrate user
-data through side channels, spread between LLM-augmented email clients as a worm,
-and pass input filters when encoded in Base64. Effective mitigations are reported
-to be lacking.
+The paper demonstrates the attacks against deployed, black-box systems,
+including Bing Chat (then GPT-4 backed) and GitHub Copilot, and against
+synthetic GPT-4 applications the authors built with search, email, memory, and
+HTTP tools. The demonstrations are qualitative proofs of concept: injected
+instructions exfiltrate user data, persist across sessions through a memory
+store, spread between email clients as a worm, and pass input filters when
+encoded in Base64. Effective mitigations are reported to be lacking.
 
 **Threat Model:** The adversary is a third party who controls some content a
-victim's LLM-integrated application may retrieve or be handed, a web page, an
-email, a document, a code package, a memory entry, and who never interacts with
-the victim's interface directly. Access to the target model is
+victim's LLM-integrated application may retrieve or be handed, such as a web
+page, an email, a document, or a memory entry, and who never interacts with the
+victim's interface. Access to the target model is
 [black-box](../concepts/white-box-black-box.md): no weights, gradients, or
-training data, and the attacker need not query the target model at all, since
-they plant the payload and wait for retrieval. The capability is to write
-natural-language or encoded instructions into that content; there is no
-perturbation budget in the adversarial-examples sense, because the injected text
-need not resemble anything and can be hidden from the human reader through HTML
-comments, invisible text, or encoding. The attack acts at inference time, when
-the content is retrieved and ingested, and injected instructions can persist
-across conversation turns and, through a memory store, across sessions. The
-targets are the application's users and any APIs the model can call on their
-behalf; the defender is the application provider, whose deployed input and output
+training data, and the adversary need not query the model at all, since they
+plant the payload and wait for retrieval. The capability is to write
+natural-language or encoded instructions into that content, hidden from a human
+reader through HTML comments, invisible text, or encoding. The attack acts at
+inference time, when the content is ingested, and the injected instructions can
+persist across conversation turns and, through a memory store, across sessions.
+The targets are the application's users and any APIs the model can call on their
+behalf. The defender is the application provider, whose deployed input and output
 filtering is shown not to cover instructions that arrive indirectly.
 
 ## Why read this

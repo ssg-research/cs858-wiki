@@ -28,50 +28,45 @@ A user who queries a commercial language model through an API cannot check which
 model answered. The provider has a cost incentive to swap in a smaller, cheaper
 model and return lower-quality output, and the weights are trade secrets, so the
 provider will not publish them for inspection. zkGPT closes this gap with a
-[zero-knowledge proof](../concepts/zero-knowledge-proof.md): the provider produces
-a short cryptographic proof that a claimed output is the correct result of running
-one fixed, [committed](../concepts/cryptographic-commitment.md) model on the
-user's input, and anyone can check the proof quickly without learning the weights.
-Here "zero-knowledge" means the proof establishes that the output was computed
-correctly under the committed weights while leaking nothing else about them;
-"non-interactive" means the proof is a single string the prover publishes, via the
-Fiat-Shamir transform, that a verifier checks offline with no further messages;
-and "succinct" means the proof stays small and fast to verify.
+[zero-knowledge proof](../concepts/zero-knowledge-proof.md): the provider
+produces a short cryptographic proof that a claimed output is the correct result
+of running one fixed, [committed](../concepts/cryptographic-commitment.md)
+model on the user's input, and anyone can check the proof quickly without
+learning the weights. The proof is non-interactive, a single string the prover
+publishes via the Fiat-Shamir transform that a verifier checks offline, and
+succinct, small and fast to verify relative to the inference it certifies.
 
-The technical obstacle is that proof backends work over arithmetic circuits, which
-offer only addition and multiplication in a finite field, while a
-[transformer](../concepts/language-model-pretraining.md) interleaves very large
+The obstacle is that proof backends work over arithmetic circuits, which offer
+only addition and multiplication in a finite field, while a
+[transformer](../concepts/language-model-pretraining.md) interleaves large
 matrix multiplications with non-arithmetic operations: the GeLU activation,
 softmax inside attention, and layer normalization, which need comparison,
-division, square root, and exponentiation. Both kinds of layer are slow to prove,
-the matrices because they are large and the non-linear layers because they are
-awkward to arithmetize. zkGPT assembles a proof system specialized for GPT-style
-models on top of the sumcheck and GKR interactive-proof protocols and the Lasso
-lookup argument, with a faster matrix-multiplication proof for the linear layers,
-a lookup-based treatment of the non-linear layers, and two further optimizations
-the authors call constraint fusion and circuit squeeze. On GPT-2 the system proves
-an inference in under 25 seconds and emits a proof of about 101 KB. The reported
-prover time is roughly 279x faster than Hao et al. (USENIX Security 2024) and 185x
-faster than the Plonk-based ZKML system (EuroSys 2024); against the concurrent
-VOLE-based framework of Lu et al. it reports faster proving and far less
-prover-to-verifier communication.
+division, square root, and exponentiation. The non-linear layers, awkward to
+arithmetize, dominate the proving cost. zkGPT builds a proof system specialized
+for GPT-style models on the sumcheck and GKR interactive-proof protocols and the
+Lasso lookup argument, treating the linear and non-linear layers separately. On
+GPT-2 it proves an inference in under 25 seconds and emits a proof of about 101
+KB. The reported prover time is roughly 279x faster than Hao et al. (USENIX
+Security 2024) and 185x faster than the Plonk-based ZKML system (EuroSys 2024);
+against the concurrent VOLE-based framework of Lu et al. it reports faster
+proving and far less prover-to-verifier communication.
 
-**Threat Model:** A prover, the model owner or compute provider, wants to convince
-a skeptical verifier, a user or a regulator, that a claimed output y equals the
-model's inference on a given input x, for a model whose weights w are bound by a
-public commitment. Public are the commitment, the function f (the
-architecture and inference computation), the input x, and the claimed output y;
-private is the witness w, the weights. The adversary is a dishonest prover that may
-deviate arbitrarily from the honest computation. Soundness: if y is not the correct
-output of the committed model on x, no prover produces an accepting proof except
-with negligible probability. Completeness: an honest prover always convinces the
-verifier. Zero-knowledge: the proof reveals nothing about w beyond the truth of the
-statement, so the weights stay secret. Each proof binds its output to the
-committed weights; when the provider publishes one commitment in advance and
-answers every query against it, that commitment is what prevents serving
-different queries with different models or swapping in a cheaper model after the
-fact. The guarantee is about integrity of the computation, not confidentiality of
-the user's input, which the verifier supplies and already knows.
+**Threat Model:** A prover, the model provider, wants to convince a skeptical
+verifier that a claimed output y equals the model's inference on a given input x,
+for a model whose weights w are bound by a public commitment. Public are the
+commitment, the function f (the architecture and inference computation), the
+input x, and the claimed output y; private is the witness w, the weights. The
+adversary is a dishonest prover that may deviate arbitrarily from the honest
+computation. Soundness: if y is not the correct output of the committed model on
+x, no prover produces an accepting proof except with negligible probability.
+Completeness: an honest prover always convinces the verifier. Zero-knowledge: the
+proof reveals nothing about w beyond the truth of the statement, so the weights
+stay secret. Each proof binds its output to the committed weights; when the
+provider publishes one commitment in advance and answers every query against it,
+that commitment is what prevents serving different queries with different models
+or swapping in a cheaper model after the fact. The guarantee is about integrity
+of the computation, not confidentiality of the user's input, which the verifier
+supplies and already knows.
 
 ## Why read this
 

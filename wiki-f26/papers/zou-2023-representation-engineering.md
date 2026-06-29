@@ -40,57 +40,48 @@ tags:
 ## High-level overview
 
 Large language models are deployed widely while their internal workings stay
-mostly opaque, which limits any guarantee about whether a model is being honest,
-whether it is about to produce harmful content, or whether it is reciting
-memorized text. This paper names and characterizes **representation engineering
-(RepE)**, a top-down approach to transparency that takes a network's
-representations, the patterns of activation spread across many units, as the
-unit of analysis. The contrast is with
+mostly opaque, which limits any guarantee about whether a model is honest, about
+to produce harmful content, or reciting memorized text. This paper names and
+characterizes **representation engineering (RepE)**, a top-down approach to
+transparency that takes a network's representations as the unit of analysis. The
+contrast is with
 [mechanistic interpretability](../concepts/mechanistic-interpretability.md),
-which works bottom-up from individual neurons and circuits. The authors borrow a
-framing from cognitive neuroscience, the Hopfieldian view that treats cognition
-as a product of representational spaces rather than node-to-node connections, and
-ask what it buys for monitoring and controlling high-level cognition in deep
-networks.
+which works bottom-up from individual neurons and circuits. The authors borrow
+the Hopfieldian view from cognitive neuroscience, which treats cognition as a
+product of representational spaces rather than node-to-node connections.
 
 RepE has two halves. **Representation reading** locates a high-level concept,
 such as truthfulness, or a function, such as lying, as a
 [linear direction](../concepts/linear-representation-hypothesis.md) in the
-model's activations. The baseline method, Linear Artificial Tomography (LAT),
-runs the model on a set of stimuli designed to vary the target concept, collects
-the hidden activations, and fits a linear model to recover a "reading vector,"
-a single direction that scores how much of the concept is present. **Representation
-control** then [steers](../concepts/activation-steering.md) behavior by
-manipulating that direction in the activations at inference: adding it,
-subtracting it, projecting it out, or training a low-rank adapter (LoRRA) to
-move representations toward a target. Reading and control reinforce each other,
-since a direction that controls behavior when manipulated has stronger evidence
-behind it than one that only correlates.
+model's activations; the baseline method, Linear Artificial Tomography (LAT),
+fits a linear model over activations to recover a "reading vector" that scores
+how much of the concept is present. **Representation control** then
+[steers](../concepts/activation-steering.md) behavior by manipulating that
+direction in the activations at inference, including a low-rank adapter variant
+(LoRRA) that moves representations toward a target.
 
 The paper presents RepE as a general toolkit and demonstrates it across a wide
 span of safety-relevant targets: honesty and hallucination, utility estimation,
 morality and power-aversion, emotion, harmlessness, bias and fairness, knowledge
 editing, and memorization. The headline application is honesty. Reading a
-model's internal concept of truthfulness yields a lie and hallucination detector,
-and steering along the honesty direction, with no labeled data, reaches
-state-of-the-art accuracy on TruthfulQA, an improvement of 18.1 percentage points
-over zero-shot prompting and over all prior methods reported. Other
-demonstrations include suppressing harmful outputs even under an adversarial
-suffix, and reducing verbatim regurgitation of memorized quotations with little
-loss of world knowledge.
+model's internal concept of truthfulness yields a lie and hallucination
+detector, and steering along the honesty direction, with no labeled data,
+reaches state-of-the-art accuracy on TruthfulQA, an improvement of 18.1
+percentage points over zero-shot prompting and over all prior methods reported.
+Other demonstrations include suppressing harmful outputs even under an
+adversarial suffix, and reducing verbatim regurgitation of memorized quotations
+with little loss of world knowledge.
 
-**Threat Model:** RepE is a transparency setting in which the model's own
-operator inspects and steers it. The analyst owns or studies the model and holds
-[white-box](../concepts/white-box-black-box.md) access to it: the architecture,
-the hidden activations at every layer and token, the ability to run chosen
-prompts, and the ability to modify activations or attach an adapter at inference.
-The claim is twofold. Reading claims that high-level concepts and functions
-(truthfulness, morality, power-seeking, harmfulness, memorization, and more) are
-recoverable as linear directions in those activations, supporting monitoring of
-what a model is doing internally. Control claims that pushing the representation
-along such a direction reliably moves the corresponding behavior, supporting
-cheap inference-time steering toward attributes such as honesty or harmlessness.
-The setting is post-training and primarily inference-time, with an optional light
+**Threat Model:** RepE is a transparency setting with no adversary. The actor is
+the model owner, the party that inspects and steers its own model and holds
+[white-box](../concepts/white-box-black-box.md) access: it can run chosen
+prompts, read the hidden activations at every layer and token, and modify those
+activations or attach an adapter at inference. The claim is twofold. Reading
+claims that high-level concepts and functions are recoverable as linear
+directions in those activations, supporting monitoring of internal state.
+Control claims that pushing the representation along such a direction reliably
+moves the corresponding behavior, supporting cheap inference-time steering. The
+setting is post-training and primarily inference-time, with an optional light
 fine-tuning step for the adapter variant; the evidence offered ranges from
 correlation to causal manipulation, a distinction the paper makes explicit.
 

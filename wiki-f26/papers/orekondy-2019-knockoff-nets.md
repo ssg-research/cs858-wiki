@@ -29,24 +29,20 @@ how much of such a model's value an adversary can capture from that interface
 alone. It formulates *functionality stealing*: training a substitute model, the
 "knockoff," that matches the victim's accuracy on the victim's own task, without
 recovering its weights and without reproducing it prediction for prediction. The
-attack has two steps: query a set of images and collect the victim's posterior
-probability vectors (its softmax outputs over the K classes), forming a
-"transfer set" of image-prediction pairs, then train the knockoff on that
-transfer set to imitate the victim's responses.
+attack builds a "transfer set" of image-prediction pairs by querying the victim,
+then trains the knockoff on that set to imitate the victim's outputs. Query
+images come from a large public image collection that need not overlap the
+victim's training distribution, chosen either by a random strategy or by an
+adaptive strategy that casts query selection as a reinforcement-learning problem
+for better sample-efficiency.
 
-The adversary draws its query images from a large public image collection that
-need not overlap the victim's training distribution. Two strategies decide what
-to query: a random strategy that samples images independently, and an adaptive
-strategy that casts query selection as a reinforcement-learning problem, learning
-a policy that prefers images yielding informative responses to improve query
-sample-efficiency. The reported observations: a knockoff trained on images from a
-different distribution still recovers a large fraction of the victim's accuracy
-(on the order of 0.81 to 0.96 times the victim's test accuracy across several
-datasets in the hardest "open-world" setting, where the query pool and the
-victim's classes barely overlap); this holds even when the knockoff uses a
-different architecture than the victim; and the attack carries over to a
-commercial image-analysis API, where a usable knockoff was trained for about $30
-in queries.
+The reported observations: a knockoff trained on images from a different
+distribution still recovers a large fraction of the victim's accuracy (on the
+order of 0.81 to 0.96 times the victim's test accuracy across several datasets in
+the hardest "open-world" setting, where the query pool and the victim's classes
+barely overlap); this holds even when the knockoff uses a different architecture
+than the victim; and the attack carries over to a commercial image-analysis API,
+where a usable knockoff was trained for about $30 in queries.
 
 **Threat Model:** The adversary has black-box query access to a deployed image
 classifier: it submits images and reads back the posterior probability vector

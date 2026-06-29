@@ -23,72 +23,58 @@ tags:
 
 ## High-level overview
 
-Emerging regulation, such as the EU AI Act, asks for evidence that a deployed
-model meets stated requirements about its accuracy, its training data, its
-provenance, and its inference. A provider that wants to supply such evidence
-faces a tension. The dataset and the weights are often confidential, so the
-provider will not hand them to a regulator for inspection, and a regulator has no
-reason to trust unverifiable claims. *Property attestation* is the mechanism for
-this gap. A prover, the model provider, produces a hardware-signed statement that
-some property holds of an operation it ran, and a verifier, a regulator, auditor,
-or customer, checks the statement without re-running the operation or seeing the
-confidential inputs. The statement rests on
-[remote attestation](../concepts/remote-attestation.md): a hardware *root of
-trust* on the prover's machine signs a measurement of the code and data that ran,
-and the verifier checks that signature against the hardware vendor and against
-reference values for the claimed property obtained from a trusted authority.
-PAL\*M is a property-attestation framework that carries this from small CPU-only
+Emerging regulation, such as the EU AI Act, asks for verifiable evidence that
+a deployed model meets stated requirements about its accuracy, training data,
+provenance, and inference, even when the dataset and weights stay confidential.
+*Property attestation* supplies that evidence: a model provider produces a
+hardware-signed statement that some property holds of an operation it ran, and
+a verifier, a regulator, auditor, or customer, checks the statement without
+re-running the operation or seeing the confidential inputs. It rests on
+[remote attestation](../concepts/remote-attestation.md), in which a hardware
+*root of trust* signs a measurement of the code and data that ran. PAL\*M is a
+property-attestation framework that carries this from small CPU-only
 classifiers to large generative models, using large language models as its
 illustration.
 
-Earlier hardware-assisted property attestation, the property-card line, ran the
-whole machine-learning operation inside a single CPU enclave and measured its
-inputs and outputs there (Duddu et al., 2024). Large generative models break that
-arrangement on two fronts. Their training and inference run across a CPU and a
+Earlier hardware-assisted property attestation ran the whole machine-learning
+operation inside a single CPU enclave (Duddu et al., 2024). Large generative
+models break that arrangement: their training and inference span a CPU and a
 GPU, and their datasets are too large to hold in enclave memory, so frameworks
 memory-map them and sample records on demand from untrusted storage. PAL\*M
-targets both. It runs operations inside a *confidential virtual machine*, a
+runs operations inside a *confidential virtual machine*, a
 [trusted execution environment](../concepts/trusted-execution-environment.md)
-that holds an entire VM rather than a user-space enclave, paired with a TEE-aware
-GPU so the accelerator's work is itself measured and attested. For datasets read
-out of order from disk, it accumulates an incremental multiset hash, an
-order-independent hash over the sampled records (Clarke et al., 2003), so the
-measurement reflects exactly the data used regardless of sampling order. On this
-basis it defines property measurements for a catalogue of operations:
-preprocessing, attribute-distribution computation, training, post-training
-optimization such as fine-tuning and quantization, evaluation, and single- and
-multi-turn chat inference. The prototype runs on commodity Intel TDX and an
-NVIDIA H100, reports under 11% overhead on common operations, and the attestation
-protocol is machine-checked in the Tamarin prover under the stated threat model.
+holding an entire VM, paired with a TEE-aware GPU so the accelerator's work is
+itself measured and attested, and it measures out-of-order dataset reads with
+an order-independent hash. On this basis it defines property measurements for a
+catalogue of operations from preprocessing through training, fine-tuning,
+evaluation, and chat inference. The output is a verifiable *property card*: a
+model card, datasheet, or inference card. The prototype runs on commodity Intel
+TDX and an NVIDIA H100, reports under 11% overhead on common operations, and its
+attestation protocol is machine-checked in the Tamarin prover. PAL\*M roots
+verifiability in trusted hardware, the counterpart to cryptographic schemes that
+certify the same properties with a
+[zero-knowledge proof](../concepts/zero-knowledge-proof.md) or
+[secure computation](../concepts/secure-multiparty-computation.md).
 
-The output of an attestation is a *property card*: a model card, datasheet, or
-inference card whose entries a third party can verify rather than accept on
-faith. PAL\*M roots that verifiability in trusted hardware, which makes it the
-hardware counterpart to cryptographic schemes that certify the same kinds of
-property with a [zero-knowledge proof](../concepts/zero-knowledge-proof.md) or
-[secure computation](../concepts/secure-multiparty-computation.md) and no trusted
-hardware.
-
-**Threat Model:** A prover, the model provider that trains, evaluates, or serves a
-model, attests properties of its operations to a verifier, a regulator, auditor,
-or customer, mediated by an initiator that requests an operation and forwards the
-evidence; the verifier may obtain reference values for a property from a trusted
-authority such as the hardware vendor. The root of trust is the attestation
-hardware. PAL\*M trusts the Intel TDX module and CPU to isolate the confidential
-VM and to produce a hardware-signed quote over what ran, and trusts the NVIDIA
-H100 to measure and attest its own configuration, with a secure channel binding
-the two into one trust boundary. The adversary is a dishonest provider with the
-standard Intel TDX powers: it controls the host, the virtual machine manager, and
-the disk, so it can read and tamper with anything outside the trust boundary,
-including memory-mapped datasets in external storage, and it is a Dolev-Yao
-network adversary that can inject or modify protocol messages. It cannot break the
-TDX module or CPU, forge a quote without the hardware key, or subvert the H100.
-What is attested is a property of an operation over its inputs and outputs, the
-measurement extended into the signed quote; what stays confidential is the model
-and dataset themselves, which are never placed in the quote. Side-channel attacks
-on the hardware and physical attacks, including memory-bus interposition and
-swapping the GPU, are out of scope, with side-channel mitigations treated as
-orthogonal.
+**Threat Model:** A prover, the model provider that trains or serves a model,
+attests properties of its operations to a verifier, mediated by an initiator
+that requests an operation and forwards the evidence; the verifier may obtain
+reference values for a property from a trusted authority such as the hardware
+vendor. The root of trust is the attestation hardware. PAL\*M trusts the Intel
+TDX module and CPU to isolate the confidential VM and to produce a hardware-signed
+quote over what ran, and trusts the NVIDIA H100 to measure and attest its own
+configuration, with a secure channel binding the two into one trust boundary. The
+adversary is a dishonest provider with the standard Intel TDX powers: it controls
+the host, the virtual machine manager, and the disk, so it can read and tamper
+with anything outside the trust boundary, including memory-mapped datasets in
+external storage, and it is a Dolev-Yao network adversary that can inject or
+modify protocol messages. It cannot break the TDX module or CPU, forge a quote
+without the hardware key, or subvert the H100. What is attested is a property of
+an operation over its inputs and outputs, the measurement extended into the
+signed quote; what stays confidential is the model and dataset themselves, which
+are never placed in the quote. Side-channel attacks on the hardware and physical
+attacks, including memory-bus interposition and swapping the GPU, are out of
+scope.
 
 ## Why read this
 

@@ -37,10 +37,10 @@ objective. This work asks whether a large model trained roughly once over a
 massive, de-duplicated corpus, a regime with almost no gap between training and
 test loss, still memorizes individual examples tightly enough that an outsider
 can pull them back out word for word. It answers yes, with a training-data
-extraction attack: sample a large, diverse pool of candidate continuations from
-the model, then rank them with a membership-inference signal that flags
-sequences the model finds far less surprising than a reference model would,
-surfacing the candidates that are verbatim training text.
+extraction attack that pairs broad sampling of candidate continuations with a
+membership-inference ranking signal: a sequence the target model finds far less
+surprising than a reference model does is flagged as likely verbatim training
+text.
 
 Run against GPT-2, a model trained on text scraped from the public web, the
 attack recovers hundreds of verbatim training sequences, including personally

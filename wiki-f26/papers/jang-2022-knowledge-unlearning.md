@@ -26,32 +26,28 @@ tags:
 
 ## High-level overview
 
-A pretrained language model memorizes parts of its training corpus, including
-personal information, and an extraction attack can pull some of it back out
-verbatim. The standard fixes either scrub the corpus before training (data
-preprocessing and deduplication) or train under differential privacy; both
-require retraining the model from scratch, which is impractical each time an
-individual exercises a right-to-be-forgotten request. This work proposes
-*knowledge unlearning*: rather than retrain, take the specific token sequences
-that must be forgotten and run gradient ascent on them, maximizing instead of
-minimizing their negative log-likelihood, for a handful of parameter updates on
-the already-trained model.
+A pretrained language model memorizes parts of its training corpus, personal
+information included, and an extraction attack can recover some of it verbatim.
+The standard privacy defenses, scrubbing the corpus before training and training
+under differential privacy, both require retraining from scratch, which is
+impractical each time an individual files a right-to-be-forgotten request. This
+work proposes *knowledge unlearning*: a few gradient-ascent updates applied to
+the already-trained model on the specific token sequences that must be forgotten,
+no retraining.
 
 Evaluated on GPT-Neo models (125M, 1.3B, 2.7B), the procedure suppresses the
-targeted sequences against extraction attacks while leaving general
-language-model capability, measured on nine NLP classification benchmarks and
-four dialogue tasks, largely intact for the larger models; on some benchmarks it
-slightly improves them. The paper reports two further empirical patterns:
-forgetting examples in sequential chunks degrades the model less than forgetting
-them all at once, and how hard a sequence is to forget depends heavily on its
-data domain, with structured text such as code or email lists easier than
-unstructured prose. It introduces two metrics, Extraction Likelihood (EL) and
-Memorization Accuracy (MA), and an operational definition of "forgotten": a
-sequence is forgotten once its EL and MA fall to the average level the model
-assigns to data it never trained on. Set against a deduplication defense and a
-differentially private decoding defense, unlearning is reported to give stronger
-empirical privacy at far lower compute, in the setting where the sequences to
-protect are known in advance.
+targeted sequences against extraction attacks while leaving general capability,
+measured on nine NLP classification benchmarks and four dialogue tasks, largely
+intact for the larger models, and on some benchmarks slightly improving them. The
+paper reports two further empirical patterns: forgetting sequences in sequential
+chunks degrades the model less than forgetting them all at once, and how hard a
+sequence is to forget depends heavily on its data domain, with structured text
+such as code or email lists easier than unstructured prose. Set against a
+deduplication defense and a differentially private decoding defense, unlearning
+is reported to give stronger empirical privacy at far lower compute. The
+protection is empirical: a sequence counts as forgotten once it is no more
+extractable than data the model never trained on, with no formal certificate over
+all possible examples.
 
 **Threat Model:** The privacy adversary has access to the deployed language
 model and mounts a targeted extraction attack: given a prefix of a sequence that
@@ -61,10 +57,11 @@ varying strength. The defender is the model owner, who holds a specific set of
 token sequences that must be protected, the data named in a right-to-be-forgotten
 request, assumed known a priori, and may edit the model's weights after training.
 The defender's claim is empirical rather than formal: after unlearning, the
-targeted sequences are no longer extractable, their EL and MA having dropped
-below the level of data the model never saw, while general capability is
-preserved. There is no (epsilon, delta) certificate over all possible examples,
-only measured protection of the named sequences against the extraction attack.
+targeted sequences are no longer extractable, their extraction and memorization
+scores having fallen to the level the model assigns to data it never saw, while
+general capability is preserved. There is no (epsilon, delta) certificate over
+all possible examples, only measured protection of the named sequences against
+the extraction attack.
 
 ## Why read this
 

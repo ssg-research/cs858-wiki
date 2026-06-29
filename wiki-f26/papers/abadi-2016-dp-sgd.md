@@ -26,35 +26,29 @@ tags:
 
 ## High-level overview
 
-Neural networks are trained on datasets that may contain sensitive records, and
-a trained model's parameters can encode fine details of individual examples.
-This paper trains deep networks under
-[differential privacy](../concepts/differential-privacy.md), the formal
-guarantee that the trained model's distribution changes by at most a bounded
-factor when any single training example is added or removed. Its algorithm,
-now universally called DP-SGD, modifies
-[stochastic gradient descent](../concepts/stochastic-gradient-descent.md) in
-two places: each example's gradient is
-[clipped](../concepts/gradient-clipping.md) to a fixed norm (bounding any one
-example's influence, its sensitivity), and calibrated Gaussian noise is added
-to the summed gradients before the update (the
-[Gaussian mechanism](../concepts/gaussian-mechanism.md)). Terminology note:
-the "privacy budget" is the pair (epsilon, delta) the training run is allowed
-to spend, an "accountant" is the procedure that tracks spending across steps,
-and the paper's "lot" is the sampling unit noise is added over, distinct from
-the computational batch.
+A trained model's parameters can encode fine details of individual training
+examples, and that data may be sensitive. This paper trains deep networks under
+[differential privacy](../concepts/differential-privacy.md), a guarantee on the
+training algorithm: removing or adding any single example changes the
+distribution over trained models by at most a bounded factor (epsilon, with
+slack delta, the run's "privacy budget"). Its algorithm, now universally called
+DP-SGD, modifies
+[stochastic gradient descent](../concepts/stochastic-gradient-descent.md) in two
+places: each example's gradient is
+[clipped](../concepts/gradient-clipping.md) to a fixed norm, bounding any one
+example's sensitivity, and calibrated Gaussian noise is added before each update
+(the [Gaussian mechanism](../concepts/gaussian-mechanism.md)).
 
-The paper's second contribution is the moments accountant, a tighter way to
-track the [privacy budget](../concepts/privacy-budget.md) across thousands of
-training steps. Generic composition theorems made deep training spend its
-budget far too fast; tracking higher moments of the privacy loss gives bounds
-tight enough that, in the paper's running example, the same training run costs
-epsilon of roughly 1.3 instead of 9.3. With both pieces implemented in
-TensorFlow, the paper reports 97% test accuracy on MNIST and 73% on CIFAR-10
-at single-digit budgets ((8, 10^-5)-differential privacy, with 90% on MNIST
-at epsilon as small as 0.5), against non-private baselines of about 98.3% and
-80%. The CIFAR-10 model trains only its fully connected layers privately, on
-top of convolutional layers pre-trained on a dataset treated as public.
+The second contribution is the moments accountant, a tighter bound on the
+[privacy budget](../concepts/privacy-budget.md) spent across the thousands of
+noisy steps a deep model takes. Earlier accounting forced training to exhaust its
+budget long before the model was useful; the moments accountant tracks privacy
+loss tightly enough to keep budgets in the single digits. Implemented in
+TensorFlow, the paper reports 97% test accuracy on MNIST and 73% on CIFAR-10 at
+single-digit budgets ((8, 10^-5)-differential privacy, with 90% on MNIST at
+epsilon as small as 0.5), against non-private baselines near 98.3% and 80%. The
+CIFAR-10 model trains only its fully connected layers privately, on convolutional
+layers pre-trained on a dataset treated as public.
 
 **Threat Model:** A defense paper, and the guarantee is attack-agnostic: it
 does not name an adversary strategy, it bounds what any adversary can learn.

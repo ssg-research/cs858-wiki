@@ -31,21 +31,18 @@ that dataset: the released model is open to
 extraction. Differentially private fine-tuning removes that risk by adapting the
 model under an (epsilon, delta) guarantee that bounds any single fine-tuning
 record's influence on what is released. The standard method,
-[DP-SGD](abadi-2016-dp-sgd.md), clips and noises per-example first-order
-gradients (Abadi et al., 2016), but computing those gradients by
-backpropagation through an LLM is memory-heavy, and for billion-parameter models
-the gradient step alone can exceed a high-end GPU. This paper fine-tunes under
-differential privacy with
+[DP-SGD](abadi-2016-dp-sgd.md), works on per-example first-order gradients
+(Abadi et al., 2016), but computing those gradients by backpropagation through
+an LLM is memory-heavy, and for billion-parameter models the gradient step alone
+can exceed a high-end GPU. This paper fine-tunes under differential privacy with
 [zeroth-order optimization](../concepts/zeroth-order-optimization.md) instead: a
 gradient-free optimizer that estimates a descent direction from forward-pass
 loss differences along random perturbation directions, so it needs roughly the
 memory of inference rather than of backpropagation. The method, DP-AggZO,
-computes several zeroth-order estimates per record, one per random direction,
-aggregates them into a single vector, clips that vector to bound its
-sensitivity, and adds [Gaussian noise](../concepts/gaussian-mechanism.md).
-Aggregating directions makes the per-record update concentrate, so the clipping
-that differential privacy requires injects far less bias than clipping a single
-high-variance estimate does.
+aggregates multiple per-record zeroth-order direction estimates before clipping
+and adding [Gaussian noise](../concepts/gaussian-mechanism.md), which
+concentrates the per-record update so DP's required clipping injects far less
+bias than clipping a single high-variance estimate.
 
 DP-AggZO improves the privacy-utility trade-off of private zeroth-order
 fine-tuning. Across a masked language model (RoBERTa) and autoregressive models
@@ -55,10 +52,8 @@ privacy budget, and it matches or surpasses the state-of-the-art first-order
 private optimizer (DP-AdamW) while using far less memory; on the 355M-parameter
 model it leads DP-AdamW across the benchmark tasks. On the largest model
 studied, the first-order baselines run out of memory on a 96 GB GPU, while
-DP-AggZO fine-tunes within that budget. Its memory cost is identical to
-single-estimate DPZO no matter how many directions are aggregated, because the
-estimates are computed sequentially; the price is additional forward passes per
-update.
+DP-AggZO fine-tunes within that budget, at the cost of extra forward passes per
+update and with memory held at the single-estimate DPZO level.
 
 **Threat Model:** A defense under differential privacy, so the guarantee is
 attack-agnostic rather than tied to a named adversary strategy. The protected
@@ -70,13 +65,9 @@ random perturbation directions as public information, and may control every
 other fine-tuning record. The defender claims (epsilon, delta)-differential
 privacy for what the fine-tuning run releases, which bounds the success of any
 membership inference or data-reconstruction attempt against the fine-tuning
-data, present or future. The guarantee comes from the DP mechanism applied to
-the optimization: each record's contribution to a step is clipped to bound its
-sensitivity, calibrated Gaussian noise is added to the per-step aggregate, and
-the privacy spent is composed across iterations with subsampling amplification
-under Rényi differential privacy accounting. As in DP-SGD, the privacy reasoning
-is on the noisy per-iteration update, not on the final parameters; the
-pretrained base model is treated as public.
+data, present or future. As in DP-SGD, the privacy reasoning is on the noisy
+per-iteration update, not on the final parameters; the pretrained base model is
+treated as public.
 
 ## Why read this
 

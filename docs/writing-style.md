@@ -103,15 +103,50 @@ Each example is from a rejected draft.
   not a default. Acceptable, because the negated alternative is the likely wrong
   assumption: "sensitivity is the worst case over all adjacent datasets, not an
   average."
+- "Adversarial attack" as a generic phrase. Every attack is adversarial by
+  definition, and authors who write it usually mean an adaptive attack. Write
+  "adaptive attack" or plain "attack" by meaning. Terms of art stay:
+  "adversarial example," "adversarial training," "adversarial robustness,"
+  "adversarial perturbation." A cited paper's title is kept verbatim.
+
+## Role terminology
+
+One canonical word per shared role, used consistently within a page's
+High-level overview (its body and the Threat Model paragraph). Consistency
+beats specificity: name a role once, then reuse the canonical word rather than
+re-listing its instances ("a regulator, auditor, or customer" becomes the
+"verifier" after first use).
+
+| Canonical term | Role |
+|---|---|
+| **adversary** | the malicious party; normalizes the plain noun "attacker." Keep terms of art ("membership inference attack," "first-order adversary") and scare-quoted "adversary" where the actor may be benign |
+| **defender** | the party making the protective claim |
+| **model owner** | party whose stake is ownership or IP of the weights |
+| **model provider** | party that serves or deploys the model to others |
+| **prover** / **verifier** | proof producer / proof checker |
+| **client** / **server** | private-input party / outsourced-compute party (secure-computation framing) |
+| **victim** | the attacked target, distinct from the defender |
+| **user** | benign end consumer of a deployed model |
+
+Provider versus owner is not a hard split: one entity is often both, so use the
+term for the relation the threat model emphasizes. Do not back-fill a role a
+paper lacks; some papers have no defender, some no adversary. Genuinely unique
+roles keep their own word (a differential-privacy curator, a watermark
+detector, an initiator).
 
 ## Format by section
 
 - **High-level overview.** One to three paragraphs, a contextualized abstract:
   problem, named approach, headline results at abstract level, decoded
-  terminology. Ends with a separate bolded paragraph beginning
-  `**Threat Model:**` that names the adversary, its knowledge, its capability
-  and budget, its timing, and the defender's claim. No methods walkthrough, no
-  per-experiment numbers.
+  terminology. About 350 words of body prose, then a separate bolded paragraph
+  beginning `**Threat Model:**` that names the adversary, its knowledge, its
+  capability and budget, its timing, and the defender's claim; the Threat Model
+  paragraph is additional to the 350 and may run longer. No methods walkthrough,
+  no per-experiment numbers, and no fact another section owns: state each fact
+  once, and do not repeat in the body what the Threat Model paragraph, Basic
+  Background, or Paper Context carries. Tighten the Threat Model paragraph the
+  same way, defining a role once and then using the role word rather than
+  re-listing its instances.
 - **Why read this.** Two to four declarative sentences on why the paper is worth
   reading on its own terms, instructor-owned. No hooks, and no reference to the
   paper's slot in the course sequence.

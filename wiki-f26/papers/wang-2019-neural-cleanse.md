@@ -26,51 +26,45 @@ tags:
 ## High-level overview
 
 A backdoored image classifier behaves normally on ordinary inputs but
-misclassifies any input carrying a small attacker-chosen pattern, the *trigger*,
-into one attacker-chosen *target label*. Because the trigger can be a tiny patch
+misclassifies any input carrying a small adversary-chosen pattern, the *trigger*,
+into an adversary-chosen *target label*. Because the trigger can be a tiny patch
 of pixels and clean accuracy is unaffected, a backdoor can sit undetected in a
-deployed model indefinitely (the terms "backdoor" and "Trojan" are used
-interchangeably in this literature). Neural Cleanse is the first general method
-to take a trained classifier with no side information and decide whether it
-hides a backdoor, recover what the trigger looks like, and patch the model so the
+deployed model indefinitely. Neural Cleanse is the first general method to take a
+trained classifier with no side information and decide whether it hides a
+backdoor, recover what the trigger looks like, and patch the model so the
 backdoor no longer fires.
 
-The detection rests on one observation, stated at a high level: in a clean model,
-turning inputs of many classes into a chosen target class requires a substantial
-change to each input; in a backdoored model, the trigger is a small,
-label-independent shortcut into the target class, so the minimal change that
-flips inputs into the infected label is abnormally small. Neural Cleanse
-reverse-engineers, for each candidate label, the smallest input pattern that
-drives inputs into that label, measures the size of each recovered pattern, and
-flags any label whose pattern is a significant outlier (far smaller than the
-rest) as the backdoor's target. Once a backdoor is found and its trigger
-reconstructed, the paper develops three mitigations: an input filter that flags
-inputs activating the backdoor's neurons, and two ways to patch the model
-(neuron pruning and unlearning) so the trigger stops working.
+Detection rests on one observation. In a clean model, turning inputs of many
+classes into a chosen target requires a substantial change to each input; the
+trigger is instead a small, label-independent shortcut, so for the infected label
+the minimal change that flips inputs into it is an abnormally small outlier
+against the other labels. Once a backdoor is found and its trigger reconstructed,
+the paper develops three mitigations: an input filter on backdoor-neuron
+activations, and two ways to patch the model (neuron pruning and unlearning) so
+the trigger stops working.
 
 The techniques are evaluated on handwritten-digit recognition (MNIST),
 traffic-sign recognition (GTSRB), and two face-recognition models (one with a
-large label space, one built by transfer learning), against two backdoor
-injection methods from prior work (BadNets and Trojan Attack) and against several
-adaptive attack variants. Headline results at abstract level: the method
-separates infected from clean models, the reconstructed triggers resemble the
-originals in which internal neurons they activate, and the patches drive attack
-success down to low single-digit percentages while preserving accuracy on clean
-inputs.
+large label space, one built by transfer learning), against two injection methods
+from prior work (BadNets and Trojan Attack) and several adaptive attack variants.
+Headline results at abstract level: the method separates infected from clean
+models, the reconstructed triggers match the originals in which internal neurons
+they activate, and the patches drive attack success down to low single-digit
+percentages while preserving clean accuracy.
 
 **Threat Model:** The adversary is whoever produced the model: an outsourced or
 compromised training provider, or a third party redistributing a tampered
 pretrained model. They control the training process (data, labels, configuration)
-or a post-training modification, and use that control to plant a backdoor so that
-any input bearing the trigger is classified into the target label, while the
-model stays accurate on clean inputs and so passes the user's ordinary validation.
-The defender receives only the trained model and a set of correctly labeled clean
+or a post-training modification, and use it to plant a backdoor so that any input
+bearing the trigger is classified into the target label, while the model stays
+accurate on clean inputs and so passes the user's ordinary validation. The
+defender receives only the trained model and a set of correctly labeled clean
 samples, plus the compute to test and modify the model; they do not hold the
 poisoned training data, the trigger, or the target label, and retraining from
 scratch is assumed infeasible. The defender's claim is to decide whether the
 model is backdoored (and if so, which label is targeted), recover a trigger that
-reproduces the backdoor behavior, and patch the model to disable the backdoor
-without degrading clean accuracy.
+reproduces the behavior, and patch the model to disable the backdoor without
+degrading clean accuracy.
 
 ## Why read this
 

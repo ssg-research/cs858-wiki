@@ -33,21 +33,19 @@ finds the worst-case perturbation of an input within an allowed set, which is
 what an attack is. An outer minimization trains the network against that worst
 case, which is what [adversarial training](../concepts/adversarial-training.md)
 is. Terminology note: in this literature an "adversary" is usually an algorithm,
-not a person; "robust accuracy" is accuracy measured on worst-case perturbed
-inputs; a "first-order adversary" is an attacker that uses only gradients of the
-loss with respect to the input.
+not a person, and a "first-order adversary" is an attacker that uses only
+gradients of the loss with respect to the input.
 
-At abstract level, the paper reports that the inner maximization, though
-non-concave, is empirically tractable, and that projected gradient descent (PGD)
-with random restarts behaves as the strongest first-order attack. It reports
-that robust classification needs noticeably larger networks than clean
-classification. Training against the PGD adversary yields models that withstand
-the strongest attacks the authors evaluate, above 89% robust accuracy on MNIST
-and around 46% on CIFAR-10, and the trained models were released as public
-attack challenges. The method is now called PGD adversarial training or
-Madry-style adversarial training, it remains the reference baseline for
-empirical defenses, and "PGD" without qualification usually means this paper's
-attack.
+The paper reports that the inner maximization, though non-concave, is empirically
+tractable, and that projected gradient descent (PGD) with random restarts behaves
+as the strongest first-order attack. It reports that robust classification needs
+noticeably larger networks than clean classification. Training against the PGD
+adversary yields models that withstand the strongest attacks the authors
+evaluate, above 89% robust accuracy on MNIST and around 46% on CIFAR-10, and the
+trained models were released as public attack challenges. The method is now
+called PGD adversarial training or Madry-style adversarial training, it remains
+the reference baseline for empirical defenses, and "PGD" without qualification
+usually means this paper's attack.
 
 **Threat Model:** An evasion (test-time) setting. The adversary perturbs
 individual inputs at classification time; the training data and the model are
