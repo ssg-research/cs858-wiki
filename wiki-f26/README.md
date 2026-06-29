@@ -1,7 +1,7 @@
 # CS858 Wiki
 
 Here you find the list of papers relevant for this course. Every student is
-expected to at least read the primary readings.
+expected to at least read the assigned readings.
 
 ---
 
@@ -16,7 +16,7 @@ expected to at least read the primary readings.
 
 ## Reading list
 
-The course runs in two parts, grouped by theme. The primary reading in each row
+The course runs in two parts, grouped by theme. The assigned reading in each row
 is required; expand the essential readings beneath it to see what goes alongside.
 
 ### Part 1: Risks to trustworthiness in ML
@@ -37,7 +37,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>1</td>
       <td>Adversarial Robustness of Classification Models</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/madry-2018-pgd.md">Towards Deep Learning Models Resistant to Adversarial Attacks</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -52,7 +52,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>2</td>
       <td>Jailbreaking LLMs</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/wei-2023-jailbroken.md">Jailbroken: How Does LLM Safety Training Fail?</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -67,7 +67,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>3</td>
       <td>Indirect Prompt Injection in AI Agents</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/greshake-2023-indirect-prompt-injection.md">Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -82,7 +82,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>4</td>
       <td>Safety Alignment and Guardrails</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/qi-2024-shallow-safety-alignment.md">Safety Alignment Should Be Made More Than Just a Few Tokens Deep</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -100,7 +100,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>5</td>
       <td>Membership Inference Attacks</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/carlini-2022-lira.md">Membership Inference Attacks From First Principles</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -115,7 +115,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>6</td>
       <td>Training-data Extraction from LLMs</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/carlini-2021-extracting-training-data.md">Extracting Training Data from Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -130,7 +130,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>7</td>
       <td>Differential Privacy in ML</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/abadi-2016-dp-sgd.md">Deep Learning with Differential Privacy</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -145,7 +145,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>8</td>
       <td>Unlearning for Generative AI</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/jang-2022-knowledge-unlearning.md">Knowledge Unlearning for Mitigating Privacy Risks in Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -163,7 +163,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>9</td>
       <td>Model Extraction / Stealing</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/orekondy-2019-knockoff-nets.md">Knockoff Nets: Stealing Functionality of Black-Box Models</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -178,7 +178,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>10</td>
       <td>Model Watermarking / Fingerprinting</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/szyller-2019-dawn.md">DAWN: Dynamic Adversarial Watermarking of Neural Networks</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -196,7 +196,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>11</td>
       <td>Training-data Poisoning</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/wang-2019-neural-cleanse.md">Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -211,7 +211,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>12</td>
       <td>Preference Manipulation / RAG Poisoning</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/zou-2024-poisonedrag.md">PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -229,7 +229,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>13</td>
       <td>Mechanistic Interpretability for AI safety</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/zou-2023-representation-engineering.md">Representation Engineering: A Top-Down Approach to AI Transparency</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -244,7 +244,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>14</td>
       <td>Unintended Interactions among ML Defenses and Risks</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/duddu-2024-unintended-interactions.md">SoK: Unintended Interactions among Machine Learning Defenses and Risks</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -259,7 +259,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>15</td>
       <td>Media Forensics and Proactive Provenance</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/kirchenbauer-2023-llm-watermark.md">A Watermark for Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -274,7 +274,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>16</td>
       <td>AI for Cybersecurity</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/pearce-2023-vulnerability-repair.md">Examining Zero-Shot Vulnerability Repair with Large Language Models</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -306,7 +306,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>17</td>
       <td>Software</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/zhang-2025-nexus.md">Secure Transformer Inference Made Non-interactive</a>
         <details>
           <summary>Essential readings (1)</summary>
@@ -320,7 +320,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>18</td>
       <td>Hardware</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/elatali-2024-blime.md">BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking</a>
         <details>
           <summary>Essential readings (1)</summary>
@@ -337,7 +337,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>19</td>
       <td>Software</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/bao-2025-dp-zo.md">Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -352,7 +352,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>20</td>
       <td>Hardware</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/zhang-2024-tee-shielded.md">No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML</a>
         <details>
           <summary>Essential readings (1)</summary>
@@ -369,7 +369,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>21</td>
       <td>Software</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/tang-2024-modelguard.md">ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks</a>
         <details>
           <summary>Essential readings (1)</summary>
@@ -383,7 +383,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>22</td>
       <td>Hardware</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/moon-2025-asgard.md">ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments</a>
         <details>
           <summary>Essential readings (1)</summary>
@@ -400,7 +400,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>23</td>
       <td>Software</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/qu-2025-zkgpt.md">zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference</a>
         <details>
           <summary>Essential readings (2)</summary>
@@ -415,7 +415,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>24</td>
       <td>Hardware</td>
       <td>
-        <strong>Primary</strong>
+        <strong>Assigned reading</strong>
         <a href="papers/chantasantitam-2026-palm.md">PAL*M: Property Attestation for Large Generative Models</a>
         <details>
           <summary>Essential readings (2)</summary>
