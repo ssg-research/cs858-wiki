@@ -20,7 +20,11 @@ tags:
   - dp-sgd
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Deep Learning with Differential Privacy
 
@@ -135,6 +139,25 @@ batch leaks nothing in that step. How tightly the accountant adds up thousands
 of sampled Gaussian steps decides how long a network can train before its
 budget is exhausted.
 
+## Reading guidance
+
+- Section 2: the (epsilon, delta) definition, the Gaussian mechanism, and
+  composition; everything after leans on these.
+- Section 3.1 and Algorithm 1: the whole algorithm in one box. Each line maps
+  to a concept: clipping bounds sensitivity, noise is the Gaussian mechanism,
+  the accountant handles composition.
+- Section 3.2 and Theorem 1: the moments accountant. Figure 2 shows what it
+  buys over the strong composition theorem; proofs are in the appendix and can
+  be deferred.
+- Section 5.1: the accounting comparison in numbers.
+- Section 5.2 and Figures 4 and 5: MNIST accuracy across (epsilon, delta)
+  pairs and parameter sensitivity. The clipping threshold C has no formula;
+  note how the paper chooses it.
+- Section 5.3: CIFAR-10. Note which layers are trained privately and which are
+  pre-trained on data the paper treats as public.
+- Section 6: the map of prior private-learning approaches and the contrast
+  with Shokri and Shmatikov (2015).
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -177,29 +200,10 @@ Rothblum, 2016; Bun and Steinke, 2016).
 
 </details>
 
-## Reading guidance
-
-- Section 2: the (epsilon, delta) definition, the Gaussian mechanism, and
-  composition; everything after leans on these.
-- Section 3.1 and Algorithm 1: the whole algorithm in one box. Each line maps
-  to a concept: clipping bounds sensitivity, noise is the Gaussian mechanism,
-  the accountant handles composition.
-- Section 3.2 and Theorem 1: the moments accountant. Figure 2 shows what it
-  buys over the strong composition theorem; proofs are in the appendix and can
-  be deferred.
-- Section 5.1: the accounting comparison in numbers.
-- Section 5.2 and Figures 4 and 5: MNIST accuracy across (epsilon, delta)
-  pairs and parameter sensitivity. The clipping threshold C has no formula;
-  note how the paper chooses it.
-- Section 5.3: CIFAR-10. Note which layers are trained privately and which are
-  pre-trained on data the paper treats as public.
-- Section 6: the map of prior private-learning approaches and the contrast
-  with Shokri and Shmatikov (2015).
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off the paper's bibliography (arXiv 1607.00133v2, pages 10-11).
 

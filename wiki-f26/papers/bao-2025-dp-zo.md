@@ -19,7 +19,11 @@ tags:
   - zeroth-order-optimization
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs
 
@@ -149,6 +153,38 @@ et al., 2021). Differential privacy is the principled counter to both: bounding
 any record's influence provably caps the success of any such attack, which is
 the guarantee this line of work targets.
 
+## Reading guidance
+
+- Section 2: preliminaries on DP, DP-SGD, MeZO, and DPZO; skim if the basic
+  background is familiar. Equations 6 and 7 define the zeroth-order
+  loss-difference estimate.
+- Section 4 and Lemma 2: the convergence analysis that ties clipping error to
+  the convergence rate of DPZO. Figure 1 plots the distribution of the
+  loss-difference estimates; note how heavy its tail is relative to the clipping
+  thresholds prior work suggested.
+- Section 5 and Algorithm 1: the method in one box. Figure 2 illustrates the
+  aggregation idea, and Lemma 3 bounds the aggregate vector's norm.
+- Section 5.3, Lemmas 4 and 5: the convergence rate and the Rényi DP guarantee.
+  The accounting also spends budget on releasing the dataset size; note how
+  much.
+- Section 6, Tables 1 and 2: utility across models, tasks, and budgets, with
+  DP-AdamW, DPZO, and non-DP references. The OOM entries mark where first-order
+  baselines fail; Table 3 is the memory comparison.
+- Figure 4: the clipping error over the course of training for each method; note
+  how large it grows under the previously suggested thresholds.
+- Figure 5: how utility changes with the number of aggregated directions, and
+  where it saturates.
+- Section 7: related work, placing the method among the DP fine-tuning,
+  zeroth-order, and clipping lines.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [PrivateFL: Accurate, Differentially Private Federated Learning via Personalized Data Transformation](https://www.usenix.org/system/files/usenixsecurity23-yang-yuchen.pdf) — a different lever on the DP utility problem, applied in federated learning.
+- [Local and Central Differential Privacy for Robustness and Privacy in Federated Learning](https://arxiv.org/abs/2009.03561) — the local-versus-central DP distinction that frames where the noise is added.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -184,42 +220,10 @@ on several benchmarks when this paper appeared.
 
 </details>
 
-## Reading guidance
-
-- Section 2: preliminaries on DP, DP-SGD, MeZO, and DPZO; skim if the basic
-  background is familiar. Equations 6 and 7 define the zeroth-order
-  loss-difference estimate.
-- Section 4 and Lemma 2: the convergence analysis that ties clipping error to
-  the convergence rate of DPZO. Figure 1 plots the distribution of the
-  loss-difference estimates; note how heavy its tail is relative to the clipping
-  thresholds prior work suggested.
-- Section 5 and Algorithm 1: the method in one box. Figure 2 illustrates the
-  aggregation idea, and Lemma 3 bounds the aggregate vector's norm.
-- Section 5.3, Lemmas 4 and 5: the convergence rate and the Rényi DP guarantee.
-  The accounting also spends budget on releasing the dataset size; note how
-  much.
-- Section 6, Tables 1 and 2: utility across models, tasks, and budgets, with
-  DP-AdamW, DPZO, and non-DP references. The OOM entries mark where first-order
-  baselines fail; Table 3 is the memory comparison.
-- Figure 4: the clipping error over the course of training for each method; note
-  how large it grows under the previously suggested thresholds.
-- Figure 5: how utility changes with the number of aggregated directions, and
-  where it saturates.
-- Section 7: related work, placing the method among the DP fine-tuning,
-  zeroth-order, and clipping lines.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [PrivateFL: Accurate, Differentially Private Federated Learning via Personalized Data Transformation](https://www.usenix.org/system/files/usenixsecurity23-yang-yuchen.pdf) — a different lever on the DP utility problem, applied in federated learning.
-- [Local and Central Differential Privacy for Robustness and Privacy in Federated Learning](https://arxiv.org/abs/2009.03561) — the local-versus-central DP distinction that frames where the noise is added.
-
-</details>
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off the paper's bibliography (USENIX Security 2025 proceedings,
 pages 16-21); the Carlini et al. extraction paper is listed there as a 2020

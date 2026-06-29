@@ -19,7 +19,11 @@ tags:
   - statistics
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # A Watermark for Large Language Models
 
@@ -149,6 +153,45 @@ which is the provenance setting the green-list method targets. Watermarking
 discrete text has historically been harder than watermarking continuous media
 such as images or audio, because small edits to wording are conspicuous.
 
+## Reading guidance
+
+- Section 1.1: notation and language-model basics; the vocabulary and the
+  logit-to-distribution pipeline the method intervenes on.
+- Section 1.2, with the "quick brown fox" sentence and the for-loop: the two
+  example sequences carry the difficulty argument; note what property of a
+  sequence the method needs to leave a signal.
+- Section 2, Algorithm 1: the hard red-list proof of concept, its z-test, and
+  the argument for how many tokens an attacker must change to scrub it.
+- Section 3, Algorithm 2: the soft red-list rule that adds a constant to
+  green-list logits and adapts its effect to entropy.
+- Section 4, Definition 4.1 and Theorem 4.2: the spike-entropy analysis
+  predicting the green-token count. Attention anchor: the analysis assumes the
+  red list is sampled uniformly at random rather than pseudo-randomly as in the
+  deployed method; note where the text says this gap is taken up.
+- Section 4.1 and Table 1: detection sensitivity and the failure cases,
+  including memorized text the model reproduces verbatim.
+- Section 5: keeping the watermark secret behind an API versus open-sourcing the
+  detector.
+- Section 6, Figures 2 to 4 with the error tables: the strength-versus-quality
+  trade-off, swept over the green-list fraction and the logit bias.
+- Section 7, Figures 5 and 6: the catalog of removal attacks (insertion,
+  deletion, substitution, paraphrase, homoglyph, the emoji generative attack,
+  and the T5 span-replacement attack) and what each costs the attacker.
+  Attention anchor: Section 7 states the assumption about which models the
+  attacker has access to; note what the security argument rests on.
+- Section 8: where the authors place the scheme relative to steganography and to
+  post-hoc detection.
+- Section 9: the open questions left for future work, including robust hashing
+  and detection over a streaming or partially watermarked span.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust](https://arxiv.org/abs/2305.20030) — the analogue for diffusion-image provenance, a contrast in modality.
+- [Media Forensics and DeepFakes: An Overview](https://arxiv.org/abs/2001.06564) — the detection-after-the-fact tradition this proactive approach departs from.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -189,49 +232,10 @@ output was announced as work in progress (Aaronson, 2022).
 
 </details>
 
-## Reading guidance
-
-- Section 1.1: notation and language-model basics; the vocabulary and the
-  logit-to-distribution pipeline the method intervenes on.
-- Section 1.2, with the "quick brown fox" sentence and the for-loop: the two
-  example sequences carry the difficulty argument; note what property of a
-  sequence the method needs to leave a signal.
-- Section 2, Algorithm 1: the hard red-list proof of concept, its z-test, and
-  the argument for how many tokens an attacker must change to scrub it.
-- Section 3, Algorithm 2: the soft red-list rule that adds a constant to
-  green-list logits and adapts its effect to entropy.
-- Section 4, Definition 4.1 and Theorem 4.2: the spike-entropy analysis
-  predicting the green-token count. Attention anchor: the analysis assumes the
-  red list is sampled uniformly at random rather than pseudo-randomly as in the
-  deployed method; note where the text says this gap is taken up.
-- Section 4.1 and Table 1: detection sensitivity and the failure cases,
-  including memorized text the model reproduces verbatim.
-- Section 5: keeping the watermark secret behind an API versus open-sourcing the
-  detector.
-- Section 6, Figures 2 to 4 with the error tables: the strength-versus-quality
-  trade-off, swept over the green-list fraction and the logit bias.
-- Section 7, Figures 5 and 6: the catalog of removal attacks (insertion,
-  deletion, substitution, paraphrase, homoglyph, the emoji generative attack,
-  and the T5 span-replacement attack) and what each costs the attacker.
-  Attention anchor: Section 7 states the assumption about which models the
-  attacker has access to; note what the security argument rests on.
-- Section 8: where the authors place the scheme relative to steganography and to
-  post-hoc detection.
-- Section 9: the open questions left for future work, including robust hashing
-  and detection over a streaming or partially watermarked span.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust](https://arxiv.org/abs/2305.20030) — the analogue for diffusion-image provenance, a contrast in modality.
-- [Media Forensics and DeepFakes: An Overview](https://arxiv.org/abs/2001.06564) — the detection-after-the-fact tradition this proactive approach departs from.
-
-</details>
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off the paper's bibliography (arXiv 2301.10226v4, pages 13-17).
 

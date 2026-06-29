@@ -19,7 +19,11 @@ tags:
   - defense
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking
 
@@ -128,6 +132,47 @@ resolved, as exploited by Spectre and Meltdown (Kocher et al., 2019; Lipp et al.
 constant-time, or data-oblivious, programming: the program's control flow, memory
 addresses, and instruction timing are written never to depend on secret values.
 
+## Reading guidance
+
+- Sections II.A and II.B: the TEE background and the side-channel taxonomy. Note
+  what the paper counts as an observable output, since that list defines what the
+  later policy must protect.
+- Section III.A and III.B: the usage scenario and the three design requirements,
+  confidentiality (SR), fast execution (PR), and backwards compatibility (CR).
+  Note exactly what SR-Confidentiality promises, that no party other than the
+  client can infer anything about the data beyond its length.
+- Section IV.B: the adversary model. Attention anchor: note precisely what is
+  trusted (the CPU extensions, the encryption engine, the HSM) and what is out of
+  scope, and how the OS is treated differently from the rest of server software.
+- Section IV.C: the protocol, with decrypt-and-blind on import and
+  encrypt-and-unblind on export, and the roles of the HSM and the encryption
+  engine in moving data across the boundary.
+- Section IV.D and Table I: the taint-tracking policy itself, the split of state
+  into blindable and visible, and the propagation and fault rules. This is the
+  core of the design.
+- Section IV.E: what "BliMe-compliant software" must avoid. Attention anchor: the
+  burden it places on application code is the constant-time discipline already
+  used for side-channel-resistant cryptographic code; note what that implies for
+  ordinary, unmodified software.
+- Section V: BliMe-BOOM, the register-transfer-level implementation on the RISC-V
+  BOOM core, and where the blindedness tag is threaded through the pipeline.
+- Section VI: the machine-checked proof. Attention anchor: note exactly what is
+  proved and on what model, and how that model relates to the BOOM implementation,
+  that is, what the proof does and does not cover.
+- Section VII and Tables II-III: the run-time, power, and area overheads, and the
+  benchmark and synthesis setup behind them.
+- Sections IX and X: the scope limits (secret-dependent faults, many clients,
+  out-of-scope attacks such as Rowhammer and physical access) and the related-work
+  map of taint tracking, data-oblivious execution, and point side-channel
+  defenses.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Origami Inference: Private Inference Using Hardware Enclaves](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9582200) — an enclave-based approach to private inference, a point of contrast with confidentiality enforced by hardware taint tracking.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -177,51 +222,10 @@ protections or pays a substantial performance cost.
 
 </details>
 
-## Reading guidance
-
-- Sections II.A and II.B: the TEE background and the side-channel taxonomy. Note
-  what the paper counts as an observable output, since that list defines what the
-  later policy must protect.
-- Section III.A and III.B: the usage scenario and the three design requirements,
-  confidentiality (SR), fast execution (PR), and backwards compatibility (CR).
-  Note exactly what SR-Confidentiality promises, that no party other than the
-  client can infer anything about the data beyond its length.
-- Section IV.B: the adversary model. Attention anchor: note precisely what is
-  trusted (the CPU extensions, the encryption engine, the HSM) and what is out of
-  scope, and how the OS is treated differently from the rest of server software.
-- Section IV.C: the protocol, with decrypt-and-blind on import and
-  encrypt-and-unblind on export, and the roles of the HSM and the encryption
-  engine in moving data across the boundary.
-- Section IV.D and Table I: the taint-tracking policy itself, the split of state
-  into blindable and visible, and the propagation and fault rules. This is the
-  core of the design.
-- Section IV.E: what "BliMe-compliant software" must avoid. Attention anchor: the
-  burden it places on application code is the constant-time discipline already
-  used for side-channel-resistant cryptographic code; note what that implies for
-  ordinary, unmodified software.
-- Section V: BliMe-BOOM, the register-transfer-level implementation on the RISC-V
-  BOOM core, and where the blindedness tag is threaded through the pipeline.
-- Section VI: the machine-checked proof. Attention anchor: note exactly what is
-  proved and on what model, and how that model relates to the BOOM implementation,
-  that is, what the proof does and does not cover.
-- Section VII and Tables II-III: the run-time, power, and area overheads, and the
-  benchmark and synthesis setup behind them.
-- Sections IX and X: the scope limits (secret-dependent faults, many clients,
-  out-of-scope attacks such as Rowhammer and physical access) and the related-work
-  map of taint tracking, data-oblivious execution, and point side-channel
-  defenses.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Origami Inference: Private Inference Using Hardware Enclaves](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9582200) — an enclave-based approach to private inference, a point of contrast with confidentiality enforced by hardware taint tracking.
-
-</details>
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off this paper's bibliography (PDF pages 14-16).
 

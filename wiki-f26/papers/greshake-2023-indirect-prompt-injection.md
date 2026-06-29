@@ -17,7 +17,11 @@ tags:
   - attack
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
 
@@ -115,6 +119,23 @@ weights, gradients, or training data
 relaxes the access requirement further: the attacker influences the model without
 querying it, by seeding content the victim's model will retrieve.
 
+## Reading guidance
+
+- **Section 2 (Preliminaries and Related Work).** The building blocks: tool-augmented and agentic LLMs, prior prompt injection, and the "LLMs as computers" analogy the threat model rests on.
+- **Section 3 (Attack surface and taxonomy).** The taxonomy itself, injection methods, threats, and affected parties (Figure 2), with "Key Message" boxes stating the claims. The taxonomy is adapted from an existing cyber-threat taxonomy; note where a threat is demonstrated versus asserted as conceivable.
+- **Section 4 (Evaluation and demonstrations).** Proof-of-concept attacks on synthetic GPT-4 apps and on Bing Chat and Copilot, grouped by threat. These are qualitative; note how success is judged for a dynamic, interactive chat session. Sections 4.1 and 5.2 state what was tested on real systems versus synthetic mock-ups, and why public injections were avoided; note the boundary.
+- **Section 5 (Discussion and mitigations).** Ethics and disclosure, limitations, and candidate defenses (input filtering, a less-capable sanitizing model, an LLM supervisor, interpretability-based detection). Note which defenses are proposed versus evaluated.
+- **Figures 4-9.** The per-attack data-flow diagrams; each shows where the injection enters and how data or control returns to the attacker.
+- **Appendix (prompts and outputs).** The actual injection prompts and model transcripts; the strongest real-world payloads were deliberately withheld.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated LLM Agents](https://arxiv.org/abs/2403.02691) — a benchmark that quantifies indirect prompt injection against tool-using agents, the measurement this paper leaves to future work.
+- [Formalizing and Benchmarking Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2310.12815) — a formal framework and shared benchmark unifying prompt-injection attacks with candidate defenses.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -151,27 +172,10 @@ through retrieved data fell outside that picture of the threat.
 
 </details>
 
-## Reading guidance
-
-- **Section 2 (Preliminaries and Related Work).** The building blocks: tool-augmented and agentic LLMs, prior prompt injection, and the "LLMs as computers" analogy the threat model rests on.
-- **Section 3 (Attack surface and taxonomy).** The taxonomy itself, injection methods, threats, and affected parties (Figure 2), with "Key Message" boxes stating the claims. The taxonomy is adapted from an existing cyber-threat taxonomy; note where a threat is demonstrated versus asserted as conceivable.
-- **Section 4 (Evaluation and demonstrations).** Proof-of-concept attacks on synthetic GPT-4 apps and on Bing Chat and Copilot, grouped by threat. These are qualitative; note how success is judged for a dynamic, interactive chat session. Sections 4.1 and 5.2 state what was tested on real systems versus synthetic mock-ups, and why public injections were avoided; note the boundary.
-- **Section 5 (Discussion and mitigations).** Ethics and disclosure, limitations, and candidate defenses (input filtering, a less-capable sanitizing model, an LLM supervisor, interpretability-based detection). Note which defenses are proposed versus evaluated.
-- **Figures 4-9.** The per-attack data-flow diagrams; each shows where the injection enters and how data or control returns to the attacker.
-- **Appendix (prompts and outputs).** The actual injection prompts and model transcripts; the strongest real-world payloads were deliberately withheld.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated LLM Agents](https://arxiv.org/abs/2403.02691) — a benchmark that quantifies indirect prompt injection against tool-using agents, the measurement this paper leaves to future work.
-- [Formalizing and Benchmarking Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2310.12815) — a formal framework and shared benchmark unifying prompt-injection attacks with candidate defenses.
-
-</details>
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off the paper's bibliography (arXiv 2302.12173, pages 13-14).
 

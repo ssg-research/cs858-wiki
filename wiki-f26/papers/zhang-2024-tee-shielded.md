@@ -23,7 +23,11 @@ tags:
   - evaluation
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML
 
@@ -145,6 +149,41 @@ with a provable guarantee (Dwork and Roth, 2014). It addresses data privacy rath
 than model stealing, and its accuracy cost is the reason the on-device line looks
 to hardware instead.
 
+## Reading guidance
+
+- Section 2: the TEE assumptions, the label-only output assumption, and the
+  defender's goal of downgrading white-box attacks to black-box ones. Attention
+  anchor: note exactly what the threat model grants the adversary (public
+  models and datasets, the offloaded weights, a sub-one-percent query budget) and
+  what it puts out of scope (TEE side channels).
+- Section 3, Table 1 and Figure 1: the literature taxonomy and the five partition
+  categories, with the representative scheme implemented for each.
+- Sections 3.3 and 3.4, Figure 2: the three-phase attack pipeline (surrogate
+  initialization, then model stealing, then membership inference) and the
+  No-Shield (white-box) and Black-box (shielding-whole-model) baselines that bound
+  every measurement.
+- Section 3.5, Table 2: the headline comparison; read the relative-accuracy row,
+  which scales each scheme's attack accuracy against the black-box baseline.
+- Section 4: the security-versus-utility trade-off and the search for a "sweet
+  spot" configuration. Attention anchor: note how stable that best configuration
+  is across the model and dataset pairs.
+- Section 5: TeeSlice and the partition-before-training strategy, the paper's
+  proposed design.
+- Section 6: TeeSlice measured against the same attacks and baselines, including
+  the overhead figures and the NLP extension.
+- Section 7: the related-work map, separating TEE-in-GPU hardware, side channels,
+  whole-model shielding, and TSDP for training from the inference setting studied
+  here.
+- Appendix A: the meta-review and the authors' response, including the reviewers'
+  concern about the one-time-pad feature-encryption assumption in TeeSlice.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287) — the foundational TEE-plus-accelerator partition idea this line of defenses descends from.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -184,45 +223,10 @@ al., 2022).
 
 </details>
 
-## Reading guidance
-
-- Section 2: the TEE assumptions, the label-only output assumption, and the
-  defender's goal of downgrading white-box attacks to black-box ones. Attention
-  anchor: note exactly what the threat model grants the adversary (public
-  models and datasets, the offloaded weights, a sub-one-percent query budget) and
-  what it puts out of scope (TEE side channels).
-- Section 3, Table 1 and Figure 1: the literature taxonomy and the five partition
-  categories, with the representative scheme implemented for each.
-- Sections 3.3 and 3.4, Figure 2: the three-phase attack pipeline (surrogate
-  initialization, then model stealing, then membership inference) and the
-  No-Shield (white-box) and Black-box (shielding-whole-model) baselines that bound
-  every measurement.
-- Section 3.5, Table 2: the headline comparison; read the relative-accuracy row,
-  which scales each scheme's attack accuracy against the black-box baseline.
-- Section 4: the security-versus-utility trade-off and the search for a "sweet
-  spot" configuration. Attention anchor: note how stable that best configuration
-  is across the model and dataset pairs.
-- Section 5: TeeSlice and the partition-before-training strategy, the paper's
-  proposed design.
-- Section 6: TeeSlice measured against the same attacks and baselines, including
-  the overhead figures and the NLP extension.
-- Section 7: the related-work map, separating TEE-in-GPU hardware, side channels,
-  whole-model shielding, and TSDP for training from the inference setting studied
-  here.
-- Appendix A: the meta-review and the authors' response, including the reviewers'
-  concern about the one-time-pad feature-encryption assumption in TeeSlice.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287) — the foundational TEE-plus-accelerator partition idea this line of defenses descends from.
-
-</details>
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off this paper's bibliography (PDF pages 15-18).
 

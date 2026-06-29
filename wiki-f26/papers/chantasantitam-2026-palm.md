@@ -17,7 +17,11 @@ tags:
   - machine-learning
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # PAL\*M: Property Attestation for Large Generative Models
 
@@ -153,6 +157,43 @@ parties jointly compute over private inputs revealing only the output. A
 such as a model, so later proofs refer to one fixed object. These are the
 alternative roots of trust against which a hardware-attestation scheme is measured.
 
+## Reading guidance
+
+- Section 2: background on large language models, TEEs, and attestation protocols.
+  Note the distinction the paper draws between remote attestation, which certifies
+  a configuration, and property attestation, which certifies a property using
+  reference values from a trusted authority.
+- Section 3: the system model, the adversary model, and the requirements R1 to R4.
+  Attention anchor: Section 3.2 fixes the trust boundary; note precisely what is
+  trusted (the TDX module and CPU, the H100), what the adversary controls (host,
+  VMM, disk, network), and what is placed out of scope.
+- Section 4.2: how the measurement is formed over datasets too large to hold in
+  enclave memory. Note why the order in which records are sampled complicates
+  getting a consistent measurement.
+- Section 4.3 and the Definition boxes: the per-operation property measurements.
+  Attention anchor: for each operation, note what the attestation measurement
+  contains and what it deliberately omits, since that is what keeps the model and
+  dataset confidential.
+- Section 4.4 and Figure 5: the end-to-end protocol from request to quote, and the
+  roles of the initiator, the trusted authority, and the verifier.
+- Section 5: the prototype on Intel TDX and an NVIDIA H100.
+- Section 6.1 and Tables 3 to 7: the measured overheads. Attention anchor: note why
+  proof of a single inference shows large relative overhead while a chat session
+  does not, and what that implies about when the framework is cheap.
+- Sections 6.2 and 7: the security analysis and the related work, including where
+  the paper places the cryptographic alternatives.
+- Appendix D: the Tamarin model, the six security goals, and the four protocol
+  cases. Note what the formal model abstracts away, for example the GPU and trust
+  domain assumed to be one trust boundary.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Laminator: Verifiable ML Property Cards using Hardware-assisted Attestations](https://arxiv.org/abs/2406.17548) — the hardware-attestation property-card approach this paper extends to large generative models.
+- [Sentry: Authenticating Machine Learning Artifacts on the Fly](https://arxiv.org/pdf/2510.00554) — authenticating ML artifacts at use time, an adjacent take on trustworthy provenance.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -201,47 +242,10 @@ et al., 2024).
 
 </details>
 
-## Reading guidance
-
-- Section 2: background on large language models, TEEs, and attestation protocols.
-  Note the distinction the paper draws between remote attestation, which certifies
-  a configuration, and property attestation, which certifies a property using
-  reference values from a trusted authority.
-- Section 3: the system model, the adversary model, and the requirements R1 to R4.
-  Attention anchor: Section 3.2 fixes the trust boundary; note precisely what is
-  trusted (the TDX module and CPU, the H100), what the adversary controls (host,
-  VMM, disk, network), and what is placed out of scope.
-- Section 4.2: how the measurement is formed over datasets too large to hold in
-  enclave memory. Note why the order in which records are sampled complicates
-  getting a consistent measurement.
-- Section 4.3 and the Definition boxes: the per-operation property measurements.
-  Attention anchor: for each operation, note what the attestation measurement
-  contains and what it deliberately omits, since that is what keeps the model and
-  dataset confidential.
-- Section 4.4 and Figure 5: the end-to-end protocol from request to quote, and the
-  roles of the initiator, the trusted authority, and the verifier.
-- Section 5: the prototype on Intel TDX and an NVIDIA H100.
-- Section 6.1 and Tables 3 to 7: the measured overheads. Attention anchor: note why
-  proof of a single inference shows large relative overhead while a chat session
-  does not, and what that implies about when the framework is cheap.
-- Sections 6.2 and 7: the security analysis and the related work, including where
-  the paper places the cryptographic alternatives.
-- Appendix D: the Tamarin model, the six security goals, and the four protocol
-  cases. Note what the formal model abstracts away, for example the GPU and trust
-  domain assumed to be one trust boundary.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Laminator: Verifiable ML Property Cards using Hardware-assisted Attestations](https://arxiv.org/abs/2406.17548) — the hardware-attestation property-card approach this paper extends to large generative models.
-- [Sentry: Authenticating Machine Learning Artifacts on the Fly](https://arxiv.org/pdf/2510.00554) — authenticating ML artifacts at use time, an adjacent take on trustworthy provenance.
-
-</details>
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off this paper's bibliography (PDF pages 13-14).
 

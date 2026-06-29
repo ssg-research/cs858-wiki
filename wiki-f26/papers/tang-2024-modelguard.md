@@ -20,7 +20,11 @@ tags:
   - computer-vision
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks
 
@@ -136,6 +140,46 @@ vector change. Confidence values also feed downstream uses such as
 out-of-distribution detection, whose quality is read from the area under a
 [ROC curve](../concepts/roc-curves.md) (AUROC).
 
+## Reading guidance
+
+- Section 2 (Threat Model): the attacker's goal, knowledge, and capability, and
+  the adaptive attacker that applies a recovery function to the returned outputs
+  before training. Note the unlimited-query-budget assumption and how it lets the
+  defender restrict attention to deterministic perturbation.
+- Section 3.1 to 3.2 (Overview, Objective and Constraints): the single objective
+  that covers both stealing goals, the two utility constraints (`ℓ1` distortion,
+  top-1 preserved), and the simplex validity constraint. Attention anchor:
+  Lemma 1 reduces the parameter-stealing defense to the functionality objective
+  under a smoothness assumption; note exactly what is assumed.
+- Section 3.3 (ModelGuard-W): the weak-attacker approximation that the recovered
+  predictions equal the perturbed ones, and the reduction to linear programming.
+- Section 3.4 (Bayes Attack): the optimal recovery as the Bayes estimator and the
+  brute-force lookup-table attack, then Partial Bayes Attack, which shrinks the
+  sampling space to make the attack runnable.
+- Section 3.5 (ModelGuard-S): the information-theoretic lower bound (Lemma 2), the
+  reformulation as minimizing mutual information, and the online vector
+  quantization that solves the rate-distortion problem one query at a time.
+  Attention anchor: the contrast between non-ordered and ordered incremental
+  quantization; note what consistency across repeated queries denies the
+  attacker.
+- Section 4 (Experiments), with the figures and tables: the four datasets
+  (Caltech256, CUB200, CIFAR100, CIFAR10) and the baseline defenses (Top-1,
+  Rounding, RevSig, Adaptive Misinformation, MAD). Attention anchor: the utility
+  axis combines `ℓ1` distortion with a downstream OOD-detection AUROC; note which
+  utility metric is reported in which figure.
+- Section 5 (Related Works): the four defense families and where prediction
+  perturbation sits among them.
+- Section 6 (Conclusion, Limitations, and Future Work): the gap between the
+  runnable Partial Bayes Attack and the perfect Bayes Attack, and the restriction
+  of the evaluation to classification.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Beowulf: Mitigating Model Extraction Attacks Via Reshaping Decision Regions](https://dl.acm.org/doi/pdf/10.1145/3658644.3670267) — a different defense lever against extraction, reshaping the target's decision regions rather than perturbing the returned probabilities.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -179,50 +223,10 @@ mechanism had received little attention.
 
 </details>
 
-## Reading guidance
-
-- Section 2 (Threat Model): the attacker's goal, knowledge, and capability, and
-  the adaptive attacker that applies a recovery function to the returned outputs
-  before training. Note the unlimited-query-budget assumption and how it lets the
-  defender restrict attention to deterministic perturbation.
-- Section 3.1 to 3.2 (Overview, Objective and Constraints): the single objective
-  that covers both stealing goals, the two utility constraints (`ℓ1` distortion,
-  top-1 preserved), and the simplex validity constraint. Attention anchor:
-  Lemma 1 reduces the parameter-stealing defense to the functionality objective
-  under a smoothness assumption; note exactly what is assumed.
-- Section 3.3 (ModelGuard-W): the weak-attacker approximation that the recovered
-  predictions equal the perturbed ones, and the reduction to linear programming.
-- Section 3.4 (Bayes Attack): the optimal recovery as the Bayes estimator and the
-  brute-force lookup-table attack, then Partial Bayes Attack, which shrinks the
-  sampling space to make the attack runnable.
-- Section 3.5 (ModelGuard-S): the information-theoretic lower bound (Lemma 2), the
-  reformulation as minimizing mutual information, and the online vector
-  quantization that solves the rate-distortion problem one query at a time.
-  Attention anchor: the contrast between non-ordered and ordered incremental
-  quantization; note what consistency across repeated queries denies the
-  attacker.
-- Section 4 (Experiments), with the figures and tables: the four datasets
-  (Caltech256, CUB200, CIFAR100, CIFAR10) and the baseline defenses (Top-1,
-  Rounding, RevSig, Adaptive Misinformation, MAD). Attention anchor: the utility
-  axis combines `ℓ1` distortion with a downstream OOD-detection AUROC; note which
-  utility metric is reported in which figure.
-- Section 5 (Related Works): the four defense families and where prediction
-  perturbation sits among them.
-- Section 6 (Conclusion, Limitations, and Future Work): the gap between the
-  runnable Partial Bayes Attack and the perfect Bayes Attack, and the restriction
-  of the evaluation to classification.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Beowulf: Mitigating Model Extraction Attacks Via Reshaping Decision Regions](https://dl.acm.org/doi/pdf/10.1145/3658644.3670267) — a different defense lever against extraction, reshaping the target's decision regions rather than perturbing the returned probabilities.
-
-</details>
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Adi, Y., Baum, C., Cisse, M., Pinkas, B., and Keshet, J. "Turning Your Weakness Into a Strength: Watermarking Deep Neural Networks by Backdooring." USENIX Security Symposium, 2018.
 - Cao, X., Jia, J., and Gong, N.Z. "IPGuard: Protecting Intellectual Property of Deep Neural Networks via Fingerprinting the Classification Boundary." ACM Asia Conference on Computer and Communications Security (AsiaCCS), 2021.

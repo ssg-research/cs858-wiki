@@ -18,7 +18,11 @@ tags:
   - computer-vision
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # DAWN: Dynamic Adversarial Watermarking of Neural Networks
 
@@ -133,6 +137,36 @@ isolated hardware enclave that runs verification code with integrity and
 confidentiality guarantees), runs the verification on the secret values and the
 suspect API and reports the verdict.
 
+## Reading guidance
+
+- Section 2 (Background): the model-extraction attack model and the backdoor-based
+  watermarking formalism, including the trigger set, the backdoor function, and
+  the oracle the model approximates.
+- Section 3 (Problem Statement) and Table 1: the adversary model, the assumptions,
+  and the requirements W1 to W4 and X1 to X3. Attention anchor: note the two
+  challenges DAWN faces that training-time watermarking does not (the defender
+  cannot pick the trigger set from the whole input space, and the adversary
+  controls training), and which requirement is new here.
+- Section 3.2 (Assumptions): the assumption that the adversary has no prior
+  expectation about any query's correct label and treats returned labels as ground
+  truth. Attention anchor: this assumption is what the indistinguishability of the
+  altered labels rests on; note exactly what it claims.
+- Section 4 (Dynamic Adversarial Watermarks): how a watermark is generated,
+  embedded, and verified, and how ownership is demonstrated. Figure 2 and Equation
+  3 set the relationship between trigger-set size and verification confidence.
+- Section 4.1.3 with Section 6.2: the mapping function that keeps the
+  watermarking decision stable under small input changes. Attention anchor: note
+  the trade-off its tolerance parameter controls and what an adversary could do at
+  each extreme.
+- Section 5 (Experimental Setup) and Table 2: the datasets and the low- versus
+  high-capacity models.
+- Section 7: the results against the two extraction attacks, with the reported
+  ownership confidence and the accuracy cost to honest clients.
+- Sections 8 and 9.2 (Limitations): the evasion strategies (discarding queries,
+  adding noise) and what each costs the adversary. Attention anchor: the argument
+  for why some evasions are not considered realistic turns on which adversary goal
+  each one sacrifices; note that cost.
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -168,40 +202,10 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
 
 </details>
 
-## Reading guidance
-
-- Section 2 (Background): the model-extraction attack model and the backdoor-based
-  watermarking formalism, including the trigger set, the backdoor function, and
-  the oracle the model approximates.
-- Section 3 (Problem Statement) and Table 1: the adversary model, the assumptions,
-  and the requirements W1 to W4 and X1 to X3. Attention anchor: note the two
-  challenges DAWN faces that training-time watermarking does not (the defender
-  cannot pick the trigger set from the whole input space, and the adversary
-  controls training), and which requirement is new here.
-- Section 3.2 (Assumptions): the assumption that the adversary has no prior
-  expectation about any query's correct label and treats returned labels as ground
-  truth. Attention anchor: this assumption is what the indistinguishability of the
-  altered labels rests on; note exactly what it claims.
-- Section 4 (Dynamic Adversarial Watermarks): how a watermark is generated,
-  embedded, and verified, and how ownership is demonstrated. Figure 2 and Equation
-  3 set the relationship between trigger-set size and verification confidence.
-- Section 4.1.3 with Section 6.2: the mapping function that keeps the
-  watermarking decision stable under small input changes. Attention anchor: note
-  the trade-off its tolerance parameter controls and what an adversary could do at
-  each extreme.
-- Section 5 (Experimental Setup) and Table 2: the datasets and the low- versus
-  high-capacity models.
-- Section 7: the results against the two extraction attacks, with the reported
-  ownership confidence and the accuracy cost to honest clients.
-- Sections 8 and 9.2 (Limitations): the evasion strategies (discarding queries,
-  adding noise) and what each costs the adversary. Attention anchor: the argument
-  for why some evasions are not considered realistic turns on which adversary goal
-  each one sacrifices; note that cost.
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Adi, Y., Baum, C., Cisse, M., Pinkas, B., and Keshet, J. "Turning Your Weakness Into a Strength: Watermarking Deep Neural Networks by Backdooring." USENIX Security Symposium, 2018.
 - Chen, X., Liu, C., Li, B., Lu, K., and Song, D. "Targeted Backdoor Attacks on Deep Learning Systems Using Data Poisoning." arXiv:1712.05526, 2017.

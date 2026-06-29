@@ -19,7 +19,11 @@ tags:
   - attack
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Membership Inference Attacks From First Principles
 
@@ -150,6 +154,29 @@ strength of the guarantee is set by the privacy parameter epsilon, and
 membership inference attacks double as empirical audits of how tight such
 guarantees are in practice (Jagielski et al., 2020; Nasr et al., 2021).
 
+## Reading guidance
+
+- Section II: background on training-data privacy; skim if the basic background
+  is familiar.
+- Section III-A, Definition 1: the membership inference security game.
+  Definition 1 grants the adversary sampling access to the underlying data
+  distribution; note where the attack later relies on it.
+- Section III-B: the case against balanced accuracy and AUC. The hypothetical
+  Attack A versus Attack B comparison carries the argument.
+- Section IV: the derivation of LiRA. Figures 3 and 4 show the per-example
+  loss distributions and the effect of logit scaling; Algorithm 1 is the whole
+  attack in one box; the online/offline distinction matters for cost.
+- Section V and Table I: re-evaluation of eight prior attacks. Note which
+  attacks change rank between balanced accuracy and TPR at low FPR.
+- Section VI and Table II: the ablation; which components produce the gains,
+  and Figure 9 for how many shadow models are enough.
+- Figure 7: train-test gap versus attack success across training
+  configurations.
+- Appendix A: [DP-SGD](abadi-2016-dp-sgd.md) against the attack; note the
+  epsilon values at which the attack is and is not stopped.
+- Section VIII: the authors' list of prior conclusions they argue need
+  re-examination.
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -194,33 +221,10 @@ either standard.
 
 </details>
 
-## Reading guidance
-
-- Section II: background on training-data privacy; skim if the basic background
-  is familiar.
-- Section III-A, Definition 1: the membership inference security game.
-  Definition 1 grants the adversary sampling access to the underlying data
-  distribution; note where the attack later relies on it.
-- Section III-B: the case against balanced accuracy and AUC. The hypothetical
-  Attack A versus Attack B comparison carries the argument.
-- Section IV: the derivation of LiRA. Figures 3 and 4 show the per-example
-  loss distributions and the effect of logit scaling; Algorithm 1 is the whole
-  attack in one box; the online/offline distinction matters for cost.
-- Section V and Table I: re-evaluation of eight prior attacks. Note which
-  attacks change rank between balanced accuracy and TPR at low FPR.
-- Section VI and Table II: the ablation; which components produce the gains,
-  and Figure 9 for how many shadow models are enough.
-- Figure 7: train-test gap versus attack success across training
-  configurations.
-- Appendix A: [DP-SGD](abadi-2016-dp-sgd.md) against the attack; note the
-  epsilon values at which the attack is and is not stopped.
-- Section VIII: the authors' list of prior conclusions they argue need
-  re-examination.
-
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off the paper's bibliography (arXiv 2112.03570v2, pages 14-16);
 venue for Shokri et al. confirmed via DBLP.
