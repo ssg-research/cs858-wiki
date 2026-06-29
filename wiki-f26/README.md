@@ -230,7 +230,7 @@ is required; expand the essential readings beneath it to see what goes alongside
       <td>Mechanistic Interpretability for AI safety</td>
       <td>
         <strong>Assigned reading</strong>
-        <a href="papers/zou-2023-representation-engineering.md">Representation Engineering: A Top-Down Approach to AI Transparency</a>
+        <a href="papers/jain-2024-safety-finetuning.md">What Makes and Breaks Safety Fine-tuning? A Mechanistic Study</a>
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
@@ -431,4 +431,4 @@ is required; expand the essential readings beneath it to see what goes alongside
 
 ---
 
-Last compiled: 2026-06-23. Papers: 24. Concepts: 69.
+Last compiled: 2026-06-29. Papers: 24. Concepts: 70.

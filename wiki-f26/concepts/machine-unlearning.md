@@ -38,6 +38,7 @@ et al., 2022).
 ## Papers that use this concept
 
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — proposes gradient ascent on target token sequences as an approximate, post-hoc unlearning method for language models, and defines an empirical test for when a sequence counts as forgotten.
+- [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — unlearning is one of the three safety fine-tuning protocols it compares, among the stronger ones in its analysis.
 
 ## Variants and traps
 

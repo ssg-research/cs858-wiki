@@ -27,7 +27,7 @@ space and need not align with individual neurons (Elhage et al., 2022).
 
 ## Papers that use this concept
 
-- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — treats high-level concepts and functions as linear directions ("reading vectors") recovered from activations, then reads and steers along them.
+- [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — finds safe and unsafe inputs separate into distinct linear activation clusters, with the safety transformation acting along a few singular directions.
 
 ## See also
 

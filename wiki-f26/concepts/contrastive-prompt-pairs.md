@@ -26,7 +26,7 @@ honesty and sycophancy.
 
 ## Papers that use this concept
 
-- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — builds reading vectors from PCA over paired-stimulus difference vectors, and builds control "contrast vectors" from a pair of contrastive prompts at inference.
+_No reading-companion page currently uses this concept._
 
 ## See also
 

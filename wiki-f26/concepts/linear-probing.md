@@ -25,7 +25,7 @@ that read or edit concepts along directions in activation space.
 
 ## Papers that use this concept
 
-- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — uses supervised linear probes as one way to build a reading vector, alongside unsupervised alternatives such as PCA over paired activations.
+_No reading-companion page currently uses this concept._
 
 ## See also
 

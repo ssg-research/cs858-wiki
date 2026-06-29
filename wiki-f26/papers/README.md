@@ -18,7 +18,7 @@ It points you into the paper; it does not stand in for it.
 | [DAWN: Dynamic Adversarial Watermarking of Neural Networks](szyller-2019-dawn.md) | Szyller, Sebastian et al. | Model Watermarking / Fingerprinting | 2019 |
 | [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](wang-2019-neural-cleanse.md) | Wang, Bolun et al. | Training-data Poisoning | 2019 |
 | [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](zou-2024-poisonedrag.md) | Zou, Wei et al. | Preference Manipulation / RAG Poisoning | 2024 |
-| [Representation Engineering: A Top-Down Approach to AI Transparency](zou-2023-representation-engineering.md) | Zou, Andy et al. | Mechanistic Interpretability for AI safety | 2023 |
+| [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](jain-2024-safety-finetuning.md) | Jain, Samyak et al. | Mechanistic Interpretability for AI safety | 2024 |
 | [SoK: Unintended Interactions among Machine Learning Defenses and Risks](duddu-2024-unintended-interactions.md) | Duddu, Vasisht et al. | Unintended Interactions among ML Defenses and Risks | 2024 |
 | [A Watermark for Large Language Models](kirchenbauer-2023-llm-watermark.md) | Kirchenbauer, John et al. | Media Forensics and Proactive Provenance | 2023 |
 | [Examining Zero-Shot Vulnerability Repair with Large Language Models](pearce-2023-vulnerability-repair.md) | Pearce, Hammond et al. | AI for Cybersecurity | 2023 |

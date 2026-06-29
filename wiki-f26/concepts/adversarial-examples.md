@@ -33,6 +33,7 @@ has not learned the intended concept.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — contrasts jailbreaks, which elicit unsafe capabilities, with adversarial examples, which induce misclassification.
 - [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](../papers/wang-2019-neural-cleanse.md) — distinguishes a training-time backdoor trigger, which is input-agnostic, from a test-time adversarial example crafted per input against a fixed model.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — its white-box variant crafts an adversarial text optimized to score as similar to the target query under the retriever's encoders.
+- [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — instantiates continuous-embedding adversarial attacks by optimizing appended soft tokens against the model's gradients, in the manner of input-space adversarial examples.
 - [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — treats evasion as one surveyed risk and adversarial training as its defense, tracing how deploying that defense shifts unrelated risks.
 
 ## Variants and traps
