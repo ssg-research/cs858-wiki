@@ -76,6 +76,7 @@ Before executing an operation, read its playbook:
 | When asked to... | Read first |
 |---|---|
 | Add / compile a paper into the wiki | `docs/ops/generate-paper-summary.md` (entry point: `/generate-paper-summary <paper>`) |
+| Replace a paper in an existing reading-list slot | `docs/ops/replace-paper.md` |
 | Answer a question from the wiki | `docs/ops/query.md` |
 | Lint or audit the wiki | `docs/ops/lint.md` |
 

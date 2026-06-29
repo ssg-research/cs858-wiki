@@ -38,7 +38,6 @@ changes the model measurably is an example whose presence can be inferred.
 - [Extracting Training Data from Large Language Models](../papers/carlini-2021-extracting-training-data.md) — shows large LMs memorize individual training examples verbatim and that this persists with no overfitting; defines k-eidetic memorization.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — targets the per-example memorization that makes specific sequences extractable, and edits it away with gradient ascent.
 - [DAWN: Dynamic Adversarial Watermarking of Neural Networks](../papers/szyller-2019-dawn.md) — relies on a surrogate's capacity to memorize a small set of deliberately mislabeled queries, which embeds as the watermark.
-- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — reads a memorization direction to detect memorized text and steers it down to reduce verbatim regurgitation with little loss of world knowledge.
 - [SoK: Unintended Interactions among Machine Learning Defenses and Risks](../papers/duddu-2024-unintended-interactions.md) — makes memorization, together with overfitting, the conjectured common cause of every unintended interaction it surveys.
 - [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — the verbatim memorization of fine-tuning data that its private optimizer is built to bound.
 

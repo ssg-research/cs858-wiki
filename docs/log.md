@@ -758,3 +758,33 @@ section records the canonical role lexicon; a new banned move bans the generic
 "adversarial attack") and `docs/ops/generate-paper-summary.md` (the
 overview-pass description, the page-template skeleton, and the quality bar).
 Model: claude-opus-4-8.
+
+## [2026-06-29 13:45] replace-paper | Representation Engineering (Zou 2023) -> What Makes and Breaks Safety Fine-tuning? (Jain 2024)
+
+Replaced the assigned reading for the "Mechanistic Interpretability for AI
+safety" slot (reading-list #13): removed
+`wiki-f26/papers/zou-2023-representation-engineering.md` and compiled
+`wiki-f26/papers/jain-2024-safety-finetuning.md` (Jain et al., NeurIPS 2024,
+arXiv:2407.10264) from scratch, Topic unchanged. Added one concept stub,
+`singular-value-decomposition.md` (SVD and the four fundamental subspaces); the
+new page also reuses mechanistic-interpretability, linear-representation-
+hypothesis, direct-preference-optimization, machine-unlearning, jailbreak,
+adversarial-examples, white-box-black-box, projected-gradient-descent, rlhf,
+safety-training, instruction-tuning, and language-model-pretraining, with
+backward cross-links to wei-2023-jailbroken and madry-2018-pgd. Re-pointed the
+"Papers that use this concept" lists on 17 concept pages (in-place swap for
+shared concepts, since the new paper inherits slot #13). Orphan handling by the
+reachability rule: activation-steering, contrastive-prompt-pairs, and
+linear-probing lost their only paper but stay linked from sibling concept pages,
+so they were kept with a neutral "no reading-companion page currently uses this
+concept" note rather than deleted; no concept page became fully siloed.
+Regenerated the README reading-list table (READY[13] updated in
+`scripts/build-paper-table.py`) and spliced the slot row; the spreadsheet's
+essential readings (Refusal in LMs Is Mediated by a Single Direction; Improving
+Alignment and Robustness with Circuit Breakers) carried over from the old entry
+and drive both the table disclosure and the page's Supplementary readings.
+Updated both indexes and the stats line (Papers 24, Concepts 70). Replaced the
+motivating-questions archive entry. Wrote the new operation doc
+`docs/ops/replace-paper.md` and indexed it in `AGENTS.md`. check-links clean
+(103 files); pre-commit markdownlint passed; `<details>` render verified via the
+GitHub markdown API. Model: Opus 4.8, `claude-opus-4-8[1m]`.

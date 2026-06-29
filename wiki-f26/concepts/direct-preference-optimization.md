@@ -31,6 +31,7 @@ safety behavior in deployed models.
 ## Papers that use this concept
 
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — names DPO as part of the standard alignment stack; its KL-regularized preference formulation is one basis for the paper's token-wise constrained fine-tuning objective.
+- [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — DPO is one of the three safety fine-tuning protocols it compares, and one of the stronger ones by cluster separation and reduced sensitivity.
 
 ## See also
 

@@ -22,6 +22,7 @@ large-scale constrained optimization.
 ## Papers that use this concept
 
 - [Towards Deep Learning Models Resistant to Adversarial Attacks](../papers/madry-2018-pgd.md) — uses PGD on the input as its attack and argues it is the strongest first-order adversary.
+- [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — its continuous-embedding attack optimizes appended embeddings against the model's gradients, the same first-order gradient-based attack primitive.
 
 ## Variants and traps
 

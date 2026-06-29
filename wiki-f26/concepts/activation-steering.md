@@ -27,7 +27,7 @@ can perturb unrelated behavior.
 
 ## Papers that use this concept
 
-- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — its "Representation Control" adds, subtracts, or projects out reading and contrast vectors in activations to steer concepts such as honesty and harmlessness.
+_No reading-companion page currently uses this concept._
 
 ## See also
 

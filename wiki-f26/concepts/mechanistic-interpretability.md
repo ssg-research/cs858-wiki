@@ -29,7 +29,7 @@ scaled to small models and narrow tasks.
 
 ## Papers that use this concept
 
-- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — positions representation engineering as a top-down alternative that takes representations, rather than neurons or circuits, as the unit of analysis.
+- [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — a mechanistic study of safety fine-tuning, analyzing the feature, parameter, and function spaces of small transformers and corroborating on Llama models.
 
 ## See also
 

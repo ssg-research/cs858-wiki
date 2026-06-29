@@ -25,7 +25,6 @@ still succeeds on them has defeated the cases safety training targeted directly.
 ## Papers that use this concept
 
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — its curated evaluation prompts are drawn from the OpenAI and Anthropic red-teaming sets.
-- [Representation Engineering: A Top-Down Approach to AI Transparency](../papers/zou-2023-representation-engineering.md) — relates its representation-control methods to the activation steering used for red teaming and for reducing sycophancy.
 
 ## See also
 

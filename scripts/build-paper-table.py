@@ -58,7 +58,7 @@ READY: dict[int, str] = {
     10: "szyller-2019-dawn",
     11: "wang-2019-neural-cleanse",
     12: "zou-2024-poisonedrag",
-    13: "zou-2023-representation-engineering",
+    13: "jain-2024-safety-finetuning",
     14: "duddu-2024-unintended-interactions",
     15: "kirchenbauer-2023-llm-watermark",
     16: "pearce-2023-vulnerability-repair",
