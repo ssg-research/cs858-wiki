@@ -18,7 +18,11 @@ tags:
   - machine-learning
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference
 
@@ -125,6 +129,40 @@ arithmetization, range checks and table lookups, are handled by lookup arguments
 which let the prover show that secret values lie in a public table; zkGPT uses the
 Lasso lookup argument (Setty et al., 2024).
 
+## Reading guidance
+
+- Abstract and Section 1: the problem and the actors. Note who the prover and
+  verifier are (the service provider versus a user or regulator) and exactly what
+  each side knows and keeps secret.
+- Section 2: the GKR protocol, the machine-learning-friendly circuit, and the Lasso
+  lookup protocol, the primitives the construction reuses. Note the quantization
+  scheme that maps real numbers to field integers and where rounding enters.
+- Section 3: the split into linear and non-linear layers and the two optimizations,
+  constraint fusion and circuit squeeze. This is the roadmap for the construction.
+- Section 4: the per-layer constraints and the matrix-multiplication proof.
+  Attention anchor: the GeLU treatment introduces an approximation the authors call
+  z-GeLU as a design choice; note what is being approximated and that the accuracy
+  comparison is deferred to Appendix C.
+- Section 7: the end-to-end GPT-2 timings and the comparisons to ZKML, Hao et al.,
+  and zkLLM. Note which cost each comparison reports, prover time, proof size, or
+  communication.
+- Section 8: the map of zero-knowledge ML systems, from decision trees and CNNs to
+  LLMs, and the separate proof-of-training line.
+- Section 9: the discussion and limitations. Attention anchor: the reliance on
+  quantization is stated as a limitation; note what it rules out (proving
+  floating-point inference directly) and that the authors flag it as shared across
+  zero-knowledge ML systems.
+- Appendix B: the completeness and soundness argument, reduced to the soundness of
+  GKR and Lasso. Note the cases the soundness proof splits the cheating prover into.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Experimenting with Zero-Knowledge Proofs of Training](https://dl.acm.org/doi/10.1145/3576915.3623202) — proving how a model was trained, the training-time counterpart to proving inference.
+- [Zero-Knowledge Proofs of Training for Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3658644.3670316) — a later, scaled proof-of-training system for deep networks, the same compliance goal at training time.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -160,44 +198,12 @@ These target the same auditability aim at training time.
 
 </details>
 
-## Reading guidance
-
-- Abstract and Section 1: the problem and the actors. Note who the prover and
-  verifier are (the service provider versus a user or regulator) and exactly what
-  each side knows and keeps secret.
-- Section 2: the GKR protocol, the machine-learning-friendly circuit, and the Lasso
-  lookup protocol, the primitives the construction reuses. Note the quantization
-  scheme that maps real numbers to field integers and where rounding enters.
-- Section 3: the split into linear and non-linear layers and the two optimizations,
-  constraint fusion and circuit squeeze. This is the roadmap for the construction.
-- Section 4: the per-layer constraints and the matrix-multiplication proof.
-  Attention anchor: the GeLU treatment introduces an approximation the authors call
-  z-GeLU as a design choice; note what is being approximated and that the accuracy
-  comparison is deferred to Appendix C.
-- Section 7: the end-to-end GPT-2 timings and the comparisons to ZKML, Hao et al.,
-  and zkLLM. Note which cost each comparison reports, prover time, proof size, or
-  communication.
-- Section 8: the map of zero-knowledge ML systems, from decision trees and CNNs to
-  LLMs, and the separate proof-of-training line.
-- Section 9: the discussion and limitations. Attention anchor: the reliance on
-  quantization is stated as a limitation; note what it rules out (proving
-  floating-point inference directly) and that the authors flag it as shared across
-  zero-knowledge ML systems.
-- Appendix B: the completeness and soundness argument, reduced to the soundness of
-  GKR and Lasso. Note the cases the soundness proof splits the cheating prover into.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Experimenting with Zero-Knowledge Proofs of Training](https://dl.acm.org/doi/10.1145/3576915.3623202) — proving how a model was trained, the training-time counterpart to proving inference.
-- [Zero-Knowledge Proofs of Training for Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3658644.3670316) — a later, scaled proof-of-training system for deep networks, the same compliance goal at training time.
-
-</details>
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off this paper's bibliography (PDF pages 15-18).
 

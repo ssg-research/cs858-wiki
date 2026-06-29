@@ -16,7 +16,11 @@ tags:
   - reinforcement-learning
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Knockoff Nets: Stealing Functionality of Black-Box Models
 
@@ -121,6 +125,36 @@ the natural framing is
 instance is the multi-armed bandit, which trades off exploring uncertain actions
 against exploiting ones already known to pay well (Sutton and Barto, 1998).
 
+## Reading guidance
+
+- Section 3 (Problem Statement): the victim-versus-adversary game and the formal
+  threat model. Note exactly which quantities the adversary is denied (internals,
+  train/test data, output-class semantics) and how that list differs from earlier
+  stealing work.
+- Section 3 (Remarks, comparison to knowledge distillation) and Figure 3: where
+  the setup is placed against distillation. Attention anchor: note which
+  distillation assumptions are dropped and which are kept.
+- Section 4.1 (Transfer Set Construction): the two query strategies, random and
+  adaptive, the latter cast as a policy over a coarse-to-fine label hierarchy.
+- Section 4.1.2 (Adaptive Strategy) and Figure 4: the reward design. Attention
+  anchor: the reward combines a certainty term, a diversity term, and a loss
+  term; note the justification given for each and how they are combined.
+- Section 5 and Table 1: the four victim black-boxes and the choices of adversary
+  image pool (closed-world versus open-world), with the label-overlap measurement
+  (Table 3) that defines those regimes.
+- Section 6.1, Table 2 and Figure 5: knockoff accuracy across datasets and query
+  budgets, with the distillation row (adversary querying the victim's own training
+  images) as a reference point.
+- Section 6.2 and Figure 10: how the knockoff's architecture, relative to the
+  victim's, affects performance. Attention anchor: the conclusion runs opposite to
+  distillation's usual aim of a smaller student; note what is claimed about model
+  complexity.
+- Section 6.3 and Figure 11: the attack against a commercial image-analysis API,
+  including the dollar cost.
+- Section 6 (defense discussion): the victim counter-strategy of truncating or
+  rounding the returned probabilities. Attention anchor: note what the defender is
+  assumed able to change, and what the paper reports it costs the attack.
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -155,40 +189,12 @@ the meaning of its outputs.
 
 </details>
 
-## Reading guidance
-
-- Section 3 (Problem Statement): the victim-versus-adversary game and the formal
-  threat model. Note exactly which quantities the adversary is denied (internals,
-  train/test data, output-class semantics) and how that list differs from earlier
-  stealing work.
-- Section 3 (Remarks, comparison to knowledge distillation) and Figure 3: where
-  the setup is placed against distillation. Attention anchor: note which
-  distillation assumptions are dropped and which are kept.
-- Section 4.1 (Transfer Set Construction): the two query strategies, random and
-  adaptive, the latter cast as a policy over a coarse-to-fine label hierarchy.
-- Section 4.1.2 (Adaptive Strategy) and Figure 4: the reward design. Attention
-  anchor: the reward combines a certainty term, a diversity term, and a loss
-  term; note the justification given for each and how they are combined.
-- Section 5 and Table 1: the four victim black-boxes and the choices of adversary
-  image pool (closed-world versus open-world), with the label-overlap measurement
-  (Table 3) that defines those regimes.
-- Section 6.1, Table 2 and Figure 5: knockoff accuracy across datasets and query
-  budgets, with the distillation row (adversary querying the victim's own training
-  images) as a reference point.
-- Section 6.2 and Figure 10: how the knockoff's architecture, relative to the
-  victim's, affects performance. Attention anchor: the conclusion runs opposite to
-  distillation's usual aim of a smaller student; note what is claimed about model
-  complexity.
-- Section 6.3 and Figure 11: the attack against a commercial image-analysis API,
-  including the dollar cost.
-- Section 6 (defense discussion): the victim counter-strategy of truncating or
-  rounding the returned probabilities. Attention anchor: note what the defender is
-  assumed able to change, and what the paper reports it costs the attack.
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Buciluǎ, C., Caruana, R., and Niculescu-Mizil, A. "Model Compression." ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2006.
 - Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., and Fei-Fei, L. "ImageNet: A Large-Scale Hierarchical Image Database." IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2009.

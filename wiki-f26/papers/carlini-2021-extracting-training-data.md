@@ -25,7 +25,11 @@ tags:
   - membership-inference
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Extracting Training Data from Large Language Models
 
@@ -131,6 +135,31 @@ to recurrent language models (McMahan et al., 2018). The guarantee comes at a
 cost in accuracy and training time, and that cost falls hardest on the long-tail
 examples that contribute most to quality.
 
+## Reading guidance
+
+- Section 2 (Background and Related Work): language-model basics and a taxonomy
+  of training-data privacy attacks. Skim if the Basic Background above is
+  familiar.
+- Section 3 (Threat Model and Ethics): the formal definitions. Definition 1
+  states what it means for a string to be extractable; Definition 2 defines
+  k-eidetic memorization by counting the training documents that contain the
+  string.
+- Section 3.1, footnote 4: Definition 1 admits pathological corner cases (a model
+  told to repeat a sentence back). Note the cases listed and how prompting with
+  only short prefixes is used to sidestep them.
+- Sections 4 and 5: the attack in two passes, a simple baseline and an improved
+  version. Section 5.1 varies how candidates are generated (decaying temperature,
+  conditioning on internet text); Section 5.2 varies how they are ranked.
+- Section 5.2: the membership-inference step compares GPT-2's perplexity against
+  six reference signals (zlib entropy, smaller GPT-2 models, lower-cased text, a
+  sliding window). Note the justification given for each comparison.
+- Sections 6 and 7: evaluation of what was extracted and which factors drive
+  memorization, including model size and how often a string appears in the data.
+- Sections 8 and 9: the mitigations weighed (differential privacy,
+  de-duplication, auditing) and their stated limits.
+- Appendix A and C: the categorization of the 604 memorized samples and the case
+  studies, including the personally identifiable categories.
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -166,35 +195,12 @@ a violation: when it moves data out of the context for which it was shared.
 
 </details>
 
-## Reading guidance
-
-- Section 2 (Background and Related Work): language-model basics and a taxonomy
-  of training-data privacy attacks. Skim if the Basic Background above is
-  familiar.
-- Section 3 (Threat Model and Ethics): the formal definitions. Definition 1
-  states what it means for a string to be extractable; Definition 2 defines
-  k-eidetic memorization by counting the training documents that contain the
-  string.
-- Section 3.1, footnote 4: Definition 1 admits pathological corner cases (a model
-  told to repeat a sentence back). Note the cases listed and how prompting with
-  only short prefixes is used to sidestep them.
-- Sections 4 and 5: the attack in two passes, a simple baseline and an improved
-  version. Section 5.1 varies how candidates are generated (decaying temperature,
-  conditioning on internet text); Section 5.2 varies how they are ranked.
-- Section 5.2: the membership-inference step compares GPT-2's perplexity against
-  six reference signals (zlib entropy, smaller GPT-2 models, lower-cased text, a
-  sliding window). Note the justification given for each comparison.
-- Sections 6 and 7: evaluation of what was extracted and which factors drive
-  memorization, including model size and how often a string appears in the data.
-- Sections 8 and 9: the mitigations weighed (differential privacy,
-  de-duplication, auditing) and their stated limits.
-- Appendix A and C: the categorization of the 604 memorized samples and the case
-  studies, including the personally identifiable categories.
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Abadi, M., Chu, A., Goodfellow, I., McMahan, H.B., Mironov, I., Talwar, K., and
   Zhang, L. "Deep Learning with Differential Privacy." ACM Conference on Computer

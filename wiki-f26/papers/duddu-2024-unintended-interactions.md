@@ -16,7 +16,11 @@ tags:
   - survey
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # SoK: Unintended Interactions among Machine Learning Defenses and Risks
 
@@ -134,29 +138,6 @@ influential training records behind a prediction, or a counterfactual that would
 change the outcome. Neither defense requires retraining, and both expose
 information about the model's decision boundary and training data.
 
-<details>
-<summary><h2>Paper Context</h2></summary>
-
-Individual interactions were documented before any unifying account. Adversarial
-training, applied to resist evasion, raises a model's vulnerability to membership
-inference (Song et al., 2019; Hayes, 2020). Differential privacy has a disparate
-impact on accuracy across subgroups (Bagdasaryan et al., 2019), and fairness
-constraints interact with privacy risks (Chang and Shokri, 2021). Each result studied one
-defense against one risk, with no shared explanation of why the interaction arose.
-
-Several systematizations had mapped the risk and defense landscape without
-treating the interactions among them. SoKs organized security and privacy in
-machine learning broadly (Papernot et al., 2018) and inference attacks on training
-data specifically (Salem et al., 2023). Surveys of multilateral tradeoffs in
-trustworthy machine learning catalogued tensions between accuracy, robustness,
-fairness, and privacy without naming their underlying causes (Gittens et al.,
-2022). The direct precursor to this paper enumerated conflicts among protection
-mechanisms, showing that combining defenses can make each less effective (Szyller
-and Asokan, 2023). A contemporaneous SoK examined the interplay of fairness,
-interpretability, and privacy (Ferry et al., 2023).
-
-</details>
-
 ## Reading guidance
 
 - Section 2: the catalogue of risks (evasion, poisoning, unauthorized model
@@ -193,10 +174,35 @@ interpretability, and privacy (Ferry et al., 2023).
 
 </details>
 
+<details>
+<summary><h2>Paper Context</h2></summary>
+
+Individual interactions were documented before any unifying account. Adversarial
+training, applied to resist evasion, raises a model's vulnerability to membership
+inference (Song et al., 2019; Hayes, 2020). Differential privacy has a disparate
+impact on accuracy across subgroups (Bagdasaryan et al., 2019), and fairness
+constraints interact with privacy risks (Chang and Shokri, 2021). Each result studied one
+defense against one risk, with no shared explanation of why the interaction arose.
+
+Several systematizations had mapped the risk and defense landscape without
+treating the interactions among them. SoKs organized security and privacy in
+machine learning broadly (Papernot et al., 2018) and inference attacks on training
+data specifically (Salem et al., 2023). Surveys of multilateral tradeoffs in
+trustworthy machine learning catalogued tensions between accuracy, robustness,
+fairness, and privacy without naming their underlying causes (Gittens et al.,
+2022). The direct precursor to this paper enumerated conflicts among protection
+mechanisms, showing that combining defenses can make each less effective (Szyller
+and Asokan, 2023). A contemporaneous SoK examined the interplay of fairness,
+interpretability, and privacy (Ferry et al., 2023).
+
+</details>
+
+---
+
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Abadi, M., Chu, A., Goodfellow, I., McMahan, H. B., Mironov, I., Talwar, K.,
   and Zhang, L. "Deep Learning with Differential Privacy." ACM Conference on

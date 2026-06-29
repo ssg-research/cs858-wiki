@@ -15,7 +15,11 @@ tags:
   - attack
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Jailbroken: How Does LLM Safety Training Fail?
 
@@ -119,6 +123,37 @@ through its interface without its weights, gradients, or training data. It is
 the access an ordinary API or chat user has, and the setting in which these
 attacks operate.
 
+## Reading guidance
+
+- **Section 2 (Background).** Sets up the threat model and the
+  GOODBOT / BADBOT / UNCLEAR labeling scheme; read the access assumptions
+  closely, since the strongest system-prompt attack later falls outside them.
+- **Section 3 (Failure modes).** Introduces competing objectives and mismatched
+  generalization, each illustrated with example attacks and ablations. Note that
+  the failure modes are stated as hypotheses and then used to build attacks;
+  watch what evidence is offered that these are the operative mechanisms rather
+  than one of several possible explanations.
+- **Section 4 (Empirical evaluation).** Tables of attack success across the
+  models, including combination attacks and the larger held-out dataset. Note how
+  an outcome is defined and that the labeling is done by hand.
+- **Section 5 (Implications for defense).** The arguments that scaling will not
+  resolve either failure mode and that "safety-capability parity" may be needed;
+  note which steps rest on the measurements and which extrapolate beyond them.
+- **Figure 2 and Table 3.** The GPT-3.5 Turbo versus GPT-4 contrast, where a
+  vulnerability appears only once the model is capable enough to follow the
+  encoded prompt.
+- **Appendices and the responsible-disclosure note.** The labeling scheme,
+  attack details, and examples live in the appendices; the strongest prompts are
+  deliberately withheld.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) — a white-box, optimization-based route to jailbreaks, complementing this paper's black-box, conceptual route.
+- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) — automates black-box jailbreak discovery with an attacker model in the loop.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -152,41 +187,12 @@ had not been given.
 
 </details>
 
-## Reading guidance
-
-- **Section 2 (Background).** Sets up the threat model and the
-  GOODBOT / BADBOT / UNCLEAR labeling scheme; read the access assumptions
-  closely, since the strongest system-prompt attack later falls outside them.
-- **Section 3 (Failure modes).** Introduces competing objectives and mismatched
-  generalization, each illustrated with example attacks and ablations. Note that
-  the failure modes are stated as hypotheses and then used to build attacks;
-  watch what evidence is offered that these are the operative mechanisms rather
-  than one of several possible explanations.
-- **Section 4 (Empirical evaluation).** Tables of attack success across the
-  models, including combination attacks and the larger held-out dataset. Note how
-  an outcome is defined and that the labeling is done by hand.
-- **Section 5 (Implications for defense).** The arguments that scaling will not
-  resolve either failure mode and that "safety-capability parity" may be needed;
-  note which steps rest on the measurements and which extrapolate beyond them.
-- **Figure 2 and Table 3.** The GPT-3.5 Turbo versus GPT-4 contrast, where a
-  vulnerability appears only once the model is capable enough to follow the
-  encoded prompt.
-- **Appendices and the responsible-disclosure note.** The labeling scheme,
-  attack details, and examples live in the appendices; the strongest prompts are
-  deliberately withheld.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) — a white-box, optimization-based route to jailbreaks, complementing this paper's black-box, conceptual route.
-- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) — automates black-box jailbreak discovery with an attacker model in the loop.
-
-</details>
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off the paper's bibliography (arXiv 2307.02483v1, pages 11-14).
 

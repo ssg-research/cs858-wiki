@@ -17,7 +17,11 @@ tags:
   - evasion
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Towards Deep Learning Models Resistant to Adversarial Attacks
 
@@ -130,6 +134,23 @@ maximizer is a descent direction for the outer problem. Its assumptions, a
 smooth function and an exact inner maximum, do not hold for ReLU networks
 attacked approximately, so applying it there needs empirical justification.
 
+## Reading guidance
+
+- Sections 1 and 2: the saddle-point formulation (Equation 2.1) and how prior
+  attacks and defenses map onto its inner and outer problems. The definition of
+  the perturbation set S takes one paragraph; note what justifies the choice of
+  the ℓ-infinity ball.
+- Sections 3.1 and 3.2: the experimental study of the inner maximization, with
+  Figures 1 and 2 as the supporting evidence, and the argument for treating PGD
+  as the strongest first-order adversary.
+- Section 4: the model-capacity experiments (Figure 4), separable from the rest
+  of the argument.
+- Section 5 with Tables 1 and 2: the robustness evaluation. Each row is a
+  different attack and source network; the threat model behind each number is
+  in the caption.
+- Appendix A: the statement of Danskin's theorem; note which of its assumptions
+  hold for a ReLU network attacked by an approximate maximizer.
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -166,27 +187,12 @@ benchmark-style robustness number.
 
 </details>
 
-## Reading guidance
-
-- Sections 1 and 2: the saddle-point formulation (Equation 2.1) and how prior
-  attacks and defenses map onto its inner and outer problems. The definition of
-  the perturbation set S takes one paragraph; note what justifies the choice of
-  the ℓ-infinity ball.
-- Sections 3.1 and 3.2: the experimental study of the inner maximization, with
-  Figures 1 and 2 as the supporting evidence, and the argument for treating PGD
-  as the strongest first-order adversary.
-- Section 4: the model-capacity experiments (Figure 4), separable from the rest
-  of the argument.
-- Section 5 with Tables 1 and 2: the robustness evaluation. Each row is a
-  different attack and source network; the threat model behind each number is
-  in the caption.
-- Appendix A: the statement of Danskin's theorem; note which of its assumptions
-  hold for a ReLU network attacked by an approximate maximizer.
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 All entries read off the paper's bibliography (arXiv 1706.06083v4, pages
 16-18).

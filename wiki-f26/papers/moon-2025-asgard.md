@@ -17,7 +17,11 @@ tags:
   - defense
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
 
@@ -136,6 +140,44 @@ device's untrusted accelerator, in the clear or under obfuscation, for speed. Th
 split trades protection for latency, and the offloaded part is the side an
 adversary can read.
 
+## Reading guidance
+
+- Section II.A and Figure 1: the Arm primitives the design rests on, the four
+  exception levels EL0 to EL3 and the two-stage address translation, the
+  vocabulary the rest of the paper assumes.
+- Section II.B: virtualization-based TEEs and the concrete protected-KVM design,
+  with the privileged hypervisor at EL2, the unprivileged host-side hypervisor,
+  page-frame ownership, and IOMMU isolation of peripherals.
+- Section II.C and Table I: the efficiency (P1) and compatibility (P2)
+  limitations of prior TrustZone-based solutions, each prior system scored
+  against both. Attention anchor: read which column each prior system fails and
+  why, since the design goals are set directly against this table.
+- Section III.A and III.B, Figure 2: the three design goals (G1 to G3) and the
+  threat model. Attention anchor: note exactly what the threat model trusts (the
+  privileged hypervisor, the EL3 secure monitor, the secure world) and what it
+  excludes (physical attacks, side channels), and that the guarantee is stated as
+  software-secure.
+- Section IV: the secure I/O passthrough design, and what has to move into the
+  privileged hypervisor, namely the IOMMU driver and the accelerator reset
+  control.
+- Section V: the platform- and application-level TCB debloating, the techniques
+  that hold the enclave image and the hypervisor additions small.
+- Section VI, Table III and Figures 5 and 8: the security analysis and the
+  TCB-size and latency measurements, including the comparison against an
+  REE-offloading baseline.
+- Section VII: scope and limits, including model extraction through side
+  channels, porting to other SoCs, and compatibility with Arm's Confidential
+  Compute Architecture.
+- Section VIII: the related-work map, separating TrustZone peripheral extension,
+  hardware GPU TEEs, and accelerator I/O virtualization.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional Neural Networks](https://arxiv.org/abs/2011.05905) — a TrustZone-based on-device protection that offloads transformed weights to the untrusted accelerator, a point of contrast with the virtualization-based design.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -180,48 +222,12 @@ enclave.
 
 </details>
 
-## Reading guidance
-
-- Section II.A and Figure 1: the Arm primitives the design rests on, the four
-  exception levels EL0 to EL3 and the two-stage address translation, the
-  vocabulary the rest of the paper assumes.
-- Section II.B: virtualization-based TEEs and the concrete protected-KVM design,
-  with the privileged hypervisor at EL2, the unprivileged host-side hypervisor,
-  page-frame ownership, and IOMMU isolation of peripherals.
-- Section II.C and Table I: the efficiency (P1) and compatibility (P2)
-  limitations of prior TrustZone-based solutions, each prior system scored
-  against both. Attention anchor: read which column each prior system fails and
-  why, since the design goals are set directly against this table.
-- Section III.A and III.B, Figure 2: the three design goals (G1 to G3) and the
-  threat model. Attention anchor: note exactly what the threat model trusts (the
-  privileged hypervisor, the EL3 secure monitor, the secure world) and what it
-  excludes (physical attacks, side channels), and that the guarantee is stated as
-  software-secure.
-- Section IV: the secure I/O passthrough design, and what has to move into the
-  privileged hypervisor, namely the IOMMU driver and the accelerator reset
-  control.
-- Section V: the platform- and application-level TCB debloating, the techniques
-  that hold the enclave image and the hypervisor additions small.
-- Section VI, Table III and Figures 5 and 8: the security analysis and the
-  TCB-size and latency measurements, including the comparison against an
-  REE-offloading baseline.
-- Section VII: scope and limits, including model extraction through side
-  channels, porting to other SoCs, and compatibility with Arm's Confidential
-  Compute Architecture.
-- Section VIII: the related-work map, separating TrustZone peripheral extension,
-  hardware GPU TEEs, and accelerator I/O virtualization.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional Neural Networks](https://arxiv.org/abs/2011.05905) — a TrustZone-based on-device protection that offloads transformed weights to the untrusted accelerator, a point of contrast with the virtualization-based design.
-
-</details>
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 Entries read off this paper's bibliography (PDF pages 14-16).
 

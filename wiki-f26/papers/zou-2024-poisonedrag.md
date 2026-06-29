@@ -16,7 +16,11 @@ tags:
   - attack
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
 
@@ -133,6 +137,39 @@ score are evaluated with [ROC curves and AUC](../concepts/roc-curves.md), readin
 the true-positive rate against the false-positive rate, since a detector that
 only works at a high false-positive rate is not deployable.
 
+## Reading guidance
+
+- Section 3.1 (threat model): pin down exactly what the attacker is denied (the
+  other texts in the database, any access to the LLM) versus granted (the
+  retriever, in the white-box setting). The strength of the result rests on how
+  little is assumed.
+- Section 4.1: the two necessary conditions, retrieval and generation, and the
+  idea of splitting an injected text into two parts that serve them.
+- Section 4.2.1: how the part responsible for the generation condition is
+  produced (an LLM is used to write it).
+- Section 4.2.2: how the retrieval condition is met. In the black-box setting the
+  design choice is to set the retrieval part equal to the target question itself;
+  note the one-line justification for that choice and how much of the attack's
+  success rides on it. The white-box setting instead optimizes embedding
+  similarity directly.
+- Section 5: the Attack Success Rate metric, the datasets, the language models,
+  and the baselines the attack is compared against.
+- Section 7 (defenses): paraphrasing, perplexity-based detection, duplicate
+  filtering, and knowledge expansion. For the perplexity detector, look at the
+  ROC curve and AUC in Figure 6 and note what the value implies about how
+  separable the injected texts are from clean ones.
+- Appendix Tables 23-25: example target questions, target answers, and the
+  malicious texts produced. Reading one shows concretely what an injected text
+  looks like.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/abs/2406.18382) — manipulating the content an LLM retrieves so it favors an attacker's preferred answer, a related angle on corrupting what the model reads.
+- [Certifiably Robust RAG against Retrieval Corruption](https://arxiv.org/abs/2405.15556) — a defense direction aimed at exactly this class of attack, giving guarantees when a bounded number of retrieved passages are malicious.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -167,43 +204,12 @@ existed but had not been examined against corruption of a retrieval corpus.
 
 </details>
 
-## Reading guidance
-
-- Section 3.1 (threat model): pin down exactly what the attacker is denied (the
-  other texts in the database, any access to the LLM) versus granted (the
-  retriever, in the white-box setting). The strength of the result rests on how
-  little is assumed.
-- Section 4.1: the two necessary conditions, retrieval and generation, and the
-  idea of splitting an injected text into two parts that serve them.
-- Section 4.2.1: how the part responsible for the generation condition is
-  produced (an LLM is used to write it).
-- Section 4.2.2: how the retrieval condition is met. In the black-box setting the
-  design choice is to set the retrieval part equal to the target question itself;
-  note the one-line justification for that choice and how much of the attack's
-  success rides on it. The white-box setting instead optimizes embedding
-  similarity directly.
-- Section 5: the Attack Success Rate metric, the datasets, the language models,
-  and the baselines the attack is compared against.
-- Section 7 (defenses): paraphrasing, perplexity-based detection, duplicate
-  filtering, and knowledge expansion. For the perplexity detector, look at the
-  ROC curve and AUC in Figure 6 and note what the value implies about how
-  separable the injected texts are from clean ones.
-- Appendix Tables 23-25: example target questions, target answers, and the
-  malicious texts produced. Reading one shows concretely what an injected text
-  looks like.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/abs/2406.18382) — manipulating the content an LLM retrieves so it favors an attacker's preferred answer, a related angle on corrupting what the model reads.
-- [Certifiably Robust RAG against Retrieval Corruption](https://arxiv.org/abs/2405.15556) — a defense direction aimed at exactly this class of attack, giving guarantees when a bounded number of retrieved passages are malicious.
-
-</details>
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Zou, W., Geng, R., Wang, B., and Jia, J. "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models." 2024. arXiv:2402.07867.
 - Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-t., Rocktäschel, T., et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." NeurIPS, 2020.

@@ -21,7 +21,11 @@ tags:
   - defense
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # Safety Alignment Should Be Made More Than Just a Few Tokens Deep
 
@@ -115,6 +119,34 @@ cross-entropy (next-token) loss and the
 a parallel view during fine-tuning: which token positions carry the largest loss
 and drive the largest weight updates.
 
+## Reading guidance
+
+- Section 2 and Figure 1: the per-token KL divergence between aligned and base
+  models on harmful inputs, the central measurement behind the "shallow" claim.
+- Table 1: what the harmfulness rate of an unaligned base model does once a
+  refusal prefix is prefilled into its decoding.
+- Section 2.3.1: the inference-stage exploits (prefilling, adversarial suffix,
+  random sampling over decoding parameters) recast under one lens.
+- Section 2.3.2 and Figure 3: per-token loss, gradient norm, and KL during a
+  fine-tuning attack, and where along the response the change concentrates.
+- Section 3: the data-augmentation approach ("safety recovery examples"). Note how
+  this training scheme relates to defenses you have seen for classifiers, and what
+  about the safety setting makes the construction different.
+- Section 4 and Table 3: the token-wise constrained fine-tuning objective and its
+  results against fine-tuning attacks and on benign downstream tasks. Note which
+  token positions receive the strong constraint, and the justification given for
+  that choice.
+- Section 5: related work, placing the paper among the superficial-alignment and
+  token-dynamics lines.
+
+<details>
+<summary><h2>Supplementary readings</h2></summary>
+
+- [Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations](https://arxiv.org/abs/2312.06674) — the system-boundary approach to safety, screening prompts and responses with a separate classifier rather than changing the model's alignment.
+- [SecAlign: Defending Against Prompt Injection with Preference Optimization](https://arxiv.org/abs/2410.05451) — a preference-optimization defense that hardens the model itself, a useful contrast to deepening safety alignment.
+
+</details>
+
 <details>
 <summary><h2>Paper Context</h2></summary>
 
@@ -150,38 +182,12 @@ al., 2023), whose KL penalty keeps the aligned policy near the base model.
 
 </details>
 
-## Reading guidance
-
-- Section 2 and Figure 1: the per-token KL divergence between aligned and base
-  models on harmful inputs, the central measurement behind the "shallow" claim.
-- Table 1: what the harmfulness rate of an unaligned base model does once a
-  refusal prefix is prefilled into its decoding.
-- Section 2.3.1: the inference-stage exploits (prefilling, adversarial suffix,
-  random sampling over decoding parameters) recast under one lens.
-- Section 2.3.2 and Figure 3: per-token loss, gradient norm, and KL during a
-  fine-tuning attack, and where along the response the change concentrates.
-- Section 3: the data-augmentation approach ("safety recovery examples"). Note how
-  this training scheme relates to defenses you have seen for classifiers, and what
-  about the safety setting makes the construction different.
-- Section 4 and Table 3: the token-wise constrained fine-tuning objective and its
-  results against fine-tuning attacks and on benign downstream tasks. Note which
-  token positions receive the strong constraint, and the justification given for
-  that choice.
-- Section 5: related work, placing the paper among the superficial-alignment and
-  token-dynamics lines.
-
-<details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations](https://arxiv.org/abs/2312.06674) — the system-boundary approach to safety, screening prompts and responses with a separate classifier rather than changing the model's alignment.
-- [SecAlign: Defending Against Prompt Injection with Preference Optimization](https://arxiv.org/abs/2410.05451) — a preference-optimization defense that hardens the model itself, a useful contrast to deepening safety alignment.
-
-</details>
+---
 
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Goodfellow, I. J., Shlens, J., and Szegedy, C. "Explaining and Harnessing
   Adversarial Examples." International Conference on Learning Representations

@@ -20,7 +20,11 @@ tags:
   - jailbreak
 ---
 
+---
+
 ### [Wiki Home](../README.md)
+
+---
 
 # What Makes and Breaks Safety Fine-tuning? A Mechanistic Study
 
@@ -135,39 +139,6 @@ yields its four fundamental subspaces (column space, row space, and the two null
 spaces); a vector in a matrix's null space is mapped to zero by it. This is the
 linear-algebra vocabulary the paper's analysis assumes.
 
-<details>
-<summary><h2>Paper Context</h2></summary>
-
-By 2024, safety fine-tuning was the standard gate before a model's release, but
-its robustness was unsettled. Jailbreaks reliably recovered restricted behavior:
-the taxonomy of competing objectives and mismatched generalization organized the
-phenomenon (Wei et al., 2023), and automated procedures produced transferable
-attack strings (Zou et al., 2023), black-box attacks in few queries (Chao et al.,
-2023), and adaptive attacks on aligned models (Andriushchenko et al., 2024).
-Continuous-embedding and adversarial-input attacks defeated alignment under
-white-box access (Carlini et al., 2023).
-
-A parallel line found that fine-tuning changes a model only slightly while still
-moving its behavior. Fine-tuning an aligned model could compromise its safety
-even without intent to (Qi et al., 2023), catastrophic forgetting could be cast
-as implicit inference (Kotha et al., 2023), and safety alignment proved brittle
-to pruning and low-rank edits (Wei et al., 2024). Mechanistic studies of
-fine-tuning found that it tends to enhance mechanisms already present in the base
-model rather than install new ones (Jain et al., 2023b; Prakash et al., 2024),
-including a case study on DPO and toxicity (Lee et al., 2024), and refusal itself
-was localized to a single direction in activation space (Arditi et al., 2024).
-
-Synthetic, controlled data had meanwhile become a workbench for mechanistic
-analysis of transformers. Probabilistic context-free grammars served as a
-tractable model of language for studying what transformers learn (Allen-Zhu and
-Li, 2023; Hahn and Goyal, 2023), and bijective-map and group-operation tasks
-exposed learned algorithms directly (Ramesh et al., 2023; Chughtai et al., 2023),
-all read through the residual-stream view of transformer computation (Elhage et
-al., 2021). What had not been done was to connect the minimal-change observations
-to the robustness failures in a single mechanistic account.
-
-</details>
-
 ## Reading guidance
 
 - Section 3 and Figures 1-2: the synthetic data-generating process (operators and
@@ -205,10 +176,45 @@ to the robustness failures in a single mechanistic account.
 
 </details>
 
+<details>
+<summary><h2>Paper Context</h2></summary>
+
+By 2024, safety fine-tuning was the standard gate before a model's release, but
+its robustness was unsettled. Jailbreaks reliably recovered restricted behavior:
+the taxonomy of competing objectives and mismatched generalization organized the
+phenomenon (Wei et al., 2023), and automated procedures produced transferable
+attack strings (Zou et al., 2023), black-box attacks in few queries (Chao et al.,
+2023), and adaptive attacks on aligned models (Andriushchenko et al., 2024).
+Continuous-embedding and adversarial-input attacks defeated alignment under
+white-box access (Carlini et al., 2023).
+
+A parallel line found that fine-tuning changes a model only slightly while still
+moving its behavior. Fine-tuning an aligned model could compromise its safety
+even without intent to (Qi et al., 2023), catastrophic forgetting could be cast
+as implicit inference (Kotha et al., 2023), and safety alignment proved brittle
+to pruning and low-rank edits (Wei et al., 2024). Mechanistic studies of
+fine-tuning found that it tends to enhance mechanisms already present in the base
+model rather than install new ones (Jain et al., 2023b; Prakash et al., 2024),
+including a case study on DPO and toxicity (Lee et al., 2024), and refusal itself
+was localized to a single direction in activation space (Arditi et al., 2024).
+
+Synthetic, controlled data had meanwhile become a workbench for mechanistic
+analysis of transformers. Probabilistic context-free grammars served as a
+tractable model of language for studying what transformers learn (Allen-Zhu and
+Li, 2023; Hahn and Goyal, 2023), and bijective-map and group-operation tasks
+exposed learned algorithms directly (Ramesh et al., 2023; Chughtai et al., 2023),
+all read through the residual-stream view of transformer computation (Elhage et
+al., 2021). What had not been done was to connect the minimal-change observations
+to the robustness failures in a single mechanistic account.
+
+</details>
+
+---
+
 ### [Wiki Home](../README.md)
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h4>References</h4></summary>
 
 - Allen-Zhu, Z. and Li, Y. "Physics of Language Models: Part 1, Context-Free
   Grammar." arXiv:2305.13673, 2023.
