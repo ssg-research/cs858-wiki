@@ -16,11 +16,7 @@ tags:
   - survey
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # SoK: Unintended Interactions among Machine Learning Defenses and Risks
 
@@ -196,8 +192,6 @@ and Asokan, 2023). A contemporaneous SoK examined the interplay of fairness,
 interpretability, and privacy (Ferry et al., 2023).
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

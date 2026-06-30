@@ -19,11 +19,7 @@ tags:
   - defense
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking
 
@@ -221,8 +217,6 @@ et al., 2018). Each of these either relies on the application to invoke its
 protections or pays a substantial performance cost.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

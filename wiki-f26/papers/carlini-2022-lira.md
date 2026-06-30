@@ -19,11 +19,7 @@ tags:
   - attack
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # Membership Inference Attacks From First Principles
 
@@ -220,8 +216,6 @@ average-case metrics on small overfit models, had not been re-examined under
 either standard.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

@@ -17,11 +17,7 @@ tags:
   - evasion
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # Towards Deep Learning Models Resistant to Adversarial Attacks
 
@@ -186,8 +182,6 @@ explicit threat models and adaptive adversaries, would accept an ML
 benchmark-style robustness number.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

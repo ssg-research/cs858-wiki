@@ -17,11 +17,7 @@ tags:
   - defense
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
 
@@ -221,8 +217,6 @@ Armv8-A hardware they do not pass an SoC-integrated accelerator through to an
 enclave.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

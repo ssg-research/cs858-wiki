@@ -21,11 +21,7 @@ tags:
   - defense
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # Safety Alignment Should Be Made More Than Just a Few Tokens Deep
 
@@ -181,8 +177,6 @@ preference-optimization stack, RLHF (Ouyang et al., 2022) and DPO (Rafailov et
 al., 2023), whose KL penalty keeps the aligned policy near the base model.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

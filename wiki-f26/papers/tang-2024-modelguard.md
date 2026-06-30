@@ -20,11 +20,7 @@ tags:
   - computer-vision
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks
 
@@ -222,8 +218,6 @@ adds a detector that identifies the defense before recovering (Chen et al.,
 mechanism had received little attention.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

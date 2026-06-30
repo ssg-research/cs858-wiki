@@ -19,11 +19,7 @@ tags:
   - zeroth-order-optimization
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs
 
@@ -219,8 +215,6 @@ memory savings over DP-SGD, reported at around an eightfold reduction on a
 on several benchmarks when this paper appeared.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

@@ -19,11 +19,7 @@ tags:
   - threat-model
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
 
@@ -194,8 +190,6 @@ and breaks had played out. No general tool existed to detect and repair a backdo
 from the trained model alone.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 

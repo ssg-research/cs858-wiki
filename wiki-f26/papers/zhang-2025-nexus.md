@@ -24,11 +24,7 @@ tags:
   - language-models
 ---
 
----
-
 ### [Wiki Home](../README.md)
-
----
 
 # Secure Transformer Inference Made Non-interactive
 
@@ -231,8 +227,6 @@ methods supports the nonlinear functions a transformer needs, and a linear-cost
 argmax over a full vocabulary is impractical.
 
 </details>
-
----
 
 ### [Wiki Home](../README.md)
 
