@@ -18,11 +18,7 @@ tags:
   - computer-vision
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # DAWN: Dynamic Adversarial Watermarking of Neural Networks
 
@@ -202,7 +198,6 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

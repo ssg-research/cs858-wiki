@@ -19,11 +19,7 @@ tags:
   - zeroth-order-optimization
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs
 
@@ -220,7 +216,6 @@ on several benchmarks when this paper appeared.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

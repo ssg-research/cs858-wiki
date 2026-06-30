@@ -15,11 +15,7 @@ tags:
   - attack
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Jailbroken: How Does LLM Safety Training Fail?
 
@@ -187,7 +183,6 @@ had not been given.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

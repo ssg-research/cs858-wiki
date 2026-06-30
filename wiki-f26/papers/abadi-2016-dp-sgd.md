@@ -20,11 +20,7 @@ tags:
   - dp-sgd
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Deep Learning with Differential Privacy
 
@@ -200,7 +196,6 @@ Rothblum, 2016; Bun and Steinke, 2016).
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

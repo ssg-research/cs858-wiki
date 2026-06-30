@@ -20,11 +20,7 @@ tags:
   - right-to-be-forgotten
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Knowledge Unlearning for Mitigating Privacy Risks in Language Models
 
@@ -200,7 +196,6 @@ large language model had not been studied.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

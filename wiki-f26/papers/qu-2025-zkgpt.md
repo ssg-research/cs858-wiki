@@ -18,11 +18,7 @@ tags:
   - machine-learning
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference
 
@@ -198,7 +194,6 @@ These target the same auditability aim at training time.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

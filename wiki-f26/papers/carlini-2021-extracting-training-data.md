@@ -25,11 +25,7 @@ tags:
   - membership-inference
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Extracting Training Data from Large Language Models
 
@@ -195,7 +191,6 @@ a violation: when it moves data out of the context for which it was shared.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

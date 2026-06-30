@@ -20,11 +20,7 @@ tags:
   - jailbreak
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # What Makes and Breaks Safety Fine-tuning? A Mechanistic Study
 
@@ -209,7 +205,6 @@ to the robustness failures in a single mechanistic account.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

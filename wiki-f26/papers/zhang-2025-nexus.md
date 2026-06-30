@@ -24,11 +24,7 @@ tags:
   - language-models
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Secure Transformer Inference Made Non-interactive
 
@@ -232,7 +228,6 @@ argmax over a full vocabulary is impractical.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

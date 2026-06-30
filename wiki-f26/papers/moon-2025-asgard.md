@@ -17,11 +17,7 @@ tags:
   - defense
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
 
@@ -222,7 +218,6 @@ enclave.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

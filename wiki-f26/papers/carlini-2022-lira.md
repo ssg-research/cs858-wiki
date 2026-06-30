@@ -19,11 +19,7 @@ tags:
   - attack
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Membership Inference Attacks From First Principles
 
@@ -221,7 +217,6 @@ either standard.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

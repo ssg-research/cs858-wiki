@@ -20,11 +20,7 @@ tags:
   - computer-vision
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks
 
@@ -223,7 +219,6 @@ mechanism had received little attention.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

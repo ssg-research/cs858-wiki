@@ -16,11 +16,7 @@ tags:
   - attack
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
 
@@ -204,7 +200,6 @@ existed but had not been examined against corruption of a retrieval corpus.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 

@@ -16,11 +16,7 @@ tags:
   - reinforcement-learning
 ---
 
----
-
 ## [Wiki Home](../README.md)
-
----
 
 # Knockoff Nets: Stealing Functionality of Black-Box Models
 
@@ -189,7 +185,6 @@ the meaning of its outputs.
 
 </details>
 
----
 <details>
 <summary><h4>References</h4></summary>
 
