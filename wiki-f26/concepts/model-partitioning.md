@@ -9,7 +9,7 @@ tags:
   - machine-learning
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Model partitioning across a TEE and an accelerator
 

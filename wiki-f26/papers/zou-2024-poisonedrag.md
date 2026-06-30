@@ -16,11 +16,7 @@ tags:
   - attack
 ---
 
----
-
-### [Wiki Home](../README.md)
-
----
+## [Wiki Home](../README.md)
 
 # PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
 
@@ -203,10 +199,6 @@ perplexity-based detection (Jain et al., 2023; Alon and Kamfonas, 2023),
 existed but had not been examined against corruption of a retrieval corpus.
 
 </details>
-
----
-
-### [Wiki Home](../README.md)
 
 <details>
 <summary><h4>References</h4></summary>

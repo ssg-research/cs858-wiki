@@ -20,11 +20,7 @@ tags:
   - dp-sgd
 ---
 
----
-
-### [Wiki Home](../README.md)
-
----
+## [Wiki Home](../README.md)
 
 # Deep Learning with Differential Privacy
 
@@ -199,10 +195,6 @@ differential privacy among them, were in concurrent development (Dwork and
 Rothblum, 2016; Bun and Steinke, 2016).
 
 </details>
-
----
-
-### [Wiki Home](../README.md)
 
 <details>
 <summary><h4>References</h4></summary>

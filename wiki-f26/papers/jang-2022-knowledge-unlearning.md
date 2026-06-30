@@ -20,11 +20,7 @@ tags:
   - right-to-be-forgotten
 ---
 
----
-
-### [Wiki Home](../README.md)
-
----
+## [Wiki Home](../README.md)
 
 # Knowledge Unlearning for Mitigating Privacy Risks in Language Models
 
@@ -199,10 +195,6 @@ forgot whole classes in classifiers; forgetting specific token sequences in a
 large language model had not been studied.
 
 </details>
-
----
-
-### [Wiki Home](../README.md)
 
 <details>
 <summary><h4>References</h4></summary>

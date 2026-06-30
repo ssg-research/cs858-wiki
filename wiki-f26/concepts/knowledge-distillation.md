@@ -8,7 +8,7 @@ tags:
   - model-extraction
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Knowledge distillation
 
@@ -43,8 +43,6 @@ match the teacher's training data, turns distillation into a tool for
 - [Kullback-Leibler divergence](kl-divergence.md)
 - [Model extraction](model-extraction.md)
 - [Transfer learning](transfer-learning.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

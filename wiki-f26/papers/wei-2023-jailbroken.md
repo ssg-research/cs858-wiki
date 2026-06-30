@@ -15,11 +15,7 @@ tags:
   - attack
 ---
 
----
-
-### [Wiki Home](../README.md)
-
----
+## [Wiki Home](../README.md)
 
 # Jailbroken: How Does LLM Safety Training Fail?
 
@@ -186,10 +182,6 @@ conceptual account of why jailbreaks succeed, grounded in the training pipeline,
 had not been given.
 
 </details>
-
----
-
-### [Wiki Home](../README.md)
 
 <details>
 <summary><h4>References</h4></summary>

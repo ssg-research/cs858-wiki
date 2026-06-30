@@ -8,7 +8,7 @@ tags:
   - software-security
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Taint tracking
 
@@ -52,8 +52,6 @@ instructions (Yu et al., 2019).
 
 - [Trusted execution environment](trusted-execution-environment.md)
 - [Secure inference](secure-inference.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

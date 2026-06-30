@@ -17,11 +17,7 @@ tags:
   - machine-learning
 ---
 
----
-
-### [Wiki Home](../README.md)
-
----
+## [Wiki Home](../README.md)
 
 # PAL\*M: Property Attestation for Large Generative Models
 
@@ -241,10 +237,6 @@ is cost: proving a single iteration of VGG-11 training runs to minutes (Abbaszad
 et al., 2024).
 
 </details>
-
----
-
-### [Wiki Home](../README.md)
 
 <details>
 <summary><h4>References</h4></summary>

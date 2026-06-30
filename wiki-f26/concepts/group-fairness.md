@@ -7,7 +7,7 @@ tags:
   - defense
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Group fairness
 
@@ -44,8 +44,6 @@ encode different goals and cannot in general be satisfied at once.
 
 - [Empirical risk minimization](empirical-risk-minimization.md)
 - [Differential privacy](differential-privacy.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

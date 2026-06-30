@@ -7,7 +7,7 @@ tags:
   - trusted-execution-environment
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Hardware virtualization
 
@@ -46,8 +46,6 @@ two-world split such as Arm TrustZone.
 
 - [Trusted execution environment](trusted-execution-environment.md)
 - [Model partitioning across a TEE and an accelerator](model-partitioning.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

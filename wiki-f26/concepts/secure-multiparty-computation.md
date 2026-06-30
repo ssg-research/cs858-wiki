@@ -8,7 +8,7 @@ tags:
   - privacy
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Secure multiparty computation
 

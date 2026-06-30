@@ -7,7 +7,7 @@ tags:
   - interpretability
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Singular value decomposition
 
@@ -35,8 +35,6 @@ standard tool for reading the dominant directions of a weight matrix.
 
 - [Mechanistic interpretability](mechanistic-interpretability.md)
 - [Linear representation hypothesis](linear-representation-hypothesis.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

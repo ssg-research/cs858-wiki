@@ -25,11 +25,7 @@ tags:
   - membership-inference
 ---
 
----
-
-### [Wiki Home](../README.md)
-
----
+## [Wiki Home](../README.md)
 
 # Extracting Training Data from Large Language Models
 
@@ -194,10 +190,6 @@ Ramaswamy et al., 2020). The framework of privacy as contextual integrity
 a violation: when it moves data out of the context for which it was shared.
 
 </details>
-
----
-
-### [Wiki Home](../README.md)
 
 <details>
 <summary><h4>References</h4></summary>

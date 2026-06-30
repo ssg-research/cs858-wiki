@@ -9,7 +9,7 @@ tags:
   - machine-learning
 ---
 
-### [Wiki Home](../README.md)
+## [Wiki Home](../README.md)
 
 # Backdoor attacks
 
@@ -51,8 +51,6 @@ than an output an attacker plants to cause harm.
 
 - [Memorization](memorization.md)
 - [Model watermarking](model-watermarking.md)
-
-### [Wiki Home](../README.md)
 
 ## References
 

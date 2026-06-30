@@ -20,11 +20,7 @@ tags:
   - jailbreak
 ---
 
----
-
-### [Wiki Home](../README.md)
-
----
+## [Wiki Home](../README.md)
 
 # What Makes and Breaks Safety Fine-tuning? A Mechanistic Study
 
@@ -208,10 +204,6 @@ al., 2021). What had not been done was to connect the minimal-change observation
 to the robustness failures in a single mechanistic account.
 
 </details>
-
----
-
-### [Wiki Home](../README.md)
 
 <details>
 <summary><h4>References</h4></summary>
