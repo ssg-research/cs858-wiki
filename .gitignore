@@ -1,6 +1,9 @@
 # Instructor-side notes — not published.
 agent_docs/
 
+# Session outputs (equation catalog, crops, metadata) — instructor working files.
+outputs/
+
 # Paper PDFs are untrusted input and live outside git.
 raw/pdfs/
 
