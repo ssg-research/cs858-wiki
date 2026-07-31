@@ -152,26 +152,18 @@ guarantees are in practice (Jagielski et al., 2020; Nasr et al., 2021).
 
 ## Reading guidance
 
-- Section II: background on training-data privacy; skim if the basic background
-  is familiar.
-- Section III-A, Definition 1: the membership inference security game.
-  Definition 1 grants the adversary sampling access to the underlying data
-  distribution; note where the attack later relies on it.
-- Section III-B: the case against balanced accuracy and AUC. The hypothetical
-  Attack A versus Attack B comparison carries the argument.
-- Section IV: the derivation of LiRA. Figures 3 and 4 show the per-example
-  loss distributions and the effect of logit scaling; Algorithm 1 is the whole
-  attack in one box; the online/offline distinction matters for cost.
-- Section V and Table I: re-evaluation of eight prior attacks. Note which
-  attacks change rank between balanced accuracy and TPR at low FPR.
-- Section VI and Table II: the ablation; which components produce the gains,
-  and Figure 9 for how many shadow models are enough.
-- Figure 7: train-test gap versus attack success across training
-  configurations.
-- Appendix A: [DP-SGD](abadi-2016-dp-sgd.md) against the attack; note the
-  epsilon values at which the attack is and is not stopped.
-- Section VIII: the authors' list of prior conclusions they argue need
-  re-examination.
+- Section III-A, Definition 1, step 4: the security game grants the adversary
+  query access to the underlying data distribution. Every shadow model the attack
+  trains depends on that grant.
+- Section III-B: the argument that balanced accuracy and AUC hide what matters,
+  and the case for reporting true-positive rate at a fixed low false-positive
+  rate instead.
+- Section IV and Algorithm 1: the likelihood-ratio test between two Gaussians
+  fitted to logit-scaled confidences, one per membership hypothesis. Figure 4 is
+  the evidence that the Gaussian fit is defensible.
+- Section V-C, Table I: eight prior attacks re-ranked once success is reported as
+  true-positive rate at 0.001% false-positive rate. Note which attacks change
+  places.
 
 <details>
 <summary><h2>Paper Context</h2></summary>

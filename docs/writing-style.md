@@ -86,6 +86,12 @@ Each example is from a rejected draft.
   those themselves; the page places a neutral attention anchor in reading
   guidance instead ("the justification for X is one sentence; note what it
   is").
+- Reading guidance written as a table of contents. Rejected: "Section 5 and
+  Table 1: the experimental setup and the datasets." A bullet that reports what
+  a section contains is a listing any model generates for free, and a page full
+  of them tells the student to read everything. Point at the specific thing a
+  summary destroys: the exact quantifier, the assumption in one clause, the
+  threshold with no derivation, the baseline chosen.
 - Newspaper drama. Rejected: "Deep learning raised the stakes and broke the
   assumptions," "these attacks are the empirical face of the problem," "would
   survive contact with either standard," and open-question closers staged for
@@ -158,9 +164,17 @@ detector, an initiator).
   when the paper appeared. What had been tried, what had broken, what was
   unsettled. Prior or contemporaneous citations only. Not questions. Renders
   inside a collapsed `<details>` block, the heading as its toggle.
-- **Reading guidance.** A bullet list keyed by section, figure, or table, one
-  line each, placed late in the page. Includes one or two neutral attention
-  anchors pointing at where to slow down, without stating why it is contested.
+- **Reading guidance.** Three bullets, five at the absolute most. One precise
+  locus each (a numbered subsection, an equation, a definition, a figure, a
+  table), ordered by position in the paper and together covering three roles:
+  where the assumptions are pinned down, where the mechanism lives, where the
+  claim is settled. The roles are a coverage requirement and a drafting rule, and
+  never appear as labels on the page. At least one bullet is a
+  neutral attention anchor pointing at where to slow down, without stating why
+  the site is contested. Sits directly after Basic Background, above the
+  collapsed blocks. Every bullet must be unsatisfiable from a summary of the
+  paper; see the rule and its sources in
+  [ops/generate-paper-summary.md](ops/generate-paper-summary.md).
 - **Motivating questions.** Staff-side archive only (`agent_docs/`); not on
   the student-facing page. Three to five high-level pre-questions per paper,
   answerable by reading it. Students generate their own.

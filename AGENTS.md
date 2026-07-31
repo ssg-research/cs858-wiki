@@ -132,6 +132,14 @@ is the instructor's release decision, never an agent's.
   those themselves (the generation effect); the page places neutral attention
   anchors in Reading guidance instead. Motivating questions are three to five
   extremely high-level pre-questions answerable by reading the paper.
+- **Reading guidance is three bullets, five at the absolute most**, ordered by
+  position in the paper. Each names one precise locus (a numbered subsection,
+  equation, definition, figure, or table); together they cover where the
+  assumptions are pinned down, where the mechanism lives, and where the claim is
+  settled. A section-by-section roadmap is a failure: it tells the student to
+  read everything, and a model generates it for free. Every bullet must be
+  unsatisfiable from a summary of the paper. See step 6 of
+  `docs/ops/generate-paper-summary.md`.
 - **Follow the house writing style** in `docs/writing-style.md` on every page:
   terse, declarative, written for a graduate reader new to the subfield. Say what
   something is, not what it is not: no defining a thing by negating an
@@ -150,7 +158,7 @@ is the instructor's release decision, never an agent's.
   PATH; invoke via npx:
 
   ```bash
-WIKI_DIR="wiki-f26"
+  WIKI_DIR="wiki-f26"
   npx --no-install markdownlint-cli2 "$WIKI_DIR/papers/foo.md" "$WIKI_DIR/concepts/bar.md"
   ```
 

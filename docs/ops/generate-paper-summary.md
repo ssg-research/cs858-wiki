@@ -287,12 +287,52 @@ not to the paper page. Each entry in the archive is headed by the paper title
 as a link to the paper. Ask the user for the canonical link for this paper
 (arXiv abstract URL or DOI); do not auto-derive it.
 
-**Reading guidance.** A bullet list keyed by section, figure, or table: one
-line each on what that part contains and its role. Include one or two
-**attention anchors**: neutral pointers at the site of an open tension ("the
+**Reading guidance.** **Three bullets. Five is the hard maximum, and the fourth
+and fifth need a reason.** Each points at one precise locus (a numbered
+subsection, an equation, a definition, a figure, a table) and says what to
+extract there. Together they must cover three roles:
+
+1. **Where the assumptions get pinned down.** The place the threat model, the
+   perturbation set, the access model, or the trust boundary is *fixed*, as
+   opposed to described. Not the section that discusses the setting: the
+   sentence or definition that commits to it.
+2. **Where the idea lives.** The single equation, definition, or algorithm step
+   that carries the mechanism. If the paper has one lemma everything rests on,
+   that is this bullet.
+3. **Where the claim is settled.** The one figure or table that decides "better
+   than X on metric Y." Name the baseline and name the metric. For a defense
+   paper this is often the adaptive-adversary section rather than the headline
+   table.
+
+The roles are a coverage requirement, not a running order. **Order the bullets
+by position in the paper**, since the student reads front to back and guidance
+that jumps backwards makes them work to follow it. All three roles must appear
+somewhere in the list. The roles are a drafting and review rule; they are never
+printed on the page and the bullets carry no role labels. At least one bullet is
+an **attention anchor**: a neutral pointer at the site of an open tension ("the
 justification for X is one sentence; note what it is"), without stating the
-tension. This section sits *late* in the page, immediately before the student
-picks up the paper.
+tension.
+
+The test every bullet must pass: **a student with a fluent summary of the paper
+still could not satisfy it.** A bullet that describes what a section contains
+fails, because that is a table of contents and a model will generate one for
+free. Point at the specific thing a summary flattens: the exact quantifier, the
+assumption stated in one clause, the baseline chosen, the threshold with no
+derivation, what a measurement is silent about.
+
+This is not a stylistic preference. LLM summaries of scientific work
+systematically drop hedges, scope qualifiers, and sample limits, and a threat
+model *is* a scope qualifier: summarization turns "X is broken by an adversary
+with this access at this budget" into "X is broken" (Peters and Chin-Yee, 2025).
+Guidance that competes with a summary loses. Guidance that points where
+summaries fail is the part of the page that cannot be automated away.
+
+Guidance also costs the reader: guided readers comprehend more but read roughly
+thirty percent slower (Cui et al., 2024), so every bullet has to earn its slot.
+Sparse and crucial beats complete.
+
+This section sits directly after Basic Background, immediately before the
+student picks up the paper.
 
 ### 7. Supplementary readings
 
@@ -384,6 +424,8 @@ tags:
   - tag2
 ---
 
+---
+
 ## [Wiki Home](../README.md)
 
 # Paper title
@@ -408,18 +450,13 @@ terms. Never its slot in the course sequence.)
 (Two to five sentences per cluster, Wikipedia link density, concept links carry
 the depth. Prerequisite knowledge only, never this paper's content.)
 
-<details>
-<summary><h2>Paper Context</h2></summary>
-
-(Declarative prose: the state of the field when the paper appeared. Prior or
-contemporaneous work only, properly cited. Never this paper's position.)
-
-</details>
-
 ## Reading guidance
 
-(A bullet list keyed by section / figure / table, one line each, including one
-or two neutral attention anchors. A roadmap, not a summary.)
+(Three bullets, five at the absolute most, ordered by position in the paper. One
+precise locus each, together covering the assumptions / mechanism /
+deciding-evidence roles, no role labels on the page, at least one neutral
+attention anchor. Every bullet must be unsatisfiable from a summary of the
+paper.)
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>
@@ -429,7 +466,15 @@ or two neutral attention anchors. A roadmap, not a summary.)
 </details>
 
 <details>
-<summary><h2>References</h2></summary>
+<summary><h2>Paper Context</h2></summary>
+
+(Declarative prose: the state of the field when the paper appeared. Prior or
+contemporaneous work only, properly cited. Never this paper's position.)
+
+</details>
+
+<details>
+<summary><h4>References</h4></summary>
 
 - Last, F., Last, F., and Last, F. "Title." Venue, Year.
 
@@ -440,15 +485,22 @@ Required: the frontmatter, "High-level overview" (with the threat-model
 paragraph), "Why read this," at least one Background section, and "References"
 whenever anything is cited. The rest is optional but encouraged.
 
-Paper Context, Supplementary readings, and References each render inside a
+Section order is fixed: High-level overview, Why read this, Basic Background,
+Reading guidance, then the collapsed blocks in the order Supplementary readings,
+Paper Context, References. Reading guidance sits above the collapsed blocks so
+it is the last thing visible before the student opens the paper.
+
+Supplementary readings, Paper Context, and References each render inside a
 collapsed `<details>` block (shown in the skeleton above) so the visible page
-stays short. Write the heading as an inline `<h2>` on the `<summary>` line, and
-keep one blank line after `</summary>` so the body stays Markdown and its
+stays short. Write the heading as an inline heading on the `<summary>` line,
+`<h2>` for Supplementary readings and Paper Context and `<h4>` for References,
+and keep one blank line after `</summary>` so the body stays Markdown and its
 relative links remain checkable.
 
-Every page opens with an `## [Wiki Home](../README.md)` link directly below the
-frontmatter and above the H1. It is page chrome, sitting outside the content
-sections. Concept pages follow the same convention.
+Every paper page opens with a `---` rule, then an `## [Wiki Home](../README.md)`
+link, then the H1. It is page chrome, sitting outside the content sections, and
+there is no repeat link at the foot of the page. Concept pages carry the same
+Wiki Home link without the rule.
 
 ---
 
@@ -542,8 +594,11 @@ A paper page is acceptable when:
   duplicating them.
 - Paper Context is declarative field context, cites only prior or
   contemporaneous work, and never previews this paper's position.
-- Reading guidance is a section-keyed bullet list with at least one neutral
-  attention anchor, placed late in the page.
+- Reading guidance is three bullets (five at the absolute most) ordered by
+  position in the paper, each naming one precise locus, together covering where
+  the assumptions are pinned down, where the mechanism lives, and where the claim
+  is settled, with at least one neutral attention anchor. No bullet is
+  satisfiable from a summary of the paper.
 - Every citation has a full References entry read off a source from this
   session.
 - Every concept it links exists and the link resolves (`check-links.py` clean).
@@ -556,6 +611,9 @@ It is **not** acceptable to:
 
 - Walk through the paper's methods, evidence, or findings beyond the
   abstract-level overview.
+- Write Reading guidance as a section-by-section roadmap. Enumerating what each
+  section contains tells the student to read everything, which is no guidance at
+  all, and a model produces that listing for free.
 - Author the field's open tensions as questions anywhere on the page (students
   generate those; the page only places attention anchors).
 - Cite follow-up work (work that responds to this paper) as background.
@@ -567,3 +625,20 @@ It is **not** acceptable to:
   in play. Negate only to correct a misconception the reader is likely to hold;
   see the "Banned moves" entry in [docs/writing-style.md](../writing-style.md).
 - Leave a broken link or an orphan concept page behind.
+
+---
+
+## References
+
+Cited by the Reading guidance rule in step 6.
+
+- Cui, P., Zouhar, V., Zhang, X., and Sachan, M. "How to Engage your Readers?
+  Generating Guiding Questions to Promote Active Reading." Annual Meeting of the
+  Association for Computational Linguistics (ACL), 2024.
+- Keshav, S. "How to Read a Paper." ACM SIGCOMM Computer Communication Review,
+  37(3), 2007.
+- Peters, U. and Chin-Yee, B. "Generalization Bias in Large Language Model
+  Summarization of Scientific Research." Royal Society Open Science, 12(4):241776,
+  2025.
+- Roughgarden, T. "CS167: Reading in Algorithms, Focus Questions." Stanford
+  University course notes, 2014.

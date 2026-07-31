@@ -147,31 +147,18 @@ to hardware instead.
 
 ## Reading guidance
 
-- Section 2: the TEE assumptions, the label-only output assumption, and the
-  defender's goal of downgrading white-box attacks to black-box ones. Attention
-  anchor: note exactly what the threat model grants the adversary (public
-  models and datasets, the offloaded weights, a sub-one-percent query budget) and
-  what it puts out of scope (TEE side channels).
-- Section 3, Table 1 and Figure 1: the literature taxonomy and the five partition
-  categories, with the representative scheme implemented for each.
+- Section 2.2: what the threat model grants the adversary, namely a public model
+  taken from the internet, the offloaded weights, and fewer queries to the victim
+  than one percent of its training data. Section 2.1 places TEE side channels out
+  of scope.
 - Sections 3.3 and 3.4, Figure 2: the three-phase attack pipeline (surrogate
-  initialization, then model stealing, then membership inference) and the
-  No-Shield (white-box) and Black-box (shielding-whole-model) baselines that bound
-  every measurement.
-- Section 3.5, Table 2: the headline comparison; read the relative-accuracy row,
-  which scales each scheme's attack accuracy against the black-box baseline.
-- Section 4: the security-versus-utility trade-off and the search for a "sweet
-  spot" configuration. Attention anchor: note how stable that best configuration
-  is across the model and dataset pairs.
-- Section 5: TeeSlice and the partition-before-training strategy, the paper's
-  proposed design.
-- Section 6: TeeSlice measured against the same attacks and baselines, including
-  the overhead figures and the NLP extension.
-- Section 7: the related-work map, separating TEE-in-GPU hardware, side channels,
-  whole-model shielding, and TSDP for training from the inference setting studied
-  here.
-- Appendix A: the meta-review and the authors' response, including the reviewers'
-  concern about the one-time-pad feature-encryption assumption in TeeSlice.
+  initialization, model stealing, membership inference) and the No-Shield and
+  Black-box baselines every scheme is read against. Note which one the paper
+  treats as the ceiling on protection.
+- Section 3.5, Table 2: the relative-accuracy row, which divides each scheme's
+  attack accuracy by the black-box baseline's. A value near 1.00x is protection
+  at the black-box level, the goal the paper sets; note how far the schemes sit
+  from it.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

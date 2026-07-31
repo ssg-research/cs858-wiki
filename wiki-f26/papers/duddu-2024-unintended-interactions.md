@@ -136,31 +136,16 @@ information about the model's decision boundary and training data.
 
 ## Reading guidance
 
-- Section 2: the catalogue of risks (evasion, poisoning, unauthorized model
-  ownership, the four privacy inference risks, discriminatory behaviour) and
-  defenses (adversarial training, outlier removal, watermarking, fingerprinting,
-  differential privacy, group fairness, explanations), plus the notation used
-  throughout. A reference list to skim and return to.
-- Section 3: the framework. The conjecture that overfitting (3.1) and
-  memorization (3.2) are the underlying causes, the factors that influence each,
-  and the relationship between the two (3.3). The justification for selecting
-  these two properties as the causes is stated briefly; note what it rests on.
-- Section 4, Tables 2 and 3: the survey, relating each defense and risk to the
-  factors and situating known interactions in the framework. Table 3 marks
-  whether each interaction is empirically shown, theoretically shown, or only
-  conjectured, and flags exceptions; note which cells are evidence and which are
-  conjecture.
-- Section 4.4: the guideline (G1 to G4) for inferring the direction of an
-  interaction from a shared factor, and how a dominant factor is chosen when
+- Section 3, the conjecture stated at its head and unpacked in 3.1 to 3.3:
+  overfitting and memorization are taken as the two underlying causes of every
+  interaction in the survey. The justification for picking those two is stated
+  briefly; note what it rests on, since the whole framework inherits it.
+- Section 4.4, guidelines G1 to G4: how the direction of an interaction is
+  inferred from a shared factor, and how a dominant factor is chosen when two
   factors disagree.
-- Section 5: the two interactions conjectured from the guideline and then
-  validated, with a separate threat model stated for each experiment. Section 5.3
-  reasons about interactions the paper does not evaluate.
-- Section 6: related surveys, and the orthogonal line of work on tradeoffs within
-  a single defense.
-- Section 7: the discussion of completeness, the correlation-not-causation caveat,
-  and how the framework would extend to new causes, defenses, and generative
-  models.
+- Table 3 with its legend: each underlying factor in a cell is marked
+  empirically shown, theoretically shown, or only conjectured, and exceptions are
+  listed separately. Note how many carry the conjecture mark.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

@@ -121,26 +121,15 @@ attacks operate.
 
 ## Reading guidance
 
-- **Section 2 (Background).** Sets up the threat model and the
-  GOODBOT / BADBOT / UNCLEAR labeling scheme; read the access assumptions
-  closely, since the strongest system-prompt attack later falls outside them.
-- **Section 3 (Failure modes).** Introduces competing objectives and mismatched
-  generalization, each illustrated with example attacks and ablations. Note that
-  the failure modes are stated as hypotheses and then used to build attacks;
-  watch what evidence is offered that these are the operative mechanisms rather
-  than one of several possible explanations.
-- **Section 4 (Empirical evaluation).** Tables of attack success across the
-  models, including combination attacks and the larger held-out dataset. Note how
-  an outcome is defined and that the labeling is done by hand.
-- **Section 5 (Implications for defense).** The arguments that scaling will not
-  resolve either failure mode and that "safety-capability parity" may be needed;
-  note which steps rest on the measurements and which extrapolate beyond them.
-- **Figure 2 and Table 3.** The GPT-3.5 Turbo versus GPT-4 contrast, where a
-  vulnerability appears only once the model is capable enough to follow the
-  encoded prompt.
-- **Appendices and the responsible-disclosure note.** The labeling scheme,
-  attack details, and examples live in the appendices; the strongest prompts are
-  deliberately withheld.
+- Section 2.1: black-box access through a chat interface, no system-prompt
+  modification, no edits to message history, and the GOODBOT / BADBOT / UNCLEAR
+  labelling. The adversarial system-prompt attack in Section 4 is exempted; note
+  where the boundary sits.
+- Sections 3.1 and 3.2: competing objectives and mismatched generalization,
+  stated as hypotheses and then used to construct attacks. Note what evidence is
+  offered that these are the operative mechanisms.
+- Figure 2 and Table 3: GPT-3.5 Turbo against GPT-4 under the same encoded
+  prompts. Outcomes are labelled by hand; note where the two models diverge.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

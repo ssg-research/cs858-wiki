@@ -130,37 +130,16 @@ addresses, and instruction timing are written never to depend on secret values.
 
 ## Reading guidance
 
-- Sections II.A and II.B: the TEE background and the side-channel taxonomy. Note
-  what the paper counts as an observable output, since that list defines what the
-  later policy must protect.
-- Section III.A and III.B: the usage scenario and the three design requirements,
-  confidentiality (SR), fast execution (PR), and backwards compatibility (CR).
-  Note exactly what SR-Confidentiality promises, that no party other than the
-  client can infer anything about the data beyond its length.
-- Section IV.B: the adversary model. Attention anchor: note precisely what is
-  trusted (the CPU extensions, the encryption engine, the HSM) and what is out of
-  scope, and how the OS is treated differently from the rest of server software.
-- Section IV.C: the protocol, with decrypt-and-blind on import and
-  encrypt-and-unblind on export, and the roles of the HSM and the encryption
-  engine in moving data across the boundary.
-- Section IV.D and Table I: the taint-tracking policy itself, the split of state
-  into blindable and visible, and the propagation and fault rules. This is the
-  core of the design.
-- Section IV.E: what "BliMe-compliant software" must avoid. Attention anchor: the
-  burden it places on application code is the constant-time discipline already
-  used for side-channel-resistant cryptographic code; note what that implies for
-  ordinary, unmodified software.
-- Section V: BliMe-BOOM, the register-transfer-level implementation on the RISC-V
-  BOOM core, and where the blindedness tag is threaded through the pipeline.
-- Section VI: the machine-checked proof. Attention anchor: note exactly what is
-  proved and on what model, and how that model relates to the BOOM implementation,
-  that is, what the proof does and does not cover.
-- Section VII and Tables II-III: the run-time, power, and area overheads, and the
-  benchmark and synthesis setup behind them.
-- Sections IX and X: the scope limits (secret-dependent faults, many clients,
-  out-of-scope attacks such as Rowhammer and physical access) and the related-work
-  map of taint tracking, data-oblivious execution, and point side-channel
-  defenses.
+- Section IV-B: the adversary model. Note what is assumed implemented correctly
+  (the BliMe extensions, the encryption engine, the HSM), that the adversary
+  controls all server software including the OS, and what falls outside the
+  model.
+- Section IV-D and Table I: the taint-tracking policy, splitting machine state
+  into blindable and visible and fixing the propagation and fault rules. This
+  table is the design.
+- Section VI-B: the machine-checked safety result, proved in F* over a simplified
+  model ISA of eight instructions, while Section VII measures the BliMe-BOOM
+  register-transfer-level implementation. Note what the proof therefore covers.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

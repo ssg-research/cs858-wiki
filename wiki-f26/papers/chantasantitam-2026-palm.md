@@ -155,32 +155,16 @@ alternative roots of trust against which a hardware-attestation scheme is measur
 
 ## Reading guidance
 
-- Section 2: background on large language models, TEEs, and attestation protocols.
-  Note the distinction the paper draws between remote attestation, which certifies
-  a configuration, and property attestation, which certifies a property using
-  reference values from a trusted authority.
-- Section 3: the system model, the adversary model, and the requirements R1 to R4.
-  Attention anchor: Section 3.2 fixes the trust boundary; note precisely what is
-  trusted (the TDX module and CPU, the H100), what the adversary controls (host,
-  VMM, disk, network), and what is placed out of scope.
-- Section 4.2: how the measurement is formed over datasets too large to hold in
-  enclave memory. Note why the order in which records are sampled complicates
-  getting a consistent measurement.
-- Section 4.3 and the Definition boxes: the per-operation property measurements.
-  Attention anchor: for each operation, note what the attestation measurement
-  contains and what it deliberately omits, since that is what keeps the model and
-  dataset confidential.
-- Section 4.4 and Figure 5: the end-to-end protocol from request to quote, and the
-  roles of the initiator, the trusted authority, and the verifier.
-- Section 5: the prototype on Intel TDX and an NVIDIA H100.
-- Section 6.1 and Tables 3 to 7: the measured overheads. Attention anchor: note why
-  proof of a single inference shows large relative overhead while a chat session
-  does not, and what that implies about when the framework is cheap.
-- Sections 6.2 and 7: the security analysis and the related work, including where
-  the paper places the cryptographic alternatives.
-- Appendix D: the Tamarin model, the six security goals, and the four protocol
-  cases. Note what the formal model abstracts away, for example the GPU and trust
-  domain assumed to be one trust boundary.
+- Section 3.2, the sentence fixing what is out of scope: the TDX module, the
+  TDX-aware CPU, and the H100 are trusted, while the adversary holds the host,
+  the VMM, the disk, and the network. Note how large the trusted set has to be
+  before an attestation means anything.
+- Section 4.3, the per-operation property measurements: for each operation, what
+  the measurement commits to and what it hashes rather than carries. That
+  omission is what keeps the model and the dataset confidential.
+- Section 6.1.3, Table 6: attesting one inference against attesting a session of
+  many. Note what changes between the two and therefore when the framework is
+  affordable.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

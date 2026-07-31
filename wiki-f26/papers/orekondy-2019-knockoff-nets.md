@@ -123,33 +123,16 @@ against exploiting ones already known to pay well (Sutton and Barto, 1998).
 
 ## Reading guidance
 
-- Section 3 (Problem Statement): the victim-versus-adversary game and the formal
-  threat model. Note exactly which quantities the adversary is denied (internals,
-  train/test data, output-class semantics) and how that list differs from earlier
-  stealing work.
-- Section 3 (Remarks, comparison to knowledge distillation) and Figure 3: where
-  the setup is placed against distillation. Attention anchor: note which
-  distillation assumptions are dropped and which are kept.
-- Section 4.1 (Transfer Set Construction): the two query strategies, random and
-  adaptive, the latter cast as a policy over a coarse-to-fine label hierarchy.
-- Section 4.1.2 (Adaptive Strategy) and Figure 4: the reward design. Attention
-  anchor: the reward combines a certainty term, a diversity term, and a loss
-  term; note the justification given for each and how they are combined.
-- Section 5 and Table 1: the four victim black-boxes and the choices of adversary
-  image pool (closed-world versus open-world), with the label-overlap measurement
-  (Table 3) that defines those regimes.
-- Section 6.1, Table 2 and Figure 5: knockoff accuracy across datasets and query
-  budgets, with the distillation row (adversary querying the victim's own training
-  images) as a reference point.
-- Section 6.2 and Figure 10: how the knockoff's architecture, relative to the
-  victim's, affects performance. Attention anchor: the conclusion runs opposite to
-  distillation's usual aim of a smaller student; note what is claimed about model
-  complexity.
-- Section 6.3 and Figure 11: the attack against a commercial image-analysis API,
-  including the dollar cost.
-- Section 6 (defense discussion): the victim counter-strategy of truncating or
-  rounding the returned probabilities. Attention anchor: note what the defender is
-  assumed able to change, and what the paper reports it costs the attack.
+- Section 3 (Problem Statement): what the adversary is denied, namely the
+  victim's internals, its train and test data, and the semantics of its output
+  classes. Note that the last of these is an explicit modelling choice.
+- Section 4.1.2 and Figure 4: the adaptive strategy's reward, summing a
+  margin-based certainty term, a diversity term, and a loss term. Note the
+  justification given for each and how they are combined.
+- Table 2: every multiplier is normalized against the victim black-box row, so a
+  knockoff at 0.93x recovers that share of the victim's accuracy. The knowledge
+  distillation row is a second reference, the adversary querying the victim's own
+  training images; note where the knockoffs land against it.
 
 <details>
 <summary><h2>Paper Context</h2></summary>
