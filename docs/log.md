@@ -788,3 +788,73 @@ motivating-questions archive entry. Wrote the new operation doc
 `docs/ops/replace-paper.md` and indexed it in `AGENTS.md`. check-links clean
 (103 files); pre-commit markdownlint passed; `<details>` render verified via the
 GitHub markdown API. Model: Opus 4.8, `claude-opus-4-8[1m]`.
+
+## [2026-07-31 16:58] revise-schema | Reading guidance: targeted three-bullet rule (issue #20)
+
+Rewrote the "Reading guidance" section on all 24 paper pages and changed the
+rule that produces it. The old sections ran 5 to 11 bullets (142 to 320 words)
+keyed one-per-section, which enumerated most of each paper and amounted to
+"read everything" (issue #20). Every page is now three bullets, 81 to 114 words,
+each naming one precise locus (numbered subsection, equation, definition,
+figure, or table) and together filling three fixed roles in order: where the
+assumptions are pinned down, where the mechanism lives, and where the claim is
+settled. The roles are a drafting and review rule and carry no labels on the
+page; at least one bullet remains a neutral attention anchor. Hard maximum five
+bullets.
+
+Grounding for the rule, since it is a pedagogy change and not a style
+preference. Expert reading is selective and multi-pass, so a uniform
+section-by-section listing works against it (Keshav, CCR 2007; Eisner, JHU
+course notes). Guiding questions measurably improve comprehension but slow
+reading roughly thirty percent, so sparse-and-crucial beats complete (Cui,
+Zouhar, Zhang and Sachan, ACL 2024). What survives long-term is problem,
+significance, and contribution, and a contribution is always "better than X on
+metric Y", so naming baseline and metric is the load-bearing act (Roughgarden,
+CS167 focus questions, Stanford 2014). The decisive argument is the AI one: LLM
+summaries of scientific work drop hedges, scope qualifiers, and sample limits at
+roughly five times the rate of expert summaries (Peters and Chin-Yee, Royal
+Society Open Science 12(4):241776, 2025), and in this course a threat model *is*
+a scope qualifier, so summarization turns "X is broken by an adversary with this
+access at this budget" into "X is broken". The test each bullet must now pass is
+that a student holding a fluent summary still could not satisfy it.
+
+Every locus shipped was verified against the paper itself. Fetched the 18 arXiv
+PDFs via `scripts/fetch-arxiv.py`, used the 5 non-arXiv PDFs already in
+`raw/pdfs/`, and pulled Neural Cleanse (S&P 2019) from the authors' site, so all
+24 were re-read rather than condensed from the previous bullets.
+
+Docs changed to match: `docs/ops/generate-paper-summary.md` step 6, the page
+schema, and the quality bar; `docs/writing-style.md` format-by-section entry and
+a new banned move (reading guidance as a table of contents);
+`.claude/commands/generate-paper-summary.md`; and `docs/ops/lint.md`, which
+gains a mechanical bullet-count check. Also corrected doc drift left by #29: the
+schema now records the real section order (Reading guidance above the collapsed
+blocks, then Supplementary readings, Paper Context, References), the `<h4>`
+References heading, and the `---` rule above the Wiki Home link with no bottom
+nav link.
+
+Reviewed by a four-model panel (Codex, Claude Code, Cursor, Antigravity) over
+five rounds, each member re-verifying every cited locus against the PDFs. Every
+factual finding was independently re-checked against the paper before being
+accepted, and several were rejected on that basis: the panel split on whether
+BliMe's adversary model is III-B or IV-B (IV-B, confirmed by the paper's own
+cross-references to IV-C and IV-D), and two members placed Pearce's
+success definition in a Section V-D that one member's reading did not show.
+Rounds 1 and 2 caught real errors this rewrite had introduced, among them
+Abadi's CIFAR layer split (the softmax layer and one or both fully connected
+layers are trained privately, not the softmax alone), Knockoff Nets' Table 2
+normalization (against the victim black-box row, not the distillation row),
+zkGPT's Table 3 columns (no communication column), DAWN's Table 6 (surrogate
+test and watermark accuracy, with the honest-client cost in Table 5), and Bao's
+OOM cells (Table 2, not Tables 1 and 3). Rounds 3 to 5 converged on overclaims:
+Lemma 3 in Bao bounds the clipping error rather than the privacy accounting,
+ASGARD's Figure 5 does not attribute latency to the TCB reduction, and
+TEE-Shielded's baselines are reference points rather than bounds on every cell.
+Two members initially read the "one precise locus" rule as forbidding a bullet
+from naming a theorem and its figure together; that reading was rejected, since
+it would split coherent sites and its proposed rewrites used imperative reader
+coaching the house style bans. All four members returned SHIP on the final
+state.
+
+check-links clean (104 files); markdownlint clean across all 106 files. Model:
+Opus 5, `claude-opus-5[1m]`.

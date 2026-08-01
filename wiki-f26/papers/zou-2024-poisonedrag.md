@@ -135,28 +135,17 @@ only works at a high false-positive rate is not deployable.
 
 ## Reading guidance
 
-- Section 3.1 (threat model): pin down exactly what the attacker is denied (the
-  other texts in the database, any access to the LLM) versus granted (the
-  retriever, in the white-box setting). The strength of the result rests on how
-  little is assumed.
-- Section 4.1: the two necessary conditions, retrieval and generation, and the
-  idea of splitting an injected text into two parts that serve them.
-- Section 4.2.1: how the part responsible for the generation condition is
-  produced (an LLM is used to write it).
-- Section 4.2.2: how the retrieval condition is met. In the black-box setting the
-  design choice is to set the retrieval part equal to the target question itself;
-  note the one-line justification for that choice and how much of the attack's
-  success rides on it. The white-box setting instead optimizes embedding
-  similarity directly.
-- Section 5: the Attack Success Rate metric, the datasets, the language models,
-  and the baselines the attack is compared against.
-- Section 7 (defenses): paraphrasing, perplexity-based detection, duplicate
-  filtering, and knowledge expansion. For the perplexity detector, look at the
-  ROC curve and AUC in Figure 6 and note what the value implies about how
-  separable the injected texts are from clean ones.
-- Appendix Tables 23-25: example target questions, target answers, and the
-  malicious texts produced. Reading one shows concretely what an injected text
-  looks like.
+- Section 3.1: what the attacker is denied (the other texts in the database, any
+  access to the LLM) against what it is granted (the retriever, in the white-box
+  setting). The result is strong in proportion to how little is assumed.
+- Section 4.2.2: in the black-box setting the retrieval half of an injected text
+  is set equal to the target question itself. Note the one-line justification, and
+  how much of the attack's success rides on that choice.
+- Table 1: attack success rates across three datasets and eight language models,
+  with five malicious texts injected per target question. That injection budget
+  is what the number means.
+- Section 7.2, Figure 6: the perplexity detector's ROC curve and AUC. That value
+  is what says whether injected texts are separable from clean ones at all.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

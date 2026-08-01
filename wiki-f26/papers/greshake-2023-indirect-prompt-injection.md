@@ -117,12 +117,16 @@ querying it, by seeding content the victim's model will retrieve.
 
 ## Reading guidance
 
-- **Section 2 (Preliminaries and Related Work).** The building blocks: tool-augmented and agentic LLMs, prior prompt injection, and the "LLMs as computers" analogy the threat model rests on.
-- **Section 3 (Attack surface and taxonomy).** The taxonomy itself, injection methods, threats, and affected parties (Figure 2), with "Key Message" boxes stating the claims. The taxonomy is adapted from an existing cyber-threat taxonomy; note where a threat is demonstrated versus asserted as conceivable.
-- **Section 4 (Evaluation and demonstrations).** Proof-of-concept attacks on synthetic GPT-4 apps and on Bing Chat and Copilot, grouped by threat. These are qualitative; note how success is judged for a dynamic, interactive chat session. Sections 4.1 and 5.2 state what was tested on real systems versus synthetic mock-ups, and why public injections were avoided; note the boundary.
-- **Section 5 (Discussion and mitigations).** Ethics and disclosure, limitations, and candidate defenses (input filtering, a less-capable sanitizing model, an LLM supervisor, interpretability-based detection). Note which defenses are proposed versus evaluated.
-- **Figures 4-9.** The per-attack data-flow diagrams; each shows where the injection enters and how data or control returns to the attacker.
-- **Appendix (prompts and outputs).** The actual injection prompts and model transcripts; the strongest real-world payloads were deliberately withheld.
+- Section 3 with Figure 2: the assumption that retrieved content and user
+  instruction share one untrusted channel, and the taxonomy of injection methods,
+  threats, and affected parties built on it. Note which cells are demonstrated
+  and which are asserted as conceivable.
+- Sections 4.1.1 to 4.1.3: what was run against Bing Chat and GitHub Copilot
+  versus against synthetic applications the authors built themselves. The
+  boundary between the two is the boundary of the evidence.
+- Sections 5.1 and 5.4: why nothing was injected into publicly retrievable
+  sources, and the statement that exact reproduction is not guaranteed against a
+  black-box system in a changing environment. Note what that leaves verifiable.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

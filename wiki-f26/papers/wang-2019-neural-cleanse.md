@@ -127,30 +127,17 @@ method optimize over inputs and inspect which neurons a trigger excites.
 
 ## Reading guidance
 
-- Section II and Figure 1: the definition of a backdoor and the attack model. Note
-  the line the paper draws between a backdoor and ordinary data poisoning, and
-  what the defender is and is not assumed to have.
-- Section III and Figure 2: the geometric intuition, a decision-boundary
-  "shortcut" into the infected label. Attention anchor: the intuition is drawn on
-  a one-dimensional, three-class cartoon; note what it assumes in order to carry
-  over to real, high-dimensional models.
-- Section IV, Equation 3: the trigger reverse-engineering objective, a
-  misclassification term plus an ℓ1 size penalty on the mask. Attention anchor: the
-  mask is made continuous so it can enter the optimization; note that choice and
-  how it shapes the trigger that is recovered.
-- Section IV (outlier detection): the Median Absolute Deviation test and the
-  anomaly-index threshold of 2 used to call a label infected; note where that
-  threshold comes from.
-- Section V, Figures 18 and 19: detection across the four applications and two
-  injection methods, and the separation between infected and clean models.
-- Section V-C and Table V: how closely the reverse-engineered trigger matches the
-  real one in the neurons it activates. Attention anchor: note the contrast
-  between BadNets and Trojan models here.
-- Section VI: the three mitigations (input filter, neuron pruning, unlearning) and
-  what each costs in clean accuracy.
-- Section VII: adaptive counter-measures (larger triggers, multiple triggers,
-  source-label-specific or "partial" backdoors). Attention anchor: note which
-  variant the base method struggles with and what change it needs to handle it.
+- Section III-B (Defense Assumptions and Goals): the defender is assumed to hold
+  the trained network and a set of correctly labelled samples. Note which of the
+  two, if removed, collapses the reverse-engineering step.
+- Section IV, Equation 3 and the outlier test: a trigger is recovered by trading a
+  misclassification term against an ℓ1 penalty on a mask relaxed to be continuous,
+  then a label is called infected when its anomaly index exceeds 2. Note where
+  that threshold comes from.
+- Section VII (Robustness Against Advanced Backdoors): the five adaptive
+  counter-measures, among them larger triggers and source-label-specific
+  backdoors. Note which variant the base method fails against and what it has to
+  change to cope.
 
 <details>
 <summary><h2>Paper Context</h2></summary>

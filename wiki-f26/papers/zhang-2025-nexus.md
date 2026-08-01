@@ -151,31 +151,14 @@ thousands of tokens, is a distinct cost in any such protocol.
 
 ## Reading guidance
 
-- Section II.A: the one-paragraph threat model. Note that both parties are
-  assumed semi-honest and computationally bounded, and exactly what each is
-  allowed to learn.
-- Sections II.C and II.D: the RNS-CKKS background and the homomorphic sign
-  primitive. Note how many of the nonlinear layers route through it.
-- Section III: the matrix-multiplication protocol and its SIMD compression.
-  Attention anchor: the offline-online split (Section III.C) moves work into an
-  input-independent preprocessing phase; note what is assumed to run "only once,
-  unless the model changes" and how that bears on the non-interactive claim.
-- Section IV.A: the secure argmax and SIMD slot folding, the source of the
-  logarithmic-versus-linear advantage over Phoenix.
-- Section IV.B: how GELU, softmax, and layer normalization are evaluated under
-  encryption.
-- Section V and Figure 7: where bootstrapping is placed in the pipeline. Note its
-  cost relative to the other operations and what governs where it runs.
-- Sections VI.C and VI.D, Tables III-IV and Figure 9: the microbenchmarks and the
-  end-to-end numbers. Attention anchor: NEXUS reports zero communication for the
-  nonlinear functions but large single-machine runtimes; note the quantity being
-  traded against bandwidth and where the GPU version recovers it.
-- Section VI.E: the error and accuracy-versus-latency analysis. Note that both
-  accuracy and latency hinge on the polynomial degree used inside bootstrapping.
-- Section VII: the map of interactive transformer protocols and non-interactive
-  CNN protocols, which fixes what was and was not available before this work.
-- Appendix D: the formal simulation-based security statement and the semi-honest
-  definition the paper adopts from Delphi.
+- Section II.A: the threat model in one paragraph. Both parties are semi-honest
+  and computationally bounded; note exactly what each is allowed to learn.
+- Section III.C: the offline and online split, which moves work into an
+  input-independent preprocessing phase assumed to run once unless the model
+  changes. The non-interactive claim is a claim about the online phase.
+- Sections VI.C and VI.D, Tables III to IV: zero communication for the nonlinear
+  functions bought with large single-machine runtimes. Note what is being traded
+  against bandwidth and where the GPU version recovers it.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

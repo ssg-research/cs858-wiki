@@ -134,29 +134,15 @@ revise that choice.
 
 ## Reading guidance
 
-- Section 1 (Introduction): the cost contrast in Figure 1, sanitization and DP
-  retraining against a few token updates, and the right-to-be-forgotten framing.
-- Section 2 (Related Work): the three lines the paper positions against, privacy
-  methods for language models, machine unlearning, and memorization. Skim if the
-  Basic Background above is familiar.
-- Section 3.1 (Methodology): the unlearning objective is a single equation,
-  gradient ascent on the target sequences. Note how short the method statement is
-  relative to the analysis that follows.
-- Section 3.2 (Quantifying privacy risks): the two metrics, Extraction Likelihood
-  and Memorization Accuracy, and the empirical definition of when a sequence is
-  forgotten. The threshold is set by comparison to validation data the model
-  never saw; note exactly what that threshold is and what it does and does not
-  certify.
-- Section 4.1 (Setup): the two baselines (a deduplication model and a
-  differentially private decoding model) and the Training Data Extraction
-  Challenge data used as the sequences to forget.
-- Section 4.2 (Main results): general-capability benchmarks before and after
-  unlearning, by model size, and the sequential-versus-batch comparison.
-- Section 4.3 and Table 4 (Domain analysis): forgetting difficulty and capability
-  degradation broken down by data domain. Note which domains are reported as
-  harder and the one-sentence hypothesis offered for why.
-- Appendix B (Perplexity): perplexity rises after unlearning even where the
-  benchmark accuracies do not; note the explanation given for the discrepancy.
+- Section 3.1, the unlearning objective: the training loss with its sign negated,
+  applied to the target token sequences. Note that nothing else in the training
+  procedure changes.
+- Section 3.2: Extraction Likelihood and Memorization Accuracy, and the empirical
+  definition of forgotten, fixed by comparison against validation data the model
+  never saw. Note what that threshold certifies and what it leaves open.
+- Section 4.3 and Table 4: forgetting difficulty and capability loss by data
+  domain. Note which domains are reported as harder and the one-sentence
+  hypothesis offered for why.
 
 <details>
 <summary><h2>Paper Context</h2></summary>

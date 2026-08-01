@@ -83,6 +83,12 @@ page and confirm:
   not what the paper does to them.
 - **No authored tensions as questions.** Reading guidance places neutral
   attention anchors; open-tension questions are for students to generate.
+- **Reading guidance is targeted, not a roadmap.** Three bullets, five at the
+  absolute most, ordered by position in the paper, each naming one precise locus,
+  together covering where the assumptions are pinned down, where the mechanism
+  lives, and where the claim is settled. Test each bullet: could a student
+  satisfy it from a summary of the paper? If yes, it is a table-of-contents
+  entry and it goes.
 
 A quick grep surfaces the obvious schema violations:
 
@@ -92,6 +98,17 @@ grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr|motivatin
 ```
 
 Any hit is a candidate violation; read it and confirm.
+
+Reading guidance length is mechanical, so check it directly:
+
+```bash
+WIKI_DIR="wiki-f26"
+for f in $WIKI_DIR/papers/*.md; do
+  case "$f" in *README.md) continue;; esac
+  n=$(awk '/^## Reading guidance/{f=1;next} /^<details>|^## /{if(f)exit} f&&/^- /{c++} END{print c+0}' "$f")
+  [ "$n" -gt 5 ] && echo "TOO MANY READING-GUIDANCE BULLETS ($n): $f"
+done
+```
 
 ## 6. Orphan concept pages
 

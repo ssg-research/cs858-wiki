@@ -151,34 +151,18 @@ such as images or audio, because small edits to wording are conspicuous.
 
 ## Reading guidance
 
-- Section 1.1: notation and language-model basics; the vocabulary and the
-  logit-to-distribution pipeline the method intervenes on.
-- Section 1.2, with the "quick brown fox" sentence and the for-loop: the two
-  example sequences carry the difficulty argument; note what property of a
-  sequence the method needs to leave a signal.
-- Section 2, Algorithm 1: the hard red-list proof of concept, its z-test, and
-  the argument for how many tokens an attacker must change to scrub it.
-- Section 3, Algorithm 2: the soft red-list rule that adds a constant to
-  green-list logits and adapts its effect to entropy.
-- Section 4, Definition 4.1 and Theorem 4.2: the spike-entropy analysis
-  predicting the green-token count. Attention anchor: the analysis assumes the
-  red list is sampled uniformly at random rather than pseudo-randomly as in the
-  deployed method; note where the text says this gap is taken up.
-- Section 4.1 and Table 1: detection sensitivity and the failure cases,
-  including memorized text the model reproduces verbatim.
-- Section 5: keeping the watermark secret behind an API versus open-sourcing the
-  detector.
-- Section 6, Figures 2 to 4 with the error tables: the strength-versus-quality
-  trade-off, swept over the green-list fraction and the logit bias.
-- Section 7, Figures 5 and 6: the catalog of removal attacks (insertion,
-  deletion, substitution, paraphrase, homoglyph, the emoji generative attack,
-  and the T5 span-replacement attack) and what each costs the attacker.
-  Attention anchor: Section 7 states the assumption about which models the
-  attacker has access to; note what the security argument rests on.
-- Section 8: where the authors place the scheme relative to steganography and to
-  post-hoc detection.
-- Section 9: the open questions left for future work, including robust hashing
-  and detection over a streaming or partially watermarked span.
+- Section 3, Algorithm 2: the soft rule, which adds a constant to green-list
+  logits so the bias yields on low-entropy text. The green list is seeded
+  pseudo-randomly from the preceding token, which is what makes detection
+  possible without the model.
+- Section 4, Definition 4.1 and Theorem 4.2: the spike-entropy bound on expected
+  green tokens. The theorem assumes multinomial sampling and a uniformly random
+  green list while the deployed rule is pseudo-random; note where the text takes
+  up that gap.
+- Section 7, the sentence fixing the attacker's resources: watermark-free text
+  must be produced from the private watermarked model together with other public
+  models, which the paper notes are much weaker. Every removal result in
+  Figures 5 and 6 is relative to that grant.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

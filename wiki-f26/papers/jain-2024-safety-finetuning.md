@@ -137,32 +137,15 @@ linear-algebra vocabulary the paper's analysis assumes.
 
 ## Reading guidance
 
-- Section 3 and Figures 1-2: the synthetic data-generating process (operators and
-  operands, PCFG-sampled text, safety as a property of the combination) and how
-  the input types are built: jailbreaks via competing objectives (JB-CO-Task,
-  JB-CO-Text), mismatched generalization (JB-MisGen), and continuous-embedding
-  attacks (Adv). Note the mapping back onto the jailbreak taxonomy.
-- Section 4.1 and Figure 3: the activation-clustering measure and how separation
-  between safe and unsafe clusters grows with stronger protocols and with depth;
-  the bottom row repeats the measurement on Llama models.
-- Section 4.2 and Figures 4-5: the parameter-space analysis of the change
-  introduced by safety fine-tuning, framed through the fundamental subspaces.
-  Attention anchor: note how "minimal" the transformation is taken to be, and
-  exactly what is measured to support the claim that it is "specialized for unsafe
-  samples."
-- Section 4.3 and Figure 6: local Lipschitzness as a per-sample sensitivity
-  probe, and how it moves in opposite directions for safe versus unsafe inputs.
-- The "interventions via linear connectivity" paragraph at the end of Section
-  4.2: the one interventional test, interpolating and extrapolating along the
-  fitted transformation. Note what extrapolation beyond the fine-tuned model
-  does.
-- Section 5 and Figure 7: jailbreak and adversarial inputs re-run through the same
-  feature-, function-, and parameter-space analyses. Attention anchor: the
-  analysis keeps only successful attacks; note what that selection does to the
-  comparison.
-- Appendix B: the natural-language instantiation on Llama and the correspondence
-  between synthetic inputs and real prompts. Note how much of the evidence is
-  synthetic versus measured on a deployed model.
+- Section 3 and Figures 1 to 2: the synthetic data-generating process, where
+  safety is a property of operator and operand combinations sampled from a PCFG.
+  Nearly all of the paper's evidence is collected in this synthetic world; note
+  what it is built to make measurable.
+- Section 4.2 and Figures 4 to 5: the parameter-space claim that safety
+  fine-tuning induces a minimal transformation specialized for unsafe samples.
+  Note exactly what is measured to support "minimal" and "specialized."
+- Section 5 and Figure 7: jailbreaks re-run through the same analyses. The
+  comparison keeps only successful attacks; note what that selection does to it.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

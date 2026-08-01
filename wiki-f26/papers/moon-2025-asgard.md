@@ -138,34 +138,16 @@ adversary can read.
 
 ## Reading guidance
 
-- Section II.A and Figure 1: the Arm primitives the design rests on, the four
-  exception levels EL0 to EL3 and the two-stage address translation, the
-  vocabulary the rest of the paper assumes.
-- Section II.B: virtualization-based TEEs and the concrete protected-KVM design,
-  with the privileged hypervisor at EL2, the unprivileged host-side hypervisor,
-  page-frame ownership, and IOMMU isolation of peripherals.
-- Section II.C and Table I: the efficiency (P1) and compatibility (P2)
-  limitations of prior TrustZone-based solutions, each prior system scored
-  against both. Attention anchor: read which column each prior system fails and
-  why, since the design goals are set directly against this table.
-- Section III.A and III.B, Figure 2: the three design goals (G1 to G3) and the
-  threat model. Attention anchor: note exactly what the threat model trusts (the
-  privileged hypervisor, the EL3 secure monitor, the secure world) and what it
-  excludes (physical attacks, side channels), and that the guarantee is stated as
-  software-secure.
-- Section IV: the secure I/O passthrough design, and what has to move into the
-  privileged hypervisor, namely the IOMMU driver and the accelerator reset
-  control.
-- Section V: the platform- and application-level TCB debloating, the techniques
-  that hold the enclave image and the hypervisor additions small.
-- Section VI, Table III and Figures 5 and 8: the security analysis and the
-  TCB-size and latency measurements, including the comparison against an
-  REE-offloading baseline.
-- Section VII: scope and limits, including model extraction through side
-  channels, porting to other SoCs, and compatibility with Arm's Confidential
-  Compute Architecture.
-- Section VIII: the related-work map, separating TrustZone peripheral extension,
-  hardware GPU TEEs, and accelerator I/O virtualization.
+- Section III-B with Figure 2: the threat model. The guarantee is stated as
+  software-secure; physical attacks and side channels are out of scope, and the
+  privileged hypervisor, the EL3 secure monitor, and the secure world are
+  trusted.
+- Section IV-A: secure I/O passthrough, and what has to move into the privileged
+  hypervisor to support it, namely the IOMMU driver and accelerator reset
+  control. Note what that adds to the platform-level trusted computing base.
+- Table III with Figure 5: enclave and TCB size, then end-to-end latency against
+  the REE-only and partition-and-offload baselines. Note what ASGARD costs
+  relative to running with no protection at all.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

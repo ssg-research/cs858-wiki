@@ -127,29 +127,15 @@ Lasso lookup argument (Setty et al., 2024).
 
 ## Reading guidance
 
-- Abstract and Section 1: the problem and the actors. Note who the prover and
-  verifier are (the service provider versus a user or regulator) and exactly what
-  each side knows and keeps secret.
-- Section 2: the GKR protocol, the machine-learning-friendly circuit, and the Lasso
-  lookup protocol, the primitives the construction reuses. Note the quantization
-  scheme that maps real numbers to field integers and where rounding enters.
-- Section 3: the split into linear and non-linear layers and the two optimizations,
-  constraint fusion and circuit squeeze. This is the roadmap for the construction.
-- Section 4: the per-layer constraints and the matrix-multiplication proof.
-  Attention anchor: the GeLU treatment introduces an approximation the authors call
-  z-GeLU as a design choice; note what is being approximated and that the accuracy
-  comparison is deferred to Appendix C.
-- Section 7: the end-to-end GPT-2 timings and the comparisons to ZKML, Hao et al.,
-  and zkLLM. Note which cost each comparison reports, prover time, proof size, or
-  communication.
-- Section 8: the map of zero-knowledge ML systems, from decision trees and CNNs to
-  LLMs, and the separate proof-of-training line.
-- Section 9: the discussion and limitations. Attention anchor: the reliance on
-  quantization is stated as a limitation; note what it rules out (proving
-  floating-point inference directly) and that the authors flag it as shared across
-  zero-knowledge ML systems.
-- Appendix B: the completeness and soundness argument, reduced to the soundness of
-  GKR and Lasso. Note the cases the soundness proof splits the cheating prover into.
+- Section 2.1, the quantization map: real numbers to field integers, and where
+  rounding enters. Everything proved downstream is a statement about the
+  quantized model.
+- Section 4.1: the per-layer constraints, and z-GeLU introduced as a design
+  choice with its accuracy comparison deferred to Appendix C. Note what is being
+  approximated.
+- Section 7.2, Table 3: end-to-end GPT-2 proving against Hao et al., ZKML, Lu et
+  al., and zkLLM, in prover time, verifier time, and proof size. Two rows report
+  proof size in gigabytes rather than kilobytes; note which schemes those are.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

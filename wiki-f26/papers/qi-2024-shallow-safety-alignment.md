@@ -117,23 +117,17 @@ and drive the largest weight updates.
 
 ## Reading guidance
 
-- Section 2 and Figure 1: the per-token KL divergence between aligned and base
-  models on harmful inputs, the central measurement behind the "shallow" claim.
-- Table 1: what the harmfulness rate of an unaligned base model does once a
-  refusal prefix is prefilled into its decoding.
-- Section 2.3.1: the inference-stage exploits (prefilling, adversarial suffix,
-  random sampling over decoding parameters) recast under one lens.
-- Section 2.3.2 and Figure 3: per-token loss, gradient norm, and KL during a
-  fine-tuning attack, and where along the response the change concentrates.
-- Section 3: the data-augmentation approach ("safety recovery examples"). Note how
-  this training scheme relates to defenses you have seen for classifiers, and what
-  about the safety setting makes the construction different.
-- Section 4 and Table 3: the token-wise constrained fine-tuning objective and its
-  results against fine-tuning attacks and on benign downstream tasks. Note which
-  token positions receive the strong constraint, and the justification given for
-  that choice.
-- Section 5: related work, placing the paper among the superficial-alignment and
-  token-dynamics lines.
+- Figure 1 with Table 1: the per-token KL divergence between aligned and base
+  models on harmful prompts, then the harmfulness rate of an unaligned base model
+  once a refusal prefix is prefilled into its decoding. Note what those two
+  numbers jointly commit to.
+- Section 2.3: the vulnerabilities the shallowness claim is meant to explain,
+  from prefilling and decoding-parameter manipulation in 2.3.1 to fine-tuning in
+  2.3.2. Note which of them need weight access and which need only the decoding
+  interface.
+- Section 4.1, Equation 3, with Table 3 for the results: the token-wise
+  constrained fine-tuning objective. Note which token positions receive the
+  strong constraint and the justification given for stopping there.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

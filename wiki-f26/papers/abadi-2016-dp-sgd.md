@@ -137,22 +137,17 @@ budget is exhausted.
 
 ## Reading guidance
 
-- Section 2: the (epsilon, delta) definition, the Gaussian mechanism, and
-  composition; everything after leans on these.
-- Section 3.1 and Algorithm 1: the whole algorithm in one box. Each line maps
-  to a concept: clipping bounds sensitivity, noise is the Gaussian mechanism,
-  the accountant handles composition.
-- Section 3.2 and Theorem 1: the moments accountant. Figure 2 shows what it
-  buys over the strong composition theorem; proofs are in the appendix and can
-  be deferred.
-- Section 5.1: the accounting comparison in numbers.
-- Section 5.2 and Figures 4 and 5: MNIST accuracy across (epsilon, delta)
-  pairs and parameter sensitivity. The clipping threshold C has no formula;
-  note how the paper chooses it.
-- Section 5.3: CIFAR-10. Note which layers are trained privately and which are
-  pre-trained on data the paper treats as public.
-- Section 6: the map of prior private-learning approaches and the contrast
-  with Shokri and Shmatikov (2015).
+- Section 3.1, Algorithm 1: the clipping step is what bounds any single example's
+  influence on the update, and every privacy claim downstream rests on that
+  bound. The threshold C has no closed form; note how Section 5.2 settles on a
+  value.
+- Theorem 1 with Figure 2: the moments accountant, and the factor of
+  sqrt(log(T/delta)) it saves over the strong composition theorem. Figure 2 puts
+  a number on that saving, as epsilon against training epochs.
+- Section 5.3: the CIFAR-10 numbers. The convolutional layers are pretrained on
+  CIFAR-100, which the paper declares public, and only the softmax layer and one
+  or both fully connected layers are trained privately. Note what the reported
+  epsilon therefore covers.
 
 <details>
 <summary><h2>Paper Context</h2></summary>

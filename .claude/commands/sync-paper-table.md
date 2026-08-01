@@ -31,7 +31,7 @@ Sync the paper table in `wiki-f26/README.md` to the current spreadsheet.
 5. **Lint and verify.**
 
    ```bash
-WIKI_DIR="wiki-f26"
+   WIKI_DIR="wiki-f26"
    npx --no-install markdownlint-cli2 "$WIKI_DIR/README.md"
    uv run python3 scripts/check-links.py
    ```

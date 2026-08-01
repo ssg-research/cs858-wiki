@@ -151,27 +151,17 @@ the guarantee this line of work targets.
 
 ## Reading guidance
 
-- Section 2: preliminaries on DP, DP-SGD, MeZO, and DPZO; skim if the basic
-  background is familiar. Equations 6 and 7 define the zeroth-order
-  loss-difference estimate.
-- Section 4 and Lemma 2: the convergence analysis that ties clipping error to
-  the convergence rate of DPZO. Figure 1 plots the distribution of the
-  loss-difference estimates; note how heavy its tail is relative to the clipping
-  thresholds prior work suggested.
-- Section 5 and Algorithm 1: the method in one box. Figure 2 illustrates the
-  aggregation idea, and Lemma 3 bounds the aggregate vector's norm.
-- Section 5.3, Lemmas 4 and 5: the convergence rate and the Rényi DP guarantee.
-  The accounting also spends budget on releasing the dataset size; note how
-  much.
-- Section 6, Tables 1 and 2: utility across models, tasks, and budgets, with
-  DP-AdamW, DPZO, and non-DP references. The OOM entries mark where first-order
-  baselines fail; Table 3 is the memory comparison.
-- Figure 4: the clipping error over the course of training for each method; note
-  how large it grows under the previously suggested thresholds.
-- Figure 5: how utility changes with the number of aggregated directions, and
-  where it saturates.
-- Section 7: related work, placing the method among the DP fine-tuning,
-  zeroth-order, and clipping lines.
+- Section 5.1, the input list of Algorithm 1: what the privacy guarantee is taken
+  over, including the Laplace noise spent on releasing the dataset size n itself.
+  Note what the adversary is assumed to observe.
+- Section 4.1, Figure 1, with Lemma 3 in Section 5.2: the distribution of
+  zeroth-order loss-difference estimates against the clipping thresholds prior
+  work recommended, and the norm bound on the aggregated direction that in turn
+  bounds the clipping error. Note how heavy that tail is next to those
+  thresholds.
+- Table 2, with Table 3 for peak memory on RoBERTa: utility on OPT-1.3B and
+  OPT-6.7B against DP-AdamW and DPZO. The OOM cells are the claim; note which
+  baselines fail to run at all rather than run worse.
 
 <details>
 <summary><h2>Supplementary readings</h2></summary>

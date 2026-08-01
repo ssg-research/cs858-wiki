@@ -133,28 +133,19 @@ examples that contribute most to quality.
 
 ## Reading guidance
 
-- Section 2 (Background and Related Work): language-model basics and a taxonomy
-  of training-data privacy attacks. Skim if the Basic Background above is
-  familiar.
-- Section 3 (Threat Model and Ethics): the formal definitions. Definition 1
-  states what it means for a string to be extractable; Definition 2 defines
-  k-eidetic memorization by counting the training documents that contain the
-  string.
-- Section 3.1, footnote 4: Definition 1 admits pathological corner cases (a model
-  told to repeat a sentence back). Note the cases listed and how prompting with
-  only short prefixes is used to sidestep them.
-- Sections 4 and 5: the attack in two passes, a simple baseline and an improved
-  version. Section 5.1 varies how candidates are generated (decaying temperature,
-  conditioning on internet text); Section 5.2 varies how they are ranked.
-- Section 5.2: the membership-inference step compares GPT-2's perplexity against
-  six reference signals (zlib entropy, smaller GPT-2 models, lower-cased text, a
-  sliding window). Note the justification given for each comparison.
-- Sections 6 and 7: evaluation of what was extracted and which factors drive
-  memorization, including model size and how often a string appears in the data.
-- Sections 8 and 9: the mitigations weighed (differential privacy,
-  de-duplication, auditing) and their stated limits.
-- Appendix A and C: the categorization of the 604 memorized samples and the case
-  studies, including the personally identifiable categories.
+- Section 3, Definitions 1 and 2: what makes a string extractable, and k-eidetic
+  memorization, defined by counting the training documents containing it.
+  Definition 1 admits pathological cases; note what footnote 4 lists and how
+  short prefixes sidestep them.
+- Section 5.2, with the metric list in Section 6.1: candidates are ranked by
+  five comparison signals (Small and Medium GPT-2, zlib entropy, lower-cased
+  text, a 50-token sliding window) set against a plain-perplexity baseline. The
+  comparison, not the perplexity, is the attack.
+- Section 6.2 with Table 2: 604 of 1,800 candidates confirmed memorized, an
+  aggregate true-positive rate of 33.5%, broken out by generation strategy and
+  inference metric. Section 6.1 fixes what confirmation meant, one of four
+  authors finding a non-trivial substring that returns an exact Google match;
+  note what that makes the 604 a count of.
 
 <details>
 <summary><h2>Paper Context</h2></summary>
