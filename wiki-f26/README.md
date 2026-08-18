@@ -234,7 +234,7 @@ is required; expand the essential readings beneath it to see what goes alongside
         <details>
           <summary>Essential readings (2)</summary>
           <ul>
-            <li><a href="https://arxiv.org/abs/2406.11717">Refusal in Language Models Is Mediated by a Single Direction</a></li>
+            <li><a href="https://arxiv.org/abs/2502.17420">The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence</a></li>
             <li><a href="https://arxiv.org/abs/2406.04313">Improving Alignment and Robustness with Circuit Breakers</a></li>
           </ul>
         </details>

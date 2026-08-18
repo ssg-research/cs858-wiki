@@ -150,7 +150,7 @@ linear-algebra vocabulary the paper's analysis assumes.
 <details>
 <summary><h2>Supplementary readings</h2></summary>
 
-- [Refusal in Language Models Is Mediated by a Single Direction](https://arxiv.org/abs/2406.11717) — locates refusal in a single activation direction; the paper's interpolation experiments relate directly to this single-direction account.
+- [The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence](https://arxiv.org/abs/2502.17420) — finds refusal governed by multiple independent directions and concept cones rather than one, revising the single-direction account this paper's interpolation experiments engage with.
 - [Improving Alignment and Robustness with Circuit Breakers](https://arxiv.org/abs/2406.04313) — a representation-level defense that remaps harmful internal states to resist jailbreaks and adversarial inputs, a constructive counterpart to this paper's diagnosis of how safety fine-tuning is bypassed.
 
 </details>
