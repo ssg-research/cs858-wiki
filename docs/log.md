@@ -802,6 +802,25 @@ settled. The roles are a drafting and review rule and carry no labels on the
 page; at least one bullet remains a neutral attention anchor. Hard maximum five
 bullets.
 
+## [2026-08-18 13:41] fix | swap essential reading for slot #13 (Arditi 2024 -> Wollschläger 2025)
+
+Swapped one of the two essential readings for reading-list slot #13
+("Mechanistic Interpretability for AI safety", assigned reading
+`jain-2024-safety-finetuning.md`): the instructor replaced "Refusal in Language
+Models Is Mediated by a Single Direction" (Arditi et al., 2024, arXiv:2406.11717)
+with "The Geometry of Refusal in Large Language Models: Concept Cones and
+Representational Independence" (Wollschläger et al., 2025, arXiv:2502.17420) in
+`wiki-f26/README.md`. Updated `docs/CS858-F26-papers-stripped.xlsx` (cell E27,
+the slot's essential-readings column and source of truth for
+`scripts/build-paper-table.py`) to match, confirmed via a before/after diff of
+the generator's output, and swapped the corresponding Supplementary readings
+bullet on `jain-2024-safety-finetuning.md`. Kept the Arditi et al. 2024 citation
+in Paper Context and References as background on the 2024 literature landscape
+the paper was written into; the new paper (2025) postdates that context. The
+second essential reading for the slot (Circuit Breakers) and the assigned
+reading are unchanged. check-links clean (104 files); markdownlint clean.
+Model: Sonnet 5, `claude-sonnet-5[1m]`.
+
 Grounding for the rule, since it is a pedagogy change and not a style
 preference. Expert reading is selective and multi-pass, so a uniform
 section-by-section listing works against it (Keshav, CCR 2007; Eisner, JHU
