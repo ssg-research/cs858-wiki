@@ -62,21 +62,19 @@ magnitude while keeping runtime comparable, and its non-interactive structure
 admits a GPU implementation the interactive baselines cannot use, at accuracy
 close to plaintext inference on the reported tasks.
 
-**Threat Model:** Two parties run a single round of communication: a client
-holding a private input and a server holding a private model. Both are
+**Threat Model:** Secure inference is a two-party protocol between a client
+holding a private input and a server holding a private model, and it preserves
+the privacy of both parties' inputs. Both parties are
 [semi-honest](../concepts/secure-multiparty-computation.md) (honest-but-curious)
-and computationally bounded, so each follows the protocol exactly but may try to
-infer the other's secret from its own view. A corrupted server must learn
-nothing about the client's input; a corrupted client must learn nothing about
-the model's weights beyond what the returned prediction reveals. The model's
-architecture is treated as public; the protected secrets are the input values
-and the weight values. Security is argued in the simulation paradigm, each
-party's view shown reproducible from its own input and the output alone, so only
-homomorphic ciphertexts and the final result cross the wire. The guarantee does
-not cover a malicious party that deviates from the protocol. By design the
-protocol returns only the argmax label rather than the full logit vector,
-limiting the residual [membership-inference](../concepts/membership-inference.md)
-leakage carried through the output itself.
+and computationally bounded: each adheres to the protocol specification while
+trying to learn what it can about the other's secret from the view its own
+execution gives it. A corrupted server learns nothing about the client's input;
+a corrupted client learns nothing about the model's parameters beyond the
+inference result it receives. A party that deviates from the protocol falls
+outside the guarantee. The paper states the model at this level in its main body
+and fixes the formal version in an appendix: a static semi-honest
+probabilistic-polynomial-time adversary corrupting one of the two parties, with
+security defined in the simulation paradigm.
 
 ## Why read this
 
@@ -153,8 +151,9 @@ thousands of tokens, is a distinct cost in any such protocol.
 
 ## Reading guidance
 
-- Section II.A: the threat model in one paragraph. Both parties are semi-honest
-  and computationally bounded; note exactly what each is allowed to learn.
+- Section II.A states the threat model in four sentences and defers the formal
+  statement to Appendix D. Read both and note what the appendix's simulation-based
+  definition pins down that the main-body paragraph leaves open.
 - Section III.C: the offline and online split, which moves work into an
   input-independent preprocessing phase assumed to run once unless the model
   changes. The non-interactive claim is a claim about the online phase.

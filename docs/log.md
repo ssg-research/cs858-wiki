@@ -917,3 +917,78 @@ All 24 paper URLs return HTTP 200. check-links clean (104 files); markdownlint
 clean; pre-commit clean. Rendering of the `**Paper:**` line and the Essential
 Readings disclosure confirmed through `gh api /markdown`. Model: Opus 5,
 `claude-opus-5[1m]`.
+
+## [2026-08-19 14:43] fix | Threat-model precision across the corpus, plus the ops rules behind it
+
+Instructor notes on three pages named one failure with three faces, and a fourth
+case surfaced during the pass. A threat model has a conceptual layer (the
+requirement), a formal layer (this paper's instantiation of it), and a mechanism
+layer that is not the threat model at all. Pages had collapsed those layers, and
+separately had used "trusted" in its general-English sense rather than the
+trusted-computing-base sense.
+
+Four instructor-flagged pages:
+
+- `zhang-2025-nexus.md`: the paragraph merged Section II.A (two-party,
+  semi-honest, computationally bounded, four sentences) with Appendix D (static
+  semi-honest PPT adversary, simulation-paradigm definitions, corrupted-party
+  views), producing a statement denser than the paper's own front matter.
+  Rewritten at main-body density, naming the appendix as where the formal
+  version lives. Dropped: "the model's architecture is treated as public" (the
+  paper never says it; "architecture" appears nowhere outside the
+  bibliography), the simulation-paradigm mechanics, "only HE ciphertexts cross
+  the wire" (from the proof), and the argmax/membership-inference design
+  rationale (a contribution, already carried by Basic Background). The first
+  reading-guidance bullet now points at the II.A / Appendix D split.
+- `elatali-2024-blime.md`: the closing sentences described BliMe's approach. The
+  attestation-and-key-agreement handshake is Section IV-C1, the protocol, and
+  moved to the overview body; "machine-checked on a model of the ISA" was
+  already in the body and was cut. The paragraph now ends at SR-Confidentiality
+  as stated in Section III-B, and gained the multi-client dimension from the
+  usage scenario (a co-resident client is an adversary).
+- `chantasantitam-2026-palm.md`: the page had the H100 simply "trusted" with "a
+  secure channel binding the two into one trust boundary" (the SPDM session of
+  Section 4.3.1, which is design). Section 3.2 is more careful: the H100
+  *hardware* is trusted to measure and report its configuration honestly, while
+  the assigned device and the GPU-TD interface are not, which is why the TD must
+  obtain and check a GPU attestation token, exactly as TDs themselves are
+  attested rather than trusted. Rewritten to hold that distinction, with denial
+  of service added to the out-of-scope list. Reading-guidance bullet retargeted
+  to the same sentence.
+- `madry-2018-pgd.md`: the ℓ-infinity ball was written as the threat model.
+  Section 2 puts a set of allowed perturbations S capturing perceptual
+  similarity as the requirement and the ℓ-infinity ball as one instantiation,
+  with richer notions left to future work. The paragraph now states the
+  requirement, then the instantiation as an instantiation.
+
+Audit pass over the other twenty pages found four more, all contribution
+leaking into the threat model, none touching trust:
+`greshake-2023-indirect-prompt-injection.md` (the defender's filtering "is shown
+not to cover" indirect instructions is the paper's finding, not the defender's
+claim), `jain-2024-safety-finetuning.md` (the MLP-transformation mechanism and
+the safe-looking-activations result, both already in the body; replaced with the
+two access levels the attacks actually need),
+`jang-2022-knowledge-unlearning.md` (measured extraction and memorization scores
+inside the defender's claim), `moon-2025-asgard.md` (trusted set listed the EL3
+secure monitor alongside the secure world that contains it; now names the
+TEEvisor and folds EL3 into SW, matching Section III-B). The remaining sixteen
+pages passed. Verified against the PDFs for NEXUS, BliMe, PAL*M, Madry, and
+ASGARD; the four other fixes were checked against the pages' own bodies.
+
+Ops changes so this does not recur. The playbooks specified the paragraph by its
+contents and never by its boundary, which cannot exclude a mechanism sentence
+that reads like an answer to "what can the adversary do." Added an exclusion
+test alongside the inclusion list: `AGENTS.md` Universal Rules gains a
+threat-model bullet; `docs/writing-style.md` gains a Trust vocabulary section
+(trusted means placed in the TCB; attested, measured, verified, isolated, and
+encrypted are mechanisms for not trusting something; say what a component is
+trusted *for*) and an extended Threat Model entry;
+`docs/ops/generate-paper-summary.md` step 4 gains a three-test Threat model
+discipline block, the middle test being counterfactual (swap this paper's
+approach for another meeting the same goal and drop what stops holding);
+`docs/ops/lint.md` check 5 gains three review bullets and two commands that dump
+every Threat Model paragraph and grep them for trust and result vocabulary;
+`.claude/commands/generate-paper-summary.md` gains the matching constraint.
+
+check-links clean (104 files); markdownlint clean on all thirteen changed files;
+no new prose em-dashes. Model: Opus 5, `claude-opus-5[1m]`.

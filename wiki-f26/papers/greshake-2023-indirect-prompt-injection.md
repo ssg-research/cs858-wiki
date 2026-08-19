@@ -63,8 +63,9 @@ reader through HTML comments, invisible text, or encoding. The attack acts at
 inference time, when the content is ingested, and the injected instructions can
 persist across conversation turns and, through a memory store, across sessions.
 The targets are the application's users and any APIs the model can call on their
-behalf. The defender is the application provider, whose deployed input and output
-filtering is shown not to cover instructions that arrive indirectly.
+behalf. The defender is the application provider, whose deployed protection is
+filtering on the channels it controls, screening what a user types in and what
+the model emits.
 
 ## Why read this
 

@@ -59,19 +59,18 @@ fine-tuning alters a model only minimally.
 
 **Threat Model:** This is a mechanistic study that spans a defender and an
 adversary. The defender is the model provider, which applies safety fine-tuning
-(SSFT, DPO, or unlearning) after instruction tuning so the model refuses inputs
-it deems unsafe; the claim under study is that refusal is implemented by a
-minimal transformation of the MLP weights that clusters unsafe-input activations
-apart from safe ones. The adversary supplies inputs that recover the refused
-behavior: jailbreaks phrased as competing objectives or mismatched
-generalization, which are human-readable prompts in the input space, and
-white-box continuous-embedding attacks that optimize appended soft-token
-embeddings against the model's gradients, in the manner of
-[ℓp adversarial examples](../concepts/adversarial-examples.md). The analysis
-itself is [white-box](../concepts/white-box-black-box.md) throughout: it reads
-activations, weights, and gradients at every layer, on the synthetic models and
-on Llama-2/3 chat. The adversary's leverage is that evasion needs only
-activations that resemble safe inputs, never a direct defeat of the weights.
+(SSFT, DPO, or unlearning) after instruction tuning; its claim is that the
+resulting model refuses the requests it deems unsafe. The adversary supplies
+inputs that recover the refused behavior, at two levels of access: jailbreaks
+phrased as competing objectives or mismatched generalization are human-readable
+prompts in the input space, needing only the ability to send a request, while
+continuous-embedding attacks optimize appended soft-token embeddings against
+the model's gradients and so need
+[white-box](../concepts/white-box-black-box.md) access, in the manner of
+[ℓp adversarial examples](../concepts/adversarial-examples.md). Both act at
+inference time on a model that is already fine-tuned. The analysis itself is
+white-box throughout: it reads activations, weights, and gradients at every
+layer, on the synthetic models and on Llama-2/3 chat.
 
 ## Why read this
 

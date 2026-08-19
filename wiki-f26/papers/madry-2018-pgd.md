@@ -51,10 +51,14 @@ usually means this paper's attack.
 
 **Threat Model:** An evasion (test-time) setting. The adversary perturbs
 individual inputs at classification time; the training data and the model are
-untouched. Each perturbation must stay inside the
-[ℓ-infinity ball](../concepts/lp-norms.md) of radius epsilon around the
-original input, so no pixel may change by more than epsilon (0.3 on MNIST in
-[0,1] scale, 8 on CIFAR-10 in [0,255] scale). The headline setting is
+untouched. What bounds the adversary is a set of allowed perturbations around
+each input, and the requirement on that set is perceptual: a perturbed input
+must still look like the original to a human, so that its true label is
+unchanged. The paper instantiates that set as the
+[ℓ-infinity ball](../concepts/lp-norms.md) of radius epsilon, so no pixel may
+change by more than epsilon (0.3 on MNIST in [0,1] scale, 8 on CIFAR-10 in
+[0,255] scale), and treats this as one workable formalization of perceptual
+similarity while leaving richer ones open. The headline setting is
 [white-box](../concepts/white-box-black-box.md): the adversary knows the
 architecture and the weights and can compute gradients. Weaker black-box
 (transfer) adversaries are evaluated as well. The defender's claim is accuracy

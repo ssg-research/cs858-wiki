@@ -48,6 +48,14 @@ Constraints:
 - One paper per invocation.
 - Slug is `author-year-shortname` (lowercase, hyphens; shortname is an obvious
   named method or a couple of distinctive title words).
+- The **Threat Model:** paragraph carries the threat model and nothing else. No
+  protocol steps, no mechanism, no proof technique, no measured result: test each
+  sentence by swapping this paper's approach for another meeting the same goal
+  and dropping what stops holding. "Trusted" means placed in the trusted
+  computing base, so a component that is attested, measured, or verified is
+  checked rather than trusted. Where the paper fixes a requirement with one
+  formalization, state the requirement and then name the formalization as this
+  paper's instantiation, at the density the paper's own main body uses.
 - Links between pages are plain relative Markdown links (`[text](../concepts/slug.md)`),
   never Obsidian `[[wikilinks]]`.
 - Finish with `uv run python3 scripts/check-links.py` (zero broken links),

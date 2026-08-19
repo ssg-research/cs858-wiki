@@ -45,26 +45,28 @@ server compute on a client's plaintext data while the hardware enforces a
 [taint-tracking](../concepts/taint-tracking.md) policy on it. The client's data
 and every value derived from it carry a hardware "blinded" mark and may not reach
 any observable output, including the side channels that defeat enclaves; such
-data leaves the system only by re-encryption under the client's key. The authors
-implement the extensions on a speculative out-of-order RISC-V core, BOOM (Zhao et
-al., 2020), report moderate run-time overhead in the single-digit to
-low-tens-of-percent range with minimal power and area cost, and give a
-machine-checked proof that the policy preserves the confidentiality of blinded
-data on a simplified model ISA.
+data leaves the system only by re-encryption under the client's key. Before
+sending anything a client attests the HSM and agrees a session key with it,
+which is how the client checks that it is talking to genuine BliMe hardware
+rather than assuming it. The authors implement the extensions on a speculative
+out-of-order RISC-V core, BOOM (Zhao et al., 2020), report moderate run-time
+overhead in the single-digit to low-tens-of-percent range with minimal power
+and area cost, and give a machine-checked proof that the policy preserves the
+confidentiality of blinded data on a simplified model ISA.
 
-**Threat Model:** A client outsources computation to a remote server and wants
-the confidentiality of its input preserved, revealing nothing beyond the data's
-length. The adversary controls all server software, including the operating
-system and the third-party application that processes the data, and can observe
-side channels such as memory-access patterns, cache state, and instruction
-timing. The adversary cannot break the hardware: the BliMe hardware is assumed
-correct, and attacks requiring physical access (power analysis, fault injection,
-direct access to the memory bus) are out of scope. Before sending data, the
-client uses [remote attestation](../concepts/trusted-execution-environment.md) to
-confirm it is talking to genuine BliMe hardware. Under these assumptions the
-defender's claim is that no blinded value, and nothing derived from it, can reach
-an observable output except by re-encryption under the originating client's key,
-with the policy enforced in hardware and machine-checked on a model of the ISA.
+**Threat Model:** Several clients outsource computation to one remote server,
+each in its own session. The adversary controls all server software, including
+the operating system and the third-party application that processes the data,
+and can observe side channels such as memory-access patterns, cache state, and
+instruction timing; another client of the same server is an adversary too.
+Trusted is the server hardware, meaning the BliMe extensions, the encryption
+engine, and the HSM, each assumed implemented correctly. Attacks on the hardware itself are
+out of scope: the adversary cannot use physical means to make the hardware
+depart from its specification, and side-channel attacks requiring physical
+access, such as differential power analysis, are excluded. The defender's claim
+is confidentiality in a specific sense, that when a client supplies sensitive
+input to the server, no party other than that same client can infer anything
+about the data beyond its length.
 
 ## Why read this
 
