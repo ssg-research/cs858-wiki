@@ -254,6 +254,39 @@ gets this paragraph, attack and defense papers alike; for papers where the
 threat model is implicit, making it explicit is the single highest-value thing
 the page does.
 
+**Threat model discipline.** The list above says what belongs in the paragraph.
+These three tests say what does not, and each sentence has to pass all three.
+
+1. **"Trusted" means placed in the trusted computing base.** A component is
+   trusted when the guarantee assumes it behaves correctly and fails silently
+   if it does not. Attested, measured, verified, isolated, and encrypted are not
+   trust: each is a mechanism for *not* having to trust something, and a
+   component is attested precisely because it is not trusted. Name the trusted
+   set and say what each member is trusted *for*, since trust is never global
+   (a CPU trusted to sign honestly is not thereby trusted against a physical
+   attacker). The full vocabulary is in
+   [../writing-style.md](../writing-style.md).
+2. **The threat model is not the contribution.** Protocol steps, mechanisms,
+   proof techniques, measured results, and evaluation limits go in the overview
+   body, in Basic Background, or nowhere. The test is counterfactual: replace
+   this paper's approach with a different one meeting the same goal. Sentences
+   that still hold are threat model; sentences that break describe the approach
+   and belong elsewhere. The corollary is that a defender's claim is what the
+   defender asserts, never the paper's verdict on it: "the provider's filtering
+   is shown not to cover indirect instructions" is a finding wearing a threat
+   model's clothes.
+3. **Keep the paper's own layering.** A threat model normally has a conceptual
+   layer, the requirement (client data stays confidential; a perturbation stays
+   imperceptible), and a formal layer, one instantiation of that requirement (a
+   simulation-paradigm security definition; an ℓ-infinity ball at a fixed
+   epsilon). Papers routinely put the first in the main body and the second in
+   an appendix or a numbered definition. Write the conceptual layer at the
+   density the main body uses, then name the instantiation as an instantiation
+   ("the paper instantiates that set as..."), so a student can tell the
+   requirement apart from the one choice this paper made. Collapsing the two
+   yields a paragraph denser than the paper's own front matter, which fails the
+   page's purpose even when every clause is true.
+
 ### 5. Background pass — draft both background sections
 
 **Basic Background.** Prerequisite coverage split into `###` subsections, one

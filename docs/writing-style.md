@@ -140,6 +140,34 @@ paper lacks; some papers have no defender, some no adversary. Genuinely unique
 roles keep their own word (a differential-privacy curator, a watermark
 detector, an initiator).
 
+## Trust vocabulary
+
+In security and cryptography "trusted" is a term of art, and the general-English
+sense of the word is wrong everywhere on these pages. A component is **trusted**
+when the guarantee assumes it behaves correctly, so that if it misbehaves the
+guarantee fails and nothing detects it. The trusted components together are the
+**trusted computing base** (TCB). Everything else is **untrusted**, which is a
+statement about where the guarantee rests rather than a prediction that the
+component will misbehave.
+
+Two consequences:
+
+- **Attested is the opposite of trusted.** A component is attested precisely
+  because it is not trusted: its state is checked at run time instead of assumed.
+  PAL\*M states the pattern plainly of the confidential VM it runs in: "TDs are
+  not inherently trusted. Hence, TDX supports attestation." The same holds for
+  *measured*, *verified*, *isolated*, and *encrypted*. Each is a mechanism that
+  lets a party stop trusting something, so writing any of them as trust inverts
+  the meaning.
+- **Say what a component is trusted *for*.** Trust is never global. A CPU may be
+  trusted to sign a measurement honestly and not to withstand a physical
+  attacker; a hypervisor may be trusted for isolation and not for availability.
+  Writing "trusted to X" forces the boundary to come out precise.
+
+Call a component trusted only where the paper puts it in the TCB, and name the
+whole trusted set when the paper does. Where a sentence needs the ordinary
+English sense, write "relies on," "assumes," or "takes on faith."
+
 ## Format by section
 
 - **Paper link.** One line directly under the H1: `**Paper:**` followed by a
@@ -155,7 +183,12 @@ detector, an initiator).
   once, and do not repeat in the body what the Threat Model paragraph, Basic
   Background, or Paper Context carries. Tighten the Threat Model paragraph the
   same way, defining a role once and then using the role word rather than
-  re-listing its instances.
+  re-listing its instances. It stays one paragraph, pitched at the density of
+  the paper's own main-body statement of its model, and it carries the threat
+  model only: no protocol steps, no mechanism, no proof technique, no measured
+  result. "Trusted" in it is the trusted-computing-base sense (see Trust
+  vocabulary above), and a formal instantiation reads as this paper's
+  instantiation of a requirement rather than as the requirement.
 - **Why read this.** Two to four declarative sentences on why the paper is worth
   reading on its own terms, instructor-owned. No hooks, and no reference to the
   paper's slot in the course sequence.

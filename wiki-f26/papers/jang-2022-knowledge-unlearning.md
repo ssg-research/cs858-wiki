@@ -59,11 +59,10 @@ varying strength. The defender is the model owner, who holds a specific set of
 token sequences that must be protected, the data named in a right-to-be-forgotten
 request, assumed known a priori, and may edit the model's weights after training.
 The defender's claim is empirical rather than formal: after unlearning, the
-targeted sequences are no longer extractable, their extraction and memorization
-scores having fallen to the level the model assigns to data it never saw, while
-general capability is preserved. There is no (epsilon, delta) certificate over
-all possible examples, only measured protection of the named sequences against
-the extraction attack.
+targeted sequences are no longer extractable and general capability is
+preserved. There is no (epsilon, delta) certificate quantifying over all
+possible examples, only measured protection of the named sequences against this
+attack.
 
 ## Why read this
 

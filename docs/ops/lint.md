@@ -83,6 +83,22 @@ page and confirm:
   not what the paper does to them.
 - **No authored tensions as questions.** Reading guidance places neutral
   attention anchors; open-tension questions are for students to generate.
+- **The Threat Model paragraph carries a threat model.** Every sentence names
+  the adversary, its knowledge, capability, budget or timing, the trusted set,
+  or the defender's claim. Test each sentence counterfactually: replace the
+  paper's approach with a different one meeting the same goal, and drop any
+  sentence that stops holding, because it described the approach. A defender's
+  claim is what the defender asserts, never the paper's verdict on it.
+- **"Trusted" is used in the trusted-computing-base sense.** A component is
+  trusted when the guarantee assumes it behaves correctly and fails silently
+  otherwise. A component that is attested, measured, verified, isolated, or
+  encrypted is not thereby trusted; it is checked instead of trusted. Confirm
+  the page names what each trusted component is trusted *for*.
+- **A formal instantiation reads as an instantiation.** Where the paper fixes a
+  requirement with one formalization (an ℓ-infinity ball at a fixed epsilon, a
+  simulation-paradigm definition), the page states the requirement first and the
+  formalization as this paper's choice. A page whose threat model is denser than
+  the paper's own main-body statement has merged the two layers.
 - **Reading guidance is targeted, not a roadmap.** Three bullets, five at the
   absolute most, ordered by position in the paper, each naming one precise locus,
   together covering where the assumptions are pinned down, where the mechanism
@@ -98,6 +114,29 @@ grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr|motivatin
 ```
 
 Any hit is a candidate violation; read it and confirm.
+
+The Threat Model paragraphs are short enough to read in one pass; dump them all
+and review each against the three checks above:
+
+```bash
+WIKI_DIR="wiki-f26"
+for f in $WIKI_DIR/papers/*.md; do
+  case "$f" in *README.md) continue;; esac
+  echo "### $(basename "$f")"
+  awk '/^\*\*Threat Model:\*\*/{p=1} p{print} p&&/^$/{exit}' "$f"
+done
+```
+
+Grepping that dump for trust and result vocabulary gives a review queue rather
+than a verdict; read every hit in context:
+
+```bash
+WIKI_DIR="wiki-f26"
+for f in $WIKI_DIR/papers/*.md; do
+  case "$f" in *README.md) continue;; esac
+  awk -v F="$(basename "$f")" '/^\*\*Threat Model:\*\*/{p=1} p{print F": "$0} p&&/^$/{exit}' "$f"
+done | grep -inE "trust|attest|we show|is shown|demonstrat|outperform|overhead|faster|reduces"
+```
 
 Reading guidance length is mechanical, so check it directly:
 

@@ -62,11 +62,12 @@ it wants to protect; an REE-side privileged adversary on the device aims to stea
 it; and a trusted DNN-serving enclave runs on ASGARD-extended platform software.
 The adversary fully controls the REE, down to the unprivileged hypervisor that
 manages resources, and seeks to read or dump the model's weights and architecture
-while it is in use for inference. Trusted are the small privileged hypervisor at
-EL2 that enforces isolation between domains, the EL3 secure monitor, and the
-secure world, which on Armv8-A can access the normal world regardless. The
-protected asset is the model, kept confidential in transit, at rest, and in use;
-the accelerator sits behind an IOMMU and exposes a reset interface. The
+while it is in use for inference. Trusted are the TEEvisor, the small
+hypervisor at EL2 that enforces isolation between virtualization domains, and
+the secure world, which on Armv8-A includes the EL3 secure monitor and can reach
+the entire normal world regardless. The protected asset is the model, kept
+confidential in transit, at rest, and in use; the accelerator sits behind an
+IOMMU and exposes a reset interface. The
 defender's claim is software-secure enclaves against REE-side software
 adversaries on commodity Armv8-A hardware. Physical attacks and side channels are
 out of scope. The paper notes the guarantee can be strengthened to

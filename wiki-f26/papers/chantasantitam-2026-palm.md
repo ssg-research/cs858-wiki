@@ -62,21 +62,28 @@ certify the same properties with a
 attests properties of its operations to a verifier, mediated by an initiator
 that requests an operation and forwards the evidence; the verifier may obtain
 reference values for a property from a trusted authority such as the hardware
-vendor. The root of trust is the attestation hardware. PAL\*M trusts the Intel
-TDX module and CPU to isolate the confidential VM and to produce a hardware-signed
-quote over what ran, and trusts the NVIDIA H100 to measure and attest its own
-configuration, with a secure channel binding the two into one trust boundary. The
-adversary is a dishonest provider with the standard Intel TDX powers: it controls
-the host, the virtual machine manager, and the disk, so it can read and tamper
-with anything outside the trust boundary, including memory-mapped datasets in
-external storage, and it is a Dolev-Yao network adversary that can inject or
-modify protocol messages. It cannot break the TDX module or CPU, forge a quote
-without the hardware key, or subvert the H100. What is attested is a property of
-an operation over its inputs and outputs, the measurement extended into the
-signed quote; what stays confidential is the model and dataset themselves, which
-are never placed in the quote. Side-channel attacks on the hardware and physical
-attacks, including memory-bus interposition and swapping the GPU, are out of
-scope.
+vendor. The adversary is a dishonest prover with the standard Intel TDX powers:
+it controls the host, the virtual machine manager, and the disk, so it can read
+and tamper with anything outside the trust boundary, including memory-mapped
+datasets in external storage, and it is a Dolev-Yao network adversary that can
+inject or modify protocol messages. It may try to forge a quote, either by
+learning the signing key or by tampering with code and data undetected. The
+trusted set is small and named: the Intel TDX module and the TDX-aware CPU,
+trusted to be implemented correctly, to isolate the confidential VM from the
+host and from other VMs, and to produce a hardware-signed quote over what ran;
+and the NVIDIA H100's hardware, trusted to measure its own configuration and
+report it honestly. Trust in that sense reaches no further. The confidential VM
+is created by the adversary-controlled virtual machine manager, and the GPU is
+assigned by that same manager, its interface outside the VM's protection until
+the assignment is made, so neither the VM nor the assigned device is assumed to
+be in the state it should be. Each is therefore attested rather than trusted:
+the VM through its quote, the GPU through an attestation token the VM obtains
+and checks before relying on the device. What an attestation carries is a
+property of an operation over its inputs and outputs, measured and extended
+into the signed quote; the model and the dataset stay confidential and never
+enter the quote. Denial of service, side-channel attacks on the hardware, and
+physical attacks, including memory-bus interposition and physically swapping
+the GPU, are out of scope.
 
 ## Why read this
 
@@ -157,10 +164,10 @@ alternative roots of trust against which a hardware-attestation scheme is measur
 
 ## Reading guidance
 
-- Section 3.2, the sentence fixing what is out of scope: the TDX module, the
-  TDX-aware CPU, and the H100 are trusted, while the adversary holds the host,
-  the VMM, the disk, and the network. Note how large the trusted set has to be
-  before an attestation means anything.
+- Section 3.2, the paragraph on the GPU: the H100's hardware is trusted, the
+  device the VMM assigns to the confidential VM is not, and one attestation
+  token separates the two. Find the sentence that does the work of bringing the
+  GPU inside the trust boundary.
 - Section 4.3, the per-operation property measurements: for each operation, what
   the measurement commits to and what it hashes rather than carries. That
   omission is what keeps the model and the dataset confidential.

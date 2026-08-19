@@ -128,6 +128,19 @@ is the instructor's release decision, never an agent's.
   abstract with a bolded **Threat Model:** paragraph. No "Key findings,"
   "Methods," or "Results" section, and no walkthrough of the paper's argument or
   evidence.
+- **The threat model is not the contribution, and "trusted" is a term of art.**
+  The **Threat Model:** paragraph names the adversary, its knowledge, capability,
+  budget, and timing, the trusted set, and the defender's claim. It carries no
+  protocol steps, mechanism, proof technique, or measured result: test each
+  sentence by swapping this paper's approach for another meeting the same goal
+  and dropping what stops holding. A component is *trusted* only when the
+  guarantee assumes it behaves correctly and fails silently otherwise, so a
+  component that is attested, measured, or verified is checked rather than
+  trusted. Where a paper fixes a requirement with one formalization (an
+  ℓ-infinity ball at a fixed epsilon, a simulation-paradigm definition), state
+  the requirement and name the formalization as this paper's instantiation, at
+  the density the paper's own main body uses. See the trust vocabulary in
+  `docs/writing-style.md` and step 4 of `docs/ops/generate-paper-summary.md`.
 - **Never author the field's open tensions as questions.** Students must reach
   those themselves (the generation effect); the page places neutral attention
   anchors in Reading guidance instead. Motivating questions are three to five
