@@ -23,6 +23,8 @@ tags:
 
 # Membership Inference Attacks From First Principles
 
+**Paper:** [arXiv:2112.03570](https://arxiv.org/abs/2112.03570)
+
 ## High-level overview
 
 [Membership inference attacks](../concepts/membership-inference.md) are the de
@@ -206,6 +208,14 @@ had long operated at low false-positive rates as a matter of course. The
 accumulated membership inference results, nearly all evaluated by
 average-case metrics on small overfit models, had not been re-examined under
 either standard.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Membership Inference Attacks Against Machine Learning Models](https://arxiv.org/abs/1610.05820) — the shadow-model attack that introduced membership inference against ML models, the average-case baseline this paper reworks around the low-false-positive regime.
+- [Detecting Pretraining Data from Large Language Models](https://arxiv.org/abs/2310.16789) — the same question at pretraining scale, where the training set is unknown and the detector works from token probabilities alone.
 
 </details>
 

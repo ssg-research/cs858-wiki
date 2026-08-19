@@ -22,6 +22,8 @@ tags:
 
 # zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference
 
+**Paper:** [USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25/presentation/qu-zkgpt)
+
 ## High-level overview
 
 A user who queries a commercial language model through an API cannot check which
@@ -138,14 +140,6 @@ Lasso lookup argument (Setty et al., 2024).
   proof size in gigabytes rather than kilobytes; note which schemes those are.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Experimenting with Zero-Knowledge Proofs of Training](https://dl.acm.org/doi/10.1145/3576915.3623202) — proving how a model was trained, the training-time counterpart to proving inference.
-- [Zero-Knowledge Proofs of Training for Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3658644.3670316) — a later, scaled proof-of-training system for deep networks, the same compliance goal at training time.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 Zero-knowledge proofs for machine learning began with small models and vision.
@@ -177,6 +171,14 @@ zero-knowledge proofs of training: an early exploration of the problem (Garg et 
 2024), a confidential proof of fair tree training (Shamsabadi et al., 2023), and
 trustless audits that reveal neither data nor model (Waiwitlikhit et al., 2024).
 These target the same auditability aim at training time.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Experimenting with Zero-Knowledge Proofs of Training](https://dl.acm.org/doi/10.1145/3576915.3623202) — proving how a model was trained, the training-time counterpart to proving inference.
+- [Zero-Knowledge Proofs of Training for Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3658644.3670316) — a later, scaled proof-of-training system for deep networks, the same compliance goal at training time.
 
 </details>
 

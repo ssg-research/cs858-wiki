@@ -877,3 +877,43 @@ state.
 
 check-links clean (104 files); markdownlint clean across all 106 files. Model:
 Opus 5, `claude-opus-5[1m]`.
+
+## [2026-08-19 12:20] infra | Essential Readings on every paper page, paper link under each title
+
+Renamed the paper pages' **Supplementary readings** section to **Essential
+Readings** and moved it below Paper Context, so the collapsed blocks now run
+Paper Context, Essential Readings, References. Added the section to the eight
+pages that lacked it (slots 1, 5, 6, 7, 8, 9, 10, 11), with a one-line "why it's
+here" framing per reading in the same voice as the sixteen existing blocks.
+Added a `**Paper:**` line directly under each H1 linking to the paper itself,
+labelled `arXiv:ID` for a preprint and venue plus year otherwise (`NDSS 2025`,
+`USENIX Security 2025`, `USENIX Security 2024`, `IEEE S&P 2019` for the six
+slots whose spreadsheet link is not arXiv).
+
+Both changes were driven from `docs/CS858-F26-papers-stripped.xlsx` rather than
+authored per page: the paper column supplies the `**Paper:**` hyperlink and the
+essential-readings column supplies the reading list, which is the same pair of
+columns `scripts/build-paper-table.py` renders into the reading-list table. The
+sixteen pre-existing blocks were checked against that column before being moved
+and matched it exactly on every title and URL, so no reading changed; only the
+heading, the position, and the eight additions did. A post-hoc check parsed the
+home-page table and all 24 pages independently of the spreadsheet and found the
+two agree on every title, URL, and order.
+
+The sixteen new framings for slots 1, 5 to 11 come from model knowledge, not
+from a read of those papers this session. Four are anchored in the citing page's
+own bibliography (Goodfellow 2015 on slot 1, Shokri 2017 on slot 5, BadNets on
+slot 11, the accuracy/fidelity distinction on slot 9); the rest are not, and are
+the part of this change most worth an instructor read.
+
+Schema docs updated to match: `docs/ops/generate-paper-summary.md` step 7, its
+page skeleton, and its section-order and page-chrome paragraphs;
+`docs/writing-style.md` gains a Paper link entry and the renamed Essential
+Readings entry; `docs/ops/replace-paper.md` step 11 and its checklist now point
+at the paper column for the link and the essential-readings column for the
+section.
+
+All 24 paper URLs return HTTP 200. check-links clean (104 files); markdownlint
+clean; pre-commit clean. Rendering of the `**Paper:**` line and the Essential
+Readings disclosure confirmed through `gh api /markdown`. Model: Opus 5,
+`claude-opus-5[1m]`.

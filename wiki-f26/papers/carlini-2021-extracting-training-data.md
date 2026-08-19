@@ -29,6 +29,8 @@ tags:
 
 # Extracting Training Data from Large Language Models
 
+**Paper:** [arXiv:2012.07805](https://arxiv.org/abs/2012.07805)
+
 ## High-level overview
 
 A language model trained by next-token prediction assigns high probability to
@@ -179,6 +181,14 @@ designing autocomplete models to avoid memorizing user data (Chen et al., 2019;
 Ramaswamy et al., 2020). The framework of privacy as contextual integrity
 (Nissenbaum, 2004) offered one way to say when reproducing public text is still
 a violation: when it moves data out of the context for which it was shared.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Scalable Extraction of Training Data from (Production) Language Models](https://arxiv.org/abs/2311.17035) — the follow-up that scales extraction to aligned production models and measures total memorization rather than confirming individual examples.
+- [Extracting Training Data from Diffusion Models](https://arxiv.org/abs/2301.13188) — the same memorization question in image generation, where a training photograph is regenerated from its caption.
 
 </details>
 

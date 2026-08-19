@@ -20,6 +20,8 @@ tags:
 
 # PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
 
+**Paper:** [arXiv:2402.07867](https://arxiv.org/abs/2402.07867)
+
 ## High-level overview
 
 [Retrieval-augmented generation](../concepts/retrieval-augmented-generation.md)
@@ -148,14 +150,6 @@ only works at a high false-positive rate is not deployable.
   is what says whether injected texts are separable from clean ones at all.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/abs/2406.18382) — manipulating the content an LLM retrieves so it favors an attacker's preferred answer, a related angle on corrupting what the model reads.
-- [Certifiably Robust RAG against Retrieval Corruption](https://arxiv.org/abs/2405.15556) — a defense direction aimed at exactly this class of attack, giving guarantees when a bounded number of retrieved passages are malicious.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 By 2024, RAG was an established technique for grounding language models in
@@ -186,6 +180,14 @@ fraction of Wikipedia (Carlini et al., 2023). Input-level defenses developed for
 prompt injection and jailbreaks, such as paraphrasing the input and
 perplexity-based detection (Jain et al., 2023; Alon and Kamfonas, 2023),
 existed but had not been examined against corruption of a retrieval corpus.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Adversarial Search Engine Optimization for Large Language Models](https://arxiv.org/abs/2406.18382) — manipulating the content an LLM retrieves so it favors an attacker's preferred answer, a related angle on corrupting what the model reads.
+- [Certifiably Robust RAG against Retrieval Corruption](https://arxiv.org/abs/2405.15556) — a defense direction aimed at exactly this class of attack, giving guarantees when a bounded number of retrieved passages are malicious.
 
 </details>
 

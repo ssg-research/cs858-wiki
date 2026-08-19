@@ -24,6 +24,8 @@ tags:
 
 # Deep Learning with Differential Privacy
 
+**Paper:** [arXiv:1607.00133](https://arxiv.org/abs/1607.00133)
+
 ## High-level overview
 
 A trained model's parameters can encode fine details of individual training
@@ -188,6 +190,14 @@ and Shmatikov, 2015). No published method trained a deep network to useful
 accuracy at a single-digit budget. Tighter accounting tools, concentrated
 differential privacy among them, were in concurrent development (Dwork and
 Rothblum, 2016; Bun and Steinke, 2016).
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Evaluating Differentially Private Machine Learning in Practice](https://arxiv.org/abs/1902.08874) — what a reported epsilon buys once relaxed variants of the definition are in play, measuring leakage against the guarantee rather than trusting the accounting.
+- [Large Language Models Can Be Strong Differentially Private Learners](https://arxiv.org/abs/2110.05679) — DP-SGD carried to language-model scale, where per-example gradient clipping becomes the memory bottleneck and the utility cost falls sharply from a pretrained starting point.
 
 </details>
 

@@ -28,6 +28,8 @@ tags:
 
 # Secure Transformer Inference Made Non-interactive
 
+**Paper:** [NDSS 2025](https://www.ndss-symposium.org/ndss-paper/secure-transformer-inference-made-non-interactive/)
+
 ## High-level overview
 
 Running a transformer as a cloud service usually means the client sends its
@@ -161,13 +163,6 @@ thousands of tokens, is a distinct cost in any such protocol.
   against bandwidth and where the GPU version recovers it.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [BumbleBee: Secure Two-party Inference Framework for Large Transformers](https://eprint.iacr.org/2023/1678) — the interactive two-party baseline this non-interactive approach is measured against.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 Secure inference was developed first for
@@ -208,6 +203,13 @@ argmax of Phoenix compares every element against the others and so scales
 linearly with the number of classes (Jovanovic et al., 2022). None of these
 methods supports the nonlinear functions a transformer needs, and a linear-cost
 argmax over a full vocabulary is impractical.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [BumbleBee: Secure Two-party Inference Framework for Large Transformers](https://eprint.iacr.org/2023/1678) — the interactive two-party baseline this non-interactive approach is measured against.
 
 </details>
 

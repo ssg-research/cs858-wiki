@@ -21,6 +21,8 @@ tags:
 
 # Towards Deep Learning Models Resistant to Adversarial Attacks
 
+**Paper:** [arXiv:1706.06083](https://arxiv.org/abs/1706.06083)
+
 ## High-level overview
 
 Deep image classifiers can be fooled by
@@ -176,6 +178,14 @@ solved well enough for the min-max guarantee to mean anything, and what an
 evaluation would have to show before the security community, with its norms of
 explicit threat models and adaptive adversaries, would accept an ML
 benchmark-style robustness number.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Explaining and Harnessing Adversarial Examples](https://arxiv.org/abs/1412.6572) — the linear explanation of adversarial examples, the FGSM attack, and the first adversarial training; the one-step version of the min-max problem this paper solves iteratively.
+- [Reliable evaluation of adversarial robustness with an ensemble of diverse parameter-free attacks](https://arxiv.org/abs/2003.01690) — AutoAttack, the parameter-free attack ensemble that became the standard check on a robustness claim once PGD alone proved easy to overfit to.
 
 </details>
 

@@ -151,7 +151,7 @@ Everything else you draft; the instructor reviews.
   add the link there. The reverse direction stays off the page: a paper page
   never links forward to papers that respond to it. Forward navigation lives
   in the shared concept pages' "Papers that use this concept" lists, or in
-  Supplementary readings when the instructor adds one.
+  Essential Readings when the instructor's spreadsheet lists one.
 
 ---
 
@@ -334,13 +334,17 @@ Sparse and crucial beats complete.
 This section sits directly after Basic Background, immediately before the
 student picks up the paper.
 
-### 7. Supplementary readings
+### 7. Essential Readings
 
-If the instructor supplied supplementary / extra readings for this paper, list
-them with a one-line "why it's here" framing each. Link to a paper page if one
-exists; otherwise an external link is fine. By default only primary papers get
-full pages. On the page this section renders inside a collapsed `<details>`
-block, the heading as its toggle (see the schema skeleton).
+Every paper page carries the slot's essential readings. The source is the
+essential-readings column of `docs/CS858-F26-papers-stripped.xlsx`, the same
+column `scripts/build-paper-table.py` renders into the reading-list table, so
+the page and the table always show the same set in the same order. Take the
+titles and hyperlinks from the spreadsheet verbatim and add a one-line "why it's
+here" framing to each. Link to a paper page when one exists; otherwise the
+spreadsheet's external link is fine. By default only primary papers get full
+pages. On the page this section renders inside a collapsed `<details>` block,
+the heading as its toggle (see the schema skeleton).
 
 ### 8. Write the paper page
 
@@ -430,6 +434,8 @@ tags:
 
 # Paper title
 
+**Paper:** [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
+
 ## High-level overview
 
 (About 350 words of body prose, a contextualized abstract: problem, named
@@ -459,17 +465,17 @@ attention anchor. Every bullet must be unsatisfiable from a summary of the
 paper.)
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Title](link) — why it's here.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 (Declarative prose: the state of the field when the paper appeared. Prior or
 contemporaneous work only, properly cited. Never this paper's position.)
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Title](link) — why it's here.
 
 </details>
 
@@ -486,21 +492,26 @@ paragraph), "Why read this," at least one Background section, and "References"
 whenever anything is cited. The rest is optional but encouraged.
 
 Section order is fixed: High-level overview, Why read this, Basic Background,
-Reading guidance, then the collapsed blocks in the order Supplementary readings,
-Paper Context, References. Reading guidance sits above the collapsed blocks so
-it is the last thing visible before the student opens the paper.
+Reading guidance, then the collapsed blocks in the order Paper Context, Essential
+Readings, References. Reading guidance sits above the collapsed blocks so it is
+the last thing visible before the student opens the paper.
 
-Supplementary readings, Paper Context, and References each render inside a
-collapsed `<details>` block (shown in the skeleton above) so the visible page
-stays short. Write the heading as an inline heading on the `<summary>` line,
-`<h2>` for Supplementary readings and Paper Context and `<h4>` for References,
-and keep one blank line after `</summary>` so the body stays Markdown and its
-relative links remain checkable.
+Paper Context, Essential Readings, and References each render inside a collapsed
+`<details>` block (shown in the skeleton above) so the visible page stays short.
+Write the heading as an inline heading on the `<summary>` line, `<h2>` for Paper
+Context and Essential Readings and `<h4>` for References, and keep one blank line
+after `</summary>` so the body stays Markdown and its relative links remain
+checkable.
 
 Every paper page opens with a `---` rule, then an `## [Wiki Home](../README.md)`
-link, then the H1. It is page chrome, sitting outside the content sections, and
-there is no repeat link at the foot of the page. Concept pages carry the same
-Wiki Home link without the rule.
+link, then the H1, then a `**Paper:**` line linking to the paper itself. That
+link is the slot's hyperlink from the spreadsheet's paper column, the same target
+the reading-list table uses, and its text names where the link goes: `arXiv:ID`
+for an arXiv preprint, otherwise the venue and year (`NDSS 2025`,
+`USENIX Security 2024`, `IEEE S&P 2019`). All of this is page chrome, sitting
+outside the content sections, and there is no repeat link at the foot of the
+page. Concept pages carry the Wiki Home link without the rule or the paper
+link.
 
 ---
 

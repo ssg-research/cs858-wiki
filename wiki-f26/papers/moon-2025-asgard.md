@@ -21,6 +21,8 @@ tags:
 
 # ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments
 
+**Paper:** [NDSS 2025](https://www.ndss-symposium.org/ndss-paper/asgard-protecting-on-device-deep-neural-networks-with-virtualization-based-trusted-execution-environments/)
+
 ## High-level overview
 
 On-device deep learning runs [DNN](../concepts/convolutional-neural-network.md)
@@ -150,13 +152,6 @@ adversary can read.
   relative to running with no protection at all.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional Neural Networks](https://arxiv.org/abs/2011.05905) — a TrustZone-based on-device protection that offloads transformed weights to the untrusted accelerator, a point of contrast with the virtualization-based design.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 On-device model protection grew up on Arm TrustZone, hosting inference in the
@@ -197,6 +192,13 @@ ships yet, leaving the widespread base of legacy Armv8-A devices without it. The
 virtualization-based TEEs provide enclaves for CPU workloads; on existing
 Armv8-A hardware they do not pass an SoC-integrated accelerator through to an
 enclave.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional Neural Networks](https://arxiv.org/abs/2011.05905) — a TrustZone-based on-device protection that offloads transformed weights to the untrusted accelerator, a point of contrast with the virtualization-based design.
 
 </details>
 

@@ -21,6 +21,8 @@ tags:
 
 # Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
 
+**Paper:** [arXiv:2302.12173](https://arxiv.org/abs/2302.12173)
+
 ## High-level overview
 
 Large language models are increasingly wrapped inside applications that
@@ -129,14 +131,6 @@ querying it, by seeding content the victim's model will retrieve.
   black-box system in a changing environment. Note what that leaves verifiable.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated LLM Agents](https://arxiv.org/abs/2403.02691) — a benchmark that quantifies indirect prompt injection against tool-using agents, the measurement this paper leaves to future work.
-- [Formalizing and Benchmarking Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2310.12815) — a formal framework and shared benchmark unifying prompt-injection attacks with candidate defenses.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 By early 2023, attacks on LLMs through their prompts were documented under the
@@ -169,6 +163,14 @@ instruction tuning and RLHF for helpfulness and harmlessness (Ouyang et al.,
 2022; Stiennon et al., 2020; Bai et al., 2022). These mitigations were built
 around a user prompting the model directly; instructions reaching the model
 through retrieved data fell outside that picture of the threat.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated LLM Agents](https://arxiv.org/abs/2403.02691) — a benchmark that quantifies indirect prompt injection against tool-using agents, the measurement this paper leaves to future work.
+- [Formalizing and Benchmarking Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2310.12815) — a formal framework and shared benchmark unifying prompt-injection attacks with candidate defenses.
 
 </details>
 

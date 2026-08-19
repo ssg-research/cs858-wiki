@@ -142,6 +142,9 @@ detector, an initiator).
 
 ## Format by section
 
+- **Paper link.** One line directly under the H1: `**Paper:**` followed by a
+  link to the paper itself. The link text names where it goes, `arXiv:ID` for a
+  preprint and the venue and year otherwise. No other prose on the line.
 - **High-level overview.** One to three paragraphs, a contextualized abstract:
   problem, named approach, headline results at abstract level, decoded
   terminology. About 350 words of body prose, then a separate bolded paragraph
@@ -178,9 +181,11 @@ detector, an initiator).
 - **Motivating questions.** Staff-side archive only (`agent_docs/`); not on
   the student-facing page. Three to five high-level pre-questions per paper,
   answerable by reading it. Students generate their own.
-- **Supplementary readings.** Optional. Extra readings the instructor supplied,
-  one bullet each with a one-line "why it's here" framing. Renders inside a
-  collapsed `<details>` block, the heading as its toggle.
+- **Essential Readings.** The slot's essential readings, taken verbatim from
+  the spreadsheet column that also feeds the reading-list table, so the page and
+  the table show the same set. One bullet each with a one-line "why it's here"
+  framing. Renders inside a collapsed `<details>` block, the heading as its
+  toggle.
 - **References.** Full bibliographic entries for everything cited on the page.
   Renders inside a collapsed `<details>` block, the heading as its toggle.
 - **Concept pages.** Same register. Definitions are declarative and

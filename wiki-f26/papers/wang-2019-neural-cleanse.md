@@ -23,6 +23,8 @@ tags:
 
 # Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
 
+**Paper:** [IEEE S&P 2019](http://people.cs.uchicago.edu/~ravenben/publications/pdf/backdoor-sp19.pdf)
+
 ## High-level overview
 
 A backdoored image classifier behaves normally on ordinary inputs but
@@ -175,6 +177,14 @@ also distinct from the test-time evasion threat of adversarial examples (Szegedy
 et al., 2014), against which a separate and by then well-worn cycle of defenses
 and breaks had played out. No general tool existed to detect and repair a backdoor
 from the trained model alone.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain](https://arxiv.org/abs/1708.06733) — the original backdoor attack, poisoning training data with trigger-stamped relabeled images; the threat this defense detects.
+- [Poisoning Language Models During Instruction Tuning](https://arxiv.org/abs/2305.00944) — the same trigger-and-target construction moved to instruction tuning, where a handful of poisoned examples steer behavior across tasks.
 
 </details>
 
