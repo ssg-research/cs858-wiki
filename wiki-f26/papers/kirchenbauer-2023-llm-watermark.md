@@ -23,6 +23,8 @@ tags:
 
 # A Watermark for Large Language Models
 
+**Paper:** [arXiv:2301.10226](https://arxiv.org/abs/2301.10226)
+
 ## High-level overview
 
 Text produced by a large language model can be hard to tell apart from text
@@ -165,14 +167,6 @@ such as images or audio, because small edits to wording are conspicuous.
   Figures 5 and 6 is relative to that grant.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust](https://arxiv.org/abs/2305.20030) — the analogue for diffusion-image provenance, a contrast in modality.
-- [Media Forensics and DeepFakes: An Overview](https://arxiv.org/abs/2001.06564) — the detection-after-the-fact tradition this proactive approach departs from.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 By late 2022 the public release of capable chat models had sharpened concern
@@ -209,6 +203,14 @@ adversarial edits (Wolff and Wolff, 2022); deployed tools of this kind, such as
 GPTZero, drew scrutiny over false positives on atypical human writing (Tian,
 2023). Concurrently, a cryptographic approach to watermarking language-model
 output was announced as work in progress (Aaronson, 2022).
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust](https://arxiv.org/abs/2305.20030) — the analogue for diffusion-image provenance, a contrast in modality.
+- [Media Forensics and DeepFakes: An Overview](https://arxiv.org/abs/2001.06564) — the detection-after-the-fact tradition this proactive approach departs from.
 
 </details>
 

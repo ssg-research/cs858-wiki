@@ -20,6 +20,8 @@ tags:
 
 # Knockoff Nets: Stealing Functionality of Black-Box Models
 
+**Paper:** [arXiv:1812.02766](https://arxiv.org/abs/1812.02766)
+
 ## High-level overview
 
 A deployed image classifier exposed through a prediction API answers queries,
@@ -165,6 +167,14 @@ under a labeling budget (Settles and Craven, 2008). What had not been establishe
 was how far a copy of a model's *function*, rather than its parameters, could be
 pushed by an adversary holding neither the victim's data nor its architecture nor
 the meaning of its outputs.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [High Accuracy and High Fidelity Extraction of Neural Networks](https://arxiv.org/abs/1909.01838) — separates accuracy from fidelity as distinct extraction goals and shows what each one costs, sharpening the objective this paper pursues.
+- [Stealing Part of a Production Language Model](https://arxiv.org/abs/2403.06634) — extraction against a deployed LLM API, recovering the final embedding projection layer exactly rather than approximating the whole model.
 
 </details>
 

@@ -24,6 +24,8 @@ tags:
 
 # What Makes and Breaks Safety Fine-tuning? A Mechanistic Study
 
+**Paper:** [arXiv:2407.10264](https://arxiv.org/abs/2407.10264)
+
 ## High-level overview
 
 Safety fine-tuning aligns an instruction-tuned language model to refuse unsafe
@@ -148,14 +150,6 @@ linear-algebra vocabulary the paper's analysis assumes.
   comparison keeps only successful attacks; note what that selection does to it.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence](https://arxiv.org/abs/2502.17420) — finds refusal governed by multiple independent directions and concept cones rather than one, revising the single-direction account this paper's interpolation experiments engage with.
-- [Improving Alignment and Robustness with Circuit Breakers](https://arxiv.org/abs/2406.04313) — a representation-level defense that remaps harmful internal states to resist jailbreaks and adversarial inputs, a constructive counterpart to this paper's diagnosis of how safety fine-tuning is bypassed.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 By 2024, safety fine-tuning was the standard gate before a model's release, but
@@ -185,6 +179,14 @@ exposed learned algorithms directly (Ramesh et al., 2023; Chughtai et al., 2023)
 all read through the residual-stream view of transformer computation (Elhage et
 al., 2021). What had not been done was to connect the minimal-change observations
 to the robustness failures in a single mechanistic account.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence](https://arxiv.org/abs/2502.17420) — finds refusal governed by multiple independent directions and concept cones rather than one, revising the single-direction account this paper's interpolation experiments engage with.
+- [Improving Alignment and Robustness with Circuit Breakers](https://arxiv.org/abs/2406.04313) — a representation-level defense that remaps harmful internal states to resist jailbreaks and adversarial inputs, a constructive counterpart to this paper's diagnosis of how safety fine-tuning is bypassed.
 
 </details>
 

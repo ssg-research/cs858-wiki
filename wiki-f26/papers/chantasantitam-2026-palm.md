@@ -21,6 +21,8 @@ tags:
 
 # PAL\*M: Property Attestation for Large Generative Models
 
+**Paper:** [arXiv:2601.16199](https://arxiv.org/abs/2601.16199)
+
 ## High-level overview
 
 Emerging regulation, such as the EU AI Act, asks for verifiable evidence that
@@ -167,14 +169,6 @@ alternative roots of trust against which a hardware-attestation scheme is measur
   affordable.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Laminator: Verifiable ML Property Cards using Hardware-assisted Attestations](https://arxiv.org/abs/2406.17548) — the hardware-attestation property-card approach this paper extends to large generative models.
-- [Sentry: Authenticating Machine Learning Artifacts on the Fly](https://arxiv.org/pdf/2510.00554) — authenticating ML artifacts at use time, an adjacent take on trustworthy provenance.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 Trusted execution environments are the substrate of confidential computing, and a
@@ -219,6 +213,14 @@ reconstructs the training trajectory but has been shown fragile to forgery (Fang
 al., 2023; Zhang et al., 2022). The recurring obstacle for the cryptographic route
 is cost: proving a single iteration of VGG-11 training runs to minutes (Abbaszadeh
 et al., 2024).
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Laminator: Verifiable ML Property Cards using Hardware-assisted Attestations](https://arxiv.org/abs/2406.17548) — the hardware-attestation property-card approach this paper extends to large generative models.
+- [Sentry: Authenticating Machine Learning Artifacts on the Fly](https://arxiv.org/pdf/2510.00554) — authenticating ML artifacts at use time, an adjacent take on trustworthy provenance.
 
 </details>
 

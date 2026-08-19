@@ -20,6 +20,8 @@ tags:
 
 # SoK: Unintended Interactions among Machine Learning Defenses and Risks
 
+**Paper:** [arXiv:2312.04542](https://arxiv.org/abs/2312.04542)
+
 ## High-level overview
 
 A machine learning model faces many risks at once, and each risk has its own
@@ -148,14 +150,6 @@ information about the model's decision boundary and training data.
   listed separately. Note how many carry the conjecture mark.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Conflicting Interactions Among Protection Mechanisms for Machine Learning Models](https://arxiv.org/abs/2207.01991) — the precursor from two of the same authors; it documents that combining defenses can make each less effective, the observation this SoK generalizes into a framework.
-- [Combining Machine Learning Defenses without Conflicts](https://arxiv.org/abs/2411.09776) — a later follow-up that builds on this systematization to compose multiple defenses while avoiding the conflicts it catalogues.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 Individual interactions were documented before any unifying account. Adversarial
@@ -175,6 +169,14 @@ fairness, and privacy without naming their underlying causes (Gittens et al.,
 mechanisms, showing that combining defenses can make each less effective (Szyller
 and Asokan, 2023). A contemporaneous SoK examined the interplay of fairness,
 interpretability, and privacy (Ferry et al., 2023).
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Conflicting Interactions Among Protection Mechanisms for Machine Learning Models](https://arxiv.org/abs/2207.01991) — the precursor from two of the same authors; it documents that combining defenses can make each less effective, the observation this SoK generalizes into a framework.
+- [Combining Machine Learning Defenses without Conflicts](https://arxiv.org/abs/2411.09776) — a later follow-up that builds on this systematization to compose multiple defenses while avoiding the conflicts it catalogues.
 
 </details>
 

@@ -23,6 +23,8 @@ tags:
 
 # Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs
 
+**Paper:** [USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25/presentation/bao-ergute)
+
 ## High-level overview
 
 Fine-tuning a pretrained large language model on a sensitive dataset can leak
@@ -164,14 +166,6 @@ the guarantee this line of work targets.
   baselines fail to run at all rather than run worse.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [PrivateFL: Accurate, Differentially Private Federated Learning via Personalized Data Transformation](https://www.usenix.org/system/files/usenixsecurity23-yang-yuchen.pdf) — a different lever on the DP utility problem, applied in federated learning.
-- [Local and Central Differential Privacy for Robustness and Privacy in Federated Learning](https://arxiv.org/abs/2009.03561) — the local-versus-central DP distinction that frames where the noise is added.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 Differentially private deep learning standardized on DP-SGD, which clips
@@ -203,6 +197,14 @@ per step and clips each one (Liu et al., 2025). These methods inherit MeZO's
 memory savings over DP-SGD, reported at around an eightfold reduction on a
 355M-parameter model, but a utility gap to first-order private training remained
 on several benchmarks when this paper appeared.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [PrivateFL: Accurate, Differentially Private Federated Learning via Personalized Data Transformation](https://www.usenix.org/system/files/usenixsecurity23-yang-yuchen.pdf) — a different lever on the DP utility problem, applied in federated learning.
+- [Local and Central Differential Privacy for Robustness and Privacy in Federated Learning](https://arxiv.org/abs/2009.03561) — the local-versus-central DP distinction that frames where the noise is added.
 
 </details>
 

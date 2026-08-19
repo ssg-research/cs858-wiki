@@ -24,6 +24,8 @@ tags:
 
 # ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks
 
+**Paper:** [USENIX Security 2024](https://www.usenix.org/conference/usenixsecurity24/presentation/tang)
+
 ## High-level overview
 
 A classifier served through a prediction API can be copied by
@@ -151,13 +153,6 @@ out-of-distribution detection, whose quality is read from the area under a
   uses before comparing any two defenses.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Beowulf: Mitigating Model Extraction Attacks Via Reshaping Decision Regions](https://dl.acm.org/doi/pdf/10.1145/3658644.3670267) — a different defense lever against extraction, reshaping the target's decision regions rather than perturbing the returned probabilities.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 By 2024 model extraction was an established threat against deployed prediction
@@ -197,6 +192,13 @@ recovers much of the signal (Lee et al., 2019), and a defense-penetrating attack
 adds a detector that identifies the defense before recovering (Chen et al.,
 2023). How to perturb outputs with a guarantee that survives an attacker who knows the
 mechanism had received little attention.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Beowulf: Mitigating Model Extraction Attacks Via Reshaping Decision Regions](https://dl.acm.org/doi/pdf/10.1145/3658644.3670267) — a different defense lever against extraction, reshaping the target's decision regions rather than perturbing the returned probabilities.
 
 </details>
 

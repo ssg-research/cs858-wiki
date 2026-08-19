@@ -19,6 +19,8 @@ tags:
 
 # Jailbroken: How Does LLM Safety Training Fail?
 
+**Paper:** [arXiv:2307.02483](https://arxiv.org/abs/2307.02483)
+
 ## High-level overview
 
 Large language models deployed as assistants are
@@ -132,14 +134,6 @@ attacks operate.
   prompts. Outcomes are labelled by hand; note where the two models diverge.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) — a white-box, optimization-based route to jailbreaks, complementing this paper's black-box, conceptual route.
-- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) — automates black-box jailbreak discovery with an attacker model in the loop.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 By early 2023, the deployed assistants (ChatGPT, Claude, GPT-4, Bard) were
@@ -169,6 +163,14 @@ broadly (Chakraborty et al., 2018; Zhang et al., 2020); that line aims to cause
 mistakes, whereas a jailbreak aims to unlock a capability. A systematic,
 conceptual account of why jailbreaks succeed, grounded in the training pipeline,
 had not been given.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) — a white-box, optimization-based route to jailbreaks, complementing this paper's black-box, conceptual route.
+- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) — automates black-box jailbreak discovery with an attacker model in the loop.
 
 </details>
 

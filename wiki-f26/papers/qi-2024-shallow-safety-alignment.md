@@ -25,6 +25,8 @@ tags:
 
 # Safety Alignment Should Be Made More Than Just a Few Tokens Deep
 
+**Paper:** [arXiv:2406.05946](https://arxiv.org/abs/2406.05946)
+
 ## High-level overview
 
 The safety alignment of current large language models is brittle: simple attacks,
@@ -130,14 +132,6 @@ and drive the largest weight updates.
   strong constraint and the justification given for stopping there.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations](https://arxiv.org/abs/2312.06674) — the system-boundary approach to safety, screening prompts and responses with a separate classifier rather than changing the model's alignment.
-- [SecAlign: Defending Against Prompt Injection with Preference Optimization](https://arxiv.org/abs/2410.05451) — a preference-optimization defense that hardens the model itself, a useful contrast to deepening safety alignment.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 By 2024, aligned LLMs had been shown vulnerable to a varied and growing set of
@@ -169,6 +163,14 @@ boundary, with input and output classifiers screening prompts and responses (Ina
 et al., 2023). The alignment itself came from the supervised and
 preference-optimization stack, RLHF (Ouyang et al., 2022) and DPO (Rafailov et
 al., 2023), whose KL penalty keeps the aligned policy near the base model.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations](https://arxiv.org/abs/2312.06674) — the system-boundary approach to safety, screening prompts and responses with a separate classifier rather than changing the model's alignment.
+- [SecAlign: Defending Against Prompt Injection with Preference Optimization](https://arxiv.org/abs/2410.05451) — a preference-optimization defense that hardens the model itself, a useful contrast to deepening safety alignment.
 
 </details>
 

@@ -185,11 +185,16 @@ spliced into `wiki-f26/README.md` by hand (see that script's header).
 
 The spreadsheet's **essential-readings column** (the one
 `build-paper-table.py` renders into the row's `<details>`) is also the source for
-the new page's **Supplementary readings**: list those readings, with a one-line
-framing each. The separate extra-reading columns are instructor reference and do
-not render. The essential-readings column can still hold a reading carried over
-from the old paper; confirm each one fits the new paper, and flag any that look
-like leftovers rather than silently keeping or dropping them.
+the new page's **Essential Readings**: list those readings, in the spreadsheet's
+order, with a one-line framing each. The separate extra-reading columns are
+instructor reference and do not render. The essential-readings column can still
+hold a reading carried over from the old paper; confirm each one fits the new
+paper, and flag any that look like leftovers rather than silently keeping or
+dropping them.
+
+The slot's **paper column** carries the hyperlink for the new page's `**Paper:**`
+line. Take it verbatim, and label it `arXiv:ID` for an arXiv preprint or the
+venue and year otherwise.
 
 ### 12. Update the motivating-questions archive
 
@@ -243,8 +248,9 @@ A replacement is acceptable when:
 - The reachability rule was applied: every concept page is either used by a paper
   or reachable from another page, no concept page was deleted while something
   still linked to it, and any kept-but-unused page carries the neutral note.
-- The reading-list table, the indexes, and the new page's Supplementary readings
-  all agree with the spreadsheet for the slot, and the stats line is recounted.
+- The reading-list table, the indexes, and the new page's Essential Readings and
+  `**Paper:**` link all agree with the spreadsheet for the slot, and the stats
+  line is recounted.
 
 Reproducibility is structural, exactly as in
 [generate-paper-summary.md](generate-paper-summary.md): a frozen schema, a fixed

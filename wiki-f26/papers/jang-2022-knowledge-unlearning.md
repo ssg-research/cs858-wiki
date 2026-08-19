@@ -24,6 +24,8 @@ tags:
 
 # Knowledge Unlearning for Mitigating Privacy Risks in Language Models
 
+**Paper:** [arXiv:2210.01504](https://arxiv.org/abs/2210.01504)
+
 ## High-level overview
 
 A pretrained language model memorizes parts of its training corpus, personal
@@ -179,6 +181,14 @@ privacy and measured how much memorized training data a model sheds over
 training, in image and audio models (Jagielski et al., 2022). These methods
 forgot whole classes in classifiers; forgetting specific token sequences in a
 large language model had not been studied.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Erasing Concepts from Diffusion Models](https://arxiv.org/abs/2303.07345) — the same removal goal in image generation, editing a concept out of the weights rather than a sequence out of a language model.
+- [TOFU: A Task of Fictitious Unlearning for LLMs](https://arxiv.org/abs/2401.06121) — a benchmark built on synthetic author profiles, so what was learned, and therefore what must be forgotten, is known exactly.
 
 </details>
 

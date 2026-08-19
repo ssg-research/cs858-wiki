@@ -23,6 +23,8 @@ tags:
 
 # BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking
 
+**Paper:** [arXiv:2204.09649](https://arxiv.org/abs/2204.09649)
+
 ## High-level overview
 
 A client that outsources computation to a cloud server must send its data there
@@ -142,13 +144,6 @@ addresses, and instruction timing are written never to depend on secret values.
   register-transfer-level implementation. Note what the proof therefore covers.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Origami Inference: Private Inference Using Hardware Enclaves](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9582200) — an enclave-based approach to private inference, a point of contrast with confidentiality enforced by hardware taint tracking.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 Confidential computing in industry rests on trusted execution environments. Intel
@@ -194,6 +189,13 @@ transcript inside a TEE (Lee et al., 2021); oblivious-RAM constructions hide
 memory-access patterns at additional cost (Goldreich and Ostrovsky, 1996; Stefanov
 et al., 2018). Each of these either relies on the application to invoke its
 protections or pays a substantial performance cost.
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Origami Inference: Private Inference Using Hardware Enclaves](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9582200) — an enclave-based approach to private inference, a point of contrast with confidentiality enforced by hardware taint tracking.
 
 </details>
 

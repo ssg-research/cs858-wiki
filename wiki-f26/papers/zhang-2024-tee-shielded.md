@@ -27,6 +27,8 @@ tags:
 
 # No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML
 
+**Paper:** [arXiv:2310.07152](https://arxiv.org/abs/2310.07152)
+
 ## High-level overview
 
 On-device machine learning ships a trained model to a phone or IoT device, where
@@ -161,13 +163,6 @@ to hardware instead.
   from it.
 
 <details>
-<summary><h2>Supplementary readings</h2></summary>
-
-- [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287) — the foundational TEE-plus-accelerator partition idea this line of defenses descends from.
-
-</details>
-
-<details>
 <summary><h2>Paper Context</h2></summary>
 
 Putting a model on a user's device exposes its weights, turning model stealing and
@@ -203,6 +198,13 @@ false-positive rates (Carlini et al., 2022). An on-device adversary also holds
 public pretrained models and datasets, which transfer-learning attacks convert
 into knowledge of a target's architecture and weights (Wang et al., 2018; Chen et
 al., 2022).
+
+</details>
+
+<details>
+<summary><h2>Essential Readings</h2></summary>
+
+- [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287) — the foundational TEE-plus-accelerator partition idea this line of defenses descends from.
 
 </details>
 
