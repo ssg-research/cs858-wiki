@@ -76,18 +76,6 @@ and fixes the formal version in an appendix: a static semi-honest
 probabilistic-polynomial-time adversary corrupting one of the two parties, with
 security defined in the simulation paradigm.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-NEXUS is the first secure transformer-inference protocol to remove interaction
-entirely, recasting a problem the field had treated as communication-bound into
-one bound by server computation. That shift is what lets it apply GPU and
-FHE-accelerator speedups the interactive protocols structurally cannot. It is
-also a clear worked example of evaluating every layer of a real transformer,
-attention, GELU, softmax, layer normalization, and a vocabulary-sized argmax,
-under a single homomorphic-encryption scheme.
-
 ## Basic Background
 
 ### Transformers and the layers evaluated under encryption

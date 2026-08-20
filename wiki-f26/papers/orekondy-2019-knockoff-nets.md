@@ -62,14 +62,6 @@ data confidential protects the model's value, is what the attack tests; the pape
 also considers a defender that degrades its responses by truncating or rounding
 the probabilities it returns.
 
-## Why read this
-
-The paper strips the model-extraction adversary down to what any paying API
-client already has: images in, probabilities out. Its claim is that a working
-copy can still be trained when the adversary's architecture and query data
-differ entirely from the victim's, with no access to the victim's training set,
-internals, or output-class semantics.
-
 ## Basic Background
 
 ### Image classification with convolutional networks

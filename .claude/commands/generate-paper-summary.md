@@ -34,12 +34,6 @@ paper's row in the canonical reading list in
 invent it or ask for it. If the paper has no row yet, stop and ask the instructor
 where it belongs.
 
-Before drafting, confirm the one editorial input the instructor owns (ask if not
-provided with the command):
-
-- the one-to-two-sentence **"Why read this"** framing (why the paper is worth
-  reading on its own terms).
-
 Constraints:
 
 - If `$1` is an arXiv URL or ID, run `uv run python3 scripts/fetch-arxiv.py "$1"`
@@ -48,6 +42,13 @@ Constraints:
 - One paper per invocation.
 - Slug is `author-year-shortname` (lowercase, hyphens; shortname is an obvious
   named method or a couple of distinctive title words).
+- Every claim about the world is sourced to the paper read this session or to a
+  cited work. Priority ("the first"), influence ("set the template the
+  literature still follows"), and exhaustiveness ("the only known way") are
+  claims about a literature: attribute them to the paper if the paper makes
+  them, cite them if a cited work settles them, otherwise cut them.
+- The page never states why the paper is on the syllabus. You draft every
+  section from the paper; no section is the instructor's editorial voice.
 - The **Threat Model:** paragraph carries the threat model and nothing else. No
   protocol steps, no mechanism, no proof technique, no measured result: test each
   sentence by swapping this paper's approach for another meeting the same goal

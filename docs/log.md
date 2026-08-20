@@ -1071,3 +1071,40 @@ framings on `elatali-2024-blime.md`, `zhang-2024-tee-shielded.md`,
 
 check-links clean (104 files); markdownlint clean on all fifteen changed files;
 no new prose em-dashes. Model: Opus 5, `claude-opus-5[1m]`.
+
+## [2026-08-20 12:13] fix | Remove the "Why read this" section from the page schema
+
+The section is gone from all 24 paper pages and from the schema, the procedure,
+the quality bar, the audit playbook, and the slash command.
+
+The section asked why a paper repays the reader's time. The course staff's
+answer to that is why *they* put the paper on the syllabus, which is a fact
+about a curriculum decision and is held by the people who made it. A page
+compiled from the paper has no access to it, and can only produce a plausible
+substitute: an accurate statement of the paper's significance that reads like an
+answer and is not one. That failure is silent, because the substitute is true.
+
+Provenance behind the removal: four sentences flagged in review sat in this
+section, all four original text from each paper's compile commit, none ever
+revised across the 24 to 30 commits that touched each file. Six editorial passes
+scoped to other sections read past them. The section began as "Why this paper is
+assigned," a question about a course decision that cannot be wrong about the
+field, and was renamed when the wiki was prepared for standalone publishing;
+the rename substituted a question an agent could plausibly answer.
+
+Also added, independent of the removal, since it caught four instances outside
+the section (three concept pages and a Madry Essential Readings line):
+
+- **Claim discipline**, a page-wide rule in `docs/ops/generate-paper-summary.md`:
+  every assertion about the world is sourced to the paper read this session or
+  to a cited work, and priority, influence, and exhaustiveness claims are
+  attributed, cited, or cut.
+- A "Banned moves" entry in `docs/writing-style.md` carrying a test rather than
+  a rejected example.
+- Two Universal Rules in `AGENTS.md`: claims carry sources, and no section
+  speaks in the instructor's voice.
+- Two pedagogy checks and a priority-vocabulary review queue in
+  `docs/ops/lint.md`.
+- Two prohibitions in the generate-paper-summary Quality bar.
+
+markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).

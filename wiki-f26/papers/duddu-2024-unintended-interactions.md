@@ -67,19 +67,6 @@ factors that drive them determine whether deploying a given defense increases or
 decreases susceptibility to a given risk. The framework asserts correlation, not
 causation, and its conjectures are checked empirically.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-Most of trustworthy machine learning is built one defense and one risk at a time,
-and this paper is the first to ask, systematically, what a defense does to the
-risks it was never designed for. It reduces a sprawling and often contradictory
-literature to two underlying causes, overfitting and memorization, and a handful
-of factors, turning scattered empirical observations into a single account that
-also predicts interactions no one has measured. It is a model of what a
-systematization can do: organize a field, expose its gaps, and yield testable
-conjectures. It received a Distinguished Paper award at IEEE S&P 2024.
-
 ## Basic Background
 
 ### Risks and defenses in trustworthy machine learning

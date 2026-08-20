@@ -73,15 +73,6 @@ client-specific watermark, which the owner can verify through a trusted judge an
 a public commitment establishing priority, while honest clients see almost no
 loss of accuracy.
 
-## Why read this
-
-Preventing model extraction without sacrificing utility has proven very hard,
-while detecting it after the fact is more tractable. The paper presents DAWN as
-the first approach to use watermarking to deter intellectual-property theft by
-model extraction, placing the mechanism at the prediction API and leaving the
-training process untouched. The result is a watermarking technique that is
-largely independent of the model it protects.
-
 ## Basic Background
 
 ### Model extraction and prediction-API access

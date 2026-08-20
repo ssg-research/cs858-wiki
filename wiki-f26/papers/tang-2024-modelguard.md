@@ -75,19 +75,6 @@ probability vector. Its claim for the information-theoretic variant is a lower
 bound on substitute-training loss that holds against the optimal recovery, while
 honest users keep high utility.
 
-## Why read this
-
-<!-- instructor: confirm -->
-The paper gives the first general optimization formulation for defending against
-adaptive model extraction, and shows that output perturbation, long treated as a
-bag of heuristics, can be posed as a single objective with utility constraints
-that covers both parameter-stealing and functionality-stealing. Its
-information-theoretic variant earns a guarantee against the optimal recovery an
-attacker could use rather than against one fixed attack, which is the property
-most prior perturbation defenses lacked. The reduction of the defense to a
-rate-distortion problem connects model-stealing defense to classical information
-theory.
-
 ## Basic Background
 
 ### Model extraction and MLaaS

@@ -68,14 +68,6 @@ model is backdoored (and if so, which label is targeted), recover a trigger that
 reproduces the behavior, and patch the model to disable the backdoor without
 degrading clean accuracy.
 
-## Why read this
-
-A single geometric intuition carries the whole defense: the infected label is
-"too easy" to reach from every other label. The paper is worth reading for how
-that intuition becomes a concrete, testable detector that runs on a trained
-classifier alone, and for the five counter-measures it then turns on that
-detector, each aimed at a different assumption the detector rests on.
-
 ## Basic Background
 
 ### Deep image classifiers

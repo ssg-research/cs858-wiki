@@ -68,23 +68,6 @@ is confidentiality in a specific sense, that when a client supplies sensitive
 input to the server, no party other than that same client can infer anything
 about the data beyond its length.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-BliMe recasts confidential outsourced computation as an information-flow problem.
-Rather than isolate client data in an enclave or hold it under encryption, it lets
-the server compute on the plaintext while hardware taint tracking guarantees that
-blinded data cannot leak, including through side channels. The confidentiality
-holds even against malicious server software: an operation that would leak blinded
-data faults rather than completing, so useful computation must follow a
-constant-time discipline. The design is carried through to a
-register-transfer-level implementation on a RISC-V out-of-order core with measured
-overheads, and to a machine-checked proof that the taint-tracking policy enforces
-confidentiality. It is a concrete case study in trading a cryptographic guarantee
-for a hardware-enforced one, and in what "verifiably secure" means when the object
-of the proof is an ISA rather than a protocol.
-
 ## Basic Background
 
 ### Outsourced computation and secure inference

@@ -70,14 +70,6 @@ drift, resist these exploits better than standard alignment at comparable
 utility. The defenses are presented as prototypes, not as a guarantee against all
 adaptive attacks.
 
-## Why read this
-
-A weakness shared across aligned LLMs turns out to have a measurable cause and a
-tractable fix. The paper reframes safety alignment from cataloguing individual
-attacks to diagnosing why alignment is brittle, then deepening it directly. Its
-constrained fine-tuning objective follows straight from that diagnosis, holding
-down updates on exactly the tokens where the paper locates the brittleness.
-
 ## Basic Background
 
 ### Autoregressive generation and decoding

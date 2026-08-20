@@ -66,14 +66,6 @@ Because memorized content surfaces through ordinary, honest generation, the
 "adversary" can be an algorithm or even a benign user, and the party at risk is
 whoever trained the model on a corpus that may contain private text.
 
-## Why read this
-
-A demonstration that production-scale language models memorize and emit verbatim
-pieces of their training data, secrets included, from sequences appearing in a
-single training document and in a model showing little overfitting. Its target
-is the prevailing assumption that a model trained for one epoch on a massive
-de-duplicated corpus cannot leak individual records.
-
 ## Basic Background
 
 ### Language models and text generation

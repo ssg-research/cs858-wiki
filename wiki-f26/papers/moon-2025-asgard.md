@@ -74,20 +74,6 @@ out of scope. The paper notes the guarantee can be strengthened to
 hardware-secure enclaves where additional hardware support, such as Arm's
 Confidential Compute Architecture, is available.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-ASGARD is the first system to build on-device model protection on a
-virtualization-based TEE rather than Arm TrustZone, and it carries the idea to a
-working prototype on a commodity Android SoC without modifying any proprietary
-firmware or accelerator driver. It shows that an enclave can be extended over an
-integrated NPU by secure I/O passthrough while keeping the trusted computing base
-small and run-time overhead near zero. The paper is a concrete study in trading
-TrustZone's static two-world partition for hypervisor-enforced VM isolation, and
-in the systems engineering that makes a TEE both accelerator-capable and
-compatible with closed-source software.
-
 ## Basic Background
 
 ### On-device deep learning and model confidentiality

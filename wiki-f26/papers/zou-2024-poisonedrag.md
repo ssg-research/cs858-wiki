@@ -68,15 +68,6 @@ system consults rather than on training or on the user's prompt. The defender,
 the party running input-level defenses the paper evaluates, aims to detect or
 neutralize the injected texts.
 
-## Why read this
-
-The paper presents the first knowledge-corruption attack on retrieval-augmented
-generation, and it lands the corruption at an unusual point in the lifecycle:
-after training, yet not at inference-time prompting either, but in the retrieval
-corpus the deployed system consults. It rewards thinking about the whole system
-rather than the model in isolation, since
-the vulnerable component is the data pipeline feeding the model.
-
 ## Basic Background
 
 ### Retrieval-augmented generation and dense retrieval
