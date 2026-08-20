@@ -19,7 +19,7 @@ the patch. The criterion is an oracle: usually a regression test suite, sometime
 a formal property or a crashing input run under a sanitizer. Classical
 generate-and-validate systems search a space of candidate edits and keep any that
 pass the tests; GenProg, which mutates the program with genetic operators, is the
-seminal example (Le Goues et al., 2012). A recurring pitfall is that a patch can
+canonical example (Le Goues et al., 2012). A recurring pitfall is that a patch can
 be plausible, passing the supplied tests, without being correct, so weak test
 suites overstate repair rates (Qi et al., 2015). Learning-based repair instead
 trains neural sequence-to-sequence models on mined bug-fix pairs to predict a

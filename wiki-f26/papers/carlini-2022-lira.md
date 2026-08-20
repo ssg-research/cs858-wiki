@@ -65,11 +65,11 @@ false-positive rates.
 
 ## Why read this
 
-Privacy, like security, is a worst-case property: an attack that confidently
-identifies a few members has succeeded even if its average accuracy is
-unremarkable. This paper resets how membership inference is evaluated and, in
-the process, shows that years of accumulated results were measured with the
-wrong instrument. It is a case study in what a security claim actually means.
+An attack with a near-zero true-positive rate at low false-positive rates is
+making no confident membership predictions at all: it is calling almost
+everything a non-member, and a respectable average accuracy hides that. This
+paper resets how membership inference is evaluated and, in the process, shows
+that years of accumulated results were measured with the wrong instrument.
 
 ## Basic Background
 

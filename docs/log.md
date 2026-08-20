@@ -992,3 +992,82 @@ every Threat Model paragraph and grep them for trust and result vocabulary;
 
 check-links clean (104 files); markdownlint clean on all thirteen changed files;
 no new prose em-dashes. Model: Opus 5, `claude-opus-5[1m]`.
+
+## [2026-08-20 10:12] fix | Unverified priority, field-shaping, and gloss claims in "Why read this"
+
+A reviewer flagged one sentence each on four pages, all in `## Why read this`.
+Fixed those, then swept every paper and concept page for the same three failure
+classes: unverified priority or superlative claims, field-shaping claims the
+page cannot support, and editorial gloss stated as established fact.
+
+The four flagged sentences. `carlini-2022-lira.md`: the low-FPR metric was
+justified as "privacy, like security, is a worst-case property," which is not
+the argument the paper makes for the metric. Re-grounded in Section III-B: an
+attack with a near-zero TPR at low FPR is making no confident membership
+predictions at all, it is calling almost everything a non-member, and its
+average accuracy hides that (the paper's own LOSS-attack example: 60% balanced
+accuracy, 48% correct on its most confident member predictions). The "privacy is
+a worst-case property" phrasing in the overview stands; the paper argues exactly
+that in Section I and III-B ("privacy is not an average case metric";
+"balanced accuracy is an average-case metric, but this is not what matters in
+security"). `abadi-2016-dp-sgd.md`: the utility sentence carried a
+training-length clause plus two unsupported claims ("the only known way to
+actually guarantee training-data privacy," "nearly every modern private training
+system ... builds on this algorithm"); rewritten as the privacy-utility
+tradeoff alone. `szyller-2019-dawn.md`: "the first defense to treat the deployed
+system as a whole" is not a claim the paper makes; replaced with its actual
+abstract claim, "the first approach to use watermarking to deter model
+extraction IP theft," plus the API-versus-training-process placement it states
+in the same sentence. `wang-2019-neural-cleanse.md`: "set the template that the
+backdoor-defense literature still follows: detect, reverse-engineer, patch" is
+false as a general claim about backdoor defenses; replaced with the geometric
+intuition and the five counter-measures the paper runs against its own detector.
+
+Sweep results. Cut or bounded: `carlini-2021-extracting-training-data.md`
+("first practical demonstration," "set the terms for the LLM training-data
+privacy work that followed"), `orekondy-2019-knockoff-nets.md` ("the strongest
+and most durable result," "remains the reference point"),
+`qi-2024-shallow-safety-alignment.md` ("among the most practical known ways"),
+`qu-2025-zkgpt.md` ("the first zero-knowledge proof system to make proving full
+GPT-2 inference practical," a claim the paper never makes; replaced with its
+measured 25-second proof time and ~2-orders-of-magnitude speedup),
+`zou-2024-poisonedrag.md` (generalized beyond the paper's "first knowledge
+corruption attack to RAG"), `madry-2018-pgd.md` ("one of the first works to
+establish adversarial training ... on firm footing," and "the standard check"
+softened to "a standard check" on AutoAttack),
+`kirchenbauer-2023-llm-watermark.md` ("became practical and analyzable here,"
+"sets the method apart from earlier rule-based text watermarking"),
+`jang-2022-knowledge-unlearning.md` ("widely cited"), `concepts/fgsm.md` ("the
+first widely used attack," "the first attack cheap enough to run inside
+training"), `concepts/automated-program-repair.md` (GenProg "seminal" ->
+"canonical," matching `pearce-2023-vulnerability-repair.md`),
+`concepts/white-box-black-box.md` ("the most common" intermediate notion).
+
+Priority claims left standing because the paper makes them in its own abstract
+or contributions list, checked against the PDF this session:
+`chantasantitam-2026-palm.md` ("the first framework for ML property attestations
+of large generative models"), `duddu-2024-unintended-interactions.md` ("the
+first systematic framework for understanding unintended interactions"; the
+Distinguished Paper award confirmed on the authors' group page),
+`moon-2025-asgard.md` ("the first virtualization-based TEE"),
+`tang-2024-modelguard.md` ("the first general formulation for the defense
+against adaptive model extraction attacks"), `zhang-2025-nexus.md` ("the first
+non-interactive protocol for secure transformer inference"),
+`zhang-2024-tee-shielded.md` ("the first systematic empirical evaluation on the
+security of TSDP approaches"), `greshake-2023-indirect-prompt-injection.md`
+("the first taxonomy and systematic analysis"; "we construct the first examples
+of such attacks"), `pearce-2023-vulnerability-repair.md` (page says "one of the
+first," paper says "the first evaluation of LLMs for zero-shot vulnerability
+repair"), `bao-2025-dp-zo.md` (the paper reports outperforming DP-AdamW, the
+state-of-the-art first-order method), and `wang-2019-neural-cleanse.md`'s
+overview line ("the first general method"; the abstract says "the first robust
+and generalizable detection and mitigation system").
+
+Reading-value gloss kept where it is plainly the page recommending the paper
+rather than asserting a fact about the field: the "case study" and "template"
+framings on `elatali-2024-blime.md`, `zhang-2024-tee-shielded.md`,
+`jain-2024-safety-finetuning.md`, `chantasantitam-2026-palm.md`,
+`duddu-2024-unintended-interactions.md`, and `madry-2018-pgd.md`.
+
+check-links clean (104 files); markdownlint clean on all fifteen changed files;
+no new prose em-dashes. Model: Opus 5, `claude-opus-5[1m]`.

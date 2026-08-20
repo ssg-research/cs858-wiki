@@ -68,11 +68,11 @@ whoever trained the model on a corpus that may contain private text.
 
 ## Why read this
 
-The first practical demonstration that production-scale language models memorize
-and emit verbatim pieces of their training data, secrets included, even when the
-model shows no signs of overfitting. It broke the long-assumed link between
-training-data leakage and overfitting, and set the terms for the LLM
-training-data privacy work that followed.
+A demonstration that production-scale language models memorize and emit verbatim
+pieces of their training data, secrets included, from sequences appearing in a
+single training document and in a model showing little overfitting. Its target
+is the prevailing assumption that a model trained for one epoch on a massive
+de-duplicated corpus cannot leak individual records.
 
 ## Basic Background
 

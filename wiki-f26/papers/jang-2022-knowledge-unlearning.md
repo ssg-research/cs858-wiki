@@ -69,9 +69,9 @@ attack.
 Unlearning is a central question for privacy compliance: regulations such as the
 GDPR right to be forgotten can require removing an individual's data from a
 deployed model, and retraining from scratch on every request is infeasible. This
-paper is an early and widely cited case for doing that with a cheap post-hoc
-edit, gradient ascent on the sequences to forget, and it reports that the edit
-can preserve general capability. It is equally worth reading for what it exposes
+paper is an early case for doing that with a cheap post-hoc edit, gradient
+ascent on the sequences to forget, and it reports that the edit can preserve
+general capability. It is equally worth reading for what it exposes
 about the method's limits: the protection it gives is empirical rather than a
 formal guarantee, it degrades when many sequences are forgotten at once, and its
 difficulty swings with the data domain, the properties that keep unlearning from

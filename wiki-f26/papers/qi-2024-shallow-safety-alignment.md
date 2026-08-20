@@ -75,9 +75,8 @@ adaptive attacks.
 A weakness shared across aligned LLMs turns out to have a measurable cause and a
 tractable fix. The paper reframes safety alignment from cataloguing individual
 attacks to diagnosing why alignment is brittle, then deepening it directly. Its
-constrained fine-tuning objective is, short of re-running a full alignment
-pipeline, among the most practical known ways to keep a model's safety from
-unraveling under later fine-tuning.
+constrained fine-tuning objective follows straight from that diagnosis, holding
+down updates on exactly the tokens where the paper locates the brittleness.
 
 ## Basic Background
 

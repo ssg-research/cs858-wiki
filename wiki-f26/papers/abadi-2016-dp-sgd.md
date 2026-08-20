@@ -70,11 +70,9 @@ grows.
 
 Empirical defenses hold only until a stronger attack arrives. This paper instead
 gives a defense with a proof, a training algorithm whose privacy guarantee holds
-against any adversary, including future ones. Using it in practice is difficult,
-since clipping and noise cost accuracy and the budget constrains how long a model
-can train, yet differential privacy remains the only known way to actually
-guarantee training-data privacy, and nearly every modern private training
-system, federated learning especially, builds on this algorithm in some form.
+against any adversary, including future ones. That guarantee is bought with
+utility: clipping and noise cost accuracy, and a smaller epsilon costs more of
+it, so every use of the algorithm is a choice of where to sit on that tradeoff.
 
 ## Basic Background
 

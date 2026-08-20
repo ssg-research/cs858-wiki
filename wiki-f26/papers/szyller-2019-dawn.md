@@ -76,11 +76,11 @@ loss of accuracy.
 ## Why read this
 
 Preventing model extraction without sacrificing utility has proven very hard,
-while detecting it after the fact is more tractable. DAWN is the first defense to
-treat the deployed system as a whole rather than the model in isolation, placing
-its mechanism at the prediction API instead of inside the trained model. The
-result is a watermarking technique that is largely independent of the model it
-protects.
+while detecting it after the fact is more tractable. The paper presents DAWN as
+the first approach to use watermarking to deter intellectual-property theft by
+model extraction, placing the mechanism at the prediction API and leaving the
+training process untouched. The result is a watermarking technique that is
+largely independent of the model it protects.
 
 ## Basic Background
 
