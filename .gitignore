@@ -24,3 +24,7 @@ __pycache__/
 
 # Claude Code local settings (user-specific; .claude/commands/ is tracked).
 .claude/settings.local.json
+
+# Agent worktrees: throwaway checkouts of this repo. Left untracked, a stray
+# `git add -A` stages one as an embedded git repository.
+.claude/worktrees/
