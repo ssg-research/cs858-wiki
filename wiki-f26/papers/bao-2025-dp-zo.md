@@ -71,19 +71,6 @@ data, present or future. As in DP-SGD, the privacy reasoning is on the noisy
 per-iteration update, not on the final parameters; the pretrained base model is
 treated as public.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-Differentially private fine-tuning has been bottlenecked by the memory cost of
-per-example gradients, which pushes large-model private training onto hardware
-many groups lack. This paper shows that a gradient-free optimizer, far cheaper
-in memory but inherently noisier, can be made into a competitive private
-fine-tuner, in places matching or beating the first-order state of the art at a
-fraction of the memory. The analysis connecting clipping bias to the convergence
-rate is of independent interest, and reframes the memory-versus-utility tension
-that has shaped private fine-tuning.
-
 ## Basic Background
 
 ### Differential privacy and its machinery

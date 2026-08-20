@@ -65,15 +65,6 @@ architecture and the weights and can compute gradients. Weaker black-box
 under the worst allowed perturbation, argued for the class of first-order
 adversaries.
 
-## Why read this
-
-Most early defenses against adversarial examples were point countermeasures,
-and many were broken shortly after publication. This paper instead fixes an
-explicit class of adversaries and trains models to resist all of them, so the
-claim it makes is about a stated adversary class rather than about whichever
-attack it happened to survive. It is also a well-constructed paper, worth
-reading as a model for arguing an empirical security claim.
-
 ## Basic Background
 
 ### Training a classifier

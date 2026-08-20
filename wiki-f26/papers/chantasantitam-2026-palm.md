@@ -85,18 +85,6 @@ enter the quote. Denial of service, side-channel attacks on the hardware, and
 physical attacks, including memory-bus interposition and physically swapping
 the GPU, are out of scope.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-PAL\*M is the first property-attestation framework to cover large generative
-models, extending hardware-assisted property cards from CPU-only classifiers to
-the CPU-GPU pipelines that train, fine-tune, evaluate, and serve them. It is a
-concrete counterpoint to cryptographic proof systems for the same
-regulatory-compliance goal, trading a zero-knowledge proof for a hardware root of
-trust, and a useful case study in folding a confidential-GPU attestation into
-end-to-end evidence.
-
 ## Basic Background
 
 ### Large generative models and their operations

@@ -61,16 +61,6 @@ inference time only, with no access to training. The defender is the model
 provider, which serves a safety-trained model that refuses restricted behaviors
 and is claimed to resist adversarial misuse.
 
-## Why read this
-
-Finding a jailbreak is easy, and that ease is what makes them hard to study.
-Sample a prompt enough times at a high enough temperature and some response may
-slip past the refusal by chance, but a one-off success that does not repeat
-establishes nothing. The scientific challenge is to elicit restricted behavior
-systematically and repeatably. This paper meets that bar: it moves from a
-hypothesis about why safety training fails to a clean experimental design, and
-produces its attacks by construction rather than by luck.
-
 ## Basic Background
 
 ### Language models and pretraining

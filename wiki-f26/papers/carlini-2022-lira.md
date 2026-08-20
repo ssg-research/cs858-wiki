@@ -63,14 +63,6 @@ augmentations are guessed wrong. The privacy claim under attack is membership
 secrecy, and the attack is judged by its true-positive rate at low
 false-positive rates.
 
-## Why read this
-
-An attack with a near-zero true-positive rate at low false-positive rates is
-making no confident membership predictions at all: it is calling almost
-everything a non-member, and a respectable average accuracy hides that. This
-paper resets how membership inference is evaluated and, in the process, shows
-that years of accumulated results were measured with the wrong instrument.
-
 ## Basic Background
 
 ### Training, confidence, and the generalization gap

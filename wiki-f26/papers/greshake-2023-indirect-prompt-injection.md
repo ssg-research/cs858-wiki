@@ -67,15 +67,6 @@ behalf. The defender is the application provider, whose deployed protection is
 filtering on the channels it controls, screening what a user types in and what
 the model emits.
 
-## Why read this
-
-This is the paper that introduced and named indirect prompt injection. It
-reframes the LLM trust boundary: once a model retrieves documents or calls tools,
-third-party content it ingests, not only the user typing the prompt, can hijack
-its behavior. The contribution is a way of seeing, importing a full
-computer-security vocabulary, arbitrary code execution, worms, persistence, and
-command-and-control, into LLM-integrated applications.
-
 ## Basic Background
 
 ### Large language models and alignment

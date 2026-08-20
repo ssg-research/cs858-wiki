@@ -76,18 +76,6 @@ positives are statistically improbable regardless of a human author's writing
 style, and that removing the watermark from a long passage requires changing a
 large fraction of its tokens.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-This is decoding-time watermarking of language-model output that is practical
-and analyzable at once: the watermark needs no model retraining, the detector
-needs neither the model nor its API, and detection reports an interpretable
-p-value rather than a trained classifier's score. The information-theoretic tie
-between a passage's entropy and how strongly it can be marked explains why some
-text resists marking. The paper rewards attention to both what the test
-guarantees and where the authors place the watermark's limits.
-
 ## Basic Background
 
 ### Language models, tokens, and decoding

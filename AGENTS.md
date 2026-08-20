@@ -158,6 +158,19 @@ is the instructor's release decision, never an agent's.
   something is, not what it is not: no defining a thing by negating an
   alternative the reader never raised ("X, not Y"). No essay openers,
   metaphors-as-structure, or second-person coaching.
+- **Every claim about the world carries a source.** A sentence asserting
+  something about the field is grounded in the paper read this session or in a
+  cited work, or it is cut. Claims of priority ("the first defense to"),
+  influence ("set the template the literature still follows"), and
+  exhaustiveness ("the only known way") are facts about a literature that
+  compiling one paper does not establish; attribute them to the paper where the
+  paper makes them, cite them where a cited work settles them, otherwise write
+  what the paper does instead. See `docs/ops/generate-paper-summary.md` (Claim
+  discipline) and the "Banned moves" entry in `docs/writing-style.md`.
+- **The page never says why a paper is on the syllabus.** That is a fact about a
+  course decision, held by the staff who made it, and nothing in the paper
+  establishes it. Every section is drafted from the paper and reviewed by the
+  instructor; none is written in the instructor's editorial voice.
 - You may answer from training knowledge, but say so explicitly. If an answer
   did not come from the wiki or a source read this session, state that upfront.
 - Bibliographic metadata: read author names, years, and DOIs off the paper

@@ -99,6 +99,18 @@ Each example is from a rejected draft.
   changed, what failed, and what had not been done, in flat declaratives.
 - Filler intensifiers. Rejected: "is doing real work," "carries the central
   argument," "a striking challenge." Cut them.
+- Unverified claims about the field. Priority ("the first defense to treat the
+  deployed system as a whole"), influence ("set the template that the
+  backdoor-defense literature still follows"), and exhaustiveness ("the only
+  known way to guarantee training-data privacy") are claims about a literature,
+  and compiling one paper is no evidence for any of them. Test: name the source.
+  If the paper claims it, attribute it to the paper ("the authors position DAWN
+  as the first approach to..."); if a cited work settles it, cite it; if
+  neither, cut the claim and write what the paper does instead. The house
+  register is the reason the rule is needed: terse declarative prose states a
+  sourced claim and an invented one in the same voice, so nothing on the page
+  marks the difference and later editorial passes read straight over the
+  invented one.
 - Definition by gratuitous negation: the "X, not Y" construction where Y was
   never in play. Rejected: "a training-data privacy setting, not an evasion one"
   on a page that never raises evasion. State what the thing is; the negated
@@ -189,9 +201,6 @@ English sense, write "relies on," "assumes," or "takes on faith."
   result. "Trusted" in it is the trusted-computing-base sense (see Trust
   vocabulary above), and a formal instantiation reads as this paper's
   instantiation of a requirement rather than as the requirement.
-- **Why read this.** Two to four declarative sentences on why the paper is worth
-  reading on its own terms, instructor-owned. No hooks, and no reference to the
-  paper's slot in the course sequence.
 - **Basic Background.** `###` subsections, one per prerequisite cluster, two to
   five sentences each, Wikipedia link density. Covers the general ML and training
   machinery the paper assumes as well as the subfield-specific concepts. Never

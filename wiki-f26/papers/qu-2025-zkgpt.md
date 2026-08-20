@@ -70,20 +70,6 @@ or swapping in a cheaper model after the fact. The guarantee is about integrity
 of the computation, not confidentiality of the user's input, which the verifier
 supplies and already knows.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-zkGPT proves a full GPT-2 inference in under 25 seconds, roughly two orders of
-magnitude faster than the zero-knowledge systems it measures itself against,
-taking the problem from far too slow to interactive-scale latency. It is a clear
-worked example of casting an entire transformer, the large matrix
-multiplications and the awkward non-linear layers alike, into the
-arithmetic-circuit model that proof systems require, and of why the non-linear
-layers rather than the matrix products dominate the cost. The construction also
-shows how the sumcheck and GKR line of interactive proofs combines with a modern
-lookup argument to reach a succinct, publicly verifiable, non-interactive proof.
-
 ## Basic Background
 
 ### Transformer inference and quantization

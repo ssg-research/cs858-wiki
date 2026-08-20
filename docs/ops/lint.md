@@ -79,6 +79,15 @@ page and confirm:
 - **No pre-digestion.** No "Summary," "Key findings," "Contributions," "Results,"
   "TLDR," or "Motivating questions" section. This is the most important check;
   flag any violation.
+- **Every claim about the world carries a source.** Priority ("the first"),
+  influence ("set the template the literature still follows"), and
+  exhaustiveness ("the only known way") are facts about a literature. Each is
+  attributed to the paper where the paper claims it, carries an author-year
+  citation where a cited work settles it, or is cut. Terse declarative prose
+  reads the same either way, so check the claim rather than the sentence.
+- **No section speaks in the instructor's voice.** The page never states why the
+  paper is on the syllabus or why it repays the reader's time. That is a fact
+  about a course decision, and a page written from the paper can only guess it.
 - **Basic Background is prerequisite-only.** It explains background concepts,
   not what the paper does to them.
 - **No authored tensions as questions.** Reading guidance places neutral
@@ -110,7 +119,7 @@ A quick grep surfaces the obvious schema violations:
 
 ```bash
 WIKI_DIR="wiki-f26"
-grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr|motivating questions)' $WIKI_DIR/papers/
+grep -rniE '^#+ .*(summary|key (findings|contributions)|results|tl;?dr|motivating questions|why read this|why this paper)' $WIKI_DIR/papers/
 ```
 
 Any hit is a candidate violation; read it and confirm.
@@ -137,6 +146,18 @@ for f in $WIKI_DIR/papers/*.md; do
   awk -v F="$(basename "$f")" '/^\*\*Threat Model:\*\*/{p=1} p{print F": "$0} p&&/^$/{exit}' "$f"
 done | grep -inE "trust|attest|we show|is shown|demonstrat|outperform|overhead|faster|reduces"
 ```
+
+Priority and influence vocabulary is greppable across the whole page, and gives
+a review queue rather than a verdict. Read every hit against the paper:
+
+```bash
+WIKI_DIR="wiki-f26"
+grep -rinE "the (first|only)|first (to|work|paper|defense|attack|system|approach)|only known|remains the|set the (template|terms)|standard (practice|check)|seminal|canonical|widely cited|most (common|durable|practical)" \
+  $WIKI_DIR/papers/ $WIKI_DIR/concepts/
+```
+
+A hit is legitimate when the paper makes the claim about itself and the page
+attributes it. It is a violation when the page asserts it in its own voice.
 
 Reading guidance length is mechanical, so check it directly:
 

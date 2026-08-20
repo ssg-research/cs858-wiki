@@ -76,19 +76,6 @@ claim, which the paper measures, is that shielding a privacy-sensitive subset
 downgrades white-box MS and MIA to the black-box label-only setting, matching the
 protection of shielding the entire model.
 
-## Why read this
-
-<!-- instructor: confirm -->
-
-This is a systematization-and-attack paper: it takes a family of deployed hardware
-defenses at their word, builds one practical adversary, and shows that placing
-part of a model in a TEE while offloading the rest leaks most of what the
-shielding was meant to protect. The result reframes on-device model protection as
-a question of which weights carry privacy, not how many layers sit in the enclave,
-and shows that the answer shifts with the model and the dataset. It pairs a
-negative result about existing schemes with a constructive alternative, a useful
-template for the security evaluation of a defense class.
-
 ## Basic Background
 
 ### On-device ML and trusted execution environments

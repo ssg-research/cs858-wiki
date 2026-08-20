@@ -72,16 +72,6 @@ inference time on a model that is already fine-tuned. The analysis itself is
 white-box throughout: it reads activations, weights, and gradients at every
 layer, on the synthetic models and on Llama-2/3 chat.
 
-## Why read this
-
-<!-- instructor: confirm -->
-This paper gives a concrete, testable account of what safety fine-tuning changes
-inside a language model, a small MLP-weight transformation that sorts inputs by
-safety, and shows that the same mechanism explains why jailbreaks and adversarial
-inputs evade it. The synthetic data framework, corroborated on Llama-2 and
-Llama-3, is a clean template for a mechanistic claim that transfers from
-controlled models to deployed ones.
-
 ## Basic Background
 
 ### The LLM training pipeline

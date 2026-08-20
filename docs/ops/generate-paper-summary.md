@@ -99,6 +99,29 @@ properly (see Citation convention below).
 
 ---
 
+## Claim discipline
+
+Every sentence that asserts something about the world carries a source, and
+there are three sources and no fourth:
+
+1. **The paper**, read this session. Where the paper makes a claim about its own
+   standing, attribute it rather than restating it as fact: "the authors position
+   DAWN as the first approach to..." and not "DAWN is the first approach to...".
+2. **A cited work**, with a full References entry (see Citation convention).
+3. **Settled knowledge of the field**, which still takes an author-year citation
+   as soon as it is specific enough to be wrong.
+
+Claims about priority ("the first"), influence ("set the template the literature
+still follows"), and exhaustiveness ("the only known way") require source 1 or 2.
+They are facts about a literature, and reading one paper is no evidence for any
+of them. Cut what you cannot source. The paper is worth reading without them.
+
+The house register is what makes this rule load-bearing: terse declarative prose
+renders a sourced claim and an invented one identically, so no reader and no
+later editorial pass can tell them apart.
+
+---
+
 ## The paper's section comes from the canonical reading list
 
 The reading list in [wiki-f26/README.md](../../wiki-f26/README.md) is the canonical
@@ -113,18 +136,16 @@ exactly. If the paper has no row in the reading list, stop and ask the
 instructor where it belongs; adding a topic area is the instructor's call, not
 the agent's.
 
-## The one input the instructor supplies
+## Authorship
 
-One part of the page is editorial and the instructor owns it. Ask for it up
-front if it was not passed with the command; draft a candidate and mark it
-`<!-- instructor: confirm -->` if the instructor wants you to propose one:
+You draft every section of the page and the instructor reviews it. No section is
+reserved for the instructor's own prose.
 
-- **Why read this** — one to two sentences on why the paper is worth reading, on
-  its own terms (its significance, what makes it a good read), never its slot in
-  the course sequence. This is the only place the instructor explicitly
-  editorializes.
-
-Everything else you draft; the instructor reviews.
+A reading companion plausibly would explain why a paper is on the syllabus, and
+this one does not. That is a fact about a course decision, held by the staff who
+made it, and nothing in the paper establishes it. A page written from the paper
+can restate the paper's significance and sound like an answer to it, which is
+worse than leaving the question to the seminar.
 
 ---
 
@@ -477,11 +498,6 @@ own paragraph: **Threat Model:** adversary, knowledge, capability, timing, and
 the defender's claim. State each fact once; the body does not repeat what the
 Threat Model paragraph, Basic Background, or Paper Context owns.)
 
-## Why read this
-
-(Instructor's one to two sentences: why the paper is worth reading, on its own
-terms. Never its slot in the course sequence.)
-
 ## Basic Background
 
 ### Prerequisite cluster
@@ -521,12 +537,12 @@ contemporaneous work only, properly cited. Never this paper's position.)
 ````
 
 Required: the frontmatter, "High-level overview" (with the threat-model
-paragraph), "Why read this," at least one Background section, and "References"
-whenever anything is cited. The rest is optional but encouraged.
+paragraph), at least one Background section, and "References" whenever anything
+is cited. The rest is optional but encouraged.
 
-Section order is fixed: High-level overview, Why read this, Basic Background,
-Reading guidance, then the collapsed blocks in the order Paper Context, Essential
-Readings, References. Reading guidance sits above the collapsed blocks so it is
+Section order is fixed: High-level overview, Basic Background, Reading guidance,
+then the collapsed blocks in the order Paper Context, Essential Readings,
+References. Reading guidance sits above the collapsed blocks so it is
 the last thing visible before the student opens the paper.
 
 Paper Context, Essential Readings, and References each render inside a collapsed
@@ -661,6 +677,11 @@ It is **not** acceptable to:
 - Author the field's open tensions as questions anywhere on the page (students
   generate those; the page only places attention anchors).
 - Cite follow-up work (work that responds to this paper) as background.
+- Assert a claim of priority, influence, or exhaustiveness ("the first defense
+  to," "set the template the literature still follows," "the only known way")
+  that neither the paper nor a cited work supports.
+- State why the paper is on the syllabus, or write any section as the
+  instructor's editorial voice.
 - Cite anything without a full References entry, or reconstruct an entry from
   memory.
 - Write blog-style hooks, metaphors-as-structure, or reader-coaching in place
