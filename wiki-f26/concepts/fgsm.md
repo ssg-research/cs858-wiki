@@ -23,9 +23,8 @@ x_adv = x + epsilon * sign( grad_x L(theta, x, y) )
 ```
 
 The sign quantization moves every coordinate by exactly epsilon, placing x_adv
-on a corner of the ℓ-infinity ball. FGSM costs one backward pass, which made it
-both the first widely used attack and the first attack cheap enough to run inside
-training.
+on a corner of the ℓ-infinity ball. FGSM costs one backward pass, which is what
+makes it cheap enough to run inside training.
 
 FGSM is a one-step linearization of the inner maximization: it assumes the loss
 is locally linear and takes the optimal step under that assumption. When the

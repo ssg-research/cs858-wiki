@@ -74,10 +74,11 @@ supplies and already knows.
 
 <!-- instructor: confirm -->
 
-zkGPT is the first zero-knowledge proof system to make proving full GPT-2
-inference practical, taking it from far too slow to interactive-scale latency. It
-is a clear worked example of casting an entire transformer,
-the large matrix multiplications and the awkward non-linear layers alike, into the
+zkGPT proves a full GPT-2 inference in under 25 seconds, roughly two orders of
+magnitude faster than the zero-knowledge systems it measures itself against,
+taking the problem from far too slow to interactive-scale latency. It is a clear
+worked example of casting an entire transformer, the large matrix
+multiplications and the awkward non-linear layers alike, into the
 arithmetic-circuit model that proof systems require, and of why the non-linear
 layers rather than the matrix products dominate the cost. The construction also
 shows how the sumcheck and GKR line of interactive proofs combines with a modern

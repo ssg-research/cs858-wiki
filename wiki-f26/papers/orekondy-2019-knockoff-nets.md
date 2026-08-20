@@ -64,11 +64,11 @@ the probabilities it returns.
 
 ## Why read this
 
-For years this was the strongest and most durable result in black-box model
-extraction, and it remains the reference point for stealing classification
-models. Its lasting claim is that a working copy can be trained even when the
-adversary's architecture and query data differ entirely from the victim's, with
-no access to the victim's training set, internals, or output-class semantics.
+The paper strips the model-extraction adversary down to what any paying API
+client already has: images in, probabilities out. Its claim is that a working
+copy can still be trained when the adversary's architecture and query data
+differ entirely from the victim's, with no access to the victim's training set,
+internals, or output-class semantics.
 
 ## Basic Background
 

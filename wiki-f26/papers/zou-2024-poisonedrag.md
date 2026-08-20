@@ -70,11 +70,11 @@ neutralize the injected texts.
 
 ## Why read this
 
-This is the first attack to poison a large-language-model system by corrupting
-its knowledge base rather than its training data, and it lands the corruption at
-an unusual point in the lifecycle: after training, yet not at inference-time
-prompting either, but in the retrieval corpus the deployed system consults. It
-rewards thinking about the whole system rather than the model in isolation, since
+The paper presents the first knowledge-corruption attack on retrieval-augmented
+generation, and it lands the corruption at an unusual point in the lifecycle:
+after training, yet not at inference-time prompting either, but in the retrieval
+corpus the deployed system consults. It rewards thinking about the whole system
+rather than the model in isolation, since
 the vulnerable component is the data pipeline feeding the model.
 
 ## Basic Background

@@ -69,11 +69,10 @@ adversaries.
 
 Most early defenses against adversarial examples were point countermeasures,
 and many were broken shortly after publication. This paper instead fixes an
-explicit class of adversaries and trains models to resist all of them, which
-makes it one of the first works to establish adversarial training and
-robustness on firm footing rather than as a heuristic. It is also a
-well-constructed paper, worth reading as a model for arguing an empirical
-security claim.
+explicit class of adversaries and trains models to resist all of them, so the
+claim it makes is about a stated adversary class rather than about whichever
+attack it happened to survive. It is also a well-constructed paper, worth
+reading as a model for arguing an empirical security claim.
 
 ## Basic Background
 
@@ -189,7 +188,7 @@ benchmark-style robustness number.
 <summary><h2>Essential Readings</h2></summary>
 
 - [Explaining and Harnessing Adversarial Examples](https://arxiv.org/abs/1412.6572) — the linear explanation of adversarial examples, the FGSM attack, and the first adversarial training; the one-step version of the min-max problem this paper solves iteratively.
-- [Reliable evaluation of adversarial robustness with an ensemble of diverse parameter-free attacks](https://arxiv.org/abs/2003.01690) — AutoAttack, the parameter-free attack ensemble that became the standard check on a robustness claim once PGD alone proved easy to overfit to.
+- [Reliable evaluation of adversarial robustness with an ensemble of diverse parameter-free attacks](https://arxiv.org/abs/2003.01690) — AutoAttack, the parameter-free attack ensemble that became a standard check on a robustness claim once PGD alone proved easy to overfit to.
 
 </details>
 

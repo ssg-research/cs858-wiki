@@ -70,12 +70,11 @@ degrading clean accuracy.
 
 ## Why read this
 
-Neural Cleanse set the template that the backdoor-defense literature still
-follows: detect, reverse-engineer the trigger, then patch, all from the trained
-model alone. It is worth reading for how a single sharp geometric intuition (the
-infected label is "too easy" to reach) is turned into a concrete, testable
-detector, and for its discipline in stress-testing that detector against an
-attacker who knows how it works.
+A single geometric intuition carries the whole defense: the infected label is
+"too easy" to reach from every other label. The paper is worth reading for how
+that intuition becomes a concrete, testable detector that runs on a trained
+classifier alone, and for the five counter-measures it then turns on that
+detector, each aimed at a different assumption the detector rests on.
 
 ## Basic Background
 

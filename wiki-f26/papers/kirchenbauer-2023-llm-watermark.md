@@ -80,14 +80,13 @@ large fraction of its tokens.
 
 <!-- instructor: confirm -->
 
-Decoding-time watermarking of language-model output became practical and
-analyzable here: the watermark needs no model retraining, the detector needs
-neither the model nor its API, and detection reports an interpretable p-value
-rather than a trained classifier's score. The information-theoretic tie between a
-passage's entropy and how strongly it can be marked sets the method apart from
-earlier rule-based text watermarking and explains why some text resists marking.
-The paper rewards attention to both what the test guarantees and where the
-authors place the watermark's limits.
+This is decoding-time watermarking of language-model output that is practical
+and analyzable at once: the watermark needs no model retraining, the detector
+needs neither the model nor its API, and detection reports an interpretable
+p-value rather than a trained classifier's score. The information-theoretic tie
+between a passage's entropy and how strongly it can be marked explains why some
+text resists marking. The paper rewards attention to both what the test
+guarantees and where the authors place the watermark's limits.
 
 ## Basic Background
 
