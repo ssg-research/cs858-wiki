@@ -57,8 +57,8 @@ confidentiality of blinded data on a simplified model ISA.
 **Threat Model:** Several clients outsource computation to one remote server,
 each in its own session. The adversary controls all server software, including
 the operating system and the third-party application that processes the data,
-and can observe side channels such as memory-access patterns, cache state, and
-instruction timing; another client of the same server is an adversary too.
+and can observe [side channels](../concepts/side-channel.md) such as
+memory-access patterns, cache state, and instruction timing; another client of the same server is an adversary too.
 Trusted is the server hardware, meaning the BliMe extensions, the encryption
 engine, and the HSM, each assumed implemented correctly. Attacks on the hardware itself are
 out of scope: the adversary cannot use physical means to make the hardware

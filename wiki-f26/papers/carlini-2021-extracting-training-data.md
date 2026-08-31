@@ -34,8 +34,8 @@ tags:
 ## High-level overview
 
 A language model trained by next-token prediction assigns high probability to
-its training data, so some memorization of that data is intrinsic to the
-objective. This work asks whether a large model trained roughly once over a
+its training data, so some [memorization](../concepts/memorization.md) of that
+data is intrinsic to the objective. This work asks whether a large model trained roughly once over a
 massive, de-duplicated corpus, a regime with almost no gap between training and
 test loss, still memorizes individual examples tightly enough that an outsider
 can pull them back out word for word. It answers yes, with a training-data
@@ -72,16 +72,18 @@ whoever trained the model on a corpus that may contain private text.
 
 A neural [language model](../concepts/language-model-pretraining.md) is trained
 by next-token prediction: it estimates the probability of each token given the
-preceding ones, and the training loss is the average negative log-likelihood
-over the corpus. The same model generates text autoregressively, sampling one
+preceding ones, and the training loss is the average
+[cross-entropy](../concepts/cross-entropy.md), equivalently the negative
+log-likelihood, over the corpus. The same model generates text autoregressively, sampling one
 token at a time and feeding it back; the
 [decoding strategy](../concepts/decoding-strategies.md) (greedy selection,
-temperature scaling, or top-k sampling) controls how each next token is drawn
+[temperature](../concepts/temperature.md) scaling, or top-k sampling) controls
+how each next token is drawn
 from the predicted distribution. The standard intrinsic quality measure is
 [perplexity](../concepts/perplexity.md), the exponential of the per-token average
 negative log-likelihood, low when the model finds a sequence unsurprising. GPT-2
-(Radford et al., 2019) is a [Transformer](../concepts/language-model-pretraining.md)
-language model of this kind (Vaswani et al., 2017), released in sizes from 124
+(Radford et al., 2019) is a [Transformer](../concepts/transformer.md) language
+model of this kind (Vaswani et al., 2017), released in sizes from 124
 million to 1.5 billion parameters and trained on text scraped from the public
 web.
 
@@ -159,7 +161,8 @@ sequences and tracking their exposure, and could extract them, in models trained
 on academic datasets, often for more epochs than usual, or when the secret's
 format was known in advance (Carlini et al., 2019). Related work examined
 memorization of updates to language models (Zanella-Béguelin et al., 2020) and
-in federated training (Thakkar et al., 2020). These demonstrations relied on
+in [federated training](../concepts/federated-learning.md) (Thakkar et al.,
+2020). These demonstrations relied on
 planted canaries, atypical training regimes, or prior knowledge of the secret's
 format.
 

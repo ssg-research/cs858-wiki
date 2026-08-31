@@ -6,6 +6,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | Concept | Summary |
 | --- | --- |
 | [activation-steering](activation-steering.md) | Controlling an LLM at inference by adding, subtracting, or projecting out a concept direction in its activations; steering vectors and their limits. |
+| [adaptive-attack](adaptive-attack.md) | An attack built against the specific defense it is evaluated on; the security-evaluation standard a defense claim rests on. |
 | [adversarial-examples](adversarial-examples.md) | The evasion phenomenon: small input perturbations that flip a prediction. |
 | [adversarial-threat-model](adversarial-threat-model.md) | How an adversary's power is specified: perturbation set, knowledge, timing. |
 | [adversarial-training](adversarial-training.md) | Training on adversarially perturbed inputs as a defense. |
@@ -15,6 +16,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | [code-language-models](code-language-models.md) | Transformers pretrained on source code that complete or generate programs from a prompt; Codex, code completion, and byte-pair tokenization. |
 | [contrastive-prompt-pairs](contrastive-prompt-pairs.md) | Eliciting a concept's direction from a matched pair of prompts that differ only in the target concept, by differencing their activations. |
 | [convolutional-neural-network](convolutional-neural-network.md) | CNNs for image classification: learned convolutional filters, pooling, a softmax head, and the standard backbones (AlexNet, VGG, ResNet, DenseNet). |
+| [cross-entropy](cross-entropy.md) | The negative log probability a model assigns to the correct answer; the default training objective and the per-example privacy signal. |
 | [cryptographic-commitment](cryptographic-commitment.md) | A binding, hiding token published for a value and opened later; with a time-stamped public log it gives proof of priority for ownership claims. |
 | [data-poisoning](data-poisoning.md) | Corrupting training data to change what a model learns: availability vs targeted/integrity poisoning, backdoors as the trigger-conditioned subclass, and why training-set sanitization defenses presume data access. |
 | [decoding-strategies](decoding-strategies.md) | How an LLM turns next-token distributions into text: greedy, temperature, top-k, top-p, and prefilling. |
@@ -22,13 +24,17 @@ explanation you can read on its own or reach from a paper that uses it.
 | [differential-privacy](differential-privacy.md) | The formal bound on any single example's influence; DP-SGD and the epsilon guarantee. |
 | [direct-preference-optimization](direct-preference-optimization.md) | Aligning an LM to pairwise preferences directly, without a separate reward model or RL loop; the DPO alternative to RLHF. |
 | [empirical-risk-minimization](empirical-risk-minimization.md) | Average training loss as a proxy for expected loss; the baseline objective. |
+| [federated-learning](federated-learning.md) | Training one shared model across clients that keep their data local, exchanging updates with a server; local vs central DP and why locality alone is not privacy. |
 | [fgsm](fgsm.md) | The one-step gradient-sign attack and its role as a baseline. |
+| [fine-tuning](fine-tuning.md) | Continuing training of a pretrained model on a smaller task- or behavior-specific dataset; full vs parameter-efficient (LoRA) updates, and how it undoes earlier stages. |
+| [functionality-stealing](functionality-stealing.md) | The model-extraction goal of a substitute that performs the victim's task, scored on task accuracy rather than on agreeing with the victim. |
 | [gaussian-mechanism](gaussian-mechanism.md) | Sensitivity and noise calibrated to it; the additive-noise recipe behind DP mechanisms. |
 | [gradient-clipping](gradient-clipping.md) | Norm-rescaling gradients; a training stabilizer that, per example, becomes a sensitivity bound. |
 | [gradient-masking](gradient-masking.md) | The defense failure mode where gradients become useless but worst-case loss stays high. |
 | [group-fairness](group-fairness.md) | Constraining a model to behave equitably across groups defined by a sensitive attribute; demographic parity, equalized odds, equality of opportunity, and pre/in/post-processing enforcement. |
 | [hardware-virtualization](hardware-virtualization.md) | Hypervisors and the Arm virtualization extensions (EL2, two-stage address translation, the IOMMU) that give each VM an isolated view of memory and devices; the substrate beneath virtualization-based TEEs. |
 | [homomorphic-encryption](homomorphic-encryption.md) | Computing directly on ciphertexts so the result decrypts to the function of the plaintexts; partially / leveled / fully HE, bootstrapping, and the CKKS scheme for approximate real arithmetic. |
+| [indirect-prompt-injection](indirect-prompt-injection.md) | Prompt injection whose instructions arrive through content the application retrieves or is handed, planted by a third party. |
 | [instruction-tuning](instruction-tuning.md) | Fine-tuning a base LM to follow natural-language instructions; the instruction-following objective. |
 | [jailbreak](jailbreak.md) | A prompt that elicits behavior a safety-trained LLM was trained to refuse; distinct from adversarial examples. |
 | [kl-divergence](kl-divergence.md) | Asymmetric measure of how far one distribution is from a reference; the per-token unit of how much alignment moved the base model. |
@@ -46,6 +52,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | [memorization](memorization.md) | Per-example fitting, random-label capacity, and the long-tail argument; the signal privacy attacks exploit. |
 | [model-explanations](model-explanations.md) | Post-hoc explanations released with a prediction: feature attribution, influence-based, and counterfactual/recourse; what they reveal and the attack surface they open. |
 | [model-extraction](model-extraction.md) | Attacks that reproduce a deployed model's parameters, hyperparameters, architecture, or functionality from query access; the fidelity-versus-accuracy axes and the MLaaS setting. |
+| [model-fingerprinting](model-fingerprinting.md) | Identifying a model by properties it already has, typically its decision boundary, rather than by a marker planted at training time. |
 | [model-partitioning](model-partitioning.md) | Splitting a DNN across a trusted execution environment and an untrusted accelerator (GPU): shielding a privacy-sensitive subset in the enclave while offloading the rest in the clear for speed; on-device TSDP and the security-versus-utility trade-off. |
 | [model-watermarking](model-watermarking.md) | Embedding an owner-verifiable marker in a trained model; white-box (in the weights) vs black-box (backdoor-based trigger set) verification, and the assumption that the owner controls training. |
 | [mutual-information](mutual-information.md) | How much observing one variable reveals about another; the KL divergence between the joint distribution and the product of the marginals, its entropy decomposition, and its role as an information-leakage and rate-distortion measure. |
@@ -53,6 +60,7 @@ explanation you can read on its own or reach from a paper that uses it.
 | [privacy-budget](privacy-budget.md) | The (epsilon, delta) budget, composition theorems, accountants, and amplification by subsampling. |
 | [projected-gradient-descent](projected-gradient-descent.md) | Gradient step plus projection; the constrained-optimization primitive behind the PGD attack. |
 | [prompt-injection](prompt-injection.md) | Adversarial instructions in a prompt or ingested content that override the intended task; direct and indirect. |
+| [quantization](quantization.md) | Mapping floating-point weights and activations to low-precision integers under a shared scale; the deployment lever and the precondition for expressing a model in a proof circuit. |
 | [red-teaming](red-teaming.md) | Probing a model for policy-violating outputs to inform safety training and as an evaluation benchmark. |
 | [reinforcement-learning](reinforcement-learning.md) | Training an agent to maximize a reward from chosen actions; policy gradients, the multi-armed bandit, and the gradient-bandit update. |
 | [remote-attestation](remote-attestation.md) | A hardware root of trust signs a measurement (a quote) of the code and data that ran, checked by a remote verifier; property-based attestation adds reference values from a trusted authority, and ML property cards (model card, datasheet, inference card). |
@@ -64,12 +72,16 @@ explanation you can read on its own or reach from a paper that uses it.
 | [secure-inference](secure-inference.md) | Running model inference on a client's private input against a server's private model, revealing only the result; HE-, MPC-, and TEE-based instantiations and the interaction / bandwidth cost axes. |
 | [secure-multiparty-computation](secure-multiparty-computation.md) | Jointly computing a function over private inputs while revealing only the output; two-party computation, garbled circuits and secret sharing, semi-honest vs malicious adversaries, and simulation-based security. |
 | [shadow-models](shadow-models.md) | Adversary-trained imitations of the target model used to calibrate membership inference attacks. |
+| [side-channel](side-channel.md) | Learning a secret from timing, cache state, memory-access patterns, or speculative execution rather than from outputs; the class TEE guarantees usually exclude. |
 | [singular-value-decomposition](singular-value-decomposition.md) | Factoring a matrix into singular vectors and values; the rank, the four fundamental subspaces, and the null space as the inputs a matrix maps to zero. |
+| [softmax](softmax.md) | Logits and the map that turns them into a probability distribution; the attention mixing weights, the API leakage decision, and the expensive nonlinearity under encryption. |
 | [software-vulnerability](software-vulnerability.md) | A security-relevant code defect an attacker can exploit; MITRE's CWE catalog and Top 25, and the concrete / localize / confirm distinction. |
 | [stochastic-gradient-descent](stochastic-gradient-descent.md) | Minibatch gradient descent; the default optimizer and the source of attack gradients. |
 | [taint-tracking](taint-tracking.md) | Dynamic information-flow tracking (DIFT): labelling data at a source and propagating the label to every derived value, then enforcing a policy on where it may flow; software vs hardware (tag-bit) implementations and the confidentiality / integrity dual uses. |
+| [temperature](temperature.md) | The scalar dividing the logits before the softmax; the decoding randomness knob and the distillation softening knob. |
 | [transfer-learning](transfer-learning.md) | Reusing representations across tasks; ImageNet pretraining then fine-tuning, for higher accuracy with less task-specific data. |
 | [transferability](transferability.md) | Adversarial examples crafted on one model often fool another; the basis of black-box transfer attacks. |
+| [transformer](transformer.md) | Stacked self-attention and feed-forward blocks with residual connections; the residual stream, and the nonlinearities that dominate encrypted and proved inference. |
 | [trusted-execution-environment](trusted-execution-environment.md) | Hardware-isolated enclaves that shield code and data from a malicious OS, with remote attestation; Intel SGX, Arm TrustZone, AMD SEV, Sanctum, and their side-channel and run-time-attack limits. |
 | [white-box-black-box](white-box-black-box.md) | Adversary knowledge assumptions, from full weights to query-only access. |
 | [zero-knowledge-proof](zero-knowledge-proof.md) | A proof that a computation on a secret witness was done correctly while revealing nothing about it; prover and verifier, completeness / soundness / zero-knowledge, interactive vs non-interactive (Fiat-Shamir), succinct proofs / zk-SNARKs, and the arithmetic-circuit model. |

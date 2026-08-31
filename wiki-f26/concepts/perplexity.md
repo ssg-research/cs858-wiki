@@ -38,6 +38,8 @@ per-example membership signal.
 
 ## See also
 
+- [Cross-entropy loss](cross-entropy.md)
+
 - [Language model pretraining](language-model-pretraining.md)
 - [Decoding strategies](decoding-strategies.md)
 - [Membership inference](membership-inference.md)

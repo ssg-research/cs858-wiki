@@ -54,7 +54,8 @@ raises the success of distribution (property) inference.
 settings. The defenses are deployed by a model owner: adversarial training,
 outlier removal, [differential privacy](../concepts/differential-privacy.md),
 group fairness, [model watermarking](../concepts/model-watermarking.md),
-fingerprinting, and the release of explanations. The risks are pursued by an
+[fingerprinting](../concepts/model-fingerprinting.md), and the release of
+explanations. The risks are pursued by an
 adversary or arise as a property of the model: evasion, poisoning, unauthorized
 model ownership through [model extraction](../concepts/model-extraction.md),
 membership inference, data reconstruction, attribute inference, distribution

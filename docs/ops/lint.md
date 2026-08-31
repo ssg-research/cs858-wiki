@@ -186,7 +186,82 @@ done
 Not always wrong (a concept may be seeded ahead of the paper that needs it), but
 worth reviewing.
 
-## 7. Markdownlint
+## 7. Concept coverage (run after adding a concept page)
+
+A new concept page is only half the work: the papers that already rely on the
+concept have to link it, and the concept page has to list them back. Neither
+direction is structural, so `check-links.py` cannot see a miss.
+
+Drive the sweep from a term list rather than from the slug, because pages use the
+prose form of a concept, not its filename. Write every surface form the corpus
+might use, separated by `|`, and run:
+
+```bash
+WIKI_DIR="wiki-f26"
+SLUG="cross-entropy"
+TERMS="cross-entropy|cross entropy|negative log likelihood|softmax loss"
+for f in $WIKI_DIR/papers/*.md; do
+  case "$f" in *README.md) continue;; esac
+  grep -qiE "$TERMS" "$f" || continue
+  grep -q "concepts/$SLUG.md" "$f" \
+    && echo "LINKED:   $(basename "$f")" \
+    || echo "UNLINKED: $(basename "$f")"
+done
+```
+
+Every `UNLINKED` line is a page that talks about the concept without linking it.
+Read each hit before acting: a bare bibliography entry or a passing contrast is
+not always a use. Then close the loop in the other direction, which must be
+silent:
+
+```bash
+WIKI_DIR="wiki-f26"
+SLUG="cross-entropy"
+for f in $(grep -rl "concepts/$SLUG.md" $WIKI_DIR/papers/ | xargs -n1 basename); do
+  grep -q "papers/$f" "$WIKI_DIR/concepts/$SLUG.md" || echo "NO RECIPROCAL ENTRY: $f"
+done
+```
+
+Where a page uses a concept several times, the house rule is to link the first
+mention in the High-level overview (the Threat Model paragraph included) and the
+first mention in Basic Background, and to leave later repetitions plain. A term
+that appears only inside a References entry or a paper title is not a use.
+
+## 8. Concept links that land on the wrong page
+
+A link resolves and still sends the reader somewhere unhelpful when the target
+page is titled something other than the anchor text. That happens when a concept
+is *mentioned inside* another concept's page and a drafting session routes to it
+rather than creating a page. `check-links.py` cannot see this, because the link
+works.
+
+This heuristic lists every concept link whose anchor text shares no substantial
+word with the target slug:
+
+```bash
+WIKI_DIR="wiki-f26"
+grep -roh '\[[^]]*\](\.\./concepts/[a-z0-9-]*\.md)' $WIKI_DIR/papers/ | sort -u | \
+python3 -c '
+import sys, re
+for line in sys.stdin:
+    m = re.match(r"\[(.*)\]\(\.\./concepts/(.*)\.md\)$", line.strip())
+    if not m:
+        continue
+    text, slug = m.group(1).lower(), m.group(2)
+    words = [w for w in re.split(r"[^a-z0-9]+", text) if len(w) >= 4]
+    if words and not any(w in slug or slug.split("-")[0].startswith(w[:5]) for w in words):
+        print(f"{text}  ->  {slug}")
+' | sort -u
+```
+
+A review queue, not a verdict, and it runs about a dozen hits on a corpus this
+size. Most are legitimate synonyms and abbreviations, which are fine: `fgsm` for
+"Fast Gradient Sign Method", `rlhf` for the spelled-out name, `lp-norms` for
+"ℓ-infinity ball". Read every hit and ask the step-3 question: is the anchor text
+another name for the target page's title, or is it a separate idea that the
+target page happens to mention? The second case is a missing concept page.
+
+## 9. Markdownlint
 
 ```bash
 WIKI_DIR="wiki-f26"
@@ -197,7 +272,7 @@ Must be 0 errors. `--no-install` uses the existing global install and skips the
 install prompt; if it errors with "not found," substitute `--yes` to fetch from
 npm. The bare `markdownlint` / `markdownlint-cli2` binaries are not on PATH.
 
-## 8. Em-dash check
+## 10. Em-dash check
 
 Em-dashes are prohibited in prose. Use commas or shorter sentences. Exception:
 the `[text](link) — description` list-separator pattern is allowed.
@@ -207,7 +282,7 @@ WIKI_DIR="wiki-f26"
 grep -rn '—' $WIKI_DIR/ --include="*.md" | grep -v ') —' | head -20
 ```
 
-## 9. Scripts lint (ruff + types)
+## 11. Scripts lint (ruff + types)
 
 The published artifact is `wiki-f26/`, but the tooling in `scripts/` must stay clean
 too. Run the same linters pre-commit enforces:

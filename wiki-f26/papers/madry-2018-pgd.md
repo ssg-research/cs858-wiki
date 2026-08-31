@@ -34,13 +34,22 @@ min-max (saddle-point) problem from
 finds the worst-case perturbation of an input within an allowed set, which is
 what an attack is. An outer minimization trains the network against that worst
 case, which is what [adversarial training](../concepts/adversarial-training.md)
-is. Terminology note: in this literature an "adversary" is usually an algorithm,
-not a person, and a "first-order adversary" is an attacker that uses only
-gradients of the loss with respect to the input.
+is. Several of the paper's terms are worth decoding before they appear.
+"Adversary" here usually names an algorithm rather than a person. "First-order"
+says which derivatives the attack is allowed: only the first, the gradient of the
+loss with respect to the input pixels, which says which way to move to raise the
+loss and nothing about how the surface curves. "Saddle point" names the kind of
+solution a min-max problem asks for, a point that is a minimum in one variable
+(the weights) and a maximum in the other (the perturbation) at the same time.
+"Robust accuracy" is accuracy measured after the attacker has perturbed every
+test input, so it sits below clean accuracy on the same model.
 
-The paper reports that the inner maximization, though non-concave, is empirically
-tractable, and that projected gradient descent (PGD) with random restarts behaves
-as the strongest first-order attack. It reports that robust classification needs
+The paper reports that the inner maximization is tractable in practice despite
+being non-concave, meaning its loss surface over the perturbation has many
+separate local maxima with no guarantee that any method finds the highest.
+Projected gradient descent (PGD), rerun from many random starting points inside
+the allowed set ("random restarts"), behaves as the strongest first-order attack.
+It reports that robust classification needs
 noticeably larger networks than clean classification. Training against the PGD
 adversary yields models that withstand the strongest attacks the authors
 evaluate, above 89% robust accuracy on MNIST and around 46% on CIFAR-10, and the
@@ -72,9 +81,9 @@ adversaries.
 A neural network classifier maps an input in R^d to one of k labels and is
 trained by
 [empirical risk minimization](../concepts/empirical-risk-minimization.md):
-minimizing the average of a loss function (here cross-entropy) over the
-training set, as a proxy for the expected loss over the data distribution. The
-minimization runs by
+minimizing the average [cross-entropy loss](../concepts/cross-entropy.md) over
+the training set, as a proxy for the expected loss over the data distribution.
+The minimization runs by
 [stochastic gradient descent](../concepts/stochastic-gradient-descent.md),
 which estimates the gradient of the loss with respect to the parameters on a
 small batch and steps against it. The same backpropagation machinery also
@@ -129,9 +138,10 @@ attacked approximately, so applying it there needs empirical justification.
 ## Reading guidance
 
 - Section 2, the paragraph fixing the perturbation set S, and Equation 2.1: where
-  the threat model is pinned down. The ℓ-infinity ball is adopted on the strength
-  of one citation and a deferral to future work; note what is offered in
-  justification.
+  the threat model is pinned down. What S has to capture is perceptual
+  similarity; the ℓ-infinity ball is what the paper puts in its place. That
+  substitution is made in one sentence, on one citation, with richer notions of
+  perceptual similarity deferred to future work. Note what is offered for it.
 - Section 3.2: the claim that robustness against PGD implies robustness against
   every first-order adversary. It is stated as a conjecture supported by the
   concentration of PGD's local maxima, and the guarantee rests on it.
@@ -170,7 +180,8 @@ mature field in operations research (Wald, 1945; Ben-Tal et al., 2009). Open at
 the time: whether the non-concave inner problem of a deep network could be
 solved well enough for the min-max guarantee to mean anything, and what an
 evaluation would have to show before the security community, with its norms of
-explicit threat models and adaptive adversaries, would accept an ML
+explicit threat models and
+[adaptive adversaries](../concepts/adaptive-attack.md), would accept an ML
 benchmark-style robustness number.
 
 </details>

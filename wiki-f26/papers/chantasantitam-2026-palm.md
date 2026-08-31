@@ -81,7 +81,8 @@ the VM through its quote, the GPU through an attestation token the VM obtains
 and checks before relying on the device. What an attestation carries is a
 property of an operation over its inputs and outputs, measured and extended
 into the signed quote; the model and the dataset stay confidential and never
-enter the quote. Denial of service, side-channel attacks on the hardware, and
+enter the quote. Denial of service,
+[side-channel attacks](../concepts/side-channel.md) on the hardware, and
 physical attacks, including memory-bus interposition and physically swapping
 the GPU, are out of scope.
 
@@ -89,13 +90,15 @@ the GPU, are out of scope.
 
 ### Large generative models and their operations
 
-A large language model is a [transformer](../concepts/language-model-pretraining.md)
-with billions of parameters, pretrained to predict the next token and then
+A large language model is a [transformer](../concepts/transformer.md) with
+billions of parameters, pretrained to predict the next token and then
 adapted to tasks (Vaswani et al., 2017). Adaptation is usually parameter-efficient
-fine-tuning, which updates a small subset of weights or small added modules rather
-than retraining the whole model, with low-rank adaptation (LoRA) the common
-instance (Hu et al., 2022). Post-training also includes quantization, which lowers
-the numerical precision of weights to shrink memory and compute. Quality is
+[fine-tuning](../concepts/fine-tuning.md), which updates a small subset of weights
+or small added modules rather than retraining the whole model, with low-rank
+adaptation (LoRA) the common
+instance (Hu et al., 2022). Post-training also includes
+[quantization](../concepts/quantization.md), which lowers the numerical precision
+of weights to shrink memory and compute. Quality is
 reported on benchmarks such as MMLU for knowledge and BLEU for translation.
 Because the datasets dwarf main memory, training libraries memory-map them,
 mapping a file into virtual memory and loading records from disk on demand instead
@@ -188,7 +191,8 @@ Laminator produced verifiable ML property cards by running operations in an SGX
 enclave and measuring their inputs and outputs (Duddu et al., 2024).
 Contemporaneous systems extend the idea in different directions: Atlas records ML
 lifecycle provenance to a transparency log (Spoczynski et al., 2025), ExclaveFL
-attests federated-learning rounds with an integrity-only enclave (Guo et al.,
+attests [federated-learning](../concepts/federated-learning.md) rounds with an
+integrity-only enclave (Guo et al.,
 2024), SLAPP gives stateful proofs of execution for federated learning and
 differential privacy on Cortex-M TrustZone (Rattanavipanon and Nunes, 2025), and
 attestable audits run AI-safety benchmarks inside a TEE (Schnabl et al., 2025).

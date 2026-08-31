@@ -81,10 +81,11 @@ large fraction of its tokens.
 ### Language models, tokens, and decoding
 
 A [language model](../concepts/language-model-pretraining.md) for next-token
-prediction reads a sequence of tokens, the units of text drawn from a fixed
-vocabulary of tens of thousands of entries, and outputs a vector of logits, one
-score per vocabulary token. A softmax turns those logits into a probability
-distribution over the next token.
+prediction, in practice a [transformer](../concepts/transformer.md), reads a
+sequence of tokens, the units of text drawn from a fixed vocabulary of tens of
+thousands of entries, and outputs a vector of
+[logits](../concepts/softmax.md), one score per vocabulary token. A softmax turns
+those logits into a probability distribution over the next token.
 [Decoding](../concepts/decoding-strategies.md) is the procedure that turns these
 distributions into text: greedy decoding takes the most probable token,
 multinomial sampling draws from the distribution, and beam search keeps several
@@ -107,7 +108,8 @@ text worse.
 
 [Perplexity](../concepts/perplexity.md) is the standard intrinsic measure of how
 well a language model predicts a sequence, the exponential of the average
-per-token negative log-likelihood. Lower perplexity under a reference model
+per-token [cross-entropy](../concepts/cross-entropy.md), also written as the
+negative log-likelihood. Lower perplexity under a reference model
 indicates text the model finds more fluent and predictable. It serves here as
 the yardstick for whether biasing the output toward green-list tokens degrades
 quality.
@@ -182,7 +184,8 @@ al., 2018; Boenisch, 2021; Gu et al., 2022).
 
 An alternative to embedding any signal is post-hoc detection: training a
 classifier to separate machine from human text using language-model features or
-fine-tuned detectors (Zellers et al., 2019; Jawahar et al., 2020). Such
+[fine-tuned](../concepts/fine-tuning.md) detectors (Zellers et al., 2019;
+Jawahar et al., 2020). Such
 detectors exploit statistical residue that models leave in their output, but
 they lose ground as models improve, with detectors built for one generation of
 model struggling on the next (Gambini et al., 2022), and they can be evaded by

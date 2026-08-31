@@ -99,8 +99,9 @@ a deployed RAG system, which no model is trained on but every answer depends on.
 
 Two adjacent attack families act through what a model reads rather than how it
 was trained. [Prompt injection](../concepts/prompt-injection.md) places
-adversarial instructions in the prompt or in ingested content to override the
-intended task. A [jailbreak](../concepts/jailbreak.md) crafts input that elicits
+adversarial instructions in the prompt, or, as
+[indirect injection](../concepts/indirect-prompt-injection.md), in content the
+application ingests, to override the intended task. A [jailbreak](../concepts/jailbreak.md) crafts input that elicits
 behavior the model was trained to refuse. Both are worth holding in mind as
 contrasts: PoisonedRAG steers the answer with misleading content treated as a
 fact, not with instructions or a refusal bypass.

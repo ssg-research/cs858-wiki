@@ -1108,3 +1108,103 @@ the section (three concept pages and a Madry Essential Readings line):
 - Two prohibitions in the generate-paper-summary Quality bar.
 
 markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).
+
+## [2026-08-31 16:05] fix | supervisor review round: five concept pages and per-paper corrections
+
+Five new concept pages, each linked from every paper page that uses it and
+carrying the reciprocal "Papers that use this concept" list:
+
+- `cross-entropy` (Madry, LiRA, Knockoff Nets, Neural Cleanse, shallow safety
+  alignment, ModelGuard, and the three language-model pages that write it as
+  negative log-likelihood).
+- `temperature` (Jailbroken, shallow safety alignment, training-data extraction,
+  zero-shot vulnerability repair), split out from `decoding-strategies` because
+  it also carries the softening role in knowledge distillation.
+- `adaptive-attack` (Madry, Neural Cleanse, Jailbroken, ModelGuard, shallow
+  safety alignment, safety fine-tuning).
+- `indirect-prompt-injection` (Greshake, PoisonedRAG), split out from
+  `prompt-injection`.
+- `functionality-stealing` (Knockoff Nets, DAWN, ModelGuard), split out from
+  `model-extraction`.
+
+Per-paper corrections from the review:
+
+- Madry: the perturbation-set reading-guidance bullet now names what the
+  justification is for, the substitution of the ℓ-infinity ball for perceptual
+  similarity. Decoded "first-order adversary," "saddle point," "non-concave,"
+  "random restarts," and "robust accuracy" in the overview.
+- LiRA: the threat model said "the adversary does not modify any input," which
+  read as a statement about queries. It now says the adversary contributes no
+  training data and cannot influence the training run, placing poisoning
+  outside the setting, and separately that the candidate example is submitted
+  unaltered.
+- Shallow safety alignment: the RLHF/DPO KL penalty now links `kl-divergence`.
+- Training-data extraction: `memorization` linked at its first mention in the
+  overview.
+- DAWN: corrected the client-specificity claim. The watermarking decision is a
+  keyed function of the query and the protected model, independent of who sent
+  it; the owner registers, per client, which of that client's queries were
+  watermarked, so one watermarked query can sit in several clients' registered
+  sets and verification names the clients whose responses went into training.
+- Neural Cleanse: `backdoor-attacks` linked at its first mention in the
+  overview.
+
+Added a "Concept coverage" check to `docs/ops/lint.md`: an alias-driven grep
+sweep in both directions (papers that discuss a concept without linking it, and
+links with no reciprocal entry), plus the house rule that a concept is linked at
+its first mention in the High-level overview and again at its first mention in
+Basic Background.
+
+Concepts 70 to 75; stats line updated. markdownlint, pre-commit, and
+check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).
+
+## [2026-08-31 17:20] fix | seven more concept pages, and the instructions that would have caught them
+
+Seven concept pages, each linked from every paper page that uses it, with
+reciprocal lists and index rows:
+
+- `transformer` (nine papers). Four pages had already written
+  `[transformer](../concepts/language-model-pretraining.md)`, a link that
+  resolved to a page about a different subject; all four now point here.
+- `fine-tuning` (ten papers), `softmax` (five), `side-channel` (five),
+  `quantization` (three), `model-fingerprinting` (three),
+  `federated-learning` (two).
+
+Neural Cleanse now attributes its priority claim ("is presented as the first
+general method") rather than asserting it.
+
+Diagnosis of why the twelve concepts added in this review round were missed, and
+the instructions added against each cause:
+
+- **Routing could only find a page, never ask whether one was needed.** Step 3
+  matched a term against `grep "^description:"`, and a description that
+  *mentions* a term matches a search for it, so temperature routed into
+  decoding-strategies, indirect prompt injection into prompt-injection,
+  functionality stealing into model-extraction, and transformer into
+  language-model-pretraining. Step 3 now carries a suitability test: the target
+  page's title is the anchor text or a plain synonym of it, and a term that is
+  only mentioned inside another page needs its own.
+- **Nothing looked backwards from a new concept page.** Step 9 updated only the
+  concepts the current paper used, so a page created at paper 17 was invisible to
+  papers 1 through 16 by construction. Step 9 now requires a term-driven backward
+  sweep over the already-compiled papers whenever a page is created, and the
+  quality bar checks it.
+- **Per-paper prerequisite lists cannot see corpus-wide terms.** A term every
+  paper uses once and no paper leans on hard never looks worth a page in any
+  single session. Step 3 now says so explicitly: the test is whether a reader new
+  to the subfield needs it, not how central it is to this paper.
+- **Link density was specified for Basic Background only**, which is exactly why
+  memorization and backdoor were linked there and left bare in the overviews.
+  `writing-style.md` and the schema now fix the rule as: first mention in the
+  High-level overview (Threat Model included), first mention in Basic Background,
+  later repetitions plain, no link on a References or Essential Readings mention.
+- **No check could catch any of it.** `check-links.py` is silent on a link that
+  resolves to the wrong page, and lint check 6 finds concepts nobody links but
+  not concepts everybody discusses and nobody links. Added lint check 8, an
+  anchor-text heuristic that lists concept links whose anchor text shares no
+  substantial word with the target slug. Run against the pre-review corpus it
+  flags `transformer -> language-model-pretraining`, the largest miss in this
+  round.
+
+Concepts 75 to 82; stats line updated. markdownlint, pre-commit, and check-links
+clean. Model: Opus 5 (`claude-opus-5[1m]`).

@@ -27,8 +27,8 @@ tags:
 
 ## High-level overview
 
-Fine-tuning a pretrained large language model on a sensitive dataset can leak
-that dataset: the released model is open to
+[Fine-tuning](../concepts/fine-tuning.md) a pretrained large language model on a
+sensitive dataset can leak that dataset: the released model is open to
 [membership inference](../concepts/membership-inference.md) and training-data
 extraction. Differentially private fine-tuning removes that risk by adapting the
 model under an (epsilon, delta) guarantee that bounds any single fine-tuning

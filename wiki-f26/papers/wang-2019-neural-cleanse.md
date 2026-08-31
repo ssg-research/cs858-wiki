@@ -27,14 +27,15 @@ tags:
 
 ## High-level overview
 
-A backdoored image classifier behaves normally on ordinary inputs but
+A [backdoored](../concepts/backdoor-attacks.md) image classifier behaves normally
+on ordinary inputs but
 misclassifies any input carrying a small adversary-chosen pattern, the *trigger*,
 into an adversary-chosen *target label*. Because the trigger can be a tiny patch
 of pixels and clean accuracy is unaffected, a backdoor can sit undetected in a
-deployed model indefinitely. Neural Cleanse is the first general method to take a
-trained classifier with no side information and decide whether it hides a
-backdoor, recover what the trigger looks like, and patch the model so the
-backdoor no longer fires.
+deployed model indefinitely. Neural Cleanse is presented as the first general
+method to take a trained classifier with no side information and decide whether
+it hides a backdoor, recover what the trigger looks like, and patch the model so
+the backdoor no longer fires.
 
 Detection rests on one observation. In a clean model, turning inputs of many
 classes into a chosen target requires a substantial change to each input; the
@@ -48,7 +49,8 @@ the trigger stops working.
 The techniques are evaluated on handwritten-digit recognition (MNIST),
 traffic-sign recognition (GTSRB), and two face-recognition models (one with a
 large label space, one built by transfer learning), against two injection methods
-from prior work (BadNets and Trojan Attack) and several adaptive attack variants.
+from prior work (BadNets and Trojan Attack) and several
+[adaptive attack](../concepts/adaptive-attack.md) variants.
 Headline results at abstract level: the method separates infected from clean
 models, the reconstructed triggers match the originals in which internal neurons
 they activate, and the patches drive attack success down to low single-digit
@@ -78,9 +80,10 @@ The models under defense are
 distribution over a fixed set of labels and predicts the highest-probability one.
 They are trained by
 [stochastic gradient descent](../concepts/stochastic-gradient-descent.md) on a
-cross-entropy loss. One of the evaluated models is built by
+[cross-entropy loss](../concepts/cross-entropy.md). One of the evaluated models is built by
 [transfer learning](../concepts/transfer-learning.md), in which a backbone
-pretrained on a large dataset is fine-tuned on a smaller target task, a routine
+pretrained on a large dataset is
+[fine-tuned](../concepts/fine-tuning.md) on a smaller target task, a routine
 default in vision.
 
 ### Backdoors and how they are planted

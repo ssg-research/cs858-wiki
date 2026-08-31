@@ -30,7 +30,8 @@ tags:
 ## High-level overview
 
 The safety alignment of current large language models is brittle: simple attacks,
-and even benign fine-tuning, can return an aligned model to harmful behavior.
+and even benign [fine-tuning](../concepts/fine-tuning.md), can return an aligned
+model to harmful behavior.
 This paper argues that one underlying property explains much of that brittleness,
 which it names **shallow safety alignment**. A shallowly aligned model adapts its
 generative distribution over only the first few output tokens, enough to open a
@@ -60,15 +61,16 @@ adversary seeks to elicit restricted (harmful) content; in the fine-tuning case
 the "adversary" may be a benign developer whose ordinary fine-tuning degrades
 safety as a side effect. Capability spans the exploits the paper unifies:
 inference-time control over [decoding](../concepts/decoding-strategies.md)
-(prefilling the first response tokens, or varying temperature, top-k, and top-p),
+(prefilling the first response tokens, or varying
+[temperature](../concepts/temperature.md), top-k, and top-p),
 input-only access (optimizing an adversarial suffix appended to a prompt), and
 post-deployment fine-tuning access (a few gradient steps on a small dataset,
 through an open model or a hosted fine-tuning interface), including with benign
 fine-tuning data. The defender claims that alignment whose effect reaches beyond
 the first few tokens, and a fine-tuning objective that constrains early-token
 drift, resist these exploits better than standard alignment at comparable
-utility. The defenses are presented as prototypes, not as a guarantee against all
-adaptive attacks.
+utility. The defenses are presented as prototypes rather than as a guarantee against an
+[adaptive attack](../concepts/adaptive-attack.md) built against them.
 
 ## Basic Background
 
@@ -78,7 +80,8 @@ A language model is [pretrained](../concepts/language-model-pretraining.md) to
 predict the next token over a large corpus, producing a base model with broad
 capabilities. Turning the resulting next-token distributions into text is the job
 of a [decoding strategy](../concepts/decoding-strategies.md): greedy decoding, or
-sampling controlled by temperature, top-k, and top-p. Prefilling forces the
+sampling controlled by [temperature](../concepts/temperature.md), top-k, and
+top-p. Prefilling forces the
 response to begin with a chosen string, so generation continues from those tokens
 rather than the model's own first choice. These decoding controls are set at
 inference and do not change the weights.
@@ -90,7 +93,9 @@ A base model becomes an assistant through
 demonstrations, usually followed by preference optimization such as
 [RLHF](../concepts/rlhf.md) or
 [direct preference optimization](../concepts/direct-preference-optimization.md).
-Both carry a KL penalty that keeps the aligned policy close to the base model.
+Both carry a [KL-divergence](../concepts/kl-divergence.md) penalty that keeps the
+aligned policy close to the base model, bounding how far preference optimization
+may move the next-token distributions it started from.
 [Safety training](../concepts/safety-training.md) is the part of this process that
 makes the model refuse a designated set of restricted behaviors, producing the
 characteristic refusal response. A [jailbreak](../concepts/jailbreak.md) is a
@@ -103,7 +108,7 @@ Because alignment adjusts a base model rather than replacing it, "how much did i
 change" is a quantitative question. The [KL divergence](../concepts/kl-divergence.md)
 between the aligned and base models' next-token distributions, computed per token
 position, measures where along a response the two models disagree. The per-token
-cross-entropy (next-token) loss and the
+[cross-entropy](../concepts/cross-entropy.md) (next-token) loss and the
 [gradient](../concepts/stochastic-gradient-descent.md) norm at each position give
 a parallel view during fine-tuning: which token positions carry the largest loss
 and drive the largest weight updates.

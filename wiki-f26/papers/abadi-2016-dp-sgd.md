@@ -137,7 +137,8 @@ budget is exhausted.
   sqrt(log(T/delta)) it saves over the strong composition theorem. Figure 2 puts
   a number on that saving, as epsilon against training epochs.
 - Section 5.3: the CIFAR-10 numbers. The convolutional layers are pretrained on
-  CIFAR-100, which the paper declares public, and only the softmax layer and one
+  CIFAR-100, which the paper declares public, and only the
+  [softmax](../concepts/softmax.md) layer and one
   or both fully connected layers are trained privately. Note what the reported
   epsilon therefore covers.
 
