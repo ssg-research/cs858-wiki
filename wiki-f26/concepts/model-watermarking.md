@@ -49,6 +49,8 @@ and how hard it is to remove by retraining.
 
 ## See also
 
+- [Model fingerprinting](model-fingerprinting.md)
+
 - [Backdoor attacks](backdoor-attacks.md)
 - [Model extraction](model-extraction.md)
 - [Cryptographic commitment](cryptographic-commitment.md)

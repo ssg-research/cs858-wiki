@@ -54,6 +54,8 @@ side-channel attacks.
 
 ## See also
 
+- [Side-channel attack](side-channel.md)
+
 - [Taint tracking](taint-tracking.md)
 - [Secure inference](secure-inference.md)
 

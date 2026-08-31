@@ -34,5 +34,6 @@ large-scale constrained optimization.
 ## See also
 
 - [Stochastic gradient descent](stochastic-gradient-descent.md)
+- [Cross-entropy loss](cross-entropy.md)
 - [Fast Gradient Sign Method (FGSM)](fgsm.md)
 - [ℓp norms](lp-norms.md)

@@ -245,6 +245,32 @@ Reuse existing concept pages aggressively. The whole point of the shared layer
 is that `differential-privacy.md` is written once and linked from every paper
 that needs it.
 
+**What makes a page suitable.** A page is the right target when its *title* is
+the term you want to link. Reuse is the default, and this is the one test that
+overrides it: if the anchor text you would write is X and the page you would
+point at is titled Y, you have a routing near-miss, with two cases. Either X is a
+plain synonym of Y (`FGSM` for "Fast Gradient Sign Method", `RLHF` for the
+spelled-out name), in which case link it and move on. Or X is a distinct idea
+that merely gets *mentioned inside* the page about Y, in which case X needs its
+own page. The `grep "^description:"` sweep above cannot separate the two, because
+a description that mentions X matches a search for X either way; only reading the
+candidate page's title and Definition can.
+
+The near-miss is easy to miss precisely because it produces a working link. A
+student who clicks "functionality stealing" and lands on a page titled "Model
+extraction" has to hunt for the sentence that was meant; a student who clicks
+"transformer" and lands on "Language model pretraining" never learns what
+attention is. Both links resolve, so `check-links.py` stays silent. The mechanical
+version of this test is the anchor-text check in [lint.md](lint.md).
+
+**Do not defer a page because this paper leans on the concept lightly.** The
+question is whether a graduate reader new to the subfield needs it, not how
+central it is to this paper. A term that every paper on the reading list uses
+once, and that no single paper leans on hard, is among the most valuable pages in
+the corpus and the one each individual session is most likely to gloss inline
+instead. When you catch yourself writing a one-clause gloss for a term other
+papers on the reading list will also use, write the stub.
+
 ### 4. Overview pass — high-level overview and threat model
 
 Draft the **High-level overview**: one to three short paragraphs, pitched as a
@@ -419,12 +445,30 @@ the References section for everything cited anywhere on the page.
   `[Differential privacy](../concepts/differential-privacy.md)`. Keep the `.md`
   extension. See AGENTS.md for the convention and why.
 
-### 9. Update the concept pages
+### 9. Update the concept pages, and sweep backwards for every new one
 
 For every concept this paper depends on, add the paper to that concept's
 "Papers that use this concept" section as a relative link
 (`[Paper title](../papers/<slug>.md) — one-line role`). This is what makes the
 links navigable in both directions.
+
+**Then, for every concept page you *created* this session, sweep the papers
+already compiled.** The corpus is built one paper at a time in reading-list
+order, so a page created at paper 17 is invisible to papers 1 through 16 unless
+someone goes back for it. Those earlier papers did not stop needing the concept.
+They glossed it inline, which leaves the corpus explaining one idea six different
+ways and linking it nowhere.
+
+Drive the sweep from a term list rather than from the slug, because pages write
+the prose form of a concept and never its filename. Write out every surface form
+the corpus might use, run the Concept coverage check in [lint.md](lint.md), read
+each hit, and link the ones that are genuine uses. A term inside a References
+entry, an Essential Readings title, or an unrelated sense of the word (a paper
+about biometric fingerprints is not about model fingerprinting) is not a use.
+
+This step is not deferred to a later audit. A concept page whose backward links
+are missing is worse than no page at all: the next session greps
+`^description:`, finds it, links it for that paper only, and the gap widens.
 
 ### 10. Update the indexes
 
@@ -503,7 +547,10 @@ Threat Model paragraph, Basic Background, or Paper Context owns.)
 ### Prerequisite cluster
 
 (Two to five sentences per cluster, Wikipedia link density, concept links carry
-the depth. Prerequisite knowledge only, never this paper's content.)
+the depth. Prerequisite knowledge only, never this paper's content. Link a
+concept at its first mention here and, separately, at its first mention in the
+High-level overview above; the two sections serve different readers and either
+may be entered first.)
 
 ## Reading guidance
 
@@ -661,9 +708,17 @@ A paper page is acceptable when:
   satisfiable from a summary of the paper.
 - Every citation has a full References entry read off a source from this
   session.
-- Every concept it links exists and the link resolves (`check-links.py` clean).
+- Every concept it links exists and the link resolves (`check-links.py` clean),
+  and every concept link lands on a page whose *title* is the anchor text or a
+  plain synonym of it.
+- Concepts are linked at their first mention in the High-level overview (the
+  Threat Model paragraph included) and again at their first mention in Basic
+  Background.
 - The reciprocal link from each concept's "Papers that use this concept"
   exists.
+- Every concept page created this session has been swept backwards against the
+  already-compiled papers (step 9), and every earlier paper that uses it links
+  it.
 - `markdownlint` is clean and there are no prose em-dashes (see AGENTS.md).
 - Prose follows [docs/writing-style.md](../writing-style.md).
 

@@ -28,9 +28,11 @@ A deployed image classifier exposed through a prediction API answers queries,
 image in and class probabilities out, while keeping its training data, its
 architecture, and even the meaning of its output classes private. This work asks
 how much of such a model's value an adversary can capture from that interface
-alone. It formulates *functionality stealing*: training a substitute model, the
-"knockoff," that matches the victim's accuracy on the victim's own task, without
-recovering its weights and without reproducing it prediction for prediction. The
+alone. It formulates
+[*functionality stealing*](../concepts/functionality-stealing.md): training a
+substitute model, the "knockoff," that matches the victim's accuracy on the
+victim's own task, without recovering its weights and without reproducing it
+prediction for prediction. The
 attack builds a "transfer set" of image-prediction pairs by querying the victim,
 then trains the knockoff on that set to imitate the victim's outputs. Query
 images come from a large public image collection that need not overlap the
@@ -71,7 +73,7 @@ The victim and the knockoff are
 (CNNs) for image classification: each maps an image to a posterior probability
 distribution over a fixed set of K classes, and is trained by
 [stochastic gradient descent](../concepts/stochastic-gradient-descent.md) on a
-cross-entropy loss against labels. The experiments use standard backbones,
+[cross-entropy loss](../concepts/cross-entropy.md) against labels. The experiments use standard backbones,
 including ResNet (He et al., 2016) and VGG (Simonyan and Zisserman, 2014), which
 function as interchangeable architecture choices.
 
@@ -80,7 +82,8 @@ function as interchangeable architecture choices.
 Both the victim models and the knockoff are built by
 [transfer learning](../concepts/transfer-learning.md): a backbone pretrained on
 the large ImageNet / ILSVRC dataset (Deng et al., 2009; Russakovsky et al., 2015)
-is then fine-tuned on a task. ImageNet plays a second role here as well, as one
+is then [fine-tuned](../concepts/fine-tuning.md) on a task. ImageNet plays a
+second role here as well, as one
 of the large public image pools from which an adversary can draw its queries.
 
 ### Knowledge distillation
@@ -100,7 +103,9 @@ of a deployed model from external access, typically the
 [black-box](../concepts/white-box-black-box.md) query interface of a prediction
 API: inputs in, outputs out, with no view of weights or gradients. Different
 attacks target different assets: exact parameters, hyperparameters, the
-architecture, or the model's functionality. A common distinction is fidelity
+architecture, or
+[the model's functionality](../concepts/functionality-stealing.md). A common
+distinction is fidelity
 (matching the victim prediction for prediction) versus accuracy (performing the
 underlying task well).
 

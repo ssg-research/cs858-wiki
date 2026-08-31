@@ -35,6 +35,8 @@ design decision.
 
 ## See also
 
+- [Fine-tuning](fine-tuning.md)
+
 - [Convolutional neural network](convolutional-neural-network.md)
 - [Knowledge distillation](knowledge-distillation.md)
 

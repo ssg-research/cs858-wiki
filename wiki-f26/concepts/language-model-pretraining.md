@@ -40,6 +40,8 @@ alignment stage revisits. The canonical instance is GPT-3 (Brown et al., 2020).
 
 ## See also
 
+- [Transformer](transformer.md)
+
 - [Instruction tuning](instruction-tuning.md)
 - [Reinforcement learning from human feedback (RLHF)](rlhf.md)
 

@@ -37,8 +37,10 @@ available to whoever calls the model, they are also an attack surface.
 - [Knowledge Unlearning for Mitigating Privacy Risks in Language Models](../papers/jang-2022-knowledge-unlearning.md) — measures extraction with greedy decoding and compares against a differentially private decoding baseline that interpolates the logits toward uniform before nucleus sampling.
 - [A Watermark for Large Language Models](../papers/kirchenbauer-2023-llm-watermark.md) — embeds the watermark during decoding by modifying the logits before sampling, and marks most strongly under multinomial sampling and beam search.
 - [Examining Zero-Shot Vulnerability Repair with Large Language Models](../papers/pearce-2023-vulnerability-repair.md) — sweeps temperature and top-p to tune how the code models sample candidate patches, settling on a fixed top-p with a temperature ensemble.
+- [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — fixes decoding at temperature 0 so that a jailbreak's success or failure is not confounded by sampling noise.
 
 ## See also
 
 - [Language model pretraining](language-model-pretraining.md)
+- [Temperature](temperature.md)
 - [Jailbreak (LLM)](jailbreak.md)

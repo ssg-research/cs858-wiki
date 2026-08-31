@@ -38,15 +38,21 @@ placed in the original model carries over.
 This work introduces DAWN (Dynamic Adversarial Watermarking of Neural Networks),
 a watermarking approach for deterring intellectual-property theft via model
 extraction. DAWN is a component placed in front of the prediction API rather than
-a change to the protected model. For a small, client-specific fraction of
-incoming queries (under 0.5%), it returns a deliberately altered label instead of
-the model's true prediction. If a client trains a surrogate on its query
-responses, those altered query-label pairs become a [backdoor](../concepts/backdoor-attacks.md)
-trigger set the surrogate learns, and the owner can later query a suspect model
-and check whether the planted responses reappear. The mark is client-specific, so
-a verified surrogate links back to the client whose queries trained it. Here the
-watermark is embedded by the adversary who trains the surrogate rather than by
-the defender, inverting the usual watermarking setup.
+a change to the protected model. For a small fraction of incoming queries (under
+0.5%), it returns a deliberately altered label instead of the model's true
+prediction. Whether a given query is one of them is decided by a keyed function
+of the query and the protected model, so the same input always draws the same
+response no matter who submits it. If a client trains a surrogate on its query
+responses, those altered query-label pairs become a
+[backdoor](../concepts/backdoor-attacks.md) trigger set the surrogate learns, and
+the owner can later query a suspect model and check whether the planted responses
+reappear. The owner records, for each client, which of that client's own queries
+were altered, and registers that set as the client's watermark, so one altered
+query can sit in the registered set of every client that submitted it. Verifying
+a suspect model against a registered set therefore names a client whose responses
+went into training it. Here the watermark is embedded by the adversary who trains
+the surrogate rather than by the defender, inverting the usual watermarking
+setup.
 
 The paper reports that DAWN watermarks every surrogate produced by two
 extraction attacks, including the functionality-stealing attack of
@@ -68,10 +74,10 @@ decision boundary, or splitting the extraction across several colluding clients.
 The defender operates the API and need not be the model's trainer; it cannot
 alter the protected model's training and cannot choose trigger inputs from the
 whole input space, only from what clients actually submit. Its claim is that any
-surrogate accurate enough to be useful necessarily carries an embedded,
-client-specific watermark, which the owner can verify through a trusted judge and
-a public commitment establishing priority, while honest clients see almost no
-loss of accuracy.
+surrogate accurate enough to be useful necessarily carries an embedded watermark
+that links it to the clients whose query responses trained it, which the owner
+can verify through a trusted judge and a public commitment establishing priority,
+while honest clients see almost no loss of accuracy.
 
 ## Basic Background
 
@@ -81,11 +87,12 @@ loss of accuracy.
 an asset of a deployed model from external access, usually the
 [black-box](../concepts/white-box-black-box.md) query interface of a
 prediction API, where inputs go in and labels or probability vectors come back.
-The variant DAWN addresses is functionality stealing: training a *surrogate*
-model that matches the victim's task accuracy, trained on the victim's own
-responses to the adversary's queries. The adversary may use natural or synthetic
-query data and is free to pick a surrogate architecture different from the
-victim's.
+The variant DAWN addresses is
+[functionality stealing](../concepts/functionality-stealing.md): training a
+*surrogate* model that matches the victim's task accuracy, trained on the
+victim's own responses to the adversary's queries. The adversary may use natural
+or synthetic query data and is free to pick a surrogate architecture different
+from the victim's.
 
 ### Image classification with convolutional networks
 
@@ -103,6 +110,10 @@ marker in a model so the owner can later claim ownership of a copy. White-box
 schemes hide the marker in the weights; black-box schemes verify it through the
 prediction API. The black-box schemes relevant here verify ownership by querying
 a secret *trigger set* and checking that the model returns the planted responses.
+The alternative family,
+[model fingerprinting](../concepts/model-fingerprinting.md), embeds nothing and
+identifies a model by properties it already has, such as how it labels inputs
+near its decision boundary.
 
 ### Backdoors and model overcapacity
 

@@ -49,14 +49,16 @@ touch. The paper ships an online and a cheaper offline variant, releases code,
 and argues that prior conclusions about memorization, defenses, and "private"
 training algorithms need re-examination under the new metric.
 
-**Threat Model:** A training-data privacy setting: the adversary does not
-modify any input, and the training process is untouched. The
-adversary holds a candidate example with its label and wants to learn one bit,
-whether that example was in the target model's training set. Access is
-[black-box](../concepts/white-box-black-box.md): the adversary queries the
-trained model and observes its confidence outputs, with no access to weights or
-gradients. The adversary can sample from the underlying data distribution and
-train its own shadow models, and in the strongest setting knows the target's
+**Threat Model:** A training-data privacy setting. The target model is trained
+without the adversary's participation: the adversary contributes none of the
+training data and cannot influence the training run, so the training-time
+manipulations of [data poisoning](../concepts/data-poisoning.md) fall outside
+this setting. The adversary holds a candidate example with its label and wants to
+learn one bit, whether that example was in the target model's training set.
+Access is [black-box](../concepts/white-box-black-box.md): the adversary submits
+the candidate example unaltered and reads the model's confidence outputs, with no
+access to weights or gradients. The adversary can sample from the underlying
+data distribution and train its own shadow models, and in the strongest setting knows the target's
 architecture and training setup; the paper measures how the attack degrades
 when the shadow data is disjoint or the architecture, optimizer, and
 augmentations are guessed wrong. The privacy claim under attack is membership
@@ -70,8 +72,9 @@ false-positive rates.
 A classifier is trained by
 [empirical risk minimization](../concepts/empirical-risk-minimization.md):
 [stochastic gradient descent](../concepts/stochastic-gradient-descent.md)
-drives down the cross-entropy loss on the training set. The softmax layer turns
-the network's raw outputs (logits) into per-class confidences, and the loss on
+drives down the [cross-entropy loss](../concepts/cross-entropy.md) on the
+training set. The [softmax](../concepts/softmax.md) layer turns the network's raw
+outputs (logits) into per-class confidences, and the loss on
 an example is the negative log of the confidence assigned to its true label.
 Training therefore makes training examples low-loss by construction, and the
 gap between training and test accuracy (the generalization gap) measures how

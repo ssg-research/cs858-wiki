@@ -35,15 +35,17 @@ vectors, and trains a substitute that reproduces the target's parameters or its
 functionality. Prediction-perturbation defenses alter the returned confidence
 vectors so a substitute trained on them comes out worse, while honest users keep
 useful predictions. Earlier perturbation defenses set the alteration
-heuristically, pay a large utility cost, and lose ground to an adaptive attacker,
-one that knows the defense is in place and tries to undo it, which recovers much
-of the signal before training.
+heuristically, pay a large utility cost, and lose ground to an
+[adaptive attacker](../concepts/adaptive-attack.md), one that knows the defense
+is in place and tries to undo it, which recovers much of the signal before
+training.
 
 ModelGuard derives the perturbation from a constrained optimization: choose the
 perturbed confidence vector that maximizes the loss an adversary incurs when
 training a substitute, subject to utility constraints that bound the per-query
 `ℓ1` distortion and keep the top-1 label unchanged. A single objective covers
-both the parameter-stealing and the functionality-stealing goals. Two variants
+both the parameter-stealing and the
+[functionality-stealing](../concepts/functionality-stealing.md) goals. Two variants
 solve it under different assumptions about the adversary recovery step.
 ModelGuard-W assumes a weak adaptive attacker that trains directly on the
 perturbed outputs. ModelGuard-S targets the optimal recovery, the Bayes estimator
@@ -61,7 +63,7 @@ defenses.
 **Threat Model:** The adversary mounts query-based model extraction against a
 victim, the prediction API and the model behind it, over
 [black-box](../concepts/white-box-black-box.md) access to the confidence-score
-vector over classes, with no side channel. It does not see the confidential
+vector over classes, with no [side channel](../concepts/side-channel.md). It does not see the confidential
 training set, but it knows the input domain and queries with natural or synthetic
 data from a similar domain; in the strong case it knows the target's architecture
 and matches it in its substitute. Its query budget is unlimited, so repeating any
@@ -92,13 +94,15 @@ perturbation defense alters.
 
 ### Training a substitute by distillation
 
-Functionality stealing trains the substitute on the target's own responses, which
+[Functionality stealing](../concepts/functionality-stealing.md) trains the
+substitute on the target's own responses, which
 is [knowledge distillation](../concepts/knowledge-distillation.md) in adversarial
 form: a student is fit to a teacher's output distribution rather than to
 ground-truth labels. The substitute is typically a
 [convolutional neural network](../concepts/convolutional-neural-network.md)
 trained by [stochastic gradient descent](../concepts/stochastic-gradient-descent.md)
-on a cross-entropy or squared-error loss against the returned vectors. Because the
+on a [cross-entropy](../concepts/cross-entropy.md) or squared-error loss against
+the returned vectors. Because the
 attacker fits the returned vectors, perturbing those vectors changes what the
 substitute learns.
 
@@ -132,8 +136,8 @@ out-of-distribution detection, whose quality is read from the area under a
   what lets the defender restrict attention to deterministic perturbation.
 - Section 3.5, Lemma 2: the information-theoretic lower bound, and the
   reformulation as minimizing mutual information solved by online vector
-  quantization. Ordered incremental quantization is what makes repeated queries
-  return consistent outputs.
+  [quantization](../concepts/quantization.md). Ordered incremental quantization is
+  what makes repeated queries return consistent outputs.
 - Section 4, Figure 3 with Figure 5: Figure 3 plots extraction accuracy against
   l1 distortion, and Figure 5 (left) plots the OOD detector's AUROC against the
   same budget, a second utility measure entirely. Note which one a given plot
@@ -163,9 +167,11 @@ natural in-domain data (Juuti et al., 2019; Pal et al., 2021; Kesarwani et al.,
 charges, or refuses once a threshold is crossed, which collaborating attackers
 split across accounts evade (Kesarwani et al., 2018; Dziedzic et al., 2022; Yan
 et al., 2021). Watermarking plants an owner-verifiable marker so the owner can
-later claim a copy, but it does not stop a thief who keeps the substitute private
-or uses it for downstream attacks (Adi et al., 2018; Cao et al., 2021; Jia et
-al., 2020). Prediction perturbation alters the returned outputs to enlarge the
+later claim a copy, and
+[boundary fingerprinting](../concepts/model-fingerprinting.md) does the same
+without embedding anything, but neither stops a thief who keeps the substitute
+private or uses it for downstream attacks (Adi et al., 2018; Cao et al., 2021;
+Jia et al., 2020). Prediction perturbation alters the returned outputs to enlarge the
 substitute's training loss or redirect its gradients (Lee et al., 2019; Orekondy
 et al., 2019; Kariyappa and Qureshi, 2020; Mazeika et al., 2022); it makes the
 fewest assumptions about the attacker and applies to any extraction goal.

@@ -80,13 +80,14 @@ security defined in the simulation paradigm.
 
 ### Transformers and the layers evaluated under encryption
 
-The models are transformers such as BERT and GPT,
+The models are [transformers](../concepts/transformer.md) such as BERT and GPT,
 [pretrained language models](../concepts/language-model-pretraining.md): a stack
 of attention and feed-forward blocks ending in a linear layer that produces one
-logit per vocabulary token, with the prediction read off by argmax (Devlin et
+[logit](../concepts/softmax.md) per vocabulary token, with the prediction read off by argmax (Devlin et
 al., 2018; Radford et al., 2019). Inference interleaves
 linear operations, the large matrix products in attention and the feed-forward
-network, with nonlinear ones: softmax, the GELU activation, layer normalization,
+network, with nonlinear ones: [softmax](../concepts/softmax.md), the GELU
+activation, layer normalization,
 and the final argmax. The split matters here because the two kinds of layer have
 very different costs under encryption.
 

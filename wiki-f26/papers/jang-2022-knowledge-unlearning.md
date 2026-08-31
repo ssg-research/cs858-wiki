@@ -68,10 +68,12 @@ attack.
 
 ### Language models, the training objective, and gradient ascent
 
-A [language model](../concepts/language-model-pretraining.md) is trained by
-next-token prediction: it estimates the probability of each token given its
-predecessors, and training minimizes the average negative log-likelihood of the
-corpus by [stochastic gradient descent](../concepts/stochastic-gradient-descent.md).
+A [language model](../concepts/language-model-pretraining.md), in practice a
+[transformer](../concepts/transformer.md), is trained by next-token prediction: it estimates the probability of each token given its
+predecessors, and training minimizes the average
+[cross-entropy](../concepts/cross-entropy.md), equivalently the negative
+log-likelihood, of the corpus by
+[stochastic gradient descent](../concepts/stochastic-gradient-descent.md).
 Generation is autoregressive, drawing one token at a time under a
 [decoding strategy](../concepts/decoding-strategies.md) such as greedy selection.
 [Perplexity](../concepts/perplexity.md), the exponential of the per-token average
@@ -115,7 +117,8 @@ training reduces how much is memorized (Kandpal et al., 2022).
 [Differential privacy](../concepts/differential-privacy.md) instead bounds any
 single example's influence on the trained model, with
 [DP-SGD](abadi-2016-dp-sgd.md) as the deep-learning instantiation (Abadi et al.,
-2016); for language models it can be applied during fine-tuning (Li et al., 2022;
+2016); for language models it can be applied during
+[fine-tuning](../concepts/fine-tuning.md) (Li et al., 2022;
 Yu et al., 2022) or at decoding time (Majmudar et al., 2022). Both families
 require committing to what counts as private before training, and retraining to
 revise that choice.

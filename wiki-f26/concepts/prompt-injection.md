@@ -34,6 +34,7 @@ phrase into innocuous-looking substrings, appear on both sides (Kang et al.,
 
 ## See also
 
+- [Indirect prompt injection](indirect-prompt-injection.md)
 - [Jailbreak (LLM)](jailbreak.md)
 - [Safety training (LLM harmlessness)](safety-training.md)
 

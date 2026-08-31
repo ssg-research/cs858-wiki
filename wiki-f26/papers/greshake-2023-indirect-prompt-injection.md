@@ -32,8 +32,10 @@ code assistants, email and office copilots, browser plugins. The paper observes
 that retrieval blurs the line between data and instructions, since retrieved
 text and the developer's instructions share one context window.
 
-It introduces and names **indirect prompt injection**. Rather than typing a
-malicious prompt into a model they control, the adversary plants instructions
+It introduces and names
+**[indirect prompt injection](../concepts/indirect-prompt-injection.md)**. Rather
+than typing a malicious prompt into a model they control, the adversary plants
+instructions
 inside content likely to be retrieved, such as a web page, an email, or a code
 repository, and waits for a victim's model to ingest it. Once ingested, the
 injected text steers the model toward adversary-chosen actions. The paper frames
@@ -84,9 +86,10 @@ natural-language input, which is what makes it reprogrammable at inference time.
 
 [Prompt injection](../concepts/prompt-injection.md) supplies instructions that
 override an application's intended task. Direct injection comes from the user of
-the model; the class this paper introduces is indirect, hiding the instructions
-in content the model later reads. A [jailbreak](../concepts/jailbreak.md) is the
-related move of eliciting a behavior the model was safety-trained to refuse. Both
+the model; [indirect injection](../concepts/indirect-prompt-injection.md) hides
+the instructions in content the model later reads. A
+[jailbreak](../concepts/jailbreak.md) is the related move of eliciting a behavior
+the model was safety-trained to refuse. Both
 steer the model through its input, and the paper uses jailbreak-style payloads as
 one kind of indirect injection.
 

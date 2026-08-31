@@ -66,7 +66,8 @@ device user, is adversarial. The adversary reads, and in principle can tamper
 with, the offloaded part of the model running outside the TEE, and observes the
 TEE's inputs and outputs, which return predicted labels only (label-only outputs).
 It cannot break the TEE, whose internal data and computation are assumed secure,
-and side channels against the TEE are out of scope. Beyond the device the
+and [side channels](../concepts/side-channel.md) against the TEE are out of
+scope. Beyond the device the
 adversary holds public pretrained models and datasets, used to infer the protected
 model's architecture and to initialize a surrogate, plus a query budget against
 the deployed label-only model under one percent of the training-set size. The
@@ -122,7 +123,8 @@ The benchmarked models are standard
 [convolutional networks](../concepts/convolutional-neural-network.md), including
 ResNet, VGG, and AlexNet, built by
 [transfer learning](../concepts/transfer-learning.md): a public backbone
-pretrained on a large dataset, then fine-tuned on the task. The same public
+pretrained on a large dataset, then [fine-tuned](../concepts/fine-tuning.md) on
+the task. The same public
 backbones are an adversary resource, supplying a near-equivalent model from which
 to read architecture and initialize a surrogate.
 

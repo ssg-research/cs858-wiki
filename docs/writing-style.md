@@ -49,6 +49,23 @@ to a concept page, including general machinery like stochastic gradient
 descent or white-box access. Tiny stub concept pages exist to make this
 possible; link to them rather than glossing a term inline for the third time.
 
+**Where a link goes on the page.** Link a concept at its first mention in the
+High-level overview, the Threat Model paragraph included, and again at its first
+mention in Basic Background. Leave later repetitions plain. Two links rather than
+one because the two sections serve different readers, the overview reader and the
+prerequisite reader, and either may be where someone enters the page. A term that
+appears only inside a References entry or an Essential Readings title is a
+citation, not a use, and takes no link.
+
+**Where a link points.** The target page's title is the term in the anchor text,
+or a plain synonym of it. Linking "functionality stealing" to a page titled
+"Model extraction," or "transformer" to one titled "Language model pretraining,"
+makes the reader hunt for the sentence that was meant and hides the fact that a
+page is missing, since the link resolves and the checker stays quiet. When the
+term you want is only *mentioned* inside a page about something else, it needs
+its own page; see step 3 of
+[ops/generate-paper-summary.md](ops/generate-paper-summary.md).
+
 ## Citations
 
 - Any claim about prior work or the state of the field carries an inline

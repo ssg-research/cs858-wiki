@@ -56,6 +56,8 @@ guarantee can be expensive to reach.
 
 ## See also
 
+- [Federated learning](federated-learning.md)
+
 - [Sensitivity and the Gaussian mechanism](gaussian-mechanism.md)
 - [Privacy budget and composition](privacy-budget.md)
 - [Membership inference](membership-inference.md)

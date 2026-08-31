@@ -55,9 +55,10 @@ through the chat interface, with no view of weights or training data and no
 ability to set the system prompt or alter the message history. The lever is the
 prompt itself, rewriting a refused request into a modified prompt using
 transformations that are generally input-agnostic and human-readable; the attack
-may be adaptive, choosing the next prompt from the model's replies to earlier
-variants, though most attacks succeed without adaptivity. The attack acts at
-inference time only, with no access to training. The defender is the model
+may be [adaptive](../concepts/adaptive-attack.md), choosing the next prompt from
+the model's replies to earlier variants, though most attacks succeed without
+adaptivity. The attack acts at inference time only, with no access to training.
+The defender is the model
 provider, which serves a safety-trained model that refuses restricted behaviors
 and is claimed to resist adversarial misuse.
 
@@ -71,7 +72,13 @@ This yields a base model whose sense of which continuations are likely, its
 pretraining distribution, spans far more than any later training stage revisits,
 including the ability to read unusual formats and encodings. Generation decodes
 one token at a time from this distribution, so a continuation that is improbable
-in natural text is also improbable for the model.
+in natural text is also improbable for the model. How each token is actually
+drawn is a separate inference-time setting, the
+[decoding strategy](../concepts/decoding-strategies.md): a
+[temperature](../concepts/temperature.md) at or near zero makes generation
+deterministic, and raising it puts the model's less likely continuations within
+reach. Any success rate measured on a model is therefore a success rate at
+whatever decoding settings produced it.
 
 ### Aligning LLMs to follow instructions
 

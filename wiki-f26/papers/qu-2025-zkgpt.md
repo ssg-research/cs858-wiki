@@ -40,9 +40,10 @@ succinct, small and fast to verify relative to the inference it certifies.
 
 The obstacle is that proof backends work over arithmetic circuits, which offer
 only addition and multiplication in a finite field, while a
-[transformer](../concepts/language-model-pretraining.md) interleaves large
+[transformer](../concepts/transformer.md) interleaves large
 matrix multiplications with non-arithmetic operations: the GeLU activation,
-softmax inside attention, and layer normalization, which need comparison,
+[softmax](../concepts/softmax.md) inside attention, and layer normalization,
+which need comparison,
 division, square root, and exponentiation. The non-linear layers, awkward to
 arithmetize, dominate the proving cost. zkGPT builds a proof system specialized
 for GPT-style models on the sumcheck and GKR interactive-proof protocols and the
@@ -74,13 +75,13 @@ supplies and already knows.
 
 ### Transformer inference and quantization
 
-The model is a [transformer](../concepts/language-model-pretraining.md) such as
+The model is a [transformer](../concepts/transformer.md) such as
 GPT-2: a stack of blocks, each combining matrix multiplication, attention, the
 GeLU activation, and layer normalization (Vaswani et al., 2017; Radford et al.,
 2019; Ba et al., 2016; Hendrycks and Gimpel, 2016). A proof system operates over a
 finite field, so before the computation can be proved its real-valued weights and
-activations are quantized, mapped to integers with a shared scale, as in zkCNN
-(Liu et al., 2021). Quantization is what lets floating-point addition and
+activations are [quantized](../concepts/quantization.md), mapped to integers with
+a shared scale, as in zkCNN (Liu et al., 2021). Quantization is what lets floating-point addition and
 multiplication be approximated by integer arithmetic the circuit can express.
 
 ### Zero-knowledge proofs

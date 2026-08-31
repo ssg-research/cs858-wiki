@@ -46,6 +46,7 @@ the victim (Papernot et al., 2017).
 
 ## See also
 
+- [Functionality stealing](functionality-stealing.md)
 - [White-box and black-box access](white-box-black-box.md)
 - [Knowledge distillation](knowledge-distillation.md)
 

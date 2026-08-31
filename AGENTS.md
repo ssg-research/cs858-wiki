@@ -52,6 +52,16 @@ on GitHub, in VS Code preview, in Obsidian, and in every static-site generator
 `[[wikilink]]` syntax; it is Obsidian-specific and breaks elsewhere. The graph
 and link tooling parse this Markdown-link format; wikilinks are invisible to it.
 
+Two rules about the links themselves, both invisible to `check-links.py` because
+a wrong link still resolves. **Where a link goes:** a concept is linked at its
+first mention in the High-level overview (Threat Model paragraph included) and
+again at its first mention in Basic Background; later repetitions stay plain, and
+a term appearing only in a References entry or an Essential Readings title takes
+no link. **Where a link points:** the target page's title is the anchor text or a
+plain synonym of it. Linking "transformer" to a page titled "Language model
+pretraining" is a missing concept page wearing a working link. See
+`docs/writing-style.md` and step 3 of `docs/ops/generate-paper-summary.md`.
+
 ---
 
 ## Page Types
@@ -214,6 +224,12 @@ reuse them.
 No graph manifest. At this scale the files are the graph: to find concept pages
 relevant to a new paper, skim `grep -h "^description:" wiki-f26/concepts/*.md`; to
 find which papers already use a concept, `grep -rl "concepts/<slug>.md" wiki-f26/papers/`.
+Creating a concept page obliges you to sweep the papers already compiled for it,
+driven by a list of the term's surface forms rather than its slug, since pages
+write the prose form and never the filename (`docs/ops/lint.md`, Concept
+coverage). A page created at paper 17 is invisible to papers 1 through 16 unless
+someone goes back for it.
+
 `scripts/check-links.py` covers structural integrity (every relative link
 resolves).
 

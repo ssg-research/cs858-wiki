@@ -19,8 +19,8 @@ a second "student" model by training the student to match the teacher's outputs
 rather than the ground-truth labels alone (Hinton et al., 2015). The teacher's
 full output distribution, the "soft labels," carries more information per example
 than a one-hot label, because it exposes the relative probabilities the teacher
-assigns to the non-top classes. A temperature parameter softens that
-distribution to make those relative probabilities more visible during training.
+assigns to the non-top classes. A [temperature](temperature.md) parameter softens that distribution to make those
+relative probabilities more visible during training.
 The idea predates deep learning as model compression, where the goal was to
 shrink an ensemble into a single fast model (Buciluǎ et al., 2006).
 

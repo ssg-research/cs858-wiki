@@ -69,7 +69,8 @@ the entire normal world regardless. The protected asset is the model, kept
 confidential in transit, at rest, and in use; the accelerator sits behind an
 IOMMU and exposes a reset interface. The
 defender's claim is software-secure enclaves against REE-side software
-adversaries on commodity Armv8-A hardware. Physical attacks and side channels are
+adversaries on commodity Armv8-A hardware. Physical attacks and
+[side channels](../concepts/side-channel.md) are
 out of scope. The paper notes the guarantee can be strengthened to
 hardware-secure enclaves where additional hardware support, such as Arm's
 Confidential Compute Architecture, is available.
@@ -81,7 +82,8 @@ Confidential Compute Architecture, is available.
 On-device DNN inference runs the model on the end user's hardware, which exposes
 the model file to the device. The on-device models are typically compact
 [convolutional networks](../concepts/convolutional-neural-network.md) and small
-transformers, the object-detection and text-understanding backbones used on
+[transformers](../concepts/transformer.md), the object-detection and
+text-understanding backbones used on
 mobile NPUs. The direct threat is
 [model extraction](../concepts/model-extraction.md): reproducing a model's
 weights, architecture, or functionality from external access, which on a device

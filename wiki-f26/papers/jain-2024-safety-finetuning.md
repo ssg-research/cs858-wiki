@@ -28,7 +28,8 @@ tags:
 
 ## High-level overview
 
-Safety fine-tuning aligns an instruction-tuned language model to refuse unsafe
+Safety [fine-tuning](../concepts/fine-tuning.md) aligns an instruction-tuned
+language model to refuse unsafe
 requests, yet jailbreaks and adversarial inputs keep eliciting the content it
 was trained to withhold. This paper asks two mechanistic questions: what does
 safety fine-tuning change inside the model, and how do those inputs bypass the
@@ -37,7 +38,8 @@ data-generating framework in which an input is a task (an *operator*, such as
 "design") applied to a concept (an *operand*, such as "cycle" versus "bomb"),
 with the surrounding text drawn from a probabilistic context-free grammar. The
 design makes safety a property of the combination rather than of any token alone.
-They train small transformers on this setup and corroborate the findings on
+They train small [transformers](../concepts/transformer.md) on this setup and
+corroborate the findings on
 Llama-2 and Llama-3 chat models.
 
 Three safety fine-tuning protocols are compared: supervised safety fine-tuning
@@ -146,7 +148,8 @@ its robustness was unsettled. Jailbreaks reliably recovered restricted behavior:
 the taxonomy of competing objectives and mismatched generalization organized the
 phenomenon (Wei et al., 2023), and automated procedures produced transferable
 attack strings (Zou et al., 2023), black-box attacks in few queries (Chao et al.,
-2023), and adaptive attacks on aligned models (Andriushchenko et al., 2024).
+2023), and [adaptive attacks](../concepts/adaptive-attack.md) on aligned models
+(Andriushchenko et al., 2024).
 Continuous-embedding and adversarial-input attacks defeated alignment under
 white-box access (Carlini et al., 2023).
 
