@@ -31,6 +31,7 @@ anticipated.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — the paper's subject; it asks why safety training fails to suppress restricted behavior under adversarial prompts.
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — argues current safety training is "shallow," changing mostly the first few output tokens, and proposes ways to make it deeper.
 - [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — gives a mechanistic account of what safety training changes: a minimal MLP-weight transformation that clusters unsafe inputs apart from safe ones.
+- [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — names safety training as the later stage that trains the deployed model to refuse a set of restricted behaviors, the refusal a jailbreak-style payload targets.
 
 ## See also
 

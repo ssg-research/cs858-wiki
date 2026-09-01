@@ -31,6 +31,7 @@ informally after ChatGPT's release, including role-play personas such as "DAN"
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — explains prefilling, adversarial-suffix, and decoding-parameter jailbreaks as ways of getting past a shallow refusal prefix.
 - [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](../papers/zou-2024-poisonedrag.md) — names jailbreaking as orthogonal: it steers a RAG answer through corrupted retrieved content rather than by bypassing a safety refusal.
 - [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — models jailbreaks as competing objectives and mismatched generalization, and shows they evade the safety mechanism by producing activations that resemble safe inputs.
+- [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — holds jailbreaking apart from prompt injection as the related move of eliciting a behavior the model was safety-trained to refuse, and uses jailbreak-style payloads as one kind of indirect injection.
 
 ## See also
 

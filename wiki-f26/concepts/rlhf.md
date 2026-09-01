@@ -28,6 +28,7 @@ stay in the loss, alignment adjusts the base model rather than replacing it.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — the persistence of the pretraining objective inside the RLHF loss is central to its argument that scaling will not remove "competing objectives."
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — uses the KL-penalty view of alignment to argue that current safety alignment concentrates in the first few output tokens.
 - [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — situates RLHF among the safety fine-tuning objectives it studies, alongside supervised fine-tuning, DPO, and unlearning.
+- [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — names RLHF alongside instruction tuning as the adaptation that makes the deployed model follow requests.
 
 ## See also
 

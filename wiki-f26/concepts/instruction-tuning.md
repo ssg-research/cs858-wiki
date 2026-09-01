@@ -27,6 +27,7 @@ several that a deployed model balances, alongside language modeling and safety.
 - [Jailbroken: How Does LLM Safety Training Fail?](../papers/wei-2023-jailbroken.md) — instruction following is one of the "competing objectives"; attacks such as refusal suppression exploit the model's drive to obey formatting instructions.
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep](../papers/qi-2024-shallow-safety-alignment.md) — analyzes how supervised and preference-based fine-tuning leave safety behavior concentrated in early tokens.
 - [What Makes and Breaks Safety Fine-tuning? A Mechanistic Study](../papers/jain-2024-safety-finetuning.md) — takes the instruction-tuned model as the starting point and asks what safety fine-tuning changes on top of it.
+- [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — names instruction tuning as the stage that adapts a pretrained model to follow natural-language requests, the behavior an injected instruction is written to exploit.
 
 ## See also
 

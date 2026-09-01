@@ -37,6 +37,7 @@ alignment stage revisits. The canonical instance is GPT-3 (Brown et al., 2020).
 - [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — privately fine-tunes pretrained RoBERTa and OPT checkpoints, treating the pretrained base model as public.
 - [zkGPT: An Efficient Non-interactive Zero-knowledge Proof Framework for LLM Inference](../papers/qu-2025-zkgpt.md) — the inference it proves is a pretrained GPT-2 transformer; its blocks of matrix multiplication, attention, GeLU, and layer normalization are the layers compiled into the proof circuit.
 - [PAL\*M: Property Attestation for Large Generative Models](../papers/chantasantitam-2026-palm.md) — the generative models whose operations it attests are pretrained transformer LLMs; its property catalogue spans their training, fine-tuning, quantization, evaluation, and chat-session inference.
+- [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — the first stage of the pipeline it attacks: a next-token pretrained model, later instruction-tuned and safety-trained, steered entirely through natural-language input.
 
 ## See also
 

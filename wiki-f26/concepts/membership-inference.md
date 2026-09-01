@@ -49,6 +49,7 @@ predictions as a building block (Carlini et al., 2021).
 - [Unlocking the Power of Differentially Private Zeroth-order Optimization for Fine-tuning LLMs](../papers/bao-2025-dp-zo.md) — the leakage its differentially private fine-tuning provably bounds for the fine-tuning dataset.
 - [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — the training-data privacy attack, paired with model stealing, used to test whether a TEE partition matches the shielding-whole-model baseline.
 - [ASGARD: Protecting On-Device Deep Neural Networks with Virtualization-Based Trusted Execution Environments](../papers/moon-2025-asgard.md) — a stolen on-device model also enables membership inference, one of the privacy harms that motivate keeping the model confidential.
+- [Knockoff Nets: Stealing Functionality of Black-Box Models](../papers/orekondy-2019-knockoff-nets.md) — names membership inference among the inference attacks that read properties of a model or its data off the same prediction interface its extraction attack queries.
 
 ## Variants and traps
 

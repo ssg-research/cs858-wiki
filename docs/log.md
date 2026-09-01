@@ -1265,4 +1265,13 @@ learning from human feedback" on the Wei and Greshake pages is already linked to
 the Madry paper, a cross-reference rather than a concept link; and the remaining
 hits sit in References entries and Essential Readings titles, which take no link.
 
+Check 7's other direction, each concept's "Papers that use this concept" list
+against the papers that link it, was missing seven entries corpus-wide. Six are
+the Greshake page, never swept into `instruction-tuning`, `jailbreak`,
+`language-model-pretraining`, `rlhf`, `safety-training`, and
+`white-box-black-box`; the seventh is the Knockoff Nets entry on
+`membership-inference`, owed to the link added above. All seven are written from
+what the citing page says about the concept. Both directions of check 7 are now
+clean across the corpus.
+
 markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).
