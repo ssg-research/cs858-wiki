@@ -240,15 +240,23 @@ Read each hit before acting. A term inside a References entry, an Essential
 Readings title, a paper or product name that happens to contain it ("Open
 Pre-trained Transformer"), or an unrelated sense of the word (a paper about
 biometric fingerprints is not about model fingerprinting) is not a use. Then
-close the loop in the other direction, which must be silent:
+close the loop in the other direction, which must be silent. This half is driven
+by the slug, so it takes no term list and runs over every concept at once,
+whether or not a page was added this session:
 
 ```bash
 WIKI_DIR="wiki-f26"
-SLUG="cross-entropy"
-for f in $(grep -rl "concepts/$SLUG.md" $WIKI_DIR/papers/ | xargs -n1 basename); do
-  grep -q "papers/$f" "$WIKI_DIR/concepts/$SLUG.md" || echo "NO RECIPROCAL ENTRY: $f"
+for SLUG in $(ls $WIKI_DIR/concepts/*.md | grep -v README | xargs -n1 basename | sed 's/\.md$//'); do
+  for f in $(grep -rl "concepts/$SLUG.md" $WIKI_DIR/papers/ 2>/dev/null | xargs -n1 basename); do
+    grep -q "papers/$f" "$WIKI_DIR/concepts/$SLUG.md" \
+      || echo "NO RECIPROCAL ENTRY: $SLUG <- $f"
+  done
 done
 ```
+
+Each line names a paper that links the concept and a concept page that does not
+list it back. The paper page is the one to read: its link is the claim that the
+paper uses the concept, and the entry says how.
 
 ## 8. Concept links that land on the wrong page
 

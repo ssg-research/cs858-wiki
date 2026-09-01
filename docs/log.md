@@ -1274,4 +1274,12 @@ the Greshake page, never swept into `instruction-tuning`, `jailbreak`,
 what the citing page says about the concept. Both directions of check 7 are now
 clean across the corpus.
 
+That direction is driven by the slug alone, so it needs no term list and now
+runs over every concept in one pass rather than one slug at a time. Nobody was
+running it corpus-wide, which is how six Greshake entries survived. Its silence
+is what the self-review item in `generate-paper-summary.md` now rests on, and
+`replace-paper.md` gains it at step 13: `check-links.py` catches a reciprocal
+bullet left pointing at a deleted paper, but a bullet the step-6 rewrite dropped
+is absent rather than dangling, and nothing in that playbook saw it.
+
 markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).

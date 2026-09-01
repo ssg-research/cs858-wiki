@@ -719,8 +719,10 @@ A paper page is acceptable when:
   Threat Model paragraph included) and again at their first mention in Basic
   Background, with the placement check in [lint.md](lint.md) (check 7) run over
   this page's concepts and silent.
-- The reciprocal link from each concept's "Papers that use this concept"
-  exists.
+- The reciprocal link from each concept's "Papers that use this concept" exists,
+  with the reciprocal half of [lint.md](lint.md) check 7 silent. That half is
+  slug-driven and covers the whole corpus in one run, so it also catches an
+  entry an earlier session omitted.
 - Every concept page created this session has been swept backwards against the
   already-compiled papers (step 9), and every earlier paper that uses it links
   it.
