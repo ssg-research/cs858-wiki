@@ -461,10 +461,14 @@ ways and linking it nowhere.
 
 Drive the sweep from a term list rather than from the slug, because pages write
 the prose form of a concept and never its filename. Write out every surface form
-the corpus might use, run the Concept coverage check in [lint.md](lint.md), read
-each hit, and link the ones that are genuine uses. A term inside a References
-entry, an Essential Readings title, or an unrelated sense of the word (a paper
-about biometric fingerprints is not about model fingerprinting) is not a use.
+the corpus might use, run the Concept coverage check in [lint.md](lint.md), and
+read each hit. Where it is a genuine use, an `UNLINKED` hit needs the link added
+and a `PLAIN FIRST` hit needs the existing link moved to the section's first
+mention, since presence anywhere on the page satisfies neither the reader who
+enters at the overview nor the one who enters at Basic Background. A term inside
+a References entry, an Essential Readings title, or an unrelated sense of the
+word (a paper about biometric fingerprints is not about model fingerprinting) is
+not a use.
 
 This step is not deferred to a later audit. A concept page whose backward links
 are missing is worse than no page at all: the next session greps
@@ -713,9 +717,12 @@ A paper page is acceptable when:
   plain synonym of it.
 - Concepts are linked at their first mention in the High-level overview (the
   Threat Model paragraph included) and again at their first mention in Basic
-  Background.
-- The reciprocal link from each concept's "Papers that use this concept"
-  exists.
+  Background, with the placement check in [lint.md](lint.md) (check 7) run over
+  this page's concepts and silent.
+- The reciprocal link from each concept's "Papers that use this concept" exists,
+  with the reciprocal half of [lint.md](lint.md) check 7 silent. That half is
+  slug-driven and covers the whole corpus in one run, so it also catches an
+  entry an earlier session omitted.
 - Every concept page created this session has been swept backwards against the
   already-compiled papers (step 9), and every earlier paper that uses it links
   it.

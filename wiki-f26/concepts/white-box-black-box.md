@@ -40,6 +40,7 @@ read each paper's definition rather than assuming one.
 - [Examining Zero-Shot Vulnerability Repair with Large Language Models](../papers/pearce-2023-vulnerability-repair.md) — the developer or repair pipeline has black-box access to the commercial code models, seeing only generated completions through an API, not weights or gradients.
 - [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](../papers/zhang-2024-tee-shielded.md) — the protection goal is downgrading white-box stealing and membership inference to black-box label-only attacks; the paper measures how far short the partitions fall.
 - [ModelGuard: Information-Theoretic Defense Against Model Extraction Attacks](../papers/tang-2024-modelguard.md) — its adversary has black-box query access to the prediction API, reading perturbed confidence vectors, and in the strong case additionally knows the target's architecture.
+- [Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection](../papers/greshake-2023-indirect-prompt-injection.md) — its adversary has black-box access and need not query the model at all, planting a payload in content the victim's model will later retrieve.
 
 ## See also
 

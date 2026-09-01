@@ -212,7 +212,9 @@ uv run pre-commit run markdownlint --all-files    # the real styling gate
 
 `check-links.py` proves the teardown left no dangling link (a missed reciprocal
 link, a See-also into a deleted page, or a stale index row would show up here).
-Confirm the new page's `<details>` blocks render (the blank line after each
+A bullet the step-6 rewrite dropped is a different failure, an entry that is
+absent rather than dangling, so nothing above sees it; the reciprocal half of
+[lint.md](lint.md) check 7 does, and must be silent. Confirm the new page's `<details>` blocks render (the blank line after each
 `</summary>`), by eyeball or `gh api -X POST /markdown`; markdownlint and
 `check-links.py` do not check rendering.
 

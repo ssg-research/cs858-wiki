@@ -89,8 +89,9 @@ inference and do not change the weights.
 ### Safety alignment of LLMs
 
 A base model becomes an assistant through
-[instruction tuning](../concepts/instruction-tuning.md): supervised fine-tuning on
-demonstrations, usually followed by preference optimization such as
+[instruction tuning](../concepts/instruction-tuning.md): supervised
+[fine-tuning](../concepts/fine-tuning.md) on demonstrations, usually followed by
+preference optimization such as
 [RLHF](../concepts/rlhf.md) or
 [direct preference optimization](../concepts/direct-preference-optimization.md).
 Both carry a [KL-divergence](../concepts/kl-divergence.md) penalty that keeps the

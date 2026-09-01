@@ -35,8 +35,8 @@ standard tools each carry a cost.
 [Fully homomorphic encryption](../concepts/homomorphic-encryption.md) keeps the
 data encrypted throughout but runs orders of magnitude slower than plaintext. A
 [trusted execution environment](../concepts/trusted-execution-environment.md)
-runs at near-native speed but has repeatedly leaked enclave data through run-time
-and side-channel attacks.
+runs at near-native speed but has repeatedly leaked enclave data through
+run-time and [side-channel attacks](../concepts/side-channel.md).
 
 BliMe (Blinded Memory) takes a third route: a small set of
 instruction-set-architecture (ISA) extensions, paired with a fixed-function
@@ -57,7 +57,7 @@ confidentiality of blinded data on a simplified model ISA.
 **Threat Model:** Several clients outsource computation to one remote server,
 each in its own session. The adversary controls all server software, including
 the operating system and the third-party application that processes the data,
-and can observe [side channels](../concepts/side-channel.md) such as
+and can observe side channels such as
 memory-access patterns, cache state, and instruction timing; another client of the same server is an adversary too.
 Trusted is the server hardware, meaning the BliMe extensions, the encryption
 engine, and the HSM, each assumed implemented correctly. Attacks on the hardware itself are
@@ -89,9 +89,9 @@ system, including a malicious operating system, and lets a remote client attest
 which code is running before trusting it with secrets. Commodity examples are
 Intel SGX, Arm TrustZone, and AMD SEV (Costan and Devadas, 2016; Pinto and Santos,
 2019). The isolation boundary blocks direct memory access from outside, but does
-not by itself hide a program's data-dependent behavior, which is why enclaves have
-been broken by side-channel and transient-execution attacks (Van Bulck et al.,
-2018).
+not by itself hide a program's data-dependent behavior, which is why enclaves
+have been broken by [side-channel](../concepts/side-channel.md) and
+transient-execution attacks (Van Bulck et al., 2018).
 
 ### Taint tracking and information-flow control
 

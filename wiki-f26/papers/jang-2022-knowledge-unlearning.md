@@ -28,10 +28,12 @@ tags:
 
 ## High-level overview
 
-A pretrained language model memorizes parts of its training corpus, personal
-information included, and an extraction attack can recover some of it verbatim.
+A pretrained language model [memorizes](../concepts/memorization.md) parts of
+its training corpus, personal information included, and an extraction attack can
+recover some of it verbatim.
 The standard privacy defenses, scrubbing the corpus before training and training
-under differential privacy, both require retraining from scratch, which is
+under [differential privacy](../concepts/differential-privacy.md), both require
+retraining from scratch, which is
 impractical each time an individual files a right-to-be-forgotten request. This
 work proposes *knowledge unlearning*: a few gradient-ascent updates applied to
 the already-trained model on the specific token sequences that must be forgotten,

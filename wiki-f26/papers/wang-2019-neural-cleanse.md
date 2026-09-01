@@ -48,7 +48,9 @@ the trigger stops working.
 
 The techniques are evaluated on handwritten-digit recognition (MNIST),
 traffic-sign recognition (GTSRB), and two face-recognition models (one with a
-large label space, one built by transfer learning), against two injection methods
+large label space, one built by
+[transfer learning](../concepts/transfer-learning.md)), against two injection
+methods
 from prior work (BadNets and Trojan Attack) and several
 [adaptive attack](../concepts/adaptive-attack.md) variants.
 Headline results at abstract level: the method separates infected from clean

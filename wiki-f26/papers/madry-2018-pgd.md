@@ -47,16 +47,16 @@ test input, so it sits below clean accuracy on the same model.
 The paper reports that the inner maximization is tractable in practice despite
 being non-concave, meaning its loss surface over the perturbation has many
 separate local maxima with no guarantee that any method finds the highest.
-Projected gradient descent (PGD), rerun from many random starting points inside
-the allowed set ("random restarts"), behaves as the strongest first-order attack.
-It reports that robust classification needs
-noticeably larger networks than clean classification. Training against the PGD
-adversary yields models that withstand the strongest attacks the authors
-evaluate, above 89% robust accuracy on MNIST and around 46% on CIFAR-10, and the
-trained models were released as public attack challenges. The method is now
-called PGD adversarial training or Madry-style adversarial training, it remains
-the reference baseline for empirical defenses, and "PGD" without qualification
-usually means this paper's attack.
+[Projected gradient descent](../concepts/projected-gradient-descent.md) (PGD),
+rerun from many random starting points inside the allowed set ("random
+restarts"), behaves as the strongest first-order attack. It reports that robust
+classification needs noticeably larger networks than clean classification.
+Training against the PGD adversary yields models that withstand the strongest
+attacks the authors evaluate, above 89% robust accuracy on MNIST and around 46%
+on CIFAR-10, and the trained models were released as public attack challenges.
+The method is now called PGD adversarial training or Madry-style adversarial
+training, it remains the reference baseline for empirical defenses, and "PGD"
+without qualification usually means this paper's attack.
 
 **Threat Model:** An evasion (test-time) setting. The adversary perturbs
 individual inputs at classification time; the training data and the model are
