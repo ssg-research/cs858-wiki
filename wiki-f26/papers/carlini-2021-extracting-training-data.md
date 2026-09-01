@@ -40,7 +40,8 @@ massive, de-duplicated corpus, a regime with almost no gap between training and
 test loss, still memorizes individual examples tightly enough that an outsider
 can pull them back out word for word. It answers yes, with a training-data
 extraction attack that pairs broad sampling of candidate continuations with a
-membership-inference ranking signal: a sequence the target model finds far less
+[membership-inference](../concepts/membership-inference.md) ranking signal: a
+sequence the target model finds far less
 surprising than a reference model does is flagged as likely verbatim training
 text.
 

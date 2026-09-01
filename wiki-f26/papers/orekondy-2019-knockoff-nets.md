@@ -37,8 +37,9 @@ attack builds a "transfer set" of image-prediction pairs by querying the victim,
 then trains the knockoff on that set to imitate the victim's outputs. Query
 images come from a large public image collection that need not overlap the
 victim's training distribution, chosen either by a random strategy or by an
-adaptive strategy that casts query selection as a reinforcement-learning problem
-for better sample-efficiency.
+adaptive strategy that casts query selection as a
+[reinforcement-learning](../concepts/reinforcement-learning.md) problem for
+better sample-efficiency.
 
 The reported observations: a knockoff trained on images from a different
 distribution still recovers a large fraction of the victim's accuracy (on the
@@ -150,8 +151,9 @@ A related thread trained a substitute model not to steal the task but to enable
 evasion: a local stand-in, trained on synthetic queries to the victim, supplied
 the gradients for crafting adversarial examples that transferred back to the
 target (Papernot et al., 2017). Separately, a family of inference attacks read
-properties of the model or its data off the same interface: membership inference
-decided whether a specific record was in the training set (Shokri et al., 2017;
+properties of the model or its data off the same interface:
+[membership inference](../concepts/membership-inference.md) decided whether a
+specific record was in the training set (Shokri et al., 2017;
 Salem et al., 2019), and model inversion reconstructed a representative, often
 fuzzy, view of a class (Fredrikson et al., 2015).
 

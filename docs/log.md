@@ -1208,3 +1208,61 @@ the instructions added against each cause:
 
 Concepts 75 to 82; stats line updated. markdownlint, pre-commit, and check-links
 clean. Model: Opus 5 (`claude-opus-5[1m]`).
+
+## [2026-08-31 22:32] fix | Concept-link placement: PGD on the Madry page, and the check that let it through
+
+`madry-2018-pgd.md` wrote "Projected gradient descent (PGD)" as plain text in the
+High-level overview and linked
+[projected gradient descent](../wiki-f26/concepts/projected-gradient-descent.md)
+only in Basic Background. The link is now on the overview's first mention, and
+the paragraph is rewrapped to the house width.
+
+The rule it broke was already written down in three places, so restating it
+would have changed nothing. What failed is lint check 7, the sweep run whenever
+a concept page is created: it asked `grep -q "concepts/$SLUG.md" "$f"`, a
+whole-file test for presence. A page that links a concept in Basic Background
+and spells it out in the overview answers `LINKED` to that question, which is
+how the Madry page passed the sweep that preceded it.
+
+Check 7's snippet is replaced with a section-aware one. It splits each paper
+page into High-level overview and Basic Background, masks the concept's own
+links, and reports `PLAIN FIRST` when a section's first mention precedes its
+link, keeping `UNLINKED` for pages that link the concept nowhere. Run against
+the pre-fix corpus with `SLUG="projected-gradient-descent"` it reports the Madry
+page; run after the fix it is silent. Subsection headings are excluded, since
+the house pattern is a heading followed by a linked first sentence.
+
+Step 9 of `generate-paper-summary.md` now says what to do with each verdict, and
+the self-review item asserting first-mention placement now names the check that
+settles it.
+
+A corpus-wide sweep of the same test found 24 further instances across 14 pages,
+all fixed here: a concept's first mention in a section was plain text while its
+link sat later in that section or only in the other one. `fine-tuning` accounts
+for five and the Jain page for five. Where the link already sat later in the same
+section (Abadi on `privacy-budget`, LiRA on `membership-inference`, BliMe on
+`side-channel`) it was moved rather than duplicated, so later repetitions stay
+plain.
+
+Two judgment calls worth recording. Anchor text is an inflection of the target
+title where the first mention is inflected: `instruction-tuned` and
+`Differentially private` point at pages titled "Instruction tuning" and
+"Differential privacy". And on the Bao page the first mention of differential
+privacy is the adjectival "Differentially private fine-tuning"; the link went on
+the noun form six lines later, whose anchor matches the page title exactly.
+
+Two of the 24 are `UNLINKED` rather than `PLAIN FIRST`, a concept discussed on a
+page that links it nowhere: membership inference in the Knockoff Nets Paper
+Context, and the Jang overview's "memorizes", whose link sat only in Basic
+Background.
+
+The rest of the sweep's hits were read and discarded as term matches rather than
+uses, which is the review-queue behaviour the check is meant to have. "Open
+Pre-trained Transformer (OPT)" on the Kirchenbauer page is a model family name;
+`LLM` matches the `jailbreak` page's own title, "Jailbreak (LLM)"; "reinforcement
+learning from human feedback" on the Wei and Greshake pages is already linked to
+`rlhf`, which is the right target for that phrase; `PGD` on the Duddu page links
+the Madry paper, a cross-reference rather than a concept link; and the remaining
+hits sit in References entries and Essential Readings titles, which take no link.
+
+markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).

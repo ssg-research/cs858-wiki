@@ -33,8 +33,8 @@ examples, and that data may be sensitive. This paper trains deep networks under
 [differential privacy](../concepts/differential-privacy.md), a guarantee on the
 training algorithm: removing or adding any single example changes the
 distribution over trained models by at most a bounded factor (epsilon, with
-slack delta, the run's "privacy budget"). Its algorithm, now universally called
-DP-SGD, modifies
+slack delta, the run's "[privacy budget](../concepts/privacy-budget.md)"). Its
+algorithm, now universally called DP-SGD, modifies
 [stochastic gradient descent](../concepts/stochastic-gradient-descent.md) in two
 places: each example's gradient is
 [clipped](../concepts/gradient-clipping.md) to a fixed norm, bounding any one
@@ -42,9 +42,9 @@ example's sensitivity, and calibrated Gaussian noise is added before each update
 (the [Gaussian mechanism](../concepts/gaussian-mechanism.md)).
 
 The second contribution is the moments accountant, a tighter bound on the
-[privacy budget](../concepts/privacy-budget.md) spent across the thousands of
-noisy steps a deep model takes. Earlier accounting forced training to exhaust its
-budget long before the model was useful; the moments accountant tracks privacy
+privacy budget spent across the thousands of noisy steps a deep model takes.
+Earlier accounting forced training to exhaust its budget long before the model
+was useful; the moments accountant tracks privacy
 loss tightly enough to keep budgets in the single digits. Implemented in
 TensorFlow, the paper reports 97% test accuracy on MNIST and 73% on CIFAR-10 at
 single-digit budgets ((8, 10^-5)-differential privacy, with 90% on MNIST at

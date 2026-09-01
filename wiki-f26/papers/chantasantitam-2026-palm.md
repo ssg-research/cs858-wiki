@@ -48,9 +48,10 @@ runs operations inside a *confidential virtual machine*, a
 holding an entire VM, paired with a TEE-aware GPU so the accelerator's work is
 itself measured and attested, and it measures out-of-order dataset reads with
 an order-independent hash. On this basis it defines property measurements for a
-catalogue of operations from preprocessing through training, fine-tuning,
-evaluation, and chat inference. The output is a verifiable *property card*: a
-model card, datasheet, or inference card. The prototype runs on commodity Intel
+catalogue of operations from preprocessing through training,
+[fine-tuning](../concepts/fine-tuning.md), evaluation, and chat inference. The
+output is a verifiable *property card*: a model card, datasheet, or inference
+card. The prototype runs on commodity Intel
 TDX and an NVIDIA H100, reports under 11% overhead on common operations, and its
 attestation protocol is machine-checked in the Tamarin prover. PAL\*M roots
 verifiability in trusted hardware, the counterpart to cryptographic schemes that

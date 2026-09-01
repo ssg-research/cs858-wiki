@@ -32,8 +32,9 @@ tags:
 
 ## High-level overview
 
-Running a transformer as a cloud service usually means the client sends its
-prompt to the server in the clear and trusts the server with it.
+Running a [transformer](../concepts/transformer.md) as a cloud service usually
+means the client sends its prompt to the server in the clear and trusts the
+server with it.
 [Secure inference](../concepts/secure-inference.md) removes that disclosure: the
 client obtains the model's prediction while the server learns nothing about the
 input and the client learns nothing about the weights beyond the result.

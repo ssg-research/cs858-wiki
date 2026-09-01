@@ -46,8 +46,9 @@ false-positive rate of 0.1%, LiRA is roughly ten times more powerful than prior
 attacks, and it also dominates them on the old average-case metrics and stays
 effective against well-generalizing models that earlier attacks could barely
 touch. The paper ships an online and a cheaper offline variant, releases code,
-and argues that prior conclusions about memorization, defenses, and "private"
-training algorithms need re-examination under the new metric.
+and argues that prior conclusions about
+[memorization](../concepts/memorization.md), defenses, and "private" training
+algorithms need re-examination under the new metric.
 
 **Threat Model:** A training-data privacy setting. The target model is trained
 without the adversary's participation: the adversary contributes none of the
@@ -79,7 +80,7 @@ an example is the negative log of the confidence assigned to its true label.
 Training therefore makes training examples low-loss by construction, and the
 gap between training and test accuracy (the generalization gap) measures how
 much lower. That asymmetry between seen and unseen data is the signal every
-membership inference attack feeds on.
+[membership inference](../concepts/membership-inference.md) attack feeds on.
 
 ### Memorization
 
@@ -93,7 +94,7 @@ single global decision rule treats examples unequally.
 
 ### Membership inference
 
-[Membership inference](../concepts/membership-inference.md) is formalized as a
+Membership inference is formalized as a
 security game: a challenger trains a model on a sampled dataset, flips a coin
 to hand the adversary either a training-set member or a fresh point, and the
 adversary must guess which (Yeom et al., 2018). The attack class began as

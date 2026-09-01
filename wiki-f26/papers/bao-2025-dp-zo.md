@@ -36,7 +36,8 @@ record's influence on what is released. The standard method,
 [DP-SGD](abadi-2016-dp-sgd.md), works on per-example first-order gradients
 (Abadi et al., 2016), but computing those gradients by backpropagation through
 an LLM is memory-heavy, and for billion-parameter models the gradient step alone
-can exceed a high-end GPU. This paper fine-tunes under differential privacy with
+can exceed a high-end GPU. This paper fine-tunes under
+[differential privacy](../concepts/differential-privacy.md) with
 [zeroth-order optimization](../concepts/zeroth-order-optimization.md) instead: a
 gradient-free optimizer that estimates a descent direction from forward-pass
 loss differences along random perturbation directions, so it needs roughly the
@@ -50,7 +51,8 @@ DP-AggZO improves the privacy-utility trade-off of private zeroth-order
 fine-tuning. Across a masked language model (RoBERTa) and autoregressive models
 (the OPT family), on classification and generation tasks, it consistently beats
 the prior differentially private zeroth-order baseline (DPZO) at the same
-privacy budget, and it matches or surpasses the state-of-the-art first-order
+[privacy budget](../concepts/privacy-budget.md), and it matches or surpasses the
+state-of-the-art first-order
 private optimizer (DP-AdamW) while using far less memory; on the 355M-parameter
 model it leads DP-AdamW across the benchmark tasks. On the largest model
 studied, the first-order baselines run out of memory on a 96 GB GPU, while
@@ -86,7 +88,8 @@ as a gradient or a loss-difference estimate, is first forced into one by
 [clipping](../concepts/gradient-clipping.md) it to a fixed norm per record. Each
 private step spends part of a [privacy budget](../concepts/privacy-budget.md);
 composition theorems and a privacy accountant bound the total leakage across the
-thousands of steps a fine-tuning run takes, and sampling each batch at random
+thousands of steps a [fine-tuning](../concepts/fine-tuning.md) run takes, and
+sampling each batch at random
 amplifies the per-step guarantee. Iterative training is commonly analyzed with
 Rényi differential privacy, an accounting framework that tracks the Rényi
 divergence between the output distributions on adjacent datasets and composes

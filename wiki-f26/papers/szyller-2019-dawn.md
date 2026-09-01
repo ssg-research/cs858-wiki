@@ -55,7 +55,8 @@ the surrogate rather than by the defender, inverting the usual watermarking
 setup.
 
 The paper reports that DAWN watermarks every surrogate produced by two
-extraction attacks, including the functionality-stealing attack of
+extraction attacks, including the
+[functionality-stealing](../concepts/functionality-stealing.md) attack of
 [Knockoff Nets](orekondy-2019-knockoff-nets.md) (Orekondy et al., 2019), lets the
 owner demonstrate ownership with high confidence, and costs honest clients a
 negligible drop in accuracy (0.03 to 0.5%).

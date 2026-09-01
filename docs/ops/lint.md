@@ -200,19 +200,47 @@ might use, separated by `|`, and run:
 WIKI_DIR="wiki-f26"
 SLUG="cross-entropy"
 TERMS="cross-entropy|cross entropy|negative log likelihood|softmax loss"
-for f in $WIKI_DIR/papers/*.md; do
-  case "$f" in *README.md) continue;; esac
-  grep -qiE "$TERMS" "$f" || continue
-  grep -q "concepts/$SLUG.md" "$f" \
-    && echo "LINKED:   $(basename "$f")" \
-    || echo "UNLINKED: $(basename "$f")"
-done
+WIKI_DIR="$WIKI_DIR" SLUG="$SLUG" TERMS="$TERMS" python3 -c '
+import glob, os, re
+slug, terms = os.environ["SLUG"], os.environ["TERMS"]
+link = re.compile(r"\[[^]]+\]\(\.\./concepts/" + re.escape(slug) + r"\.md\)")
+term = re.compile(r"(?<![\w-])(?:" + terms + r")(?![\w-])", re.I)
+for path in sorted(glob.glob(os.environ["WIKI_DIR"] + "/papers/*.md")):
+    name = os.path.basename(path)
+    if name == "README.md":
+        continue
+    text = open(path).read()
+    if not term.search(text):
+        continue
+    if not link.search(text):
+        print(f"UNLINKED:    {name}")
+        continue
+    for section in ("High-level overview", "Basic Background"):
+        m = re.search(r"^## " + section + r"\n(.*?)(?=^## |^<details>|\Z)", text, re.M | re.S)
+        if not m:
+            continue
+        body = re.sub(r"^#.*$", "", m.group(1), flags=re.M)
+        anchor = link.search(body)
+        plain = term.search(link.sub(lambda k: " " * (k.end() - k.start()), body))
+        if plain and (anchor is None or plain.start() < anchor.start()):
+            print(f"PLAIN FIRST: {name}  ({section}: {plain.group(0)!r})")
+'
 ```
 
-Every `UNLINKED` line is a page that talks about the concept without linking it.
-Read each hit before acting: a bare bibliography entry or a passing contrast is
-not always a use. Then close the loop in the other direction, which must be
-silent:
+An `UNLINKED` line is a page that talks about the concept and links it nowhere.
+A `PLAIN FIRST` line is a page that links the concept somewhere and still spells
+it out in plain text earlier in the named section. Both are misses, because the
+house rule is placement, not presence: link the first mention in the High-level
+overview (the Threat Model paragraph included) and the first mention in Basic
+Background, and leave later repetitions plain. A page that satisfies the rule in
+one of the two sections and breaks it in the other is the common case, so the
+check reports the two sections separately.
+
+Read each hit before acting. A term inside a References entry, an Essential
+Readings title, a paper or product name that happens to contain it ("Open
+Pre-trained Transformer"), or an unrelated sense of the word (a paper about
+biometric fingerprints is not about model fingerprinting) is not a use. Then
+close the loop in the other direction, which must be silent:
 
 ```bash
 WIKI_DIR="wiki-f26"
@@ -221,11 +249,6 @@ for f in $(grep -rl "concepts/$SLUG.md" $WIKI_DIR/papers/ | xargs -n1 basename);
   grep -q "papers/$f" "$WIKI_DIR/concepts/$SLUG.md" || echo "NO RECIPROCAL ENTRY: $f"
 done
 ```
-
-Where a page uses a concept several times, the house rule is to link the first
-mention in the High-level overview (the Threat Model paragraph included) and the
-first mention in Basic Background, and to leave later repetitions plain. A term
-that appears only inside a References entry or a paper title is not a use.
 
 ## 8. Concept links that land on the wrong page
 

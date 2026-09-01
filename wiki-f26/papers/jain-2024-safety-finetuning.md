@@ -28,13 +28,14 @@ tags:
 
 ## High-level overview
 
-Safety [fine-tuning](../concepts/fine-tuning.md) aligns an instruction-tuned
-language model to refuse unsafe
-requests, yet jailbreaks and adversarial inputs keep eliciting the content it
-was trained to withhold. This paper asks two mechanistic questions: what does
-safety fine-tuning change inside the model, and how do those inputs bypass the
-change. To study both under controlled conditions, the authors build a synthetic
-data-generating framework in which an input is a task (an *operator*, such as
+Safety [fine-tuning](../concepts/fine-tuning.md) aligns an
+[instruction-tuned](../concepts/instruction-tuning.md) language model to refuse
+unsafe requests, yet [jailbreaks](../concepts/jailbreak.md) and adversarial
+inputs keep eliciting the content it was trained to withhold. This paper asks
+two mechanistic questions: what does safety fine-tuning change inside the model,
+and how do those inputs bypass the change. To study both under controlled
+conditions, the authors build a synthetic data-generating framework in which an
+input is a task (an *operator*, such as
 "design") applied to a concept (an *operand*, such as "cycle" versus "bomb"),
 with the surrounding text drawn from a probabilistic context-free grammar. The
 design makes safety a property of the combination rather than of any token alone.
@@ -43,7 +44,8 @@ corroborate the findings on
 Llama-2 and Llama-3 chat models.
 
 Three safety fine-tuning protocols are compared: supervised safety fine-tuning
-(SSFT), direct preference optimization (DPO), and machine unlearning. The
+(SSFT), [direct preference optimization](../concepts/direct-preference-optimization.md)
+(DPO), and [machine unlearning](../concepts/machine-unlearning.md). The
 headline is that safety fine-tuning makes a small, specialized change. It
 minimally transforms the MLP weights so that unsafe-input activations are routed
 into a direction the rest of the network barely reads, which separates safe and
@@ -89,7 +91,8 @@ that last stage changes relative to the instruction-tuned model it starts from.
 ### Safety fine-tuning protocols
 
 Safety training is realized through several objectives. Supervised safety
-fine-tuning trains on labeled safe and refusal responses, the supervised special
+[fine-tuning](../concepts/fine-tuning.md) trains on labeled safe and refusal
+responses, the supervised special
 case of [instruction tuning](../concepts/instruction-tuning.md) (Ouyang et al.,
 2022). [RLHF](../concepts/rlhf.md) optimizes a policy against a learned reward
 model (Christiano et al., 2017; Ouyang et al., 2022), while
