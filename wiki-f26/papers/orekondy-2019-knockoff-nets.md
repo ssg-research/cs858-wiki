@@ -20,7 +20,7 @@ tags:
 
 # Knockoff Nets: Stealing Functionality of Black-Box Models
 
-**Paper:** [arXiv:1812.02766](https://arxiv.org/abs/1812.02766)
+**Paper:** [CVPR 2019](https://openaccess.thecvf.com/content_CVPR_2019/html/Orekondy_Knockoff_Nets_Stealing_Functionality_of_Black-Box_Models_CVPR_2019_paper.html)
 
 ## High-level overview
 

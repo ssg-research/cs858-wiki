@@ -27,7 +27,7 @@ tags:
 
 # No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML
 
-**Paper:** [arXiv:2310.07152](https://arxiv.org/abs/2310.07152)
+**Paper:** [IEEE S&P 2024](https://ieeexplore.ieee.org/document/10646815)
 
 ## High-level overview
 

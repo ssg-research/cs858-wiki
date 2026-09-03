@@ -23,7 +23,7 @@ tags:
 
 # A Watermark for Large Language Models
 
-**Paper:** [arXiv:2301.10226](https://arxiv.org/abs/2301.10226)
+**Paper:** [ICML 2023](https://proceedings.mlr.press/v202/kirchenbauer23a.html)
 
 ## High-level overview
 

@@ -21,7 +21,7 @@ tags:
 
 # Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection
 
-**Paper:** [arXiv:2302.12173](https://arxiv.org/abs/2302.12173)
+**Paper:** [AISec 2023](https://dl.acm.org/doi/10.1145/3605764.3623985)
 
 ## High-level overview
 

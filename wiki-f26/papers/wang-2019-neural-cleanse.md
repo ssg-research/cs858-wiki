@@ -23,7 +23,7 @@ tags:
 
 # Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
 
-**Paper:** [IEEE S&P 2019](http://people.cs.uchicago.edu/~ravenben/publications/pdf/backdoor-sp19.pdf)
+**Paper:** [IEEE S&P 2019](https://ieeexplore.ieee.org/document/8835365)
 
 ## High-level overview
 

@@ -20,7 +20,7 @@ tags:
 
 # SoK: Unintended Interactions among Machine Learning Defenses and Risks
 
-**Paper:** [arXiv:2312.04542](https://arxiv.org/abs/2312.04542)
+**Paper:** [IEEE S&P 2024](https://ieeexplore.ieee.org/document/10646709)
 
 ## High-level overview
 

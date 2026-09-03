@@ -20,7 +20,7 @@ tags:
 
 # PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models
 
-**Paper:** [arXiv:2402.07867](https://arxiv.org/abs/2402.07867)
+**Paper:** [USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25/presentation/zou-poisonedrag)
 
 ## High-level overview
 

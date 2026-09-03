@@ -21,7 +21,7 @@ tags:
 
 # Towards Deep Learning Models Resistant to Adversarial Attacks
 
-**Paper:** [arXiv:1706.06083](https://arxiv.org/abs/1706.06083)
+**Paper:** [ICLR 2018](https://openreview.net/forum?id=rJzIBfZAb)
 
 ## High-level overview
 

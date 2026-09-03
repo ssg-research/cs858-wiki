@@ -23,7 +23,7 @@ tags:
 
 # Membership Inference Attacks From First Principles
 
-**Paper:** [arXiv:2112.03570](https://arxiv.org/abs/2112.03570)
+**Paper:** [IEEE S&P 2022](https://ieeexplore.ieee.org/document/9833649)
 
 ## High-level overview
 

@@ -23,7 +23,7 @@ tags:
 
 # BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking
 
-**Paper:** [arXiv:2204.09649](https://arxiv.org/abs/2204.09649)
+**Paper:** [NDSS 2024](https://www.ndss-symposium.org/ndss-paper/blime-verifiably-secure-outsourced-computation-with-hardware-enforced-taint-tracking/)
 
 ## High-level overview
 

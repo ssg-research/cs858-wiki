@@ -24,7 +24,7 @@ tags:
 
 # Deep Learning with Differential Privacy
 
-**Paper:** [arXiv:1607.00133](https://arxiv.org/abs/1607.00133)
+**Paper:** [ACM CCS 2016](https://dl.acm.org/doi/10.1145/2976749.2978318)
 
 ## High-level overview
 

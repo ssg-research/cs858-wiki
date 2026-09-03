@@ -200,8 +200,14 @@ English sense, write "relies on," "assumes," or "takes on faith."
 ## Format by section
 
 - **Paper link.** One line directly under the H1: `**Paper:**` followed by a
-  link to the paper itself. The link text names where it goes, `arXiv:ID` for a
-  preprint and the venue and year otherwise. No other prose on the line.
+  link to the paper at its publication venue. The link text is the venue and
+  year (`NDSS 2025`, `USENIX Security 2024`, `IEEE S&P 2019`), and the target is
+  the venue's own page for the paper: the ACM Digital Library for ACM
+  proceedings, IEEE Xplore for IEEE, and the proceedings site otherwise
+  (`usenix.org`, `ndss-symposium.org`, `aclanthology.org`,
+  `proceedings.mlr.press`, `proceedings.neurips.cc`, `openreview.net`,
+  `openaccess.thecvf.com`). A paper with no published venue takes its arXiv
+  abstract page under the text `arXiv:ID`. No other prose on the line.
 - **High-level overview.** One to three paragraphs, a contextualized abstract:
   problem, named approach, headline results at abstract level, decoded
   terminology. About 350 words of body prose, then a separate bolded paragraph

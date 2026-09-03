@@ -24,7 +24,7 @@ tags:
 
 # Knowledge Unlearning for Mitigating Privacy Risks in Language Models
 
-**Paper:** [arXiv:2210.01504](https://arxiv.org/abs/2210.01504)
+**Paper:** [ACL 2023](https://aclanthology.org/2023.acl-long.805/)
 
 ## High-level overview
 
