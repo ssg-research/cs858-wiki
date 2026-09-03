@@ -24,7 +24,7 @@ tags:
 
 # What Makes and Breaks Safety Fine-tuning? A Mechanistic Study
 
-**Paper:** [arXiv:2407.10264](https://arxiv.org/abs/2407.10264)
+**Paper:** [NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024/hash/a9bef53eb7b0e5950d4f2d9c74a16006-Abstract-Conference.html)
 
 ## High-level overview
 

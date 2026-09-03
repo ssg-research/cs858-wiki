@@ -29,7 +29,7 @@ tags:
 
 # Extracting Training Data from Large Language Models
 
-**Paper:** [arXiv:2012.07805](https://arxiv.org/abs/2012.07805)
+**Paper:** [USENIX Security 2021](https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting)
 
 ## High-level overview
 

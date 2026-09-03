@@ -25,7 +25,7 @@ tags:
 
 # Safety Alignment Should Be Made More Than Just a Few Tokens Deep
 
-**Paper:** [arXiv:2406.05946](https://arxiv.org/abs/2406.05946)
+**Paper:** [ICLR 2025](https://openreview.net/forum?id=6Mxhg9PtDE)
 
 ## High-level overview
 

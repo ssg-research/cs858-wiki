@@ -199,7 +199,20 @@ source.
   `--force`. Use the printed `Saved:` path as `<path>` in step 2, and the
   printed metadata for the frontmatter (`arxiv:` gets the ID).
 - **Local PDF path.** Read the metadata off the first page (title block, author
-  line). If the venue is not on the page, it is fine to leave it out.
+  line).
+- **Venue.** The `**Paper:**` line names where the paper was published, so
+  resolve the venue on either path, including for a paper you reached through
+  arXiv. Read it off two independent bibliographic sources and require them to
+  agree: the arXiv entry's `comment` and `journal_ref` fields, DBLP, Crossref,
+  and OpenAlex each answer for this field, and each is wrong on its own axis, so
+  agreement is what earns the claim. Take the venue's own page for the paper as
+  the link target: the ACM Digital Library for ACM proceedings, IEEE Xplore for
+  IEEE, and the proceedings site otherwise (`usenix.org`,
+  `ndss-symposium.org`, `aclanthology.org`, `proceedings.mlr.press`,
+  `proceedings.neurips.cc`, `openreview.net`, `openaccess.thecvf.com`). Where
+  the sources disagree, or only one of them knows the paper, put the candidates
+  and their provenance to the instructor rather than breaking the tie. A paper
+  with no published venue keeps its arXiv abstract page.
 
 ### 2. Read the paper, including its bibliography
 
@@ -536,7 +549,7 @@ tags:
 
 # Paper title
 
-**Paper:** [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
+**Paper:** [Venue YYYY](https://venue.example/paper-page)
 
 ## High-level overview
 
@@ -604,11 +617,14 @@ after `</summary>` so the body stays Markdown and its relative links remain
 checkable.
 
 Every paper page opens with a `---` rule, then an `## [Wiki Home](../README.md)`
-link, then the H1, then a `**Paper:**` line linking to the paper itself. That
-link is the slot's hyperlink from the spreadsheet's paper column, the same target
-the reading-list table uses, and its text names where the link goes: `arXiv:ID`
-for an arXiv preprint, otherwise the venue and year (`NDSS 2025`,
-`USENIX Security 2024`, `IEEE S&P 2019`). All of this is page chrome, sitting
+link, then the H1, then a `**Paper:**` line linking to the paper at its
+publication venue. Its text is the venue and year (`NDSS 2025`,
+`USENIX Security 2024`, `IEEE S&P 2019`) and its target is the venue's own page
+for the paper, both resolved in step 1 from agreeing bibliographic sources. The
+spreadsheet's paper column is a separate value, the copy the reading list was
+built from, and it is the reading list's to keep. A paper with no published
+venue takes its arXiv abstract page under the text `arXiv:ID`. All of this is
+page chrome, sitting
 outside the content sections, and there is no repeat link at the foot of the
 page. Concept pages carry the Wiki Home link without the rule or the paper
 link.

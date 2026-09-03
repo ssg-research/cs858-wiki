@@ -1299,3 +1299,60 @@ setting. The page has no References section, so the citation is recorded here
 rather than on the page.
 
 markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).
+
+## [2026-09-03 15:22] fix | Canonical publication venue for every paper link
+
+The `**Paper:**` line on each of the 24 paper pages now points at the paper's
+publication venue rather than at whichever copy the reading-list spreadsheet
+carried. Eighteen lines changed: seventeen moved off arXiv, and
+`wang-2019-neural-cleanse` moved off an author's personal-site PDF onto IEEE
+Xplore. Five pages (`bao-2025-dp-zo`, `moon-2025-asgard`, `qu-2025-zkgpt`,
+`tang-2024-modelguard`, `zhang-2025-nexus`) already named their venue and are
+unchanged. `chantasantitam-2026-palm` keeps its arXiv link: OpenAlex types it a
+preprint and DBLP knows it only as a CoRR entry, so no published venue exists.
+
+Every venue was established from at least two independent bibliographic sources
+among the arXiv entry's `comment` and `journal_ref` fields, DBLP, Crossref,
+OpenAlex, and the instructor's Zotero library, with an identity gate on title
+before any metadata was read. Eight of the papers were already in Zotero and
+agreed with the other witnesses on every venue. Link targets are the venues' own
+pages: ACM Digital Library, IEEE Xplore, `usenix.org`, `ndss-symposium.org`,
+`aclanthology.org`, `proceedings.mlr.press`, `proceedings.neurips.cc`,
+`openreview.net`, and `openaccess.thecvf.com`. All eighteen were fetched and
+confirmed to serve the right paper, except the ACM and IEEE pages, which
+bot-challenge non-browser clients and whose URLs are built from corroborated
+DOIs.
+
+Four venues differ in year from the page's `year:` field and slug, which both
+carry the arXiv posting year: `jang-2022-knowledge-unlearning` is ACL 2023,
+`qi-2024-shallow-safety-alignment` is ICLR 2025, `zou-2024-poisonedrag` is
+USENIX Security 2025, and `szyller-2019-dawn` is ACM MM 2021. The frontmatter
+and slugs are untouched, since renaming a slug moves every inbound link across
+the corpus.
+
+Three cases are worth an instructor read. `szyller-2019-dawn` now points at ACM
+MM 2021, which the authors' own arXiv comment calls a "shorter version of this
+work"; the page was compiled from the longer arXiv version.
+`greshake-2023-indirect-prompt-injection` is an AISec 2023 workshop paper rather
+than a CCS main-track paper, and the link text says so.
+`qi-2024-shallow-safety-alignment` has DBLP and Semantic Scholar agreeing on
+ICLR, but only DBLP names the year 2025; Crossref has no record and OpenAlex
+still types the paper a preprint.
+
+Two DOIs circulate for `pearce-2023-vulnerability-repair`: OpenAlex and DBLP
+carry `10.1109/SP46215.2023.10179420` and Crossref carries
+`10.1109/SP46215.2023.10179324`. Crossref redirects the first to the second, so
+they are one record with an alias, and the Xplore page for `10179324` is the
+link target.
+
+`docs/writing-style.md`, `docs/ops/generate-paper-summary.md` (step 1, the page
+skeleton, and the page-chrome paragraph), and `docs/ops/replace-paper.md`
+(step 11 and its checklist) previously sourced this link from the spreadsheet's
+paper column. They now specify the publication venue, the two-agreeing-sources
+rule for establishing it, the per-publisher link targets, and the arXiv fallback
+for an unpublished paper, and they say the spreadsheet's paper column stays with
+the reading list. `scripts/build-paper-table.py` never read that column's
+hyperlink for a paper that has a wiki page, so `wiki-f26/README.md` is unchanged.
+
+markdownlint, check-links, and pre-commit clean. Model: Opus 5
+(`claude-opus-5[1m]`).

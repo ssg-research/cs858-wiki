@@ -22,7 +22,7 @@ tags:
 
 # DAWN: Dynamic Adversarial Watermarking of Neural Networks
 
-**Paper:** [arXiv:1906.00830](https://arxiv.org/abs/1906.00830)
+**Paper:** [ACM MM 2021](https://dl.acm.org/doi/10.1145/3474085.3475591)
 
 ## High-level overview
 

@@ -19,7 +19,7 @@ tags:
 
 # Jailbroken: How Does LLM Safety Training Fail?
 
-**Paper:** [arXiv:2307.02483](https://arxiv.org/abs/2307.02483)
+**Paper:** [NeurIPS 2023](https://proceedings.neurips.cc/paper_files/paper/2023/hash/fd6613131889a4b656206c50a8bd7790-Abstract-Conference.html)
 
 ## High-level overview
 

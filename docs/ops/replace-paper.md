@@ -192,9 +192,13 @@ hold a reading carried over from the old paper; confirm each one fits the new
 paper, and flag any that look like leftovers rather than silently keeping or
 dropping them.
 
-The slot's **paper column** carries the hyperlink for the new page's `**Paper:**`
-line. Take it verbatim, and label it `arXiv:ID` for an arXiv preprint or the
-venue and year otherwise.
+The new page's `**Paper:**` line points at the paper's publication venue.
+Resolve the venue from two agreeing bibliographic sources as in step 1 of
+[generate-paper-summary.md](generate-paper-summary.md), link the venue's own
+page for the paper, and label it with the venue and year; a paper with no
+published venue takes its arXiv abstract page under `arXiv:ID`. The slot's
+**paper column** is a separate value, the copy the reading list was built from,
+and it stays with the reading list.
 
 ### 12. Update the motivating-questions archive
 
@@ -250,8 +254,9 @@ A replacement is acceptable when:
 - The reachability rule was applied: every concept page is either used by a paper
   or reachable from another page, no concept page was deleted while something
   still linked to it, and any kept-but-unused page carries the neutral note.
-- The reading-list table, the indexes, and the new page's Essential Readings and
-  `**Paper:**` link all agree with the spreadsheet for the slot, and the stats
+- The reading-list table, the indexes, and the new page's Essential Readings all
+  agree with the spreadsheet for the slot; the `**Paper:**` link names the
+  paper's publication venue and points at that venue's own page; and the stats
   line is recounted.
 
 Reproducibility is structural, exactly as in
