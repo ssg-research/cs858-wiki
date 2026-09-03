@@ -1283,3 +1283,19 @@ bullet left pointing at a deleted paper, but a bullet the step-6 rewrite dropped
 is absent rather than dangling, and nothing in that playbook saw it.
 
 markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).
+
+## [2026-09-03 14:46] fix | Name the no-box adversary on the white-box/black-box page
+
+`white-box-black-box.md` described a black-box adversary with "no query access
+at all" without naming the term the literature uses for it. The Definition now
+names it at that point, `(sometimes called a "no-box" adversary)`, and the
+paragraph is rewrapped to the house width.
+
+The term is Li, Guo, and Chen, "Practical No-box Adversarial Attacks against
+DNNs" (NeurIPS 2020, arXiv:2012.02525), whose abstract states the attacker "can
+neither access the model information or the training set nor query the model".
+"Zero-query" is the synonym the transfer-attack literature uses for the same
+setting. The page has no References section, so the citation is recorded here
+rather than on the page.
+
+markdownlint and check-links clean. Model: Opus 5 (`claude-opus-5[1m]`).
