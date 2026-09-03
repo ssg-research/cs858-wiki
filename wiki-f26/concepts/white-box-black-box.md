@@ -16,13 +16,13 @@ tags:
 Access assumptions state what the adversary knows about the target model. A
 white-box adversary has everything: architecture, weights, and therefore
 gradients. A black-box adversary sees only the model's outputs through queries,
-or has no query access at all and must rely on
-[transferability](transferability.md) from a surrogate model. Between the two
-sit intermediate notions; one is the first-order adversary, which may compute
-gradients of the loss with respect to the input but use no higher-order
-information. White-box is the worst case for the defender, so
-defense evaluations default to it. Papers define "grey-box" inconsistently, so
-read each paper's definition rather than assuming one.
+or has no query access at all (sometimes called a "no-box" adversary) and must
+rely on [transferability](transferability.md) from a surrogate model. Between
+the two sit intermediate notions; one is the first-order adversary, which may
+compute gradients of the loss with respect to the input but use no higher-order
+information. White-box is the worst case for the defender, so defense
+evaluations default to it. Papers define "grey-box" inconsistently, so read
+each paper's definition rather than assuming one.
 
 ## Papers that use this concept
 
