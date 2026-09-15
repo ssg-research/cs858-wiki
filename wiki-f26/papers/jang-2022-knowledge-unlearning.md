@@ -176,7 +176,7 @@ large language model had not been studied.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Erasing Concepts from Diffusion Models](https://arxiv.org/abs/2303.07345) — the same removal goal in image generation, editing a concept out of the weights rather than a sequence out of a language model.
 - [TOFU: A Task of Fictitious Unlearning for LLMs](https://arxiv.org/abs/2401.06121) — a benchmark built on synthetic author profiles, so what was learned, and therefore what must be forgotten, is known exactly.

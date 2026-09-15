@@ -196,7 +196,7 @@ argmax over a full vocabulary is impractical.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [BumbleBee: Secure Two-party Inference Framework for Large Transformers](https://eprint.iacr.org/2023/1678) — the interactive two-party baseline this non-interactive approach is measured against.
 

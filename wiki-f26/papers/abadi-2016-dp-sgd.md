@@ -185,7 +185,7 @@ Rothblum, 2016; Bun and Steinke, 2016).
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Evaluating Differentially Private Machine Learning in Practice](https://arxiv.org/abs/1902.08874) — what a reported epsilon buys once relaxed variants of the definition are in play, measuring leakage against the guarantee rather than trusting the accounting.
 - [Large Language Models Can Be Strong Differentially Private Learners](https://arxiv.org/abs/2110.05679) — DP-SGD carried to language-model scale, where per-example gradient clipping becomes the memory bottleneck and the utility cost falls sharply from a pretrained starting point.

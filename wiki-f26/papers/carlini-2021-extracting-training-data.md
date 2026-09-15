@@ -181,7 +181,7 @@ a violation: when it moves data out of the context for which it was shared.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Scalable Extraction of Training Data from (Production) Language Models](https://arxiv.org/abs/2311.17035) — the follow-up that scales extraction to aligned production models and measures total memorization rather than confirming individual examples.
 - [Extracting Training Data from Diffusion Models](https://arxiv.org/abs/2301.13188) — the same memorization question in image generation, where a training photograph is regenerated from its caption.

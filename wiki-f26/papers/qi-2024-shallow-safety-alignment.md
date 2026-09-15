@@ -164,7 +164,7 @@ al., 2023), whose KL penalty keeps the aligned policy near the base model.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations](https://arxiv.org/abs/2312.06674) — the system-boundary approach to safety, screening prompts and responses with a separate classifier rather than changing the model's alignment.
 - [SecAlign: Defending Against Prompt Injection with Preference Optimization](https://arxiv.org/abs/2410.05451) — a preference-optimization defense that hardens the model itself, a useful contrast to deepening safety alignment.

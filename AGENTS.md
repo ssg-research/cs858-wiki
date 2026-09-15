@@ -56,7 +56,7 @@ Two rules about the links themselves, both invisible to `check-links.py` because
 a wrong link still resolves. **Where a link goes:** a concept is linked at its
 first mention in the High-level overview (Threat Model paragraph included) and
 again at its first mention in Basic Background; later repetitions stay plain, and
-a term appearing only in a References entry or an Essential Readings title takes
+a term appearing only in a References entry or an Additional Readings title takes
 no link. **Where a link points:** the target page's title is the anchor text or a
 plain synonym of it. Linking "transformer" to a page titled "Language model
 pretraining" is a missing concept page wearing a working link. See

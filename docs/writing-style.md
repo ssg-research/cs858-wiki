@@ -54,7 +54,7 @@ High-level overview, the Threat Model paragraph included, and again at its first
 mention in Basic Background. Leave later repetitions plain. Two links rather than
 one because the two sections serve different readers, the overview reader and the
 prerequisite reader, and either may be where someone enters the page. A term that
-appears only inside a References entry or an Essential Readings title is a
+appears only inside a References entry or an Additional Readings title is a
 citation, not a use, and takes no link.
 
 **Where a link points.** The target page's title is the term in the anchor text,
@@ -246,7 +246,7 @@ English sense, write "relies on," "assumes," or "takes on faith."
 - **Motivating questions.** Staff-side archive only (`agent_docs/`); not on
   the student-facing page. Three to five high-level pre-questions per paper,
   answerable by reading it. Students generate their own.
-- **Essential Readings.** The slot's essential readings, taken verbatim from
+- **Additional Readings.** The slot's additional readings, taken verbatim from
   the spreadsheet column that also feeds the reading-list table, so the page and
   the table show the same set. One bullet each with a one-line "why it's here"
   framing. Renders inside a collapsed `<details>` block, the heading as its

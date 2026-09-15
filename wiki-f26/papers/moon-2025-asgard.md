@@ -185,7 +185,7 @@ enclave.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [ShadowNet: A Secure and Efficient On-device Model Inference System for Convolutional Neural Networks](https://arxiv.org/abs/2011.05905) — a TrustZone-based on-device protection that offloads transformed weights to the untrusted accelerator, a point of contrast with the virtualization-based design.
 

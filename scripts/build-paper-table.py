@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """One-time generator for the reading-list tables in ``wiki-f26/README.md``.
 
-Reads ``docs/CS858-F26-papers-stripped.xlsx`` (sheet ``UpdatedList``) and prints
-the Part 1 / Part 2 sections as HTML tables.
+Reads ``docs/Paper-signup-2026.xlsx`` (sheet ``Sheet1``) and prints the Part 1 /
+Part 2 sections as HTML tables.
 
 The spreadsheet groups papers under a shared theme. Each theme is rendered as a
 full-width section-header row (an HTML ``<th colspan>``) that introduces its
@@ -14,7 +14,7 @@ column:
 * the assigned reading carries an "Assigned reading" label and links to its
   reading companion when one exists (see ``READY``), otherwise to the shared
   ``under-construction.md`` placeholder with a dagger marker;
-* essential readings collapse into a ``<details>`` disclosure beneath the
+* additional readings collapse into a ``<details>`` disclosure beneath the
   primary, keeping the hyperlinks already stored in the spreadsheet (arXiv,
   USENIX, IEEE, ACM, and similar).
 
@@ -23,7 +23,8 @@ wiki repo directly (GitHub, VS Code, Obsidian); the website build rewrites them
 to absolute site URLs.
 
 Paper numbers are read directly from the spreadsheet; the sheet is the source
-of truth for numbering.
+of truth for numbering. The number and date cells are formulas, so the workbook
+is opened with ``data_only`` to read their cached values.
 
 Run from the repo root::
 
@@ -41,8 +42,8 @@ from typing import cast
 
 from openpyxl import load_workbook
 
-XLSX = Path("docs/CS858-F26-papers-stripped.xlsx")
-SHEET = "UpdatedList"
+XLSX = Path("docs/Paper-signup-2026.xlsx")
+SHEET = "Sheet1"
 
 # Papers whose reading companion already exists, keyed by reading-list number.
 READY: dict[int, str] = {
@@ -72,11 +73,12 @@ READY: dict[int, str] = {
     24: "chantasantitam-2026-palm",
 }
 
-NUMBER_COL = 1  # A: Paper #
-TITLE_COL = 2  # B: primary paper
-THEME_COL = 3  # C: theme (vertically merged across its papers)
-TOPIC_COL = 4  # D: topic (Part 1) or Software/Hardware (Part 2)
-ESSENTIAL_COL = 5  # E: essential readings
+PART_COL = 1  # A: date, and the full-width "Part" banners
+NUMBER_COL = 2  # B: Paper #
+TITLE_COL = 3  # C: assigned paper
+THEME_COL = 6  # F: theme (vertically merged across its papers)
+TOPIC_COL = 7  # G: topic (Part 1) or Software/Hardware (Part 2)
+ESSENTIAL_COL = 8  # H: additional readings
 
 UC_PAGE = "under-construction.md"
 UC_MARK = ' <sup title="Reading companion under construction">&dagger;</sup>'
@@ -119,7 +121,7 @@ def read_sheet(
     All openpyxl access is confined here; values cross the boundary as plain
     strings via :func:`cast`, so the rest of the module stays statically typed.
     """
-    workbook = load_workbook(path)
+    workbook = load_workbook(path, data_only=True)
     worksheet = workbook[sheet]
     max_row = worksheet.max_row
     max_col = worksheet.max_column
@@ -158,7 +160,7 @@ def parse(cells: dict[tuple[int, int], XlsxCell], max_row: int) -> list[Part]:
     part_rows = [
         r
         for r in range(2, max_row + 1)
-        if cell_text(cells, r, NUMBER_COL).startswith("Part")
+        if cell_text(cells, r, PART_COL).startswith("Part")
     ]
     paper_rows = [
         r for r in range(2, max_row + 1) if cell_text(cells, r, NUMBER_COL).isdigit()
@@ -169,12 +171,13 @@ def parse(cells: dict[tuple[int, int], XlsxCell], max_row: int) -> list[Part]:
     current_part: Part | None = None
     current_theme = ""
     for row in range(2, max_row + 1):
+        banner = cell_text(cells, row, PART_COL)
         head = cell_text(cells, row, NUMBER_COL)
         theme = cell_text(cells, row, THEME_COL)
         if theme:
             current_theme = theme
-        if head.startswith("Part"):
-            current_part = Part(title=head)
+        if banner.startswith("Part"):
+            current_part = Part(title=banner)
             parts.append(current_part)
             continue
         if not head.isdigit():
@@ -210,12 +213,12 @@ def link(title: str, href: str | None) -> str:
 
 
 def essential_details(items: list[Reading]) -> list[str]:
-    """The collapsible essential-readings block; empty when there are none."""
+    """The collapsible additional-readings block; empty when there are none."""
     if not items:
         return []
     lines = [
         "        <details>",
-        f"          <summary>Essential readings ({len(items)})</summary>",
+        f"          <summary>Additional readings ({len(items)})</summary>",
         "          <ul>",
     ]
     lines += [f"            <li>{link(r.title, r.href)}</li>" for r in items]

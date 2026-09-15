@@ -191,7 +191,7 @@ on several benchmarks when this paper appeared.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [PrivateFL: Accurate, Differentially Private Federated Learning via Personalized Data Transformation](https://www.usenix.org/system/files/usenixsecurity23-yang-yuchen.pdf) — a different lever on the DP utility problem, applied in federated learning.
 - [Local and Central Differential Privacy for Robustness and Privacy in Federated Learning](https://arxiv.org/abs/2009.03561) — the local-versus-central DP distinction that frames where the noise is added.
