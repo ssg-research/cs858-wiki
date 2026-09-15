@@ -189,7 +189,7 @@ mechanism had received little attention.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Beowulf: Mitigating Model Extraction Attacks Via Reshaping Decision Regions](https://dl.acm.org/doi/pdf/10.1145/3658644.3670267) — a different defense lever against extraction, reshaping the target's decision regions rather than perturbing the returned probabilities.
 

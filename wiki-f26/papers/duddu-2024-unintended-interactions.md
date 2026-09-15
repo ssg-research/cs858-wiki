@@ -161,7 +161,7 @@ interpretability, and privacy (Ferry et al., 2023).
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Conflicting Interactions Among Protection Mechanisms for Machine Learning Models](https://arxiv.org/abs/2207.01991) — the precursor from two of the same authors; it documents that combining defenses can make each less effective, the observation this SoK generalizes into a framework.
 - [Combining Machine Learning Defenses without Conflicts](https://arxiv.org/abs/2411.09776) — a later follow-up that builds on this systematization to compose multiple defenses while avoiding the conflicts it catalogues.

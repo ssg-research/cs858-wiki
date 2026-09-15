@@ -178,7 +178,7 @@ protections or pays a substantial performance cost.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Origami Inference: Private Inference Using Hardware Enclaves](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9582200) — an enclave-based approach to private inference, a point of contrast with confidentiality enforced by hardware taint tracking.
 

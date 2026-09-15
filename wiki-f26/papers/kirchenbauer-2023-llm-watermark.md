@@ -197,7 +197,7 @@ output was announced as work in progress (Aaronson, 2022).
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Tree-Ring Watermarks: Fingerprints for Diffusion Images that are Invisible and Robust](https://arxiv.org/abs/2305.20030) — the analogue for diffusion-image provenance, a contrast in modality.
 - [Media Forensics and DeepFakes: An Overview](https://arxiv.org/abs/2001.06564) — the detection-after-the-fact tradition this proactive approach departs from.

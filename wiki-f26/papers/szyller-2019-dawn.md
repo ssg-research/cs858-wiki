@@ -188,7 +188,7 @@ trained by the adversary rather than the owner (Zhang et al., 2018).
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [False Claims against Model Ownership Resolution](https://arxiv.org/abs/2304.06607) — attacks the ownership claim itself: an adversary can falsely claim a model it never trained, moving the requirement from watermark robustness to soundness of the resolution procedure.
 - [Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?](https://arxiv.org/abs/2502.11598) — whether a watermark survives into a student model distilled from the watermarked one, the deterrence question moved to LLMs.

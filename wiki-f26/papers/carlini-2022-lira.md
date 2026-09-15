@@ -208,7 +208,7 @@ either standard.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Membership Inference Attacks Against Machine Learning Models](https://arxiv.org/abs/1610.05820) — the shadow-model attack that introduced membership inference against ML models, the average-case baseline this paper reworks around the low-false-positive regime.
 - [Detecting Pretraining Data from Large Language Models](https://arxiv.org/abs/2310.16789) — the same question at pretraining scale, where the training set is unknown and the detector works from token probabilities alone.

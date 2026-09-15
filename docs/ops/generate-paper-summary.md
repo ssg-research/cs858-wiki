@@ -172,7 +172,7 @@ worse than leaving the question to the seminar.
   add the link there. The reverse direction stays off the page: a paper page
   never links forward to papers that respond to it. Forward navigation lives
   in the shared concept pages' "Papers that use this concept" lists, or in
-  Essential Readings when the instructor's spreadsheet lists one.
+  Additional Readings when the instructor's spreadsheet lists one.
 
 ---
 
@@ -427,10 +427,10 @@ Sparse and crucial beats complete.
 This section sits directly after Basic Background, immediately before the
 student picks up the paper.
 
-### 7. Essential Readings
+### 7. Additional Readings
 
-Every paper page carries the slot's essential readings. The source is the
-essential-readings column of `docs/CS858-F26-papers-stripped.xlsx`, the same
+Every paper page carries the slot's additional readings. The source is the
+additional-readings column of `docs/Paper-signup-2026.xlsx`, the same
 column `scripts/build-paper-table.py` renders into the reading-list table, so
 the page and the table always show the same set in the same order. Take the
 titles and hyperlinks from the spreadsheet verbatim and add a one-line "why it's
@@ -479,7 +479,7 @@ read each hit. Where it is a genuine use, an `UNLINKED` hit needs the link added
 and a `PLAIN FIRST` hit needs the existing link moved to the section's first
 mention, since presence anywhere on the page satisfies neither the reader who
 enters at the overview nor the one who enters at Basic Background. A term inside
-a References entry, an Essential Readings title, or an unrelated sense of the
+a References entry, an Additional Readings title, or an unrelated sense of the
 word (a paper about biometric fingerprints is not about model fingerprinting) is
 not a use.
 
@@ -586,7 +586,7 @@ contemporaneous work only, properly cited. Never this paper's position.)
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Title](link) — why it's here.
 
@@ -605,14 +605,14 @@ paragraph), at least one Background section, and "References" whenever anything
 is cited. The rest is optional but encouraged.
 
 Section order is fixed: High-level overview, Basic Background, Reading guidance,
-then the collapsed blocks in the order Paper Context, Essential Readings,
+then the collapsed blocks in the order Paper Context, Additional Readings,
 References. Reading guidance sits above the collapsed blocks so it is
 the last thing visible before the student opens the paper.
 
-Paper Context, Essential Readings, and References each render inside a collapsed
+Paper Context, Additional Readings, and References each render inside a collapsed
 `<details>` block (shown in the skeleton above) so the visible page stays short.
 Write the heading as an inline heading on the `<summary>` line, `<h2>` for Paper
-Context and Essential Readings and `<h4>` for References, and keep one blank line
+Context and Additional Readings and `<h4>` for References, and keep one blank line
 after `</summary>` so the body stays Markdown and its relative links remain
 checkable.
 

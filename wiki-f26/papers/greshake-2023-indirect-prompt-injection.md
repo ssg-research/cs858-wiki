@@ -162,7 +162,7 @@ through retrieved data fell outside that picture of the threat.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated LLM Agents](https://arxiv.org/abs/2403.02691) — a benchmark that quantifies indirect prompt injection against tool-using agents, the measurement this paper leaves to future work.
 - [Formalizing and Benchmarking Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2310.12815) — a formal framework and shared benchmark unifying prompt-injection attacks with candidate defenses.

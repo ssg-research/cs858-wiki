@@ -177,7 +177,7 @@ from the trained model alone.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain](https://arxiv.org/abs/1708.06733) — the original backdoor attack, poisoning training data with trigger-stamped relabeled images; the threat this defense detects.
 - [Poisoning Language Models During Instruction Tuning](https://arxiv.org/abs/2305.00944) — the same trigger-and-target construction moved to instruction tuning, where a handful of poisoned examples steer behavior across tasks.

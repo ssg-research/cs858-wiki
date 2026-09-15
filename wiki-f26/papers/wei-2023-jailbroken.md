@@ -164,7 +164,7 @@ had not been given.
 </details>
 
 <details>
-<summary><h2>Essential Readings</h2></summary>
+<summary><h2>Additional Readings</h2></summary>
 
 - [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) — a white-box, optimization-based route to jailbreaks, complementing this paper's black-box, conceptual route.
 - [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) — automates black-box jailbreak discovery with an attacker model in the loop.

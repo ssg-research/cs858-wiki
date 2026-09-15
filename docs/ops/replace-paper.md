@@ -161,12 +161,12 @@ git rm wiki-f26/papers/$OLD.md
 
 ### 11. Update the README reading-list table
 
-The table is generated from `docs/CS858-F26-papers-stripped.xlsx` (sheet
-`UpdatedList`) plus the `READY` map in `scripts/build-paper-table.py`, then
-spliced into `wiki-f26/README.md` by hand (see that script's header).
+The table is generated from `docs/Paper-signup-2026.xlsx` (sheet `Sheet1`)
+plus the `READY` map in `scripts/build-paper-table.py`, then spliced into
+`wiki-f26/README.md` by hand (see that script's header).
 
 - **The spreadsheet is the instructor's.** The slot's row (title, arXiv link,
-  essential and extra readings, venue link) must already reflect the new paper.
+  additional readings, venue link) must already reflect the new paper.
   If it does not, stop and ask; the syllabus is the instructor's call, not the
   agent's.
 - Update `READY[<number>]` in `scripts/build-paper-table.py` for the slot:
@@ -183,11 +183,10 @@ spliced into `wiki-f26/README.md` by hand (see that script's header).
   Recount actual files. A pure swap leaves `Papers` unchanged; `Concepts` moves
   by the number of stubs added minus pages deleted.
 
-The spreadsheet's **essential-readings column** (the one
+The spreadsheet's **additional-readings column** (the one
 `build-paper-table.py` renders into the row's `<details>`) is also the source for
-the new page's **Essential Readings**: list those readings, in the spreadsheet's
-order, with a one-line framing each. The separate extra-reading columns are
-instructor reference and do not render. The essential-readings column can still
+the new page's **Additional Readings**: list those readings, in the spreadsheet's
+order, with a one-line framing each. The additional-readings column can still
 hold a reading carried over from the old paper; confirm each one fits the new
 paper, and flag any that look like leftovers rather than silently keeping or
 dropping them.
@@ -254,7 +253,7 @@ A replacement is acceptable when:
 - The reachability rule was applied: every concept page is either used by a paper
   or reachable from another page, no concept page was deleted while something
   still linked to it, and any kept-but-unused page carries the neutral note.
-- The reading-list table, the indexes, and the new page's Essential Readings all
+- The reading-list table, the indexes, and the new page's Additional Readings all
   agree with the spreadsheet for the slot; the `**Paper:**` link names the
   paper's publication venue and points at that venue's own page; and the stats
   line is recounted.
