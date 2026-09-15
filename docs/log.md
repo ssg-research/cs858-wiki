@@ -1389,3 +1389,14 @@ columns is gone since the new sheet has none.
 
 markdownlint, check-links, and pre-commit clean. Model: Opus 5
 (`claude-opus-5[1m]`).
+
+## [2026-09-15 12:56] infra | strip names from Paper-signup-2026.xlsx
+
+Cleared the Presenter and Discussion Leader cells (values and links) from row 3
+down, replaced the sign-up instruction in A1 with a one-line description of the
+sheet, and set the workbook's creator and last-modified-by properties to
+"CS858 staff". Saved through openpyxl with `data_only`, so the formula cells
+(dates, paper numbers) now hold plain values. `scripts/build-paper-table.py`
+output is unchanged.
+
+pre-commit clean. Model: Opus 5 (`claude-opus-5[1m]`).

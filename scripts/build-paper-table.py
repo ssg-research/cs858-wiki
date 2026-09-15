@@ -23,8 +23,9 @@ wiki repo directly (GitHub, VS Code, Obsidian); the website build rewrites them
 to absolute site URLs.
 
 Paper numbers are read directly from the spreadsheet; the sheet is the source
-of truth for numbering. The number and date cells are formulas, so the workbook
-is opened with ``data_only`` to read their cached values.
+of truth for numbering. The workbook is opened with ``data_only`` so formula
+cells (the number and date columns in the instructor's export) yield their
+cached values.
 
 Run from the repo root::
 
